@@ -1,0 +1,14 @@
+blockquote {
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 0.5em;
+  border-left: 0.25em solid gray;
+  padding-left: 0.5em;
+}
+
+.at-svg {
+  filter: invert(100%);
+  height: 1rem;
+}
+
+/*# sourceMappingURL=main.css.map */
