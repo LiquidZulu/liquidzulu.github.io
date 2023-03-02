@@ -1,0 +1,35 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+import Icon from '../components/Icon.astro'
+import Blob from '../components/Blob.astro'
+---
+
+<Layout title="LiquidZulu | Creating Anarcho-Capitalist Content">
+	<Blob/>
+	<main class=' bg-slate-900 text-slate-50 overflow-hidden'>
+		<Icon icon='logo' class='!fill-slate-50 opacity-[0.015] absolute w-[130vmin] h-[130vmin] -rotate-12 right-[-40vmin] bottom-[-25vmin]'/>
+		<div class='gridlines blur-none w-[100vw] h-[100vh] grid place-items-center'>
+			<h1 class='text-slate-50 text-6xl font-black'>AAAAAAAAAAA</h1>
+		</div>
+		</div>
+	</main>
+</Layout>
+
+<style>
+ .gridlines{
+
+	 --size: 32px;
+	 --bg-size: var(--size) var(--size), var(--size) var(--size);
+
+	 --grid-color: rgba(255, 255, 255, 0.015);
+
+	 z-index: 10 !important;
+	 background-image:
+		 linear-gradient(var(--grid-color) 1px, transparent 1px),
+		 linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+	 background-size: var(--bg-size);
+	 background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
+ }
+
+</style>
