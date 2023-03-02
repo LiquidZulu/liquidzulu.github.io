@@ -9,8 +9,19 @@ import Blob from '../components/Blob.astro'
 	<Blob/>
 	<main class=' bg-slate-900 text-slate-50 overflow-hidden'>
 		<Icon icon='logo' class='!fill-slate-50 opacity-[0.015] absolute w-[130vmin] h-[130vmin] -rotate-12 right-[-40vmin] bottom-[-25vmin]'/>
-		<div class='gridlines blur-none w-[100vw] h-[100vh] grid place-items-center'>
-			<h1 class='text-slate-50 text-6xl font-black'>AAAAAAAAAAA</h1>
+		<div class='gridlines blur-none w-[100vw]'>
+            <div id='0' class='h-[100vh] top-0 grid place-items-center'>
+                <div class='space-y-5 text-center'>
+			    <h1 class='text-slate-50 text-6xl font-black'>Philosophy Distilled</h1>
+                <h2 class='text-slate-300 text-3xl font-medium'>Your path to <span class='text-transparent font-black bg-gradient-to-t from-orange-500 to-amber-500 bg-clip-text'>expertise</span> starts here.</h2>
+                </div>
+            </div>
+            <div class='w-[100vw] place-items-center grid animate-bounce text-6xl top-[90vh] absolute'>
+                <a href='#1'>👇</a>
+            </div>
+            <div id='1' class='h-[100vh]'>
+
+            </div>
 		</div>
 		</div>
 	</main>
@@ -29,7 +40,7 @@ import Blob from '../components/Blob.astro'
 		 linear-gradient(var(--grid-color) 1px, transparent 1px),
 		 linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
 	 background-size: var(--bg-size);
-	 background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
+	 background-position: -1px -1px, -1px -1px;
  }
 
 </style>

@@ -1,21 +1,44 @@
 <script>
- const blob = document.getElementById('blob-follow');
 
- document.body.onpointermove = e => {
-     const { clientX, clientY } = e;
+ // see: https://www.youtube.com/watch?v=kySGqoU7X-s
+
+ const blob = document.getElementById('blob-follow');
+ const show = b => { b.classList.remove('hide') }
+ const hide = b => { b.classList.add('hide') }
+
+ const follow = e => {
+     const { pageX, pageY } = e
 
      blob.animate({
-         left: `${clientX}px`,
-         top: `${clientY}px`
+         left: `${pageX}px`,
+         top: `${pageY}px`
      }, { duration: 3000, fill: 'forwards' })
  }
+
+ const init = e => {
+     const { pageX, pageY } = e
+     blob.animate({
+         left: `${pageX}px`,
+         top: `${pageY}px`
+     }, { duration: 0, fill: 'forwards' })
+     show(blob)
+ }
+
+ document.body.onpointermove = follow
+ document.body.onscroll = follow
+
+ document.body.addEventListener("pointerenter", init);
+
+ document.body.addEventListener("pointerleave", e => {
+     hide(blob)
+ });
 </script>
 
-<div id='blob-follow' class='z-1'></div>
+<div id='blob-follow' class='hide z-1'></div>
 <div id='blob-main' class='-z-2 bg-gradient-to-r from-violet-900 to-fuchsia-900'></div>
 <div id='blob-minor' class='-z-2 bg-gradient-to-r from-pink-900 to-rose-900'></div>
 <img class='-z-2 absolute w-[300vmin] max-w-none right-[-90vmin]' src='tailwind-blur.png'/>
-<div id='blur' class='-z-1 h-full w-full absolute'></div>
+<div id='blur' class='-z-1 h-[200vh] w-full absolute'></div>
 
 <style>
  #blur{
@@ -23,13 +46,16 @@
  }
 
  #blob-follow{
+     transition: opacity 1s;
      background-color: white;
      height: 100px;
      aspect-ratio: 1;
      position: absolute;
-     left: 50%;
-     top: 50%;
      translate: -50% -50%;
+ }
+
+ #blob-follow.hide{
+     opacity: 0;
  }
 
  #blob-main{
