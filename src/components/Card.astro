@@ -1,8 +1,8 @@
 ---
 export interface Props {
-	title: string;
-	body: string;
-	href: string;
+    title: string;
+    body: string;
+    href: string;
 }
 
 const { href, title, img, available, button, uniform } = Astro.props;
@@ -11,14 +11,53 @@ const { href, title, img, available, button, uniform } = Astro.props;
 // + https://www.youtube.com/watch?v=Z-3tPXf9a7M
 // + https://codepen.io/markmiro/pen/wbqMPa
 ---
-<div class=`${!!uniform ? 'h-[70vh]' : ''} card w-96 bg-slate-800 text-slate-50 drop-shadow-2xl`>
-  <figure class='overflow-hidden w-96'>{!!available ? <img src={img}/> : <img class='saturate-[0.8]' src={img}/>}</figure>
-  <div class="card-body grid content-start">
-    <h2 class="card-title">{title}</h2>
-    <p class=`text-lg my-3 break-normal overflow-hidden ${!!uniform ? 'h-[29vh]' : ''} text-justify`>{!!available ? <slot/> : <span class='text-slate-400'>This course is currently unavailable.</span>}</p>
-    {!!uniform ? <div class='bg-gradient-to-t h-[15vh] mt-[-15vh] from-slate-800'/> : <></>}
-    <div class="card-actions justify-end">
-		  {!!available ? <a href={href}><button class="btn bg-gradient-to-r from-orange-500 to-amber-500 hover:scale-105">{button}</button></a> : <button class="btn btn-disabled text-slate-500">Unavailable</button>}
+
+<div
+    class=`${!!uniform ? 'h-[70vh]' : ''} card w-96 bg-slate-800 text-slate-50 drop-shadow-2xl`>
+    <figure class="overflow-hidden w-96">
+        {
+            !!available ? (
+                <img src={img} />
+            ) : (
+                <img class="saturate-[0.8]" src={img} />
+            )
+        }
+    </figure>
+    <div class="card-body grid content-start">
+        <h2 class="card-title">{title}</h2>
+        <p
+            class=`text-lg my-3 break-normal overflow-hidden ${!!uniform ? 'h-[29vh]' : ''} text-justify`>
+            {
+                !!available ? (
+                    <slot />
+                ) : (
+                    <span class="text-slate-400">
+                        This course is currently unavailable.
+                    </span>
+                )
+            }
+        </p>
+        {
+            !!uniform ? (
+                <div class="bg-gradient-to-t h-[15vh] mt-[-15vh] from-slate-800" />
+            ) : (
+                <Fragment />
+            )
+        }
+        <div class="card-actions justify-end">
+            {
+                !!available ? (
+                    <a href={href}>
+                        <button class="btn bg-gradient-to-r from-orange-500 to-amber-500 hover:scale-105">
+                            {button}
+                        </button>
+                    </a>
+                ) : (
+                    <button class="btn btn-disabled text-slate-500">
+                        Unavailable
+                    </button>
+                )
+            }
+        </div>
     </div>
-  </div>
 </div>

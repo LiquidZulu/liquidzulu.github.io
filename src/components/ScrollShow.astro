@@ -10,8 +10,8 @@ const align = place == undefined ? 'left' : 'right';
 ---
 
 <script>
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
             console.log(entry.boundingClientRect.top);
             if (entry.isIntersecting) {
                 entry.target.classList.add('scroll-show-show');
@@ -23,18 +23,16 @@ const align = place == undefined ? 'left' : 'right';
         });
     });
 
-    document.querySelectorAll('.scroll-show').forEach((el) => {
+    document.querySelectorAll('.scroll-show').forEach(el => {
         el.classList.add('scroll-show-hidden');
         observer.observe(el);
     });
 </script>
 
 <div
-    class="lg:h-[60vh] md:h-[80vh] h-[90vh] bg-slate-900 grid place-items-center text-justify"
->
+    class="lg:h-[60vh] md:h-[80vh] h-[90vh] bg-slate-900 grid place-items-center text-justify">
     <div
-        class=`scroll-show lg:w-[60vw] md:w-[70vw] w-[90vw] space-y-12 grid place-items-${place} text-justify`
-    >
+        class=`scroll-show lg:w-[60vw] md:w-[70vw] w-[90vw] space-y-12 grid place-items-${place} text-justify`>
         <slot />
     </div>
 </div>

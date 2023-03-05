@@ -16,9 +16,9 @@ export function getStaticPaths() {
     };
 
     let slugs = [];
-    Object.values(lessons).forEach((i) => i.forEach((j) => slugs.push(j)));
+    Object.values(lessons).forEach(i => i.forEach(j => slugs.push(j)));
 
-    return slugs.map((i) => ({
+    return slugs.map(i => ({
         params: { lesson: i },
         props: invert(lessons),
     }));
@@ -26,31 +26,29 @@ export function getStaticPaths() {
 
 const { course } = Astro.params;
 const DATA = Astro.props;
+const courseTitles = {
+    'libertarian-ethics': 'The Fundamentals of Libertarian Ethics',
+};
 const slug = Astro.url.href.split('/').pop();
 
 const lessonInfo = await getEntryBySlug(DATA[slug], slug);
 const { Content, headings } = await lessonInfo.render();
 
 import Layout from '../layouts/Layout.astro';
-import Navbar from '../components/Navbar.astro';
-import Footer from '../components/Footer.astro';
-import TOC from '../components/TOC.astro';
-import SkipToContent from '../components/SkipToContent.astro';
+import { Navbar, Footer, SkipToContent, TOC } from '../components';
 ---
 
 <Layout
-    title={lessonInfo.data.title}
+    title={lessonInfo.data.title + ' | ' + courseTitles[DATA[slug]]}
     description={lessonInfo.data.description}
     ptype="article"
     published={lessonInfo.data.date}
-    MJ={true}
->
+    MJ={true}>
     <SkipToContent href="#md-content" />
     <Navbar path={`courses/${DATA[slug]}/${slug}`} />
     <div
         class="absolute h-[100vh] w-[100vw] blur-sm brightness-[0.25] saturate-[0.7]"
-        style=`background-image: url(/thumb-${slug}.png); background-repeat: no-repeat; background-size: cover;`
-    >
+        style=`background-image: url(/thumb-${slug}.png); background-repeat: no-repeat; background-size: cover;`>
     </div>
     <div class="hero min-h-screen bg-transparent">
         <div class="hero-overlay bg-opacity-60"></div>
@@ -62,15 +60,13 @@ import SkipToContent from '../components/SkipToContent.astro';
         </div>
     </div>
     <div
-        class="w-[100vw] place-items-center grid animate-bounce text-7xl top-[90vh] absolute"
-    >
+        class="w-[100vw] place-items-center grid animate-bounce text-7xl top-[90vh] absolute">
         <a href="#md-content">👇</a>
     </div>
     <main id="md-content" class="w-[100vw] bg-zinc-900 flex flex-row">
         <TOC headings={headings} />
         <article
-            class="md:w-[80vw] w-[100vw] bg-zinc-800 text-justify md:p-16 p-6"
-        >
+            class="md:w-[80vw] w-[100vw] bg-zinc-800 text-justify md:p-16 p-6">
             <Content />
         </article>
     </main>

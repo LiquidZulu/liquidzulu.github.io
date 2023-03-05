@@ -6,14 +6,14 @@ const { height } = Astro.props;
     // see: https://www.youtube.com/watch?v=kySGqoU7X-s
 
     const blob = document.getElementById('blob-follow');
-    const show = (b) => {
+    const show = b => {
         b.classList.remove('hide');
     };
-    const hide = (b) => {
+    const hide = b => {
         b.classList.add('hide');
     };
 
-    const follow = (e) => {
+    const follow = e => {
         const { pageX, pageY } = e;
 
         if (pageX === undefined || pageY == undefined) return;
@@ -27,7 +27,7 @@ const { height } = Astro.props;
         );
     };
 
-    const init = (e) => {
+    const init = e => {
         const { pageX, pageY } = e;
         blob.animate(
             {
@@ -44,14 +44,13 @@ const { height } = Astro.props;
 
     document.body.addEventListener('pointerenter', init);
 
-    document.body.addEventListener('pointerleave', (e) => {
+    document.body.addEventListener('pointerleave', e => {
         hide(blob);
     });
 </script>
 
 <div
-    class=`overflow-hidden ${!!height ? 'h-[' + height + 'vh] w-[100vw] top-0 absolute' : ''}`
->
+    class=`overflow-hidden ${!!height ? 'h-[' + height + 'vh] w-[100vw] top-0 absolute' : ''}`>
     <div id="blob-main" class="bg-gradient-to-r from-violet-900 to-fuchsia-900">
     </div>
     <div id="blob-minor" class="bg-gradient-to-r from-pink-900 to-rose-900">
@@ -63,8 +62,7 @@ const { height } = Astro.props;
     />
     <div
         id="blur"
-        class=`t-0 min-h-[100vh] ${!!height ? '' : 'h-[200vh]'} w-full absolute`
-    >
+        class=`t-0 min-h-[100vh] ${!!height ? '' : 'h-[200vh]'} w-full absolute`>
     </div>
 </div>
 

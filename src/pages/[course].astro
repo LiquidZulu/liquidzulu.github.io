@@ -11,7 +11,7 @@ export function getStaticPaths() {
         },
     };
 
-    return Object.keys(courseInfo).map((i) => ({
+    return Object.keys(courseInfo).map(i => ({
         params: { course: i },
         props: Object.fromEntries(
             Object.entries(courseInfo).filter(([k, v]) => k === i)
@@ -27,14 +27,11 @@ const courseLessons = await getCollection(slug);
 // astro confuses the <= with the beginning of a JSX fragment
 let lessons = [];
 for (let i = 1; i <= courseLessons.length; i++) {
-    lessons.push(courseLessons.find((l) => l.data.n == String(i)));
+    lessons.push(courseLessons.find(l => l.data.n == String(i)));
 }
 
 import Layout from '../layouts/Layout.astro';
-import Navbar from '../components/Navbar.astro';
-import Card from '../components/Card.astro';
-import Footer from '../components/Footer.astro';
-import SkipToContent from '../components/SkipToContent.astro';
+import { Navbar, Card, Footer, SkipToContent } from '../components';
 ---
 
 <Layout title={DATA[slug].title}>
@@ -42,8 +39,7 @@ import SkipToContent from '../components/SkipToContent.astro';
     <Navbar path={`courses/${slug}`} />
     <div
         class="footer-shadow absolute h-[100vh] w-[100vw] blur-sm brightness-[0.25] saturate-[0.7]"
-        style=`background-image: url(/thumb-${slug}.png); background-repeat: no-repeat; background-size: cover;`
-    >
+        style=`background-image: url(/thumb-${slug}.png); background-repeat: no-repeat; background-size: cover;`>
     </div>
     <div class="hero min-h-screen bg-transparent">
         <div class="hero-overlay bg-opacity-60"></div>
@@ -61,18 +57,16 @@ import SkipToContent from '../components/SkipToContent.astro';
         </div>
     </div>
     <div
-        class="w-[100vw] place-items-center grid animate-bounce text-7xl top-[90vh] absolute"
-    >
+        class="w-[100vw] place-items-center grid animate-bounce text-7xl top-[90vh] absolute">
         <a href="#1">👇</a>
     </div>
     <main id="1" class="gridlines text-slate-50 w-[100vw] min-h-[100vh] z-20">
         <div class="p-[5vw] grid w-[100vw]">
             <ul
-                class="flex flex-row justify-center flex-wrap gap-6 lg:gap-8 space-y-8 w-[90vw]"
-            >
+                class="flex flex-row justify-center flex-wrap gap-6 lg:gap-8 space-y-8 w-[90vw]">
                 <span></span>
                 {
-                    lessons.map((i) => (
+                    lessons.map(i => (
                         <li class="text-sm">
                             <Card
                                 title={i.data.title}
@@ -80,8 +74,7 @@ import SkipToContent from '../components/SkipToContent.astro';
                                 available="true"
                                 img={`/thumb-${i.slug}.png`}
                                 button="go to lesson"
-                                uniform={true}
-                            >
+                                uniform={true}>
                                 {i.data.description}
                             </Card>
                         </li>

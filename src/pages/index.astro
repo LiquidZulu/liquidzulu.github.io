@@ -1,13 +1,15 @@
 ---
 import '../css/global.css';
-import Footer from '../components/Footer.astro';
+import {
+    Blob,
+    Card,
+    Icon,
+    Navbar,
+    Footer,
+    ScrollShow,
+    SkipToContent,
+} from '../components';
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
-import Icon from '../components/Icon.astro';
-import Blob from '../components/Blob.astro';
-import ScrollShow from '../components/ScrollShow.astro';
-import Navbar from '../components/Navbar.astro';
-import SkipToContent from '../components/SkipToContent.astro';
 ---
 
 <Layout title="LiquidZulu | Philosophy Distilled">
@@ -32,14 +34,12 @@ import SkipToContent from '../components/SkipToContent.astro';
                 </div>
             </div>
             <div
-                class="w-[100vw] place-items-center grid animate-bounce text-7xl top-[90vh] absolute"
-            >
+                class="w-[100vw] place-items-center grid animate-bounce text-7xl top-[90vh] absolute">
                 <a href="#1">👇</a>
             </div>
             <div>
                 <div
-                    class="h-[20vh] bg-gradient-to-t from-slate-900 to-transparent"
-                >
+                    class="h-[20vh] bg-gradient-to-t from-slate-900 to-transparent">
                 </div>
                 <div id="1"></div>
                 <ScrollShow>
@@ -106,21 +106,17 @@ import SkipToContent from '../components/SkipToContent.astro';
                     <a
                         rel="prefetch"
                         class="transition-all ease-in-out hover:scale-110 flex"
-                        href="./courses"
-                    >
+                        href="./courses">
                         <div
-                            class="lg:text-8xl md:text-6xl text-6xl animation-bounce-left"
-                        >
+                            class="lg:text-8xl md:text-6xl text-6xl animation-bounce-left">
                             👉
                         </div>
                         <div
-                            class="lg:text-7xl md:text-5xl text-3xl font-black text-stone-900 bg-gradient-to-r from-orange-500 to-amber-500 p-5 cubano"
-                        >
+                            class="lg:text-7xl md:text-5xl text-3xl font-black text-stone-900 bg-gradient-to-r from-orange-500 to-amber-500 p-5 cubano">
                             COURSES
                         </div>
                         <div
-                            class="lg:text-8xl md:text-6xl text-6xl animation-bounce-right"
-                        >
+                            class="lg:text-8xl md:text-6xl text-6xl animation-bounce-right">
                             👈
                         </div>
                     </a>
