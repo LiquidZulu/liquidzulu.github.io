@@ -2,7 +2,7 @@
 import { invert } from '../util/invert';
 import { getCollection, getEntryBySlug } from 'astro:content';
 
-export function getStaticPaths() {
+export const getStaticPaths = () => {
     const lessons = {
         'libertarian-ethics': [
             'the-nature-of-law',
@@ -22,7 +22,7 @@ export function getStaticPaths() {
         params: { lesson: i },
         props: invert(lessons),
     }));
-}
+};
 
 const { course } = Astro.params;
 const DATA = Astro.props;

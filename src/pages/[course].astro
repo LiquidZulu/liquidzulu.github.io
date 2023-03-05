@@ -2,7 +2,7 @@
 import '../css/global.css';
 import { getCollection } from 'astro:content';
 
-export function getStaticPaths() {
+export const getStaticPaths = () => {
     const courseInfo = {
         'libertarian-ethics': {
             title: 'The Fundamentals of Libertarian Ethics',
@@ -17,7 +17,7 @@ export function getStaticPaths() {
             Object.entries(courseInfo).filter(([k, v]) => k === i)
         ),
     }));
-}
+};
 
 const { course } = Astro.params;
 const DATA = Astro.props;
