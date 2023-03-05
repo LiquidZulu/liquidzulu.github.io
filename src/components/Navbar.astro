@@ -1,0 +1,45 @@
+---
+import { Debug } from 'astro/components';
+const { path } = Astro.props
+let pathArr = []
+
+if(!!path){
+  pathArr = path
+  .split('/')
+  .reduce(
+    (acc, i) => { return acc.concat(acc[acc.length - 1] + `/${i}`) },
+    ['']
+  )
+  .filter(i => i !== '')
+  .map(i => i.substring(1))
+}
+---
+
+<nav class='absolute px-[2vw] py-[1vh] flex z-50'>
+    <div class="text-sm breadcrumbs w-[48vw]">
+        <ul>
+            {(()=>{
+                if(!!path){
+                    return [<li><a rel='prefetch' href=`/`>home</a></li>]
+                      .concat(
+                        pathArr
+                          .map(
+                            i => <li>
+                              <a rel='prefetch' href=`/${i.split('/').pop()}`>
+                                {i.split('/').pop()}
+                              </a>
+                            </li>
+                          )
+                      )
+                }
+            })()}
+        </ul>
+    </div>
+    <div class='mt-[1vh] w-[48vw] grid place-items-end'>
+        <a rel='prefetch' href='/courses'>
+            <button class="btn bg-gradient-to-r from-orange-500 to-amber-500 hover:scale-105">
+                courses
+            </button>
+        </a>
+    </div>
+</nav>

@@ -1,0 +1,11 @@
+---
+import Icon from './Icon.astro';
+const { slug, url, alt } = Astro.props;
+---
+
+<a href={url} aria-label={!!alt ? alt : ''} title={!!alt ? alt : ''}>
+    <Icon
+        icon={slug}
+        class="fill-zinc-500 transition-all ease-in-out hover:scale-110 w-8 h-8"
+    />
+</a>

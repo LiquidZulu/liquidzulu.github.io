@@ -1,0 +1,60 @@
+---
+/*
+see:
++ https://www.youtube.com/watch?v=T33NN_pPeNI
++ https://github.com/fireship-io/fireship.io/blob/master/app/components/ui/scroll-show.svelte
+*/
+
+const { place } = Astro.props;
+const align = place == undefined ? 'left' : 'right';
+---
+
+<script>
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            console.log(entry.boundingClientRect.top);
+            if (entry.isIntersecting) {
+                entry.target.classList.add('scroll-show-show');
+            } else {
+                // will only do the fade in if you scroll to it from above
+                if (entry.boundingClientRect.top > 0)
+                    entry.target.classList.remove('scroll-show-show');
+            }
+        });
+    });
+
+    document.querySelectorAll('.scroll-show').forEach((el) => {
+        el.classList.add('scroll-show-hidden');
+        observer.observe(el);
+    });
+</script>
+
+<div
+    class="lg:h-[60vh] md:h-[80vh] h-[90vh] bg-slate-900 grid place-items-center text-justify"
+>
+    <div
+        class=`scroll-show lg:w-[60vw] md:w-[70vw] w-[90vw] space-y-12 grid place-items-${place} text-justify`
+    >
+        <slot />
+    </div>
+</div>
+
+<style>
+    /* I have no clue why I have to put this here, but it breaks otherwise */
+    .place-items-end {
+        place-items: end;
+    }
+
+    .scroll-show-hidden {
+        opacity: 0;
+        translate: 0% 50%;
+        filter: blur(2px);
+        transition: all 0.8s;
+    }
+
+    .scroll-show-show {
+        opacity: 1;
+        filter: blur(0);
+        translate: 0% 0%;
+    }
+</style>

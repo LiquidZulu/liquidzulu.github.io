@@ -1,0 +1,135 @@
+---
+import { invert } from '../util/invert';
+import { getCollection, getEntryBySlug } from 'astro:content';
+
+export function getStaticPaths() {
+    const lessons = {
+        'libertarian-ethics': [
+            'the-nature-of-law',
+            'the-nap',
+            'homesteading-and-property-rights',
+            'contract-theory',
+            'childrens-rights',
+            'defensive-force-and-proportionality',
+            'law-subset',
+        ],
+    };
+
+    let slugs = [];
+    Object.values(lessons).forEach((i) => i.forEach((j) => slugs.push(j)));
+
+    return slugs.map((i) => ({
+        params: { lesson: i },
+        props: invert(lessons),
+    }));
+}
+
+const { course } = Astro.params;
+const DATA = Astro.props;
+const slug = Astro.url.href.split('/').pop();
+
+const lessonInfo = await getEntryBySlug(DATA[slug], slug);
+const { Content, headings } = await lessonInfo.render();
+
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import TOC from '../components/TOC.astro';
+import SkipToContent from '../components/SkipToContent.astro';
+---
+
+<Layout
+    title={lessonInfo.data.title}
+    description={lessonInfo.data.description}
+    ptype="article"
+    published={lessonInfo.data.date}
+    MJ={true}
+>
+    <SkipToContent href="#md-content" />
+    <Navbar path={`courses/${DATA[slug]}/${slug}`} />
+    <div
+        class="absolute h-[100vh] w-[100vw] blur-sm brightness-[0.25] saturate-[0.7]"
+        style=`background-image: url(/thumb-${slug}.png); background-repeat: no-repeat; background-size: cover;`
+    >
+    </div>
+    <div class="hero min-h-screen bg-transparent">
+        <div class="hero-overlay bg-opacity-60"></div>
+        <div class="hero-content text-center text-neutral-content">
+            <div class="max-w-2xl">
+                <h1 class="mb-7 text-5xl font-bold">{lessonInfo.data.title}</h1>
+                <p class="mb-5 text-xl">{lessonInfo.data.description}</p>
+            </div>
+        </div>
+    </div>
+    <div
+        class="w-[100vw] place-items-center grid animate-bounce text-7xl top-[90vh] absolute"
+    >
+        <a href="#md-content">👇</a>
+    </div>
+    <main id="md-content" class="w-[100vw] bg-zinc-900 flex flex-row">
+        <TOC headings={headings} />
+        <article
+            class="md:w-[80vw] w-[100vw] bg-zinc-800 text-justify md:p-16 p-6"
+        >
+            <Content />
+        </article>
+    </main>
+    <Footer />
+</Layout>
+
+<!-- is:global required to apply styles to the rendered MD -->
+<style is:global lang="scss">
+    #md-content {
+        h1 {
+            @apply text-6xl font-bold text-center mt-24 mb-16;
+        }
+
+        h2 {
+            @apply text-5xl font-bold text-center mt-20 mb-12;
+        }
+
+        h3 {
+            @apply text-5xl font-semibold text-center mt-16 mb-10;
+        }
+
+        h4 {
+            @apply text-4xl font-semibold text-center mt-8 mb-4;
+        }
+
+        p,
+        ol {
+            @apply my-4 text-justify text-lg min-[2000px]:text-2xl min-[2500px]:text-3xl;
+        }
+
+        blockquote {
+            @apply border-l-4 border-zinc-700 pl-4;
+        }
+
+        article {
+            ol,
+            ul {
+                @apply ml-6;
+            }
+
+            ol {
+                @apply list-decimal;
+            }
+
+            ul {
+                @apply list-disc;
+            }
+
+            a {
+                @apply text-sky-500;
+
+                &:not(.footref) {
+                    @apply hover:link;
+                }
+            }
+
+            #footnotes ~ p {
+                @apply text-left;
+            }
+        }
+    }
+</style>

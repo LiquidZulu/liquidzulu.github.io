@@ -1,0 +1,33 @@
+---
+// Adapted from the sidebar shown on fireship.io course pages
+
+const { headings } = Astro.props;
+import '../css/global.css';
+---
+
+<ul
+    id="sidebar"
+    class="scrollbar overflow-auto w-[20vw] h-[100vh] p-6 sticky sticky md:block hidden top-0 border-r-4 border-zinc-800"
+>
+    <li class="cubano border-b-2 border-zinc-700 text-lg">Sections</li>
+    <li>
+        {
+            headings.map((i) => (
+                <a
+                    class="text-gray-600 hover:text-gray-400 focus:text-gray-400"
+                    href={`#${i.slug}`}
+                >
+                    <div class="p-1 my-1 flex items-center">
+                        <span class="mr-auto text-lg pr-2">{i.text}</span>
+                    </div>
+                </a>
+            ))
+        }
+    </li>
+</ul>
+
+<style lang="scss">
+    #sidebar {
+        box-shadow: inset 0 0 1rem -0.1rem rgba(0, 0, 0, 1);
+    }
+</style>

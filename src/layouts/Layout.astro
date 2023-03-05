@@ -1,21 +1,92 @@
 ---
+import ScrollUp from '../components/ScrollUp.astro'
+import { SEO } from 'astro-seo' // https://github.com/jonasmerlin/astro-seo/tree/main
+
 export interface Props {
-	title: string;
+	title?: string;
+	description?: string;
+	ptype?: 'article';
+	published?: string;
+	MJ: boolean;
 }
 
-const { title } = Astro.props;
+const {
+	title,
+	description,
+	ptype,
+	published,
+	MJ,
+} = Astro.props;
+
+const slug = Astro.url.pathname == '/' ? 'index' : Astro.url.pathname.split('/').pop()
+
+const META = {
+	title: !!title ? title : 'LiquidZulu | Philosophy Distilled',
+	slug: slug,
+	description: !!description ? description : 'The home of philosophy without the fat.',
+	type: ptype == 'article' && !!published ? `article:${published}` : 'article:LiquidZulu'
+}
 ---
 
 <!DOCTYPE html>
-<html class='scroll-smooth overflow-x-hidden' lang="en">
+<html class='scroll-smooth overflow-x-hidden bg-slate-900' lang="en">
 	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/logo.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
+		<SEO
+			charset='UTF-8'
+
+			title={META.title}
+			description={META.description}
+
+			openGraph={{
+				basic: {
+					title: META.title,
+					type: META.type,
+					image: `/thumb-${META.slug}.png`
+				}
+			}}
+
+			twitter={{
+				creator: '@liquid2ulu',
+				card: 'summary_large_image',
+				title: META.title,
+				image: `/thumb-${META.slug}.png`,
+				description: META.description
+			}}
+
+			extend={{
+				link: [{rel: 'icon', href: '/logo.svg', type: 'image/svg+xml'}],
+				meta: [
+				    { name: 'viewport', content: 'width=device-width' },
+				    { name: 'generator', content: Astro.generator },
+					{ name: 'twitter:title', content: META.title },
+					{ name: 'twitter:description', content: META.description },
+				]
+			}}
+		/>
+
+		{(()=>{
+		if(!!MJ){
+		return (<Fragment>
+            <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+            <script
+                id="MathJax-script"
+                async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+			<script>
+			 MathJax = {
+				 tex: {
+					 inlineMath: [['$', '$'], ['\\(', '\\)']]
+				 },
+				 svg: {
+					 fontCache: 'global'
+				 }
+			 };
+			</script>
+        </Fragment>)
+		}
+		})()}
 	</head>
-	<body>
+	<body class='bg-slate-900 -z-50 text-slate-50'>
 		<slot />
+		<ScrollUp/>
 	</body>
 </html>

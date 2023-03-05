@@ -1,0 +1,59 @@
+---
+import SocialIcon from './SocialIcon.astro';
+import '../css/global.css';
+---
+
+<footer
+    class="!z-10 py-16 px-16 bg-zinc-900 footer-shadow grid place-items-center text-slate-50"
+>
+    <div class="grid place-items-center space-y-12 text-center">
+        <div class="flex space-x-3">
+            <SocialIcon
+                alt="Link to Astro js, which was used to build this website."
+                slug="astro"
+                url="https://astro.build/"
+            />
+            <SocialIcon
+                alt="Link to the github source code for this website"
+                slug="github"
+                url="https://github.com/liquidzulu/liquidzulu.github.io"
+            />
+            <SocialIcon
+                alt="Link to the LiquidZulu youtube channel."
+                slug="youtube"
+                url="https://youtube.com/liquidzulu"
+            />
+            <SocialIcon
+                alt="Link to LiquidZulu's twitter account."
+                slug="twitter"
+                url="https://twitter.com/liquid2ulu"
+            />
+            <SocialIcon
+                alt="Link to Liquidzulu's discord server."
+                slug="discord"
+                url="https://discord.com/invite/A9NKzQShPA"
+            />
+        </div>
+        <p>
+            See an issue with this page? Report it <a
+                class="text-sky-500 hover:link"
+                href="https://github.com/LiquidZulu/liquidzulu.github.io/issues/new"
+                >here</a
+            >! Or open a <a
+                class="text-sky-500 hover:link"
+                href="https://github.com/LiquidZulu/liquidzulu.github.io/pulls"
+                >pull request</a
+            > if you know how to fix it yourself.
+        </p>
+        <p class="text-zinc-400 text-justify">
+            To the extent possible under law, LiquidZulu has waived all
+            copyright and related or neighboring rights to material on this
+            Site, unless indicated otherwise. In the event the CC0 license is
+            unenforceable a <a
+                class="text-sky-500"
+                href="https://creativecommons.org/licenses/by/3.0/"
+                >Creative Commons License</a
+            > is hereby granted.
+        </p>
+    </div>
+</footer>

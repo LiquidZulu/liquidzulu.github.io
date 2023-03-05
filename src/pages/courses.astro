@@ -1,0 +1,53 @@
+---
+import '../css/global.css';
+import Layout from '../layouts/Layout.astro';
+import Blob from '../components/Blob.astro';
+import Icon from '../components/Icon.astro';
+import Card from '../components/Card.astro';
+import Footer from '../components/Footer.astro';
+import Navbar from '../components/Navbar.astro';
+import SkipToContent from '../components/SkipToContent.astro';
+---
+
+<Layout title="Courses | Philosophy Distilled">
+    <SkipToContent href="#cards" />
+    <Blob height={100} />
+    <main class="bg-slate-900 text-slate-50 w-[100vw] min-h-[100vh] z-20">
+        <Navbar path="courses" />
+        <Icon
+            icon="logo"
+            class="!fill-slate-50 opacity-[0.015] absolute w-[130vmin] h-[130vmin] -rotate-12 right-[-40vmin] bottom-[-25vmin]"
+        />
+        <div
+            class="gridlines overflow-hidden grid place-items-center blur-none w-[100vw] min-h-[100vh]"
+        >
+            <div
+                class="justify-center my-16 flex flex-row flex-wrap space-x-8 space-y-8"
+            >
+                <div id="cards"></div>
+                <Card
+                    href="/libertarian-ethics"
+                    title="The Fundamentals of Libertarian Ethics"
+                    img="/thumb-libertarian-ethics.png"
+                    available="true"
+                    button="go to course"
+                >
+                    The single fastest route from novice to <span
+                        class="emphasis pr-[0.02rem]">expert</span
+                    > in Austrian legal theory.
+                </Card>
+                <Card
+                    href=""
+                    title="The Fundamentals of Austrian Economics"
+                    img="/under-construction.png"
+                />
+                <Card
+                    href=""
+                    title="The Fundamentals of Objectivism"
+                    img="/under-construction.png"
+                />
+            </div>
+        </div>
+    </main>
+    <Footer />
+</Layout>

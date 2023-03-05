@@ -1,0 +1,95 @@
+---
+import '../css/global.css';
+import { getCollection } from 'astro:content';
+
+export function getStaticPaths() {
+    const courseInfo = {
+        'libertarian-ethics': {
+            title: 'The Fundamentals of Libertarian Ethics',
+            subtitle:
+                'The single fastest route from novice to expert in Austrian legal theory.',
+        },
+    };
+
+    return Object.keys(courseInfo).map((i) => ({
+        params: { course: i },
+        props: Object.fromEntries(
+            Object.entries(courseInfo).filter(([k, v]) => k === i)
+        ),
+    }));
+}
+
+const { course } = Astro.params;
+const DATA = Astro.props;
+const slug = Object.keys(DATA)[0];
+const courseLessons = await getCollection(slug);
+
+// astro confuses the <= with the beginning of a JSX fragment
+let lessons = [];
+for (let i = 1; i <= courseLessons.length; i++) {
+    lessons.push(courseLessons.find((l) => l.data.n == String(i)));
+}
+
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Card from '../components/Card.astro';
+import Footer from '../components/Footer.astro';
+import SkipToContent from '../components/SkipToContent.astro';
+---
+
+<Layout title={DATA[slug].title}>
+    <SkipToContent href="#1" />
+    <Navbar path={`courses/${slug}`} />
+    <div
+        class="footer-shadow absolute h-[100vh] w-[100vw] blur-sm brightness-[0.25] saturate-[0.7]"
+        style=`background-image: url(/thumb-${slug}.png); background-repeat: no-repeat; background-size: cover;`
+    >
+    </div>
+    <div class="hero min-h-screen bg-transparent">
+        <div class="hero-overlay bg-opacity-60"></div>
+        <div class="hero-content text-center text-neutral-content">
+            <div class="max-w-lg">
+                <h1 class="mb-5 text-5xl font-bold">{DATA[slug].title}</h1>
+                <p class="mb-5">{DATA[slug].subtitle}</p>
+                <a href="#1"
+                    ><button
+                        class="btn bg-gradient-to-r from-orange-500 to-amber-500 hover:scale-105"
+                        >Get Started</button
+                    ></a
+                >
+            </div>
+        </div>
+    </div>
+    <div
+        class="w-[100vw] place-items-center grid animate-bounce text-7xl top-[90vh] absolute"
+    >
+        <a href="#1">👇</a>
+    </div>
+    <main id="1" class="gridlines text-slate-50 w-[100vw] min-h-[100vh] z-20">
+        <div class="p-[5vw] grid w-[100vw]">
+            <ul
+                class="flex flex-row justify-center flex-wrap gap-6 lg:gap-8 space-y-8 w-[90vw]"
+            >
+                <span></span>
+                {
+                    lessons.map((i) => (
+                        <li class="text-sm">
+                            <Card
+                                title={i.data.title}
+                                href={`/${i.slug}`}
+                                available="true"
+                                img={`/thumb-${i.slug}.png`}
+                                button="go to lesson"
+                                uniform={true}
+                            >
+                                {i.data.description}
+                            </Card>
+                        </li>
+                    ))
+                }
+            </ul>
+        </div>
+
+        <Footer />
+    </main>
+</Layout>

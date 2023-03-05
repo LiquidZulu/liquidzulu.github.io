@@ -10,10 +10,16 @@
 		"astro": "astro"
 	},
 	"dependencies": {
+		"@astrojs/prefetch": "^0.1.2",
 		"@astrojs/tailwind": "^3.0.1",
 		"astro": "^2.0.4",
+		"astro-seo": "^0.7.1",
 		"daisyui": "^2.51.3",
+		"lodash": "^4.17.21",
 		"node-html-parser": "^6.1.5",
 		"tailwindcss": "^3.0.24"
+	},
+	"devDependencies": {
+		"sass": "^1.58.3"
 	}
 }

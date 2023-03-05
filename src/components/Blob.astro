@@ -1,96 +1,124 @@
+---
+const { height } = Astro.props;
+---
+
 <script>
+    // see: https://www.youtube.com/watch?v=kySGqoU7X-s
 
- // see: https://www.youtube.com/watch?v=kySGqoU7X-s
+    const blob = document.getElementById('blob-follow');
+    const show = (b) => {
+        b.classList.remove('hide');
+    };
+    const hide = (b) => {
+        b.classList.add('hide');
+    };
 
- const blob = document.getElementById('blob-follow');
- const show = b => { b.classList.remove('hide') }
- const hide = b => { b.classList.add('hide') }
+    const follow = (e) => {
+        const { pageX, pageY } = e;
 
- const follow = e => {
-     const { pageX, pageY } = e
+        if (pageX === undefined || pageY == undefined) return;
 
-     blob.animate({
-         left: `${pageX}px`,
-         top: `${pageY}px`
-     }, { duration: 3000, fill: 'forwards' })
- }
+        blob.animate(
+            {
+                left: `${pageX}px`,
+                top: `${pageY}px`,
+            },
+            { duration: 3000, fill: 'forwards' }
+        );
+    };
 
- const init = e => {
-     const { pageX, pageY } = e
-     blob.animate({
-         left: `${pageX}px`,
-         top: `${pageY}px`
-     }, { duration: 0, fill: 'forwards' })
-     show(blob)
- }
+    const init = (e) => {
+        const { pageX, pageY } = e;
+        blob.animate(
+            {
+                left: `${pageX}px`,
+                top: `${pageY}px`,
+            },
+            { duration: 0, fill: 'forwards' }
+        );
+        show(blob);
+    };
 
- document.body.onpointermove = follow
- document.body.onscroll = follow
+    document.body.onpointermove = follow;
+    document.body.onscroll = follow;
 
- document.body.addEventListener("pointerenter", init);
+    document.body.addEventListener('pointerenter', init);
 
- document.body.addEventListener("pointerleave", e => {
-     hide(blob)
- });
+    document.body.addEventListener('pointerleave', (e) => {
+        hide(blob);
+    });
 </script>
 
-<div id='blob-follow' class='hide z-1'></div>
-<div id='blob-main' class='-z-2 bg-gradient-to-r from-violet-900 to-fuchsia-900'></div>
-<div id='blob-minor' class='-z-2 bg-gradient-to-r from-pink-900 to-rose-900'></div>
-<img class='-z-2 absolute w-[300vmin] max-w-none right-[-90vmin]' src='tailwind-blur.png'/>
-<div id='blur' class='-z-1 h-[200vh] w-full absolute'></div>
+<div
+    class=`overflow-hidden ${!!height ? 'h-[' + height + 'vh] w-[100vw] top-0 absolute' : ''}`
+>
+    <div id="blob-main" class="bg-gradient-to-r from-violet-900 to-fuchsia-900">
+    </div>
+    <div id="blob-minor" class="bg-gradient-to-r from-pink-900 to-rose-900">
+    </div>
+    <div id="blob-follow" class="hide"></div>
+    <img
+        class="absolute w-[300vmin] max-w-none right-[-90vmin]"
+        src="tailwind-blur.png"
+    />
+    <div
+        id="blur"
+        class=`t-0 min-h-[100vh] ${!!height ? '' : 'h-[200vh]'} w-full absolute`
+    >
+    </div>
+</div>
 
 <style>
- #blur{
-    backdrop-filter: blur(500vmax);
- }
+    #blur {
+        backdrop-filter: blur(500vmax);
+    }
 
- #blob-follow{
-     transition: opacity 1s;
-     background-color: white;
-     height: 100px;
-     aspect-ratio: 1;
-     position: absolute;
-     translate: -50% -50%;
- }
+    #blob-follow {
+        transition: opacity 1s;
+        background-color: white;
+        height: 100px;
+        aspect-ratio: 1;
+        position: absolute;
+        translate: -50% -50%;
+    }
 
- #blob-follow.hide{
-     opacity: 0;
- }
+    #blob-follow.hide {
+        opacity: 0;
+    }
 
- #blob-main{
-     height: 50vmax;
-     aspect-ratio: 1;
-     position: absolute;
-     left: -5%;
-     top: 50%;
-     scale: 1.2 0.9;
-     border-radius: 50%;
-     animation: blob-rotate 20s infinite;
- }
+    #blob-main {
+        height: 50vmax;
+        aspect-ratio: 1;
+        position: absolute;
+        left: -5%;
+        top: 50%;
+        scale: 1.2 0.9;
+        border-radius: 50%;
+        animation: blob-rotate 20s infinite;
+    }
 
- #blob-minor{
-     height: 70vmax;
-     aspect-ratio: 1;
-     position: absolute;
-     left: -40%;
-     top: -60%;
-     scale: 1.2 1.1;
-     border-radius: 50%;
-     animation: blob-rotate 20s infinite;
- }
+    #blob-minor {
+        height: 70vmax;
+        aspect-ratio: 1;
+        position: absolute;
+        left: -40%;
+        top: -60%;
+        scale: 1.2 1.1;
+        border-radius: 50%;
+        animation: blob-rotate 20s infinite;
+    }
 
- @keyframes blob-rotate {
-     from {
-         rotate: 0deg;
-     }
+    @keyframes blob-rotate {
+        from {
+            rotate: 0deg;
+        }
 
-     50% {
-         scale: 1 1.3;
-     }
+        50% {
+            scale: 1 1.3;
+        }
 
-     to {
-         rotate: 360deg;
-     }
- }
+        to {
+            rotate: 360deg;
+        }
+    }
 </style>

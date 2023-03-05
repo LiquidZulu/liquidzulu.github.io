@@ -14,7 +14,7 @@ function getSVG(name: string) {
     const files = import.meta.globEager<string>('/src/svg/**/*.svg', {
         as: 'raw',
     });
-    if (!(filepath in (files))) {
+    if (!(filepath in files)) {
         throw new Error(`${filepath} not found`);
     }
     const root = parse(files[filepath]);
@@ -30,7 +30,4 @@ const { attributes: baseAttributes, innerHTML } = getSVG(icon);
 const svgAttributes = { ...baseAttributes, ...attributes };
 ---
 
-<svg
-    {...svgAttributes}
-    set:html={innerHTML}
-></svg>
+<svg {...svgAttributes} set:html={innerHTML} />

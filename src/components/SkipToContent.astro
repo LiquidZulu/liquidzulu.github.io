@@ -1,0 +1,35 @@
+---
+// This component allows those using keyboard navigation to quickly skip to the main content, it should be placed at the top of the page.
+
+const { href } = Astro.props;
+---
+
+<span id="0" class="w-[1px] h-[1px] absolute left-0 top-0"></span>
+<a class="content-skip" href={href}>Skip to content</a>
+
+<style lang="scss">
+    .content-skip {
+        font-family: Cubano;
+        z-index: 999;
+
+        @apply translate-y-[-200%]
+        absolute
+        block
+        top-5
+        left-5
+        p-[1rem]
+        font-black
+        text-zinc-50
+        text-3xl
+        transition-all
+        ease-in-out
+        bg-zinc-900
+        border-2
+        border-slate-50
+        rounded-lg;
+
+        &:focus {
+            @apply translate-y-0;
+        }
+    }
+</style>
