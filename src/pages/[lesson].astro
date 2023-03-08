@@ -1,5 +1,7 @@
 ---
+import '../css/global.css';
 import { invert } from '../util/invert';
+import { paginationPrevNext } from '../util/paginationPrevNext';
 import { getCollection, getEntryBySlug } from 'astro:content';
 
 export const getStaticPaths = () => {
@@ -25,18 +27,95 @@ export const getStaticPaths = () => {
 };
 
 const { course } = Astro.params;
-const DATA = Astro.props;
 const courseTitles = {
     'libertarian-ethics': 'The Fundamentals of Libertarian Ethics',
 };
+const DATA = Astro.props;
+const slugs = Object.keys(DATA);
 const slug = Astro.url.href.split('/').pop();
+const prevNext = paginationPrevNext(slugs, slug);
+
+const courseLessons = await getCollection(DATA[slug]);
+
+// astro confuses the <= with the beginning of a JSX fragment
+let lessons = [];
+for (let i = 1; i <= courseLessons.length; i++) {
+    lessons.push(courseLessons.find(l => l.data.n == String(i)));
+}
+
+const pagination = {
+    home: DATA[slug],
+    all: lessons,
+    n: slugs.findIndex(e => e === slug),
+    prevNext: prevNext,
+};
 
 const lessonInfo = await getEntryBySlug(DATA[slug], slug);
 const { Content, headings } = await lessonInfo.render();
 
 import Layout from '../layouts/Layout.astro';
-import { Navbar, Footer, SkipToContent, TOC } from '../components';
+import {
+    LessonPagination,
+    Navbar,
+    Footer,
+    SkipToContent,
+    TOC,
+} from '../components';
+
+import { Debug } from 'astro/components';
 ---
+
+<script>
+    // this does that thing on mises.org where it highlights the footnote you just clicked on
+    const removeHighlights = () =>
+        document
+            .querySelectorAll('.fn-highlight')
+            .forEach(el => el.classList.remove('fn-highlight'));
+
+    const fnHighlight = fn => {
+        // remove highlight from footnotes before highlighting, so that multiple dont get highlighted
+        removeHighlights();
+
+        // highlight the desired footnote
+        document
+            .getElementById(fn)
+            .parentElement.parentElement.classList.add('fn-highlight');
+    };
+
+    /* do this if you only want it to trigger on footrefs, I want the highlights to disappear when I click other links though
+    document.querySelectorAll('.footref').forEach(
+    el =>
+    (el.onclick = () => {
+    console.log('fn.' + el.id.split('.')[1]);
+    fnHighlight('fn.' + el.id.split('.')[1]);
+    })
+    );
+  */
+
+    Array.prototype.slice
+        .call(document.getElementsByTagName('a'))
+        .forEach(el => {
+            if (el.id.split('.')[0] === 'fnr' && !isNaN(el.id.split('.')[1])) {
+                el.onclick = () => fnHighlight('fn.' + el.id.split('.')[1]);
+            } else {
+                el.onclick = removeHighlights;
+            }
+        });
+
+    const location = window.location.href;
+
+    // why so many ifs? funy.
+    if (location.split('#').length == 2) {
+        if (location.split('#')[1].split('.').length == 2) {
+            if (
+                location.split('#')[1].split('.')[0] == 'fn' &&
+                !isNaN(location.split('#')[1].split('.')[1])
+            ) {
+                fnHighlight(location.split('#')[1]);
+            }
+        }
+    }
+</script>
 
 <Layout
     title={lessonInfo.data.title + ' | ' + courseTitles[DATA[slug]]}
@@ -54,7 +133,9 @@ import { Navbar, Footer, SkipToContent, TOC } from '../components';
         <div class="hero-overlay bg-opacity-60"></div>
         <div class="hero-content text-center text-neutral-content">
             <div class="max-w-2xl">
-                <h1 class="mb-7 text-5xl font-bold">{lessonInfo.data.title}</h1>
+                <h1 class="mb-7 text-5xl font-bold">
+                    {lessonInfo.data.title}
+                </h1>
                 <p class="mb-5 text-xl">{lessonInfo.data.description}</p>
             </div>
         </div>
@@ -64,17 +145,24 @@ import { Navbar, Footer, SkipToContent, TOC } from '../components';
         <a href="#md-content">👇</a>
     </div>
     <main id="md-content" class="w-[100vw] bg-zinc-900 flex flex-row">
-        <TOC headings={headings} />
+        <TOC slug={slug} pagination={pagination} headings={headings} />
+        <div
+            class="min-[1132px]:hidden block fixed bottom-0 grid place-items-center w-[100vw]">
+            <LessonPagination pagination={pagination} />
+        </div>
         <article
-            class="md:w-[80vw] w-[100vw] bg-zinc-800 text-justify md:p-16 p-6">
+            class="min-[1132px]:w-[80vw] w-[100vw] bg-zinc-800 text-justify md:p-16 p-6">
             <Content />
         </article>
     </main>
-    <Footer />
+    <Footer noShadow={true} />
 </Layout>
 
 <!-- is:global required to apply styles to the rendered MD -->
 <style is:global lang="scss">
+    .fn-highlight {
+        @apply bg-zinc-600 rounded-sm p-[0.5rem] m-[-0.5rem];
+    }
     #md-content {
         h1 {
             @apply text-6xl font-bold text-center mt-24 mb-16;
@@ -99,6 +187,10 @@ import { Navbar, Footer, SkipToContent, TOC } from '../components';
 
         blockquote {
             @apply border-l-4 border-zinc-700 pl-4;
+        }
+
+        img {
+            margin: auto;
         }
 
         article {

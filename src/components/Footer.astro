@@ -1,10 +1,14 @@
 ---
 import SocialIcon from './SocialIcon.astro';
 import '../css/global.css';
+
+const { noShadow } = Astro.props;
 ---
 
 <footer
-    class="!z-10 py-16 px-16 bg-zinc-900 footer-shadow grid place-items-center text-slate-50">
+    class={`!z-10 py-16 px-16 bg-zinc-900 ${
+        noShadow ? '' : 'footer-shadow'
+    } grid place-items-center text-slate-50`}>
     <div class="grid place-items-center space-y-12 text-center">
         <div class="flex space-x-3">
             <SocialIcon

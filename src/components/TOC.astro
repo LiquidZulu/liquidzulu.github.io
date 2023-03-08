@@ -1,28 +1,208 @@
 ---
 // Adapted from the sidebar shown on fireship.io course pages
 
-const { headings } = Astro.props;
+const { headings, pagination, slug } = Astro.props;
 import '../css/global.css';
+import { LessonPagination } from './';
+import { Debug } from 'astro/components';
 ---
 
-<ul
-    id="sidebar"
-    class="scrollbar overflow-auto w-[20vw] h-[100vh] p-6 sticky sticky md:block hidden top-0 border-r-4 border-zinc-800">
-    <li class="cubano border-b-2 border-zinc-700 text-lg">Sections</li>
-    <li>
-        {
-            headings.map(i => (
-                <a
-                    class="text-gray-600 hover:text-gray-400 focus:text-gray-400"
-                    href={`#${i.slug}`}>
-                    <div class="p-1 my-1 flex items-center">
-                        <span class="mr-auto text-lg pr-2">{i.text}</span>
-                    </div>
-                </a>
-            ))
+<script>
+    // text-gray-600 hover:text-gray-400
+    class TOCSidebar extends HTMLElement {
+        constructor() {
+            super();
+
+            // WHY do you force me to use JSON.parse on the client mr astro?
+            const headings = JSON.parse(this.dataset.headings);
+
+            const sidebarHeadings = headings.map(h => ({
+                slug: h.slug,
+                el: document.getElementById(`sidebar-section-${h.slug}`),
+            }));
+
+            let headingEls = [];
+            headings
+                .map(h => document.getElementById(h.slug))
+                .forEach(el => {
+                    headingEls.push(el);
+                });
+
+            const heightUpScreen = 60 / 100;
+
+            const sectionHighlighter = () => {
+                const heights = headingEls.map(el => ({
+                    height:
+                        el.getBoundingClientRect().y -
+                        window.innerHeight * (1 - heightUpScreen),
+                    id: el.id,
+                }));
+
+                const modClass = (
+                    element: HTMLElement,
+                    add: string[],
+                    remove: string[]
+                ) => {
+                    [
+                        ['add', add],
+                        ['remove', remove],
+                    ].forEach(([m, classlist]: any) => {
+                        // shut up TS, forEach does in fact exist here
+                        classlist.forEach((c: any) => {
+                            element.classList[m as any as 'add' | 'remove'](c);
+                        });
+                    });
+                };
+
+                const highlightThisElementPlease = (element, usure: bool) => {
+                    if (usure) {
+                        modClass(
+                            element,
+                            [
+                                'text-gray-400',
+                                'bg-zinc-800',
+                                'rounded-md',
+                                'cursor-default',
+                                'pl-[0.5rem]',
+                                'ml-[-0.5rem]',
+                            ],
+                            ['text-gray-600']
+                        );
+                    } else {
+                        modClass(
+                            element,
+                            ['text-gray-600'],
+                            [
+                                'text-gray-400',
+                                'bg-zinc-800',
+                                'rounded-md',
+                                'cursor-default',
+                                'pl-[0.5rem]',
+                                'ml-[-0.5rem]',
+                            ]
+                        );
+                    }
+                };
+
+                // the first el > 0 is the next heading off the bottom of the page
+                const toHighlight = heights.findIndex(e => e.height > 0) - 1;
+
+                sidebarHeadings.forEach(h => {
+                    switch (toHighlight) {
+                        // if findIndex cant find it
+                        case -2: {
+                            // reached bottom
+                            if (heights[heights.length - 1].height < 0) {
+                                if (h.slug == heights[heights.length - 1].id)
+                                    highlightThisElementPlease(h.el, true);
+                                else highlightThisElementPlease(h.el, false);
+                            }
+                            break;
+                        }
+                        // if all are off the bottom of the page
+                        case -1: {
+                            {
+                                highlightThisElementPlease(h.el, false);
+                            }
+                            break;
+                        }
+
+                        default:
+                            if (h.slug == heights[toHighlight].id) {
+                                highlightThisElementPlease(h.el, true);
+                            } else {
+                                highlightThisElementPlease(h.el, false);
+                            }
+                    }
+                });
+            };
+
+            document.addEventListener('scroll', sectionHighlighter);
+            sectionHighlighter();
         }
-    </li>
-</ul>
+    }
+
+    customElements.define('toc-sidebar', TOCSidebar);
+</script>
+
+<toc-sidebar
+    data-headings={JSON.stringify(headings)}
+    tabindex="-1"
+    id="sidebar"
+    class={`
+                  grid
+                  grid-cols-1
+                  place-content-center
+                  scrollbar
+                  overflow-auto
+                  w-[20vw]
+                  p-[2vw]
+                  min-[1920px]:w-[${Math.round(1920 * 0.2)}px]
+                  min-[1920px]:p-[${Math.round(1920 * 0.02)}px]
+                  h-[100vh]
+                  sticky
+                  min-[1132px]:block
+                  hidden
+                  top-0
+                  border-r-4
+                  border-zinc-800`}>
+    <div class="space-y-0">
+        <LessonPagination pagination={pagination} sidebar={true} />
+        <p class="!text-xs !text-left !mt-1 !text-zinc-600">
+            hint: use your arrow-keys to navigate
+        </p>
+    </div>
+    <ul>
+        <li class="cubano border-b-2 border-zinc-700 text-lg">Sections</li>
+        <li>
+            {
+                headings.map(i => (
+                    <a
+                        class="text-gray-600 hover:text-gray-400 focus:text-gray-400"
+                        href={`#${i.slug}`}>
+                        <div
+                            id={`sidebar-section-${i.slug}`}
+                            class="transition-all ease-in-out p-1 my-1 flex items-center">
+                            <span class="mr-auto text-lg pr-2">{i.text}</span>
+                        </div>
+                    </a>
+                ))
+            }
+        </li>
+
+        <li class="cubano border-b-2 border-zinc-700 text-lg mt-6">
+            Other Lessons
+        </li>
+        <li>
+            {
+                (() => {
+                    let count = 1;
+                    return pagination.all.map(i =>
+                        i.slug === slug ? (
+                            <div class="pl-[0.5rem] ml-[-0.5rem] text-gray-400 bg-zinc-800 rounded-md cursor-default hover:text-gray-400 focus:text-gray-400">
+                                <div class="p-1 my-1 flex items-center">
+                                    <span class="mr-auto text-lg pr-2">
+                                        {count++ + '. ' + i.data.title}
+                                    </span>
+                                </div>
+                            </div>
+                        ) : (
+                            <a
+                                class="transition-all text-gray-600 hover:text-gray-400 focus:text-gray-400"
+                                href={`/${i.slug}#md-content`}>
+                                <div class="p-1 my-1 flex items-center">
+                                    <span class="mr-auto text-lg pr-2">
+                                        {count++ + '. ' + i.data.title}
+                                    </span>
+                                </div>
+                            </a>
+                        )
+                    );
+                })()
+            }
+        </li>
+    </ul>
+</toc-sidebar>
 
 <style lang="scss">
     #sidebar {

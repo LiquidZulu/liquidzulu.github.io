@@ -1,0 +1,94 @@
+---
+const { sidebar, pagination } = Astro.props;
+---
+
+<script>
+    class Pagination extends HTMLElement {
+        constructor() {
+            super();
+
+            if (!this.dataset.sidebar) {
+                const pagination = document.getElementById('pagination');
+
+                function paginationScrollSpy() {
+                    if (window.scrollY > 250 || window.innerWidth >= 1132) {
+                        pagination.classList.add('show');
+                    } else {
+                        pagination.classList.remove('show');
+                    }
+                }
+
+                window.addEventListener('scroll', paginationScrollSpy);
+                paginationScrollSpy();
+            }
+        }
+    }
+
+    customElements.define('pagination-div', Pagination);
+</script>
+
+<script>
+    // astro is being smelly and not letting me put this in the class constructor and I also cant remember the old way of passing frontmatter variables to the client. Why change it!?
+    const prevNext = [
+        document.getElementById('prev').href,
+        document.getElementById('next').href,
+    ];
+
+    document.onkeydown = e => {
+        switch (e.keyCode) {
+            // left arrow
+            case 37: {
+                {
+                    window.location = prevNext[0];
+                }
+                break;
+            }
+            // right arrow
+            case 39: {
+                {
+                    window.location = prevNext[1];
+                }
+                break;
+            }
+        }
+    };
+</script>
+
+<pagination-div
+    data-sidebar={sidebar}
+    id={!sidebar ? 'pagination' : 'sidebar-pagination'}
+    class="btn-group">
+    <a
+        id="prev"
+        class={'btn' +
+            (!!sidebar
+                ? ` max-[1920px]:w-[3vw] w-[${Math.round(1920 * 0.03)}px]`
+                : '')}
+        href={'/' + pagination.prevNext[0] + '#md-content'}>«</a
+    >
+    <a
+        href={'/' + pagination.home}
+        class={'btn' +
+            (!!sidebar
+                ? ` max-[1920px]:w-[10vw] w-[${Math.round(1920 * 0.1)}px]`
+                : '')}>
+        <span class="w-auto truncate elipses"> Lesson {pagination.n + 1}</span>
+    </a>
+    <a
+        id="next"
+        href={'/' + pagination.prevNext[1] + '#md-content'}
+        class={'btn' +
+            (!!sidebar
+                ? ` max-[1920px]:w-[3vw] w-[${Math.round(1920 * 0.03)}px]`
+                : '')}>»</a
+    >
+</pagination-div>
+
+<style>
+    #pagination {
+        @apply opacity-0 translate-y-8 transition-all;
+    }
+    .show {
+        @apply !opacity-100 !translate-y-3;
+    }
+</style>

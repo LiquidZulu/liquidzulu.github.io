@@ -48,7 +48,9 @@ const { href, title, img, available, button, uniform } = Astro.props;
             {
                 !!available ? (
                     <a href={href}>
-                        <button class="btn bg-gradient-to-r from-orange-500 to-amber-500 hover:scale-105">
+                        <button
+                            tabindex="-1"
+                            class="btn bg-gradient-to-r from-orange-500 to-amber-500 hover:scale-105">
                             {button}
                         </button>
                     </a>

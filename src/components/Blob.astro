@@ -6,47 +6,50 @@ const { height } = Astro.props;
     // see: https://www.youtube.com/watch?v=kySGqoU7X-s
 
     const blob = document.getElementById('blob-follow');
-    const show = b => {
-        b.classList.remove('hide');
-    };
-    const hide = b => {
-        b.classList.add('hide');
-    };
 
-    const follow = e => {
-        const { pageX, pageY } = e;
+    if (blob !== null) {
+        const show = b => {
+            b.classList.remove('hide');
+        };
+        const hide = b => {
+            b.classList.add('hide');
+        };
 
-        if (pageX === undefined || pageY == undefined) return;
+        const follow = e => {
+            const { pageX, pageY } = e;
 
-        blob.animate(
-            {
-                left: `${pageX}px`,
-                top: `${pageY}px`,
-            },
-            { duration: 3000, fill: 'forwards' }
-        );
-    };
+            if (pageX === undefined || pageY == undefined) return;
 
-    const init = e => {
-        const { pageX, pageY } = e;
-        blob.animate(
-            {
-                left: `${pageX}px`,
-                top: `${pageY}px`,
-            },
-            { duration: 0, fill: 'forwards' }
-        );
-        show(blob);
-    };
+            blob.animate(
+                {
+                    left: `${pageX}px`,
+                    top: `${pageY}px`,
+                },
+                { duration: 3000, fill: 'forwards' }
+            );
+        };
 
-    document.body.onpointermove = follow;
-    document.body.onscroll = follow;
+        const init = e => {
+            const { pageX, pageY } = e;
+            blob.animate(
+                {
+                    left: `${pageX}px`,
+                    top: `${pageY}px`,
+                },
+                { duration: 0, fill: 'forwards' }
+            );
+            show(blob);
+        };
 
-    document.body.addEventListener('pointerenter', init);
+        document.body.onpointermove = follow;
+        document.body.onscroll = follow;
 
-    document.body.addEventListener('pointerleave', e => {
-        hide(blob);
-    });
+        document.body.addEventListener('pointerenter', init);
+
+        document.body.addEventListener('pointerleave', e => {
+            hide(blob);
+        });
+    }
 </script>
 
 <div
