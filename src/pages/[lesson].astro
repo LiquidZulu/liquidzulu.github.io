@@ -97,6 +97,11 @@ import { Debug } from 'astro/components';
         .forEach(el => {
             if (el.id.split('.')[0] === 'fnr' && !isNaN(el.id.split('.')[1])) {
                 el.onclick = () => fnHighlight('fn.' + el.id.split('.')[1]);
+
+                // I also want the titles to reflect the footnote content
+                el.title = document
+                    .getElementById('fn.' + el.id.split('.')[1])
+                    .parentElement.parentElement.innerText.substring(2);
             } else {
                 el.onclick = removeHighlights;
             }
