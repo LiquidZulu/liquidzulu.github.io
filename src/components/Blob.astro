@@ -15,10 +15,8 @@ const { height } = Astro.props;
             b.classList.add('hide');
         };
 
-        const follow = e => {
-            const { pageX, pageY } = e;
-
-            if (pageX === undefined || pageY == undefined) return;
+        const follow = ({ pageX, pageY }) => {
+            if (isNaN(pageX) || isNaN(pageY)) return;
 
             blob.animate(
                 {
@@ -70,56 +68,58 @@ const { height } = Astro.props;
 </div>
 
 <style>
-    #blur {
-        backdrop-filter: blur(500vmax);
-    }
-
-    #blob-follow {
-        transition: opacity 1s;
-        background-color: white;
-        height: 100px;
-        aspect-ratio: 1;
-        position: absolute;
-        translate: -50% -50%;
-    }
-
-    #blob-follow.hide {
-        opacity: 0;
-    }
-
-    #blob-main {
-        height: 50vmax;
-        aspect-ratio: 1;
-        position: absolute;
-        left: -5%;
-        top: 50%;
-        scale: 1.2 0.9;
-        border-radius: 50%;
-        animation: blob-rotate 20s infinite;
-    }
-
-    #blob-minor {
-        height: 70vmax;
-        aspect-ratio: 1;
-        position: absolute;
-        left: -40%;
-        top: -60%;
-        scale: 1.2 1.1;
-        border-radius: 50%;
-        animation: blob-rotate 20s infinite;
-    }
-
-    @keyframes blob-rotate {
-        from {
-            rotate: 0deg;
+    @media (prefers-reduced-motion: no-preference) {
+        #blur {
+            backdrop-filter: blur(500vmax);
         }
 
-        50% {
-            scale: 1 1.3;
+        #blob-follow {
+            transition: opacity 1s;
+            background-color: white;
+            height: 100px;
+            aspect-ratio: 1;
+            position: absolute;
+            translate: -50% -50%;
         }
 
-        to {
-            rotate: 360deg;
+        #blob-follow.hide {
+            opacity: 0;
+        }
+
+        #blob-main {
+            height: 50vmax;
+            aspect-ratio: 1;
+            position: absolute;
+            left: -5%;
+            top: 50%;
+            scale: 1.2 0.9;
+            border-radius: 50%;
+            animation: blob-rotate 20s infinite;
+        }
+
+        #blob-minor {
+            height: 70vmax;
+            aspect-ratio: 1;
+            position: absolute;
+            left: -40%;
+            top: -60%;
+            scale: 1.2 1.1;
+            border-radius: 50%;
+            animation: blob-rotate 20s infinite;
+        }
+
+        @keyframes blob-rotate {
+            from {
+                rotate: 0deg;
+            }
+
+            50% {
+                scale: 1 1.3;
+            }
+
+            to {
+                rotate: 360deg;
+            }
         }
     }
 </style>

@@ -38,13 +38,17 @@ const { noShadow } = Astro.props;
             />
         </div>
         <p>
-            See an issue with this page? Report it <a
+            See an issue with this page? <a
                 class="text-sky-500 hover:link"
                 href="https://github.com/LiquidZulu/liquidzulu.github.io/issues/new"
-                >here</a
+                title="GitHub issues link for this website"
+                aria-label="GitHub issues link for this website"
+                >Report it here</a
             >! Or open a <a
                 class="text-sky-500 hover:link"
                 href="https://github.com/LiquidZulu/liquidzulu.github.io/pulls"
+                aria-label="GitHub pull request link for this website"
+                title="GitHub pull request link for this website"
                 >pull request</a
             > if you know how to fix it yourself.
         </p>

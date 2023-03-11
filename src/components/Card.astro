@@ -10,10 +10,25 @@ const { href, title, img, available, button, uniform } = Astro.props;
 // see:
 // + https://www.youtube.com/watch?v=Z-3tPXf9a7M
 // + https://codepen.io/markmiro/pen/wbqMPa
+// + https://albertwalicki.com/learn/solutions/how-to-limit-text-to-n-lines
 ---
 
+<script>
+    const truncate = () =>
+        document.querySelectorAll('.card-text').forEach(el => {
+            const lines = el.offsetHeight / parseInt(el.style.lineHeight);
+            el.style.lineClamp = Math.floor(lines);
+            el.style.webkitLineClamp = Math.floor(lines);
+            el.style.height =
+                Math.floor(lines) * parseInt(el.style.lineHeight) + 'px';
+            console.log(el.offsetHeight, lines * parseInt(el.style.lineHeight));
+        });
+
+    truncate();
+</script>
+
 <div
-    class=`${!!uniform ? 'h-[70vh]' : ''} card w-96 bg-slate-800 text-slate-50 drop-shadow-2xl`>
+    class=`${!!uniform ? 'h-[35rem]' : ''} card w-96 bg-slate-800 text-slate-50 drop-shadow-2xl`>
     <figure class="overflow-hidden w-96">
         {
             !!available ? (
@@ -26,7 +41,10 @@ const { href, title, img, available, button, uniform } = Astro.props;
     <div class="card-body grid content-start">
         <h2 class="card-title">{title}</h2>
         <p
-            class=`text-lg my-3 break-normal overflow-hidden ${!!uniform ? 'h-[29vh]' : ''} text-justify`>
+            style="line-height: 28px; display: -webkit-box; -webkit-box-orient: vertical;"
+            class={`card-text fade-out text-lg my-3 break-normal ${
+                !!uniform ? `h-[20vh] overflow-hidden text-ellipsis` : ''
+            } text-justify`}>
             {
                 !!available ? (
                     <slot />
@@ -37,13 +55,7 @@ const { href, title, img, available, button, uniform } = Astro.props;
                 )
             }
         </p>
-        {
-            !!uniform ? (
-                <div class="bg-gradient-to-t h-[15vh] mt-[-15vh] from-slate-800" />
-            ) : (
-                <Fragment />
-            )
-        }
+        {!!uniform ? <Fragment /> : <Fragment />}
         <div class="card-actions justify-end">
             {
                 !!available ? (
@@ -63,3 +75,5 @@ const { href, title, img, available, button, uniform } = Astro.props;
         </div>
     </div>
 </div>
+<!--<div class="bg-gradient-to-t h-[15vh] mt-[-15vh] from-slate-800 " /><!--via-[rgba(30, 41, 59, 0.9)]-
+-->

@@ -1,3 +1,4 @@
+export { default as AstroCard } from './AstroCard.astro';
 export { default as Blob } from './Blob.astro';
 export { default as Card } from './Card.astro';
 export { default as Footer } from './Footer.astro';

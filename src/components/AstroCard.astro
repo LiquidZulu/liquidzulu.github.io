@@ -1,0 +1,63 @@
+---
+// https://github.com/withastro/astro/blob/main/examples/basics/src/components/Card.astro
+
+export interface Props {
+    title: string;
+    body: string;
+    href: string;
+}
+const { href, title, body } = Astro.props;
+---
+
+<li
+    class="link-card list-none p-[0.25rem] flex max-w-[80vw] md:max-w-[40rem] rounded-lg hover:scale-110 transition-all ease-in-out duration-200">
+    <a
+        class="w-full no-underline leading-6 py-[1rem] px-[1.3rem] rounded-lg opacity-80"
+        href={href}>
+        <h1 class="cubano text-8xl mb-6 text-center">
+            <span
+                ><span
+                    class="absolute mr-[-6rem] motion-safe:animate-ping opacity-80"
+                    >✋</span
+                >✋</span
+            > HALT!
+        </h1>
+        <p class="text-3xl text-center mb-6">
+            {body}
+        </p>
+        <h2>
+            Buy <span class="italic">{title}</span> today!
+            <span>&rarr;</span>
+        </h2>
+    </a>
+</li>
+<style lang="scss">
+    :root {
+        --astro-card-accent: 124, 58, 237;
+        --astro-card-accent-gradient: linear-gradient(
+            45deg,
+            rgb(var(--astro-card-accent)),
+            #da62c4 30%,
+            white 60%
+        );
+    }
+    .link-card {
+        background-color: white;
+        background-image: none;
+        background-size: 400%;
+        background-position: 100%;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+            0 2px 4px -2px rgba(0, 0, 0, 0.1);
+    }
+    .link-card > a {
+        color: #111;
+        background-color: white;
+    }
+    .link-card:is(:hover, :focus-within) {
+        background-position: 0;
+        background-image: var(--astro-card-accent-gradient);
+    }
+    .link-card:is(:hover, :focus-within) h2 {
+        color: rgb(var(--astro-card-accent));
+    }
+</style>
