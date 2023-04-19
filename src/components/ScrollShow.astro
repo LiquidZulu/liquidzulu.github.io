@@ -5,7 +5,7 @@ see:
 + https://github.com/fireship-io/fireship.io/blob/master/app/components/ui/scroll-show.svelte
 */
 
-const { place } = Astro.props;
+const { place, short } = Astro.props;
 const align = place == undefined ? 'left' : 'right';
 ---
 
@@ -29,9 +29,17 @@ const align = place == undefined ? 'left' : 'right';
 </script>
 
 <div
-    class="lg:h-[60vh] md:h-[80vh] h-[90vh] bg-slate-900 grid place-items-center text-justify">
+    class={`
+          ${
+              !!short
+                  ? 'lg:h-[50vh] md:h-[70vh] h-[80vh]'
+                  : 'lg:h-[60vh] md:h-[80vh] h-[90vh] md:mt-0 mt-4'
+          }
+          grid
+          place-items-center
+          text-justify`}>
     <div
-        class=`scroll-show lg:w-[60vw] md:w-[70vw] w-[90vw] space-y-12 grid place-items-${place} text-justify`>
+        class=`scroll-show lg:w-[60vw] md:w-[70vw] w-[90vw] space-y-12 grid place-items-${place} text-justify ${!!short ? 'mb-[10vh]' : ''}`>
         <slot />
     </div>
 </div>

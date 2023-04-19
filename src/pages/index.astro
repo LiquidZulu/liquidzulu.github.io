@@ -5,12 +5,23 @@ import {
     Card,
     Icon,
     Navbar,
+    NoisePanel,
     Footer,
     ScrollShow,
     SkipToContent,
+    Testimonial,
 } from '../components';
 import Layout from '../layouts/Layout.astro';
 ---
+
+<script>
+    if (!!document.getElementById('testimonial-stack')) {
+        setInterval(async () => {
+            const stack = document.getElementById('testimonial-stack').children;
+            stack[stack.length - 1].after(stack[0]);
+        }, 7e3);
+    }
+</script>
 
 <Layout title="LiquidZulu | Philosophy Distilled">
     <Blob />
@@ -22,108 +33,136 @@ import Layout from '../layouts/Layout.astro';
             class="!fill-slate-50 opacity-[0.015] absolute w-[130vmin] h-[130vmin] -rotate-12 right-[-40vmin] bottom-[-25vmin]"
         />
         <div class="gridlines blur-none w-[100vw]">
-            <div class="h-[100vh] top-0 grid place-items-center">
-                <div class="space-y-5 text-center mx-6">
-                    <h1 class="text-slate-50 text-6xl font-black">
-                        Philosophy Distilled
-                    </h1>
-                    <h2 class="text-slate-300 text-3xl font-medium">
-                        Your path to <span class="emphasis">expertise</span> starts
-                        here.
-                    </h2>
+            <div class="h-[100svh] h-[100vh] top-0 grid place-items-center">
+                <div
+                    class="mx-6 flex flex-wrap w-full justify-center items-center">
+                    <!--mb-[-9vh]">-->
+                    <div class="space-y-5 text-center grow">
+                        <h1 class="text-slate-50 text-6xl font-black">
+                            Philosophy Distilled
+                        </h1>
+                        <h2 class="text-slate-300 text-3xl font-medium">
+                            Your path to <span class="emphasis">expertise</span>
+                            starts here.
+                        </h2>
+                    </div>
+                    <!--<div
+                         class="stack transition-all ease-in-out duration-1000"
+                         id="testimonial-stack">
+                         <Testimonial slug="barack-obama" />
+                         <Testimonial slug="barack-obama" />
+                         <Testimonial slug="barack-obama" />
+                         <Testimonial slug="barack-obama" />
+                         <Testimonial slug="barack-obama" />
+                         </div>-->
                 </div>
             </div>
             <div
-                class="w-[100vw] place-items-center grid animate-bounce text-7xl top-[90vh] absolute">
+                class="w-[100vw] place-items-center grid animate-bounce text-7xl top-[90svh] absolute">
                 <a href="#1">👇</a>
             </div>
             <div>
-                <div
-                    class="h-[20vh] bg-gradient-to-t from-slate-900 to-transparent">
+                <div class="layered-waves-haikei"></div>
+                <div id="1" class="bg-slate-900 pt-[-15vh]">
+                    <ScrollShow short={true}>
+                        <h1 class="text-left text-slate-50 text-6xl font-black">
+                            Theres a problem...
+                        </h1>
+                        <p class="text-2xl lg:w-[40vw] md:w-[60vw] w-[80vw]">
+                            Philosophy is <span class="emphasis italic"
+                                >big</span
+                            >. Learning even a very small part of one specific
+                            philosophy could take years, if you even know where
+                            to look in the first place.
+                        </p>
+                    </ScrollShow>
+                    <ScrollShow place="end">
+                        <h1
+                            class="text-right text-slate-50 text-6xl font-black">
+                            Theres a solution!
+                        </h1>
+                        <p class="text-2xl lg:w-[40vw] md:w-[60vw] w-[80vw]">
+                            I have spent those years <span
+                                class="emphasis italic">autistically</span
+                            > studying philosophy, so I can deliver to you <span
+                                class="italic">only</span
+                            > the parts you <span class="emphasis"
+                                >need to know</span
+                            > to understand what is true, rather than having to slog
+                            through thousand-page tomes of utter nonsensical jibberish.
+                            (And believe me, <span class="italic">a lot</span> of
+                            it is jibberish). <br />
+                            <br /> Great care has been taken to craft the courses
+                            on this website and I <span class="emphasis"
+                                >refuse</span
+                            > to release a course unless it is better than any alternative
+                            that I am aware of.
+                        </p>
+                    </ScrollShow>
+                    <ScrollShow>
+                        <h1 class="text-left text-slate-50 text-6xl font-black">
+                            How much will this cost?
+                        </h1>
+                        <p class="text-2xl lg:w-[40vw] md:w-[60vw] w-[80vw]">
+                            <span class="emphasis">Nothing</span>. All of the
+                            courses on this website are completely <span
+                                class="text-4xl gradient-text bg-gradient-to-tr from-lime-500 to-green-500 font-black cubano animate-pulse"
+                                >FREE</span
+                            > in text form. Or if you want to support this content
+                            you can pay whatever you want to gain access to a video
+                            version of every course on this site <span
+                                class="font-semibold italic">forever</span
+                            >. <br /><br /> This way you can decide for yourself
+                            how much you think the content is worth, and you can
+                            verify that I am not swindling in terms of providing
+                            shoddy information.
+                        </p>
+                    </ScrollShow>
+                    <ScrollShow place="center">
+                        <h1 class="text-slate-50 text-6xl font-black emphasis">
+                            Start now!
+                        </h1>
+                        <p class="text-2xl lg:w-[40vw] md:w-[55vw] w-[80vw]">
+                            What are you waiting for? The courses provided on
+                            this website will bring you to expertise in their
+                            respective fields faster than anything else
+                            available online or for purchase. So head over to
+                            the courses page and begin your journey into
+                            philosophy:
+                        </p>
+                        <a
+                            rel="prefetch"
+                            class="transition-all ease-in-out hover:scale-110 flex"
+                            href="./courses">
+                            <div
+                                class="lg:text-8xl md:text-6xl text-6xl animation-bounce-left">
+                                👉
+                            </div>
+                            <div
+                                class="lg:text-7xl md:text-5xl text-3xl font-black text-stone-900 bg-gradient-to-r from-orange-500 to-amber-500 p-5 cubano">
+                                COURSES
+                            </div>
+                            <div
+                                class="lg:text-8xl md:text-6xl text-6xl animation-bounce-right">
+                                👈
+                            </div>
+                        </a>
+                    </ScrollShow>
+                    <div class="h-[20svh] h-[20vh] bg-slate-900"></div>
                 </div>
-                <div id="1"></div>
-                <ScrollShow>
-                    <h1 class="text-left text-slate-50 text-6xl font-black">
-                        Theres a problem...
-                    </h1>
-                    <p class="text-2xl lg:w-[40vw] md:w-[60vw] w-[80vw]">
-                        Philosophy is <span class="emphasis italic">big</span>.
-                        Learning even a very small part of one specific
-                        philosophy could take years, if you even know where to
-                        look in the first place.
-                    </p>
-                </ScrollShow>
-                <ScrollShow place="end">
-                    <h1 class="text-right text-slate-50 text-6xl font-black">
-                        Theres a solution!
-                    </h1>
-                    <p class="text-2xl lg:w-[40vw] md:w-[60vw] w-[80vw]">
-                        I have spent those years <span class="emphasis italic"
-                            >autistically</span
-                        > studying philosophy, so I can deliver to you <span
-                            class="italic">only</span
-                        > the parts you <span class="emphasis"
-                            >need to know</span
-                        > to understand what is true, rather than having to slog
-                        through thousand-page tomes of utter nonsensical jibberish.
-                        (And believe me, <span class="italic">a lot</span> of it
-                        is jibberish). <br />
-                        <br /> Great care has been taken to craft the courses on
-                        this website and I <span class="emphasis">refuse</span> to
-                        release a course unless it is better than any alternative
-                        that I am aware of.
-                    </p>
-                </ScrollShow>
-                <ScrollShow>
-                    <h1 class="text-left text-slate-50 text-6xl font-black">
-                        How much will this cost?
-                    </h1>
-                    <p class="text-2xl lg:w-[40vw] md:w-[60vw] w-[80vw]">
-                        <span class="emphasis">Nothing</span>. All of the
-                        courses on this website are completely <span
-                            class="text-4xl gradient-text bg-gradient-to-tr from-lime-500 to-green-500 font-black cubano animate-pulse"
-                            >FREE</span
-                        > in text form. Or if you want to support this content you
-                        can pay whatever you want to gain access to a video version
-                        of every course on this site <span
-                            class="font-semibold italic">forever</span
-                        >. <br /><br /> This way you can decide for yourself how
-                        much you think the content is worth, and you can verify that
-                        I am not swindling in terms of providing shoddy information.
-                    </p>
-                </ScrollShow>
-                <ScrollShow place="center">
-                    <h1 class="text-slate-50 text-6xl font-black emphasis">
-                        Start now!
-                    </h1>
-                    <p class="text-2xl lg:w-[40vw] md:w-[55vw] w-[80vw]">
-                        What are you waiting for? The courses provided on this
-                        website will bring you to expertise in their respective
-                        fields faster than anything else available online or for
-                        purchase. So head over to the courses page and begin
-                        your journey into philosophy:
-                    </p>
-                    <a
-                        rel="prefetch"
-                        class="transition-all ease-in-out hover:scale-110 flex"
-                        href="./courses">
-                        <div
-                            class="lg:text-8xl md:text-6xl text-6xl animation-bounce-left">
-                            👉
-                        </div>
-                        <div
-                            class="lg:text-7xl md:text-5xl text-3xl font-black text-stone-900 bg-gradient-to-r from-orange-500 to-amber-500 p-5 cubano">
-                            COURSES
-                        </div>
-                        <div
-                            class="lg:text-8xl md:text-6xl text-6xl animation-bounce-right">
-                            👈
-                        </div>
-                    </a>
-                </ScrollShow>
-                <div class="h-[20vh] bg-slate-900"></div>
                 <Footer />
             </div>
         </div>
     </main>
 </Layout>
+
+<style lang="scss">
+    .layered-waves-haikei {
+        @apply aspect-[1920/720]
+     w-full
+     bg-center
+     bg-no-repeat
+     bg-cover;
+        background-image: url('/layered-waves-haikei.svg');
+    }
+</style>

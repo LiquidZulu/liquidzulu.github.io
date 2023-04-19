@@ -1,0 +1,9 @@
+#+title: TODO
+
+* TODO
++ Add main social proof (I am thinking some prominent box in the hero that cycles through prominent testimoinals)
++ Add secondary social proof (tailwindcss-style testimonials section further down page)
+* Videos
++ https://www.youtube.com/watch?v=GTNgiTK-ic8
++ https://www.youtube.com/watch?v=bdqSEBSXBPk
++ https://www.youtube.com/watch?v=RgzTnY0cXf4

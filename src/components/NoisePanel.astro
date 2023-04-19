@@ -1,0 +1,36 @@
+---
+export interface Props {
+    xtraClasses: string;
+}
+
+const { xtraClasses } = Astro.props;
+---
+
+<div
+    class={`
+          ${!!xtraClasses ? xtraClasses : ''}
+          noise-panel
+          ring-2
+          ring-slate-700
+          transition-all
+          card
+          bg-slate-800
+          text-slate-50
+          drop-shadow-2xl`}>
+    <slot />
+</div>
+
+<style lang="scss">
+    .noise-panel {
+        &:before {
+            position: absolute;
+            inset: 0;
+            z-index: -20;
+            opacity: 0.6;
+            mix-blend-mode: overlay;
+            content: '';
+            background-image: url(/noise.webp);
+            border-radius: 1rem;
+        }
+    }
+</style>

@@ -125,6 +125,7 @@ import { Debug } from 'astro/components';
     customElements.define('toc-sidebar', TOCSidebar);
 </script>
 
+<!-- WHY HAS THIS BROKEN!? EDIT: I think I remember fixing this -->
 <toc-sidebar
     data-headings={JSON.stringify(headings)}
     tabindex="-1"
@@ -133,17 +134,16 @@ import { Debug } from 'astro/components';
                   grid
                   grid-cols-1
                   place-content-center
-                  scrollbar
-                  overflow-auto
                   w-[20vw]
                   p-[2vw]
                   min-[1920px]:w-[${Math.round(1920 * 0.2)}px]
                   min-[1920px]:p-[${Math.round(1920 * 0.02)}px]
-                  h-[100vh]
+                  overflow-auto
                   sticky
-                  min-[1132px]:block
+                  !top-0
+                  h-[100vh]
                   hidden
-                  top-0
+                  min-[1132px]:block
                   border-r-4
                   border-zinc-800`}>
     <div class="space-y-0">
@@ -157,12 +157,10 @@ import { Debug } from 'astro/components';
         <li>
             {
                 headings.map(i => (
-                    <a
-                        class="text-gray-600 hover:text-gray-400 focus:text-gray-400"
-                        href={`#${i.slug}`}>
+                    <a class="text-gray-600" href={`#${i.slug}`}>
                         <div
                             id={`sidebar-section-${i.slug}`}
-                            class="transition-all ease-in-out p-1 my-1 flex items-center">
+                            class="transition-all ease-in-out p-1 my-1 flex items-center hover:text-gray-400 focus:text-gray-400">
                             <span class="mr-auto text-lg pr-2">{i.text}</span>
                         </div>
                     </a>

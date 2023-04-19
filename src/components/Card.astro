@@ -1,11 +1,13 @@
 ---
+import NoisePanel from './NoisePanel.astro';
+
 export interface Props {
     title: string;
     body: string;
     href: string;
 }
 
-const { href, title, img, available, button, uniform } = Astro.props;
+const { href, title, img, available, button, uniform, footer } = Astro.props;
 
 // see:
 // + https://www.youtube.com/watch?v=Z-3tPXf9a7M
@@ -27,53 +29,61 @@ const { href, title, img, available, button, uniform } = Astro.props;
     truncate();
 </script>
 
-<div
-    class=`${!!uniform ? 'h-[35rem]' : ''} card w-96 bg-slate-800 text-slate-50 drop-shadow-2xl`>
-    <figure class="overflow-hidden w-96">
-        {
-            !!available ? (
-                <img src={img} />
-            ) : (
-                <img class="saturate-[0.8]" src={img} />
-            )
-        }
-    </figure>
-    <div class="card-body grid content-start">
-        <h2 class="card-title">{title}</h2>
-        <p
-            style="line-height: 28px; display: -webkit-box; -webkit-box-orient: vertical;"
-            class={`card-text fade-out text-lg my-3 break-normal ${
-                !!uniform ? `h-[20vh] overflow-hidden text-ellipsis` : ''
-            } text-justify`}>
+<a href={href} class={`${!!available ? 'available' : 'unavailable'} card-link`}>
+    <NoisePanel
+        xtraClasses={`
+                    ${
+                        !!available
+                            ? 'hover:ring hover:ring-offset-2 hover:ring-offset-transparent hover:ring-orange-500 hover:scale-105'
+                            : ''
+                    }
+                    ${!!uniform ? 'h-[35rem]' : ''}
+                    w-96
+                    h-[100%]
+                    `}>
+        <figure class="overflow-hidden w-96">
             {
                 !!available ? (
-                    <slot />
+                    <img src={img} />
                 ) : (
-                    <span class="text-slate-400">
-                        This course is currently unavailable.
-                    </span>
+                    <img class="saturate-[0.8]" src={img} />
                 )
             }
-        </p>
-        {!!uniform ? <Fragment /> : <Fragment />}
-        <div class="card-actions justify-end">
-            {
-                !!available ? (
-                    <a href={href}>
-                        <button
-                            tabindex="-1"
-                            class="btn bg-gradient-to-r from-orange-500 to-amber-500 hover:scale-105">
-                            {button}
-                        </button>
-                    </a>
-                ) : (
-                    <button class="btn btn-disabled text-slate-500">
-                        Unavailable
-                    </button>
-                )
-            }
+        </figure>
+        <div class="card-body grid content-start mb-6">
+            <h2 class="card-title">{title}</h2>
+            <p
+                style="line-height: 28px; display: -webkit-box; -webkit-box-orient: vertical;"
+                class={`card-text fade-out text-lg my-3 break-normal ${
+                    !!uniform ? `h-[20vh] overflow-hidden text-ellipsis` : ''
+                } text-justify`}>
+                {
+                    !!available ? (
+                        <slot />
+                    ) : (
+                        <span class="text-slate-400">
+                            This course is currently unavailable.
+                        </span>
+                    )
+                }
+            </p>
         </div>
-    </div>
-</div>
+        <p class="card-footer ml-4 mb-4 text-zinc-400">
+            {footer}
+        </p>
+    </NoisePanel>
+</a>
 <!--<div class="bg-gradient-to-t h-[15vh] mt-[-15vh] from-slate-800 " /><!--via-[rgba(30, 41, 59, 0.9)]-
 -->
+
+<style lang="scss">
+    .card.available {
+        @apply hover:scale-105;
+    }
+
+    .card-link {
+        &.unavailable {
+            @apply cursor-not-allowed;
+        }
+    }
+</style>

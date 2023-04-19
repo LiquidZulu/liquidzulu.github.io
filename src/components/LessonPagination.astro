@@ -64,7 +64,8 @@ const { sidebar, pagination } = Astro.props;
             (!!sidebar
                 ? ` max-[1920px]:w-[3vw] w-[${Math.round(1920 * 0.03)}px]`
                 : '')}
-        href={'/' + pagination.prevNext[0] + '#md-content'}>«</a
+        href={'/' + pagination.prevNext[0] + (!!sidebar ? '#md-content' : '')}
+        >«</a
     >
     <a
         href={'/' + pagination.home}
@@ -76,7 +77,7 @@ const { sidebar, pagination } = Astro.props;
     </a>
     <a
         id="next"
-        href={'/' + pagination.prevNext[1] + '#md-content'}
+        href={'/' + pagination.prevNext[1] + (!!sidebar ? '#md-content' : '')}
         class={'btn' +
             (!!sidebar
                 ? ` max-[1920px]:w-[3vw] w-[${Math.round(1920 * 0.03)}px]`

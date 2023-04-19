@@ -6,6 +6,29 @@ const { slug, url, alt } = Astro.props;
 <a href={url} aria-label={!!alt ? alt : ''} title={!!alt ? alt : ''}>
     <Icon
         icon={slug}
-        class="fill-zinc-500 transition-all ease-in-out hover:scale-110 w-8 h-8"
+        class={`fill-zinc-500 transition-all ease-in-out hover:scale-110 w-8 h-8 icon-${slug}`}
     />
 </a>
+
+<style lang="scss" is:global>
+    .icon-astro:hover {
+        .astro-flame {
+            @apply fill-[#ff5d01];
+        }
+        .astro-a {
+            @apply fill-[#fff];
+        }
+    }
+    .icon-github:hover {
+        @apply fill-[#F0F6FC];
+    }
+    .icon-youtube:hover {
+        @apply fill-[#FD0101];
+    }
+    .icon-twitter:hover {
+        @apply fill-[#1D9FF0];
+    }
+    .icon-discord:hover {
+        @apply fill-[#5662F6];
+    }
+</style>

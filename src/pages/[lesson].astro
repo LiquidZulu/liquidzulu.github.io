@@ -3,6 +3,7 @@ import '../css/global.css';
 import { invert } from '../util/invert';
 import { paginationPrevNext } from '../util/paginationPrevNext';
 import { getCollection, getEntryBySlug } from 'astro:content';
+import { readTimeMins, readTimeReadable } from '../util/readTime';
 
 export const getStaticPaths = () => {
     const lessons = {
@@ -55,6 +56,7 @@ const { Content, headings } = await lessonInfo.render();
 
 import Layout from '../layouts/Layout.astro';
 import {
+    BuyCoffee,
     LessonPagination,
     Navbar,
     Footer,
@@ -122,6 +124,35 @@ import { Debug } from 'astro/components';
     }
 </script>
 
+<script>
+    // this script adds little links next to the section headings, if you have js off then fuck you it wont work because I wasn't clever enough to make it work in pure css
+    const headerLevels = 4;
+
+    // [ h1, h2, etc ]
+    const tags = Array.from(Array(headerLevels).keys()).map(i => 'h' + (i + 1));
+
+    tags.forEach(t =>
+        Array.from(
+            document.getElementById('md-content').getElementsByTagName(t)
+        ).forEach(header => {
+            // make the elements
+            const div = document.createElement('div');
+            const a = document.createElement('a');
+
+            // insert the elements
+            header.parentNode.insertBefore(div, header);
+            div.appendChild(a);
+            div.appendChild(header);
+
+            // modify the elements
+            div.className = t + ' header-wrapper';
+            header.className = 'header';
+            a.className = 'section-heading-link';
+            a.href = `#${header.id}`;
+        })
+    );
+</script>
+
 <Layout
     title={lessonInfo.data.title + ' | ' + courseTitles[DATA[slug]]}
     description={lessonInfo.data.description}
@@ -131,7 +162,7 @@ import { Debug } from 'astro/components';
     <SkipToContent href="#md-content" />
     <Navbar path={`courses/${DATA[slug]}/${slug}`} />
     <div
-        class="absolute h-[100vh] w-[100vw] blur-sm brightness-[0.25] saturate-[0.7]"
+        class="absolute h-[100vh] h-[100svh] w-[100vw] blur-sm brightness-[0.25] saturate-[0.7]"
         style=`background-image: url(/thumb-${slug}.png); background-repeat: no-repeat; background-size: cover;`>
     </div>
     <div class="hero min-h-screen bg-transparent">
@@ -142,17 +173,20 @@ import { Debug } from 'astro/components';
                     {lessonInfo.data.title}
                 </h1>
                 <p class="mb-5 text-xl">{lessonInfo.data.description}</p>
+                <p class="text-zinc-400">
+                    {readTimeReadable(readTimeMins, lessonInfo.body)}
+                </p>
             </div>
         </div>
     </div>
     <div
-        class="w-[100vw] place-items-center grid animate-bounce text-7xl top-[90vh] absolute">
+        class="w-[100vw] place-items-center grid animate-bounce text-7xl top-[90vh] top-[90svh] absolute z-10">
         <a href="#md-content">👇</a>
     </div>
     <main id="md-content" class="w-[100vw] bg-zinc-900 flex flex-row">
         <TOC slug={slug} pagination={pagination} headings={headings} />
         <div
-            class="min-[1132px]:hidden block fixed bottom-0 grid place-items-center w-[100vw]">
+            class="min-[1132px]:hidden block fixed bottom-8 grid place-items-center w-[100vw]">
             <LessonPagination pagination={pagination} />
         </div>
         <article
@@ -161,6 +195,7 @@ import { Debug } from 'astro/components';
         </article>
     </main>
     <Footer noShadow={true} />
+    <BuyCoffee />
 </Layout>
 
 <!-- is:global required to apply styles to the rendered MD -->
@@ -169,19 +204,55 @@ import { Debug } from 'astro/components';
         @apply bg-zinc-600 rounded-sm p-[0.5rem] m-[-0.5rem];
     }
     #md-content {
-        h1 {
+        .section-heading-link {
+            -webkit-mask: url('/link.svg') no-repeat 50% 50%;
+            mask: url('/link.svg') no-repeat 50% 50%;
+            -webkit-mask-size: cover;
+            mask-size: cover;
+            @apply shrink-0 w-[2.5rem] h-[2rem] overflow-visible bg-slate-50 opacity-[0] ml-[-2.5rem] mr-2 transition-all;
+
+            &:focus {
+                @apply opacity-[0.8] bg-sky-500 scale-110;
+            }
+        }
+        .header-wrapper {
+            @apply flex items-center justify-center;
+
+            &:hover {
+                .section-heading-link {
+                    @apply opacity-[0.2];
+                }
+            }
+        }
+        /*
+        // abandoned because I cant turn a ::before into a link
+        h1::before,
+        h2::before,
+        h3::before,
+        h4::before {
+        content: '';
+        -webkit-mask: url('/link.svg') no-repeat 50% 50%;
+        mask: url('/link.svg') no-repeat 50% 50%;
+        -webkit-mask-size: cover;
+        mask-size: cover;
+        display: inline-block;
+        width: 2rem;
+        height: 2rem;
+        @apply bg-slate-50 opacity-[0.2];
+        }*/
+        .h1 {
             @apply text-6xl font-bold text-center mt-24 mb-16;
         }
 
-        h2 {
+        .h2 {
             @apply text-5xl font-bold text-center mt-20 mb-12;
         }
 
-        h3 {
+        .h3 {
             @apply text-5xl font-semibold text-center mt-16 mb-10;
         }
 
-        h4 {
+        .h4 {
             @apply text-4xl font-semibold text-center mt-8 mb-4;
         }
 

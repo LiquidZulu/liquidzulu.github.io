@@ -1,0 +1,910 @@
+<!DOCTYPE html><html lang="en-GB"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"><meta name="apple-mobile-web-app-capable" content="yes"><meta http-equiv="X-UA-Compatible" content="ie=edge"><meta property="og:type" content="website"><meta name="twitter:card" content="summary"><style>@media screen{body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button{-webkit-tap-highlight-color:transparent;-webkit-appearance:none;appearance:none;background-color:transparent;border:0;color:inherit;cursor:pointer;font-size:inherit;opacity:.8;outline:none;padding:0;transition:opacity .2s linear}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:disabled,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:disabled,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:disabled,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button:disabled{cursor:not-allowed;opacity:.15!important}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:hover,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:hover,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:hover,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button:hover{opacity:1}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:active,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:active,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:hover:active,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button:hover:active{opacity:.6}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:not(:disabled),body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:not(:disabled),body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:hover:not(:disabled),body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button:hover:not(:disabled){transition:none}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev],body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button.bespoke-marp-presenter-info-page-prev{background:transparent url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJNNjggOTAgMjggNTBsNDAtNDAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button.bespoke-marp-presenter-info-page-next{background:transparent url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJtMzIgOTAgNDAtNDAtNDAtNDAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen]{background:transparent url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48ZGVmcz48c3R5bGU+LmF7ZmlsbDpub25lO3N0cm9rZTojZmZmO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2Utd2lkdGg6NXB4fTwvc3R5bGU+PC9kZWZzPjxyZWN0IGNsYXNzPSJhIiB4PSIxMCIgeT0iMjAiIHdpZHRoPSI4MCIgaGVpZ2h0PSI2MCIgcng9IjUuNjciLz48cGF0aCBjbGFzcz0iYSIgZD0iTTQwIDcwSDIwVjUwbTIwIDBMMjAgNzBtNDAtNDBoMjB2MjBtLTIwIDAgMjAtMjAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button.exit[data-bespoke-marp-osc=fullscreen],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button.exit[data-bespoke-marp-osc=fullscreen]{background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48ZGVmcz48c3R5bGU+LmF7ZmlsbDpub25lO3N0cm9rZTojZmZmO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2Utd2lkdGg6NXB4fTwvc3R5bGU+PC9kZWZzPjxyZWN0IGNsYXNzPSJhIiB4PSIxMCIgeT0iMjAiIHdpZHRoPSI4MCIgaGVpZ2h0PSI2MCIgcng9IjUuNjciLz48cGF0aCBjbGFzcz0iYSIgZD0iTTIwIDUwaDIwdjIwbS0yMCAwIDIwLTIwbTQwIDBINjBWMzBtMjAgMEw2MCA1MCIvPjwvc3ZnPg==")}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=presenter],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=presenter]{background:transparent url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBkPSJNODcuOCA0Ny41Qzg5IDUwIDg3LjcgNTIgODUgNTJIMzVhOC43IDguNyAwIDAgMS03LjItNC41bC0xNS42LTMxQzExIDE0IDEyLjIgMTIgMTUgMTJoNTBhOC44IDguOCAwIDAgMSA3LjIgNC41ek02MCA1MnYzNm0tMTAgMGgyME00NSA0MmgyMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS13aWR0aD0iNSIvPjwvc3ZnPg==") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button.bespoke-marp-presenter-note-bigger{background:transparent url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBkPSJNMTIgNTBoODBNNTIgOTBWMTAiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2Utd2lkdGg9IjUiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button.bespoke-marp-presenter-note-smaller{background:transparent url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBkPSJNMTIgNTBoODAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2Utd2lkdGg9IjUiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}}@keyframes __bespoke_marp_transition_reduced_outgoing__{0%{opacity:1}to{opacity:0}}@keyframes __bespoke_marp_transition_reduced_incoming__{0%{mix-blend-mode:plus-lighter;opacity:0}to{mix-blend-mode:plus-lighter;opacity:1}}.bespoke-marp-note,.bespoke-marp-osc,.bespoke-progress-parent{display:none;transition:none}@media screen{::view-transition-group(*){animation-duration:var(--marp-bespoke-transition-animation-duration,.5s);animation-timing-function:ease}::view-transition-new(*),::view-transition-old(*){animation-delay:0s;animation-direction:var(--marp-bespoke-transition-animation-direction,normal);animation-duration:var(--marp-bespoke-transition-animation-duration,.5s);animation-fill-mode:both;animation-name:var(--marp-bespoke-transition-animation-name,var(--marp-bespoke-transition-animation-name-fallback,__bespoke_marp_transition_no_animation__));mix-blend-mode:normal}::view-transition-old(*){--marp-bespoke-transition-animation-name-fallback:__bespoke_marp_transition_reduced_outgoing__;animation-timing-function:ease}::view-transition-new(*){--marp-bespoke-transition-animation-name-fallback:__bespoke_marp_transition_reduced_incoming__;animation-timing-function:ease}::view-transition-new(root),::view-transition-old(root){animation-timing-function:linear}::view-transition-new(__bespoke_marp_transition_osc__),::view-transition-old(__bespoke_marp_transition_osc__){animation-duration:0s!important;animation-name:__bespoke_marp_transition_osc__!important}::view-transition-new(__bespoke_marp_transition_osc__){opacity:0!important}.bespoke-marp-transition-warming-up::view-transition-group(*),.bespoke-marp-transition-warming-up::view-transition-new(*),.bespoke-marp-transition-warming-up::view-transition-old(*){animation-play-state:paused!important}body,html{height:100%;margin:0}body{background:#000;overflow:hidden}svg.bespoke-marp-slide{content-visibility:hidden;opacity:0;pointer-events:none;z-index:-1}svg.bespoke-marp-slide:not(.bespoke-marp-active) *{view-transition-name:none!important}svg.bespoke-marp-slide.bespoke-marp-active{content-visibility:visible;opacity:1;pointer-events:auto;z-index:0}svg.bespoke-marp-slide.bespoke-marp-active.bespoke-marp-active-ready *{animation-name:__bespoke_marp__!important}@supports not (content-visibility:hidden){svg.bespoke-marp-slide[data-bespoke-marp-load=hideable]{display:none}svg.bespoke-marp-slide[data-bespoke-marp-load=hideable].bespoke-marp-active{display:block}}}@media screen and (prefers-reduced-motion:reduce){svg.bespoke-marp-slide *{view-transition-name:none!important}}@media screen{[data-bespoke-marp-fragment=inactive]{visibility:hidden}body[data-bespoke-view=""] .bespoke-marp-parent,body[data-bespoke-view=next] .bespoke-marp-parent{bottom:0;left:0;position:absolute;right:0;top:0}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc{view-transition-name:__bespoke_marp_transition_osc__;background:rgba(0,0,0,.65);border-radius:7px;bottom:50px;color:#fff;contain:paint;display:block;font-family:Helvetica,Arial,sans-serif;font-size:16px;left:50%;line-height:0;opacity:1;padding:12px;position:absolute;touch-action:manipulation;transform:translateX(-50%);transition:opacity .2s linear;-webkit-user-select:none;user-select:none;white-space:nowrap;will-change:transform;z-index:1}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>*,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>*{margin-left:6px}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>:first-child,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>:first-child{margin-left:0}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>span,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>span{opacity:.8}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>span[data-bespoke-marp-osc=page],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>span[data-bespoke-marp-osc=page]{display:inline-block;min-width:140px;text-align:center}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen],body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=presenter],body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=presenter],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev]{height:32px;line-height:32px;width:32px}body[data-bespoke-view=""] .bespoke-marp-parent.bespoke-marp-inactive,body[data-bespoke-view=next] .bespoke-marp-parent.bespoke-marp-inactive{cursor:none}body[data-bespoke-view=""] .bespoke-marp-parent.bespoke-marp-inactive>.bespoke-marp-osc,body[data-bespoke-view=next] .bespoke-marp-parent.bespoke-marp-inactive>.bespoke-marp-osc{opacity:0;pointer-events:none}body[data-bespoke-view=""] svg.bespoke-marp-slide,body[data-bespoke-view=next] svg.bespoke-marp-slide{height:100%;left:0;position:absolute;top:0;width:100%}body[data-bespoke-view=""] .bespoke-progress-parent{background:#222;display:flex;height:5px;width:100%}body[data-bespoke-view=""] .bespoke-progress-parent+.bespoke-marp-parent{top:5px}body[data-bespoke-view=""] .bespoke-progress-parent .bespoke-progress-bar{background:#0288d1;flex:0 0 0;transition:flex-basis .2s cubic-bezier(0,1,1,1)}body[data-bespoke-view=next]{background:transparent}body[data-bespoke-view=presenter]{background:#161616}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container{display:grid;font-family:Helvetica,Arial,sans-serif;grid-template:"current dragbar next" minmax(140px,1fr) "current dragbar note" 2fr "info    dragbar note" 3em;grid-template-columns:minmax(3px,var(--bespoke-marp-presenter-split-ratio,66%)) 0 minmax(3px,1fr);height:100%;left:0;position:absolute;top:0;width:100%}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-parent{grid-area:current;overflow:hidden;position:relative}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-parent svg.bespoke-marp-slide{height:calc(100% - 40px);left:20px;pointer-events:none;position:absolute;top:20px;-webkit-user-select:none;user-select:none;width:calc(100% - 40px)}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-parent svg.bespoke-marp-slide.bespoke-marp-active{filter:drop-shadow(0 3px 10px rgba(0,0,0,.5))}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-dragbar-container{background:#0288d1;cursor:col-resize;grid-area:dragbar;margin-left:-3px;opacity:0;position:relative;transition:opacity .4s linear .1s;width:6px;z-index:10}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-dragbar-container:hover{opacity:1}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-dragbar-container.active{opacity:1;transition-delay:0s}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-next-container{background:#222;cursor:pointer;display:none;grid-area:next;overflow:hidden;position:relative}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-next-container.active{display:block}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-next-container iframe.bespoke-marp-presenter-next{background:transparent;border:0;display:block;filter:drop-shadow(0 3px 10px rgba(0,0,0,.5));height:calc(100% - 40px);left:20px;pointer-events:none;position:absolute;top:20px;-webkit-user-select:none;user-select:none;width:calc(100% - 40px)}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container{background:#222;color:#eee;grid-area:note;position:relative;z-index:1}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button{height:1.5em;line-height:1.5em;width:1.5em}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-presenter-note-wrapper{bottom:0;display:block;left:0;position:absolute;right:0;top:0}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-presenter-note-buttons{background:rgba(0,0,0,.65);border-radius:4px;bottom:0;display:flex;gap:4px;margin:12px;opacity:0;padding:6px;pointer-events:none;position:absolute;right:0;transition:opacity .2s linear}}@media screen{body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-presenter-note-buttons:focus-within,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-presenter-note-wrapper:focus-within+.bespoke-marp-presenter-note-buttons,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container:hover .bespoke-marp-presenter-note-buttons{opacity:1;pointer-events:auto}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note{word-wrap:break-word;box-sizing:border-box;font-size:calc(1.1em*var(--bespoke-marp-note-font-scale, 1));height:calc(100% - 40px);margin:20px;overflow:auto;padding-right:3px;scrollbar-color:hsla(0,0%,93%,.5) transparent;scrollbar-width:thin;white-space:pre-wrap;width:calc(100% - 40px)}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note::-webkit-scrollbar{width:6px}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note::-webkit-scrollbar-track{background:transparent}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note::-webkit-scrollbar-thumb{background:hsla(0,0%,93%,.5);border-radius:6px}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note:empty{pointer-events:none}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note.active{display:block}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note p:first-child{margin-top:0}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note p:last-child{margin-bottom:0}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container{align-items:center;box-sizing:border-box;color:#eee;display:flex;flex-wrap:nowrap;grid-area:info;justify-content:center;overflow:hidden;padding:0 10px}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-page,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-time,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-timer{box-sizing:border-box;display:block;padding:0 10px;white-space:nowrap;width:100%}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button{height:1.5em;line-height:1.5em;width:1.5em}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-page{order:2;text-align:center}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-page .bespoke-marp-presenter-info-page-text{display:inline-block;min-width:120px;text-align:center}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-time{color:#999;order:1;text-align:left}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-timer{color:#999;order:3;text-align:right}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-timer:hover{cursor:pointer}}@media print{.bespoke-marp-presenter-info-container,.bespoke-marp-presenter-next-container,.bespoke-marp-presenter-note-container{display:none}}</style><style>div#p>svg>foreignObject>section{width:1280px;height:720px;box-sizing:border-box;overflow:hidden;position:relative;scroll-snap-align:center center}div#p>svg>foreignObject>section:after{bottom:0;content:attr(data-marpit-pagination);padding:inherit;pointer-events:none;position:absolute;right:0}div#p>svg>foreignObject>section:not([data-marpit-pagination]):after{display:none}/* Normalization */div#p>svg>foreignObject>section :is(h1,marp-h1){font-size:2em;margin:0.67em 0}div#p>svg>foreignObject>section video::-webkit-media-controls{will-change:transform}@page{size:1280px 720px;margin:0}@media print{body,html{background-color:#fff;margin:0;page-break-inside:avoid;break-inside:avoid-page}div#p>svg>foreignObject>section{page-break-before:always;break-before:page}div#p>svg>foreignObject>section,div#p>svg>foreignObject>section *{-webkit-print-color-adjust:exact!important;animation-delay:0s!important;animation-duration:0s!important;color-adjust:exact!important;transition:none!important}div#p>svg[data-marpit-svg]{display:block;height:100vh;width:100vw}}div#p>svg>foreignObject>section mjx-container[jax=SVG]{direction:ltr}div#p>svg>foreignObject>section mjx-container[jax=SVG]>svg{overflow:visible;min-height:1px;min-width:1px}div#p>svg>foreignObject>section mjx-container[jax=SVG]>svg a{fill:blue;stroke:blue}div#p>svg>foreignObject>section mjx-container[jax=SVG][display=true]{display:block;text-align:center;margin:1em 0}div#p>svg>foreignObject>section mjx-container[jax=SVG][display=true][width=full]{display:flex}div#p>svg>foreignObject>section mjx-container[jax=SVG][justify=left]{text-align:left}div#p>svg>foreignObject>section mjx-container[jax=SVG][justify=right]{text-align:right}div#p>svg>foreignObject>section g[data-mml-node=merror]>g{fill:red;stroke:red}div#p>svg>foreignObject>section g[data-mml-node=merror]>rect[data-background]{fill:yellow;stroke:none}div#p>svg>foreignObject>section g[data-mml-node=mtable]>line[data-line],div#p>svg>foreignObject>section svg[data-table]>g>line[data-line]{stroke-width:70px;fill:none}div#p>svg>foreignObject>section g[data-mml-node=mtable]>rect[data-frame],div#p>svg>foreignObject>section svg[data-table]>g>rect[data-frame]{stroke-width:70px;fill:none}div#p>svg>foreignObject>section g[data-mml-node=mtable]>.mjx-dashed,div#p>svg>foreignObject>section svg[data-table]>g>.mjx-dashed{stroke-dasharray:140}div#p>svg>foreignObject>section g[data-mml-node=mtable]>.mjx-dotted,div#p>svg>foreignObject>section svg[data-table]>g>.mjx-dotted{stroke-linecap:round;stroke-dasharray:0,140}div#p>svg>foreignObject>section g[data-mml-node=mtable]>g>svg{overflow:visible}div#p>svg>foreignObject>section [jax=SVG] mjx-tool{display:inline-block;position:relative;width:0;height:0}div#p>svg>foreignObject>section [jax=SVG] mjx-tool>mjx-tip{position:absolute;top:0;left:0}div#p>svg>foreignObject>section mjx-tool>mjx-tip{display:inline-block;padding:.2em;border:1px solid #888;font-size:70%;background-color:#F8F8F8;color:black;box-shadow:2px 2px 5px #AAAAAA}div#p>svg>foreignObject>section g[data-mml-node=maction][data-toggle]{cursor:pointer}div#p>svg>foreignObject>section mjx-status{display:block;position:fixed;left:1em;bottom:1em;min-width:25%;padding:.2em .4em;border:1px solid #888;font-size:90%;background-color:#F8F8F8;color:black}div#p>svg>foreignObject>section foreignObject[data-mjx-xml]{font-family:initial;line-height:normal;overflow:visible}div#p>svg>foreignObject>section mjx-container[jax=SVG] path[data-c],div#p>svg>foreignObject>section mjx-container[jax=SVG] use[data-c]{stroke-width:3}@media print{div#p>svg>foreignObject>section mjx-container[jax=SVG] path[data-c],div#p>svg>foreignObject>section mjx-container[jax=SVG] use[data-c]{stroke-width:0}}div#p>svg>foreignObject>section img[data-marp-twemoji]{background:transparent;height:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;width:1em}
+/*!
+ * Marp / Marpit Uncover theme
+ *
+ * @theme uncover
+ * @author Yuki Hattori
+ *
+ * @auto-scaling true
+ * @size 16:9 1280px 720px
+ * @size 4:3 960px 720px
+ */div#p>svg>foreignObject>section{word-wrap:break-word;--color-background:#fdfcff;--color-background-code:#f2f1f4;--color-background-paginate:rgba(32,34,40,.05);--color-foreground:#202228;--color-highlight:#009dd5;--color-highlight-hover:#087eaa;--color-highlight-heading:#33b1dd;--color-header:rgba(32,34,40,.4);--color-header-shadow:rgba(253,252,255,.8);background:var(--color-background);flex-flow:column nowrap;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Open Sans,Helvetica Neue,sans-serif;font-size:40px;height:720px;justify-content:center;letter-spacing:3px;line-height:1.4;padding:30px 70px;position:relative;text-align:center;width:1280px;z-index:0}div#p>svg>foreignObject>section{--marpit-root-font-size:40px}div#p>svg>foreignObject>section,div#p>svg>foreignObject>section:after{color:var(--color-foreground);display:flex}div#p>svg>foreignObject>section:after{align-items:flex-end;background:linear-gradient(-45deg,var(--color-background-paginate) 50%,transparent 50%);background-size:cover;font-size:.6em;height:80px;justify-content:flex-end;padding:30px;text-align:right;text-shadow:0 0 5px var(--color-background);width:80px}div#p>svg>foreignObject>section:after{--marpit-root-font-size:.6em}div#p>svg>foreignObject>section:where(:not(.invert)) :is(pre,marp-pre) code.hljs{display:block;overflow-x:auto;padding:1em}div#p>svg>foreignObject>section:where(:not(.invert)) code.hljs{padding:3px 5px}div#p>svg>foreignObject>section:where(:not(.invert)) .hljs{background:#fff;color:#000}div#p>svg>foreignObject>section:where(:not(.invert)) .hljs-addition,div#p>svg>foreignObject>section:where(:not(.invert)) .hljs-meta,div#p>svg>foreignObject>section:where(:not(.invert)) .hljs-string,div#p>svg>foreignObject>section:where(:not(.invert)) .hljs-symbol,div#p>svg>foreignObject>section:where(:not(.invert)) .hljs-template-tag,div#p>svg>foreignObject>section:where(:not(.invert)) .hljs-template-variable{color:#756bb1}div#p>svg>foreignObject>section:where(:not(.invert)) .hljs-comment,div#p>svg>foreignObject>section:where(:not(.invert)) .hljs-quote{color:#636363}div#p>svg>foreignObject>section:where(:not(.invert)) .hljs-bullet,div#p>svg>foreignObject>section:where(:not(.invert)) .hljs-link,div#p>svg>foreignObject>section:where(:not(.invert)) .hljs-literal,div#p>svg>foreignObject>section:where(:not(.invert)) .hljs-number,div#p>svg>foreignObject>section:where(:not(.invert)) .hljs-regexp{color:#31a354}div#p>svg>foreignObject>section:where(:not(.invert)) .hljs-deletion,div#p>svg>foreignObject>section:where(:not(.invert)) .hljs-variable{color:#88f}div#p>svg>foreignObject>section:where(:not(.invert)) .hljs-built_in,div#p>svg>foreignObject>section:where(:not(.invert)) .hljs-doctag,div#p>svg>foreignObject>section:where(:not(.invert)) .hljs-keyword,div#p>svg>foreignObject>section:where(:not(.invert)) .hljs-name,div#p>svg>foreignObject>section:where(:not(.invert)) .hljs-section,div#p>svg>foreignObject>section:where(:not(.invert)) .hljs-selector-class,div#p>svg>foreignObject>section:where(:not(.invert)) .hljs-selector-id,div#p>svg>foreignObject>section:where(:not(.invert)) .hljs-selector-tag,div#p>svg>foreignObject>section:where(:not(.invert)) .hljs-strong,div#p>svg>foreignObject>section:where(:not(.invert)) .hljs-tag,div#p>svg>foreignObject>section:where(:not(.invert)) .hljs-title,div#p>svg>foreignObject>section:where(:not(.invert)) .hljs-type{color:#3182bd}div#p>svg>foreignObject>section:where(:not(.invert)) .hljs-emphasis{font-style:italic}div#p>svg>foreignObject>section:where(:not(.invert)) .hljs-attribute{color:#e6550d}div#p>svg>foreignObject>section:where(.invert){--color-background:#202228;--color-background-code:#2b2d33;--color-background-paginate:hsla(0,0%,100%,.05);--color-foreground:#fff;--color-highlight:#60d0f0;--color-highlight-hover:#88dcf4;--color-highlight-heading:#80d9f3;--color-header:hsla(0,0%,100%,.4);--color-header-shadow:rgba(32,34,40,.8)}div#p>svg>foreignObject>section:where(.invert) :is(pre,marp-pre) code.hljs{display:block;overflow-x:auto;padding:1em}div#p>svg>foreignObject>section:where(.invert) code.hljs{padding:3px 5px}div#p>svg>foreignObject>section:where(.invert) .hljs{background:#222;color:#fff}div#p>svg>foreignObject>section:where(.invert) .hljs-comment,div#p>svg>foreignObject>section:where(.invert) .hljs-quote{color:#777}div#p>svg>foreignObject>section:where(.invert) .hljs-built_in,div#p>svg>foreignObject>section:where(.invert) .hljs-bullet,div#p>svg>foreignObject>section:where(.invert) .hljs-deletion,div#p>svg>foreignObject>section:where(.invert) .hljs-link,div#p>svg>foreignObject>section:where(.invert) .hljs-literal,div#p>svg>foreignObject>section:where(.invert) .hljs-meta,div#p>svg>foreignObject>section:where(.invert) .hljs-number,div#p>svg>foreignObject>section:where(.invert) .hljs-params,div#p>svg>foreignObject>section:where(.invert) .hljs-regexp,div#p>svg>foreignObject>section:where(.invert) .hljs-symbol,div#p>svg>foreignObject>section:where(.invert) .hljs-tag,div#p>svg>foreignObject>section:where(.invert) .hljs-template-variable,div#p>svg>foreignObject>section:where(.invert) .hljs-variable{color:#ab875d}div#p>svg>foreignObject>section:where(.invert) .hljs-attribute,div#p>svg>foreignObject>section:where(.invert) .hljs-name,div#p>svg>foreignObject>section:where(.invert) .hljs-section,div#p>svg>foreignObject>section:where(.invert) .hljs-selector-class,div#p>svg>foreignObject>section:where(.invert) .hljs-selector-id,div#p>svg>foreignObject>section:where(.invert) .hljs-title,div#p>svg>foreignObject>section:where(.invert) .hljs-type{color:#9b869b}div#p>svg>foreignObject>section:where(.invert) .hljs-addition,div#p>svg>foreignObject>section:where(.invert) .hljs-keyword,div#p>svg>foreignObject>section:where(.invert) .hljs-selector-tag,div#p>svg>foreignObject>section:where(.invert) .hljs-string{color:#8f9c6c}div#p>svg>foreignObject>section:where(.invert) .hljs-emphasis{font-style:italic}div#p>svg>foreignObject>section:where(.invert) .hljs-strong{font-weight:700}div#p>svg>foreignObject>section>:first-child,div#p>svg>foreignObject>section[data-header]>:nth-child(2){margin-top:0}div#p>svg>foreignObject>section>:last-child,div#p>svg>foreignObject>section[data-footer]>:nth-last-child(2){margin-bottom:0}div#p>svg>foreignObject>section blockquote,div#p>svg>foreignObject>section p{margin:0 0 15px}div#p>svg>foreignObject>section :is(h1,marp-h1),div#p>svg>foreignObject>section :is(h2,marp-h2),div#p>svg>foreignObject>section :is(h3,marp-h3),div#p>svg>foreignObject>section :is(h4,marp-h4),div#p>svg>foreignObject>section :is(h5,marp-h5),div#p>svg>foreignObject>section :is(h6,marp-h6){margin:15px 0 30px}div#p>svg>foreignObject>section :is(h1,marp-h1) strong,div#p>svg>foreignObject>section :is(h2,marp-h2) strong,div#p>svg>foreignObject>section :is(h3,marp-h3) strong,div#p>svg>foreignObject>section :is(h4,marp-h4) strong,div#p>svg>foreignObject>section :is(h5,marp-h5) strong,div#p>svg>foreignObject>section :is(h6,marp-h6) strong{color:var(--color-highlight-heading);font-weight:inherit}div#p>svg>foreignObject>section :is(h1,marp-h1)::part(auto-scaling),div#p>svg>foreignObject>section :is(h2,marp-h2)::part(auto-scaling),div#p>svg>foreignObject>section :is(h3,marp-h3)::part(auto-scaling),div#p>svg>foreignObject>section :is(h4,marp-h4)::part(auto-scaling),div#p>svg>foreignObject>section :is(h5,marp-h5)::part(auto-scaling),div#p>svg>foreignObject>section :is(h6,marp-h6)::part(auto-scaling){max-height:660px}div#p>svg>foreignObject>section :is(h1,marp-h1){font-size:2em}div#p>svg>foreignObject>section :is(h2,marp-h2){font-size:1.7em}div#p>svg>foreignObject>section :is(h3,marp-h3){font-size:1.4em;letter-spacing:2px}div#p>svg>foreignObject>section :is(h4,marp-h4){font-size:1.2em;letter-spacing:2px}div#p>svg>foreignObject>section :is(h5,marp-h5){font-size:1em;letter-spacing:1px}div#p>svg>foreignObject>section :is(h6,marp-h6){font-size:.8em;letter-spacing:1px}div#p>svg>foreignObject>section footer,div#p>svg>foreignObject>section header{color:var(--color-header);font-size:.45em;left:70px;letter-spacing:1px;position:absolute;right:70px;text-shadow:0 1px 0 var(--color-header-shadow);z-index:1}div#p>svg>foreignObject>section header{top:30px}div#p>svg>foreignObject>section footer{bottom:30px}div#p>svg>foreignObject>section a{color:var(--color-highlight);text-decoration:none}div#p>svg>foreignObject>section a:hover{color:var(--color-highlight-hover);text-decoration:underline}div#p>svg>foreignObject>section ol,div#p>svg>foreignObject>section ul{margin:0 auto;text-align:left}div#p>svg>foreignObject>section>ol,div#p>svg>foreignObject>section>ul{margin-bottom:15px}div#p>svg>foreignObject>section code{font-family:SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;letter-spacing:0}div#p>svg>foreignObject>section :not(:is(pre,marp-pre))>code,div#p>svg>foreignObject>section>code{background:var(--color-background-code);color:var(--color-foreground);margin:-.2em .2em .2em;padding:.2em}div#p>svg>foreignObject>section :is(pre,marp-pre){--preserve-aspect-ratio:xMidYMid meet;filter:drop-shadow(0 4px 4px rgba(0,0,0,.2));font-size:70%;line-height:1.15;margin:15px 0 30px;text-align:left}div#p>svg>foreignObject>section :is(pre,marp-pre)::part(auto-scaling){max-height:570px}div#p>svg>foreignObject>section :is(pre,marp-pre)>code{background:var(--color-background-code);box-sizing:content-box;color:var(--color-foreground);display:block;margin:0 auto;min-width:456px;padding:.4em .6em}div#p>svg>foreignObject>section[data-size="4:3"] :is(pre,marp-pre)>code{min-width:328px}div#p>svg>foreignObject>section table{border-collapse:collapse;margin:0 auto 15px}div#p>svg>foreignObject>section table>tbody>tr>td,div#p>svg>foreignObject>section table>tbody>tr>th,div#p>svg>foreignObject>section table>thead>tr>td,div#p>svg>foreignObject>section table>thead>tr>th{padding:.15em .5em}div#p>svg>foreignObject>section table>thead>tr>td,div#p>svg>foreignObject>section table>thead>tr>th{border-bottom:3px solid}div#p>svg>foreignObject>section table>tbody>tr:not(:last-child)>td,div#p>svg>foreignObject>section table>tbody>tr:not(:last-child)>th{border-bottom:1px solid}div#p>svg>foreignObject>section blockquote{font-size:90%;line-height:1.3;padding:0 2em;position:relative;z-index:0}div#p>svg>foreignObject>section blockquote:after,div#p>svg>foreignObject>section blockquote:before{content:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBkPSJNNDQgMTkuMyAzOC45NCAwQzguMTQgOS41OSAwIDQwLjA1IDAgNTQuODNWMTAwaDQxLjQ3VjU0LjgzaC0yM2MtLjA0LS4yOC4yNS0yNy42NiAyNS41My0zNS41M3ptNTYgMEw5NC45NCAwQzY0LjE0IDkuNTkgNTYgNDAuMDUgNTYgNTQuODNWMTAwaDQxLjQ3VjU0LjgzaC0yM2MtLjA0LS4yOC4yNS0yNy42NiAyNS41My0zNS41M3oiIHN0eWxlPSJmaWxsOiM4ODg7b3BhY2l0eTouMzMiLz48L3N2Zz4=");height:auto;pointer-events:none;position:absolute;width:1em;z-index:-1}div#p>svg>foreignObject>section blockquote:before{left:0;top:0}div#p>svg>foreignObject>section blockquote:after{bottom:0;right:0;transform:rotate(180deg)}div#p>svg>foreignObject>section blockquote>:last-child{margin-bottom:0}div#p>svg>foreignObject>section mark{background:transparent;color:var(--color-highlight)}div#p>svg>foreignObject>section sup{color:#0ea5e9}div#p>svg>foreignObject>section[data-marpit-advanced-background=background]{columns:initial!important;display:block!important;padding:0!important}div#p>svg>foreignObject>section[data-marpit-advanced-background=background]:after,div#p>svg>foreignObject>section[data-marpit-advanced-background=background]:before,div#p>svg>foreignObject>section[data-marpit-advanced-background=content]:after,div#p>svg>foreignObject>section[data-marpit-advanced-background=content]:before{display:none!important}div#p>svg>foreignObject>section[data-marpit-advanced-background=background]>div[data-marpit-advanced-background-container]{all:initial;display:flex;flex-direction:row;height:100%;overflow:hidden;width:100%}div#p>svg>foreignObject>section[data-marpit-advanced-background=background]>div[data-marpit-advanced-background-container][data-marpit-advanced-background-direction=vertical]{flex-direction:column}div#p>svg>foreignObject>section[data-marpit-advanced-background=background][data-marpit-advanced-background-split]>div[data-marpit-advanced-background-container]{width:var(--marpit-advanced-background-split,50%)}div#p>svg>foreignObject>section[data-marpit-advanced-background=background][data-marpit-advanced-background-split=right]>div[data-marpit-advanced-background-container]{margin-left:calc(100% - var(--marpit-advanced-background-split, 50%))}div#p>svg>foreignObject>section[data-marpit-advanced-background=background]>div[data-marpit-advanced-background-container]>figure{all:initial;background-position:center;background-repeat:no-repeat;background-size:cover;flex:auto;margin:0}div#p>svg>foreignObject>section[data-marpit-advanced-background=content],div#p>svg>foreignObject>section[data-marpit-advanced-background=pseudo]{background:transparent!important}div#p>svg>foreignObject>section[data-marpit-advanced-background=pseudo],div#p>svg[data-marpit-svg]>foreignObject[data-marpit-advanced-background=pseudo]{pointer-events:none!important}div#p>svg>foreignObject>section[data-marpit-advanced-background-split]{width:100%;height:100%}</style></head><body><div class="bespoke-marp-osc"><button data-bespoke-marp-osc="prev" tabindex="-1" title="Previous slide">Previous slide</button><span data-bespoke-marp-osc="page"></span><button data-bespoke-marp-osc="next" tabindex="-1" title="Next slide">Next slide</button><button data-bespoke-marp-osc="fullscreen" tabindex="-1" title="Toggle fullscreen (f)">Toggle fullscreen</button><button data-bespoke-marp-osc="presenter" tabindex="-1" title="Open presenter view (p)">Open presenter view</button></div><div id="p"><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="1" data-class="invert" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<h1>3. Homesteading and Property Rights</h1>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="2" data-class="invert" data-footer="N. Stephan Kinsella, *Thoughts on the Latecomer and Homesteading Ideas; or, why the very idea of “ownership” implies that only libertarian principles are justifiable*" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<blockquote>
+<p>[...] the first user and possessor of a good is either its owner or he is not. If he is not, then who is? The person who takes it from him by force? If forcefully taking possession from a prior owner entitles the new possessor to the thing, then there is no such thing as ownership, but only mere possession. But such a rule — that a later user may acquire something by taking it from the previous owner — does not avoid conflicts, it rather authorizes them.</p>
+</blockquote>
+<footer>N. Stephan Kinsella, <em>Thoughts on the Latecomer and Homesteading Ideas; or, why the very idea of “ownership” implies that only libertarian principles are justifiable</em></footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="3" data-class="invert" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<h1>The Homesteading Principle</h1>
+<p>Ownership is assigned to the initial possessor/director of any external good</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="4" data-marpit-fragments="4" data-class="invert" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<h2>The Prior-Later Distinction</h2>
+<ul>
+<li data-marpit-fragment="1">Ownership of a thing is distinct from the ability to direct its use</li>
+<li data-marpit-fragment="2">In asserting different ownership claims each person are asserting that they are the one who <em>justly</em> directs the use of the stick</li>
+<li data-marpit-fragment="3">If <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: 0;" xmlns="http://www.w3.org/2000/svg" width="1.717ex" height="1.545ex" role="img" focusable="false" viewBox="0 -683 759 683"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D435" d="M231 637Q204 637 199 638T194 649Q194 676 205 682Q206 683 335 683Q594 683 608 681Q671 671 713 636T756 544Q756 480 698 429T565 360L555 357Q619 348 660 311T702 219Q702 146 630 78T453 1Q446 0 242 0Q42 0 39 2Q35 5 35 10Q35 17 37 24Q42 43 47 45Q51 46 62 46H68Q95 46 128 49Q142 52 147 61Q150 65 219 339T288 628Q288 635 231 637ZM649 544Q649 574 634 600T585 634Q578 636 493 637Q473 637 451 637T416 636H403Q388 635 384 626Q382 622 352 506Q352 503 351 500L320 374H401Q482 374 494 376Q554 386 601 434T649 544ZM595 229Q595 273 572 302T512 336Q506 337 429 337Q311 337 310 336Q310 334 293 263T258 122L240 52Q240 48 252 48T333 46Q422 46 429 47Q491 54 543 105T595 229Z"></path></g></g></g></svg></mjx-container> could own something by taking it from <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: 0;" xmlns="http://www.w3.org/2000/svg" width="1.697ex" height="1.62ex" role="img" focusable="false" viewBox="0 -716 750 716"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D434" d="M208 74Q208 50 254 46Q272 46 272 35Q272 34 270 22Q267 8 264 4T251 0Q249 0 239 0T205 1T141 2Q70 2 50 0H42Q35 7 35 11Q37 38 48 46H62Q132 49 164 96Q170 102 345 401T523 704Q530 716 547 716H555H572Q578 707 578 706L606 383Q634 60 636 57Q641 46 701 46Q726 46 726 36Q726 34 723 22Q720 7 718 4T704 0Q701 0 690 0T651 1T578 2Q484 2 455 0H443Q437 6 437 9T439 27Q443 40 445 43L449 46H469Q523 49 533 63L521 213H283L249 155Q208 86 208 74ZM516 260Q516 271 504 416T490 562L463 519Q447 492 400 412L310 260L413 259Q516 259 516 260Z"></path></g></g></g></svg></mjx-container>, that implies <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.05ex;" xmlns="http://www.w3.org/2000/svg" width="1.719ex" height="1.645ex" role="img" focusable="false" viewBox="0 -705 760 727"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D436" d="M50 252Q50 367 117 473T286 641T490 704Q580 704 633 653Q642 643 648 636T656 626L657 623Q660 623 684 649Q691 655 699 663T715 679T725 690L740 705H746Q760 705 760 698Q760 694 728 561Q692 422 692 421Q690 416 687 415T669 413H653Q647 419 647 422Q647 423 648 429T650 449T651 481Q651 552 619 605T510 659Q484 659 454 652T382 628T299 572T226 479Q194 422 175 346T156 222Q156 108 232 58Q280 24 350 24Q441 24 512 92T606 240Q610 253 612 255T628 257Q648 257 648 248Q648 243 647 239Q618 132 523 55T319 -22Q206 -22 128 53T50 252Z"></path></g></g></g></svg></mjx-container> could take it and become the owner</li>
+<li data-marpit-fragment="4">This would mean that ownership of a thing and the ability to direct its use are not distinct</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="5" data-class="invert" data-footer="N. Stephan Kinsella, *Thoughts on the Latecomer and Homesteading Ideas; or, why the very idea of “ownership” implies that only libertarian principles are justifiable*" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<blockquote>
+<p>In other words, we can see not only that Lockean homesteading […] is inextricably bound up with the prior-later distinction […] <em><strong>but that the very idea of ownership implies that only libertarian-style ownership is justifiable</strong></em>.</p>
+</blockquote>
+<footer>N. Stephan Kinsella, <em>Thoughts on the Latecomer and Homesteading Ideas; or, why the very idea of “ownership” implies that only libertarian principles are justifiable</em></footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="6" data-class="invert" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<h1>The Criteria for Property Borders</h1>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="7" data-class="invert" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<h1>The Criteria for Property Borders</h1>
+<p>Rational property borders are and must be:</p>
+<ol>
+<li>Objective</li>
+<li>Intersubjectively-ascertainable</li>
+</ol>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="8" data-class="invert" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<h2>Objective Propety Borders</h2>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="9" data-marpit-fragments="2" data-class="invert" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<h2>Objective Propety Borders</h2>
+<ul>
+<li data-marpit-fragment="1">Must adhere to existence as against the arbitrary content of ones consciousness</li>
+<li data-marpit-fragment="2">Subjective property borders might contradict, <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.186ex;" xmlns="http://www.w3.org/2000/svg" width="1.509ex" height="1.251ex" role="img" focusable="false" viewBox="0 -471 667 553"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><path data-c="2234" d="M273 411Q273 437 291 454T334 471Q358 471 375 454T393 411T376 368T333 351Q307 351 290 368T273 411ZM84 38Q110 38 126 21T143 -22Q143 -46 127 -64T83 -82Q57 -82 41 -65T24 -22Q24 4 41 21T84 38ZM524 -22Q524 4 541 21T584 38Q608 38 625 21T643 -22Q643 -45 627 -63T583 -82Q557 -82 541 -65T524 -22Z"></path></g></g></g></svg></mjx-container> non-universal</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="10" data-class="invert" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<h2>Intersubjectively-Ascertainable Propety Borders</h2>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="11" data-marpit-fragments="2" data-class="invert" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<h2>Intersubjectively-Ascertainable Propety Borders</h2>
+<ul>
+<li data-marpit-fragment="1">Must be able to be perceived by third parties</li>
+<li data-marpit-fragment="2">This is required to avoid conflicts</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="12" data-class="invert" data-footer="N. Stephan Kinsella, *Dialogical Arguments for Libertarian Rights*" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--footer:N. Stephan Kinsella, *Dialogical Arguments for Libertarian Rights*;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<blockquote>
+<p>[...] no one could ever deny that norms for determining the ownership of scarce goods are useful for allowing conflict-free exploitation of such resources. But, as Hoppe points out, there are only two fundamental alternatives for acquiring unowned property: (1) by doing something with things with which no one else had ever done anything before, that is, the Lockean concept of mixing of labour, or homesteading; or (2) simply by verbal declaration or decree.</p>
+</blockquote>
+<footer>N. Stephan Kinsella, <em>Dialogical Arguments for Libertarian Rights</em></footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="13" data-class="invert" data-footer="N. Stephan Kinsella, *Dialogical Arguments for Libertarian Rights*" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--footer:N. Stephan Kinsella, *Dialogical Arguments for Libertarian Rights*;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<blockquote>
+<p>However, a rule that allows property to be owned by mere verbal declaration cannot serve to avoid conflicts, since any number of people could at any time assert conflicting claims of ownership of a particular scarce resource. Only the first alternative, that of Lockean homesteading, establishes an objective [...] link between a particular person and a particular scarce resource, and thus no one can deny the Lockean right to homestead unowned resources.</p>
+</blockquote>
+<footer>N. Stephan Kinsella, <em>Dialogical Arguments for Libertarian Rights</em></footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="14" data-class="invert" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;"></section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="15" data-class="invert" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<h1>The Homestead Stalemate</h1>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="16" data-marpit-fragments="4" data-class="invert" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<h1>The Homestead Stalemate</h1>
+<ul>
+<li data-marpit-fragment="1">Neither is the late-comer</li>
+<li data-marpit-fragment="2">A stalemate is not (yet) a conflict</li>
+<li data-marpit-fragment="3">A stalemate can turn into a conflict if Crusoe forcefully excludes Friday</li>
+<li data-marpit-fragment="4">The aggressive party cedes ownership to the non-aggressive party</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="17" data-class="invert" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<h1>Against the Georgist Anti-Homestead Ethic</h1>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="18" data-marpit-fragments="2" data-class="invert" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<h1>Against the Georgist Anti-Homestead Ethic</h1>
+<ul>
+<li data-marpit-fragment="1">To engage in argumentation you must first homestead <em>something</em></li>
+<li data-marpit-fragment="2"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.186ex;" xmlns="http://www.w3.org/2000/svg" width="1.509ex" height="1.251ex" role="img" focusable="false" viewBox="0 -471 667 553"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><path data-c="2234" d="M273 411Q273 437 291 454T334 471Q358 471 375 454T393 411T376 368T333 351Q307 351 290 368T273 411ZM84 38Q110 38 126 21T143 -22Q143 -46 127 -64T83 -82Q57 -82 41 -65T24 -22Q24 4 41 21T84 38ZM524 -22Q524 4 541 21T584 38Q608 38 625 21T643 -22Q643 -45 627 -63T583 -82Q557 -82 541 -65T524 -22Z"></path></g></g></g></svg></mjx-container> it cannot be denied that it is just to engage in an act of homesteading</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="19" data-class="invert" data-footer="Hans-Hermann Hoppe, *A Theory of Socialism and Capitalism*" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--footer:Hans-Hermann Hoppe, *A Theory of Socialism and Capitalism*;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<blockquote>
+<p>What is wrong with this idea of dropping the prior-later distinction as morally irrelevant? First, if the late-comers, i.e., those who did not in fact do something with some scarce goods, had indeed as much of a right to them as the first-comers, i.e., those who did do something with the scarce goods, then literally no one would be allowed to do anything with anything, as one would have to have all of the late-comers’ consent prior to doing whatever one wanted to do.</p>
+</blockquote>
+<footer>Hans-Hermann Hoppe, <em>A Theory of Socialism and Capitalism</em></footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="20" data-class="invert" data-footer="Hans-Hermann Hoppe, *A Theory of Socialism and Capitalism*" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--footer:Hans-Hermann Hoppe, *A Theory of Socialism and Capitalism*;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<blockquote>
+<p>Indeed, as posterity would include one’s children’s children—people, that is, who come so late that one could never possibly ask them—advocating a legal system that does not make use of the prior-later distinction as part of its underlying property theory is simply absurd in that it implies advocating death but must presuppose life to advocate any thing.</p>
+</blockquote>
+<footer>Hans-Hermann Hoppe, <em>A Theory of Socialism and Capitalism</em></footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="21" data-class="invert" data-footer="Hans-Hermann Hoppe, *A Theory of Socialism and Capitalism*" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--footer:Hans-Hermann Hoppe, *A Theory of Socialism and Capitalism*;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<blockquote>
+<p>Neither we, our forefathers, nor our progeny could, do, or will survive and say or argue anything if one were to follow this rule. In order for any person—past, present, or future—to argue anything it must be possible to survive now. Nobody can wait and suspend acting until everyone of an indeterminate class of late-comers happens to appear and agree to what one wants to do.</p>
+</blockquote>
+<footer>Hans-Hermann Hoppe, <em>A Theory of Socialism and Capitalism</em></footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="22" data-class="invert" data-footer="Hans-Hermann Hoppe, *A Theory of Socialism and Capitalism*" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--footer:Hans-Hermann Hoppe, *A Theory of Socialism and Capitalism*;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<blockquote>
+<p>Rather, insofar as a person finds himself alone, he must be able to act, to use, produce, consume goods straightaway, prior to any agreement with people who are simply not around yet (and perhaps never will be). And insofar as a person finds himself in the company of others and there is conflict over how to use a given scarce resource, he must be able to resolve the problem at a definite point in time with a definite number of people instead of having to wait unspecified periods of time for unspecified numbers of people.</p>
+</blockquote>
+<footer>Hans-Hermann Hoppe, <em>A Theory of Socialism and Capitalism</em></footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="23" data-class="invert" data-footer="Hans-Hermann Hoppe, *A Theory of Socialism and Capitalism*" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--footer:Hans-Hermann Hoppe, *A Theory of Socialism and Capitalism*;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<blockquote>
+<p>Simply in order to survive, then, which is a prerequisite to arguing in favor of or against anything, property rights cannot be conceived of as being timeless and nonspecific regarding the number of people concerned. Rather, they must necessarily be thought of as originating through acting at definite points in time for definite acting individuals.</p>
+</blockquote>
+<footer>Hans-Hermann Hoppe, <em>A Theory of Socialism and Capitalism</em></footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="24" data-class="invert" data-footer="Hans-Hermann Hoppe, *A Theory of Socialism and Capitalism*" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--footer:Hans-Hermann Hoppe, *A Theory of Socialism and Capitalism*;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<blockquote>
+<p>Furthermore, the idea of abandoning the prior-later distinction, which socialism finds so attractive, would again simply be incompatible with the nonaggression principle as the practical foundation of argumentation. To argue and possibly agree with someone (if only on the fact that there is dis agreement) means to recognize each other’s prior right of exclusive control over his own body.</p>
+</blockquote>
+<footer>Hans-Hermann Hoppe, <em>A Theory of Socialism and Capitalism</em></footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="25" data-class="invert" data-footer="Hans-Hermann Hoppe, *A Theory of Socialism and Capitalism*" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--footer:Hans-Hermann Hoppe, *A Theory of Socialism and Capitalism*;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<blockquote>
+<p>Otherwise, it would be impossible for anyone to first say anything at a definite point in time and for someone else to then be able to reply, or vice versa, as neither the first nor the second speaker would be independent physical decision-making units anymore, at any time. Eliminating the prior-later distinction then, as socialism attempts to do, is tantamount to eliminating the possibility of arguing and reaching agreement.</p>
+</blockquote>
+<footer>Hans-Hermann Hoppe, <em>A Theory of Socialism and Capitalism</em></footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="26" data-class="invert" data-footer="Hans-Hermann Hoppe, *A Theory of Socialism and Capitalism*" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--footer:Hans-Hermann Hoppe, *A Theory of Socialism and Capitalism*;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<blockquote>
+<p>However, as one cannot argue that there is no possibility for discussion without the prior control of every person over his own body being recognized and accepted as fair, a late-comer ethic that does not wish to make this difference could never be agreed upon by anyone. Simply saying that it could implies a contradiction, as one’s being able to say so would presuppose one’s existence as an independent decision-making unit at a definite point in time.</p>
+</blockquote>
+<footer>Hans-Hermann Hoppe, <em>A Theory of Socialism and Capitalism</em></footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="27" data-class="invert" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<h1>Self-Ownership</h1>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="28" data-marpit-fragments="3" data-class="invert" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<h1>Self-Ownership</h1>
+<ul>
+<li data-marpit-fragment="1">Property rights are conflict avoiding norms</li>
+<li data-marpit-fragment="2">Property rights are derived from the nature of argumentation</li>
+<li data-marpit-fragment="3">For <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: 0;" xmlns="http://www.w3.org/2000/svg" width="1.697ex" height="1.62ex" role="img" focusable="false" viewBox="0 -716 750 716"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D434" d="M208 74Q208 50 254 46Q272 46 272 35Q272 34 270 22Q267 8 264 4T251 0Q249 0 239 0T205 1T141 2Q70 2 50 0H42Q35 7 35 11Q37 38 48 46H62Q132 49 164 96Q170 102 345 401T523 704Q530 716 547 716H555H572Q578 707 578 706L606 383Q634 60 636 57Q641 46 701 46Q726 46 726 36Q726 34 723 22Q720 7 718 4T704 0Q701 0 690 0T651 1T578 2Q484 2 455 0H443Q437 6 437 9T439 27Q443 40 445 43L449 46H469Q523 49 533 63L521 213H283L249 155Q208 86 208 74ZM516 260Q516 271 504 416T490 562L463 519Q447 492 400 412L310 260L413 259Q516 259 516 260Z"></path></g></g></g></svg></mjx-container> and <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: 0;" xmlns="http://www.w3.org/2000/svg" width="1.717ex" height="1.545ex" role="img" focusable="false" viewBox="0 -683 759 683"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D435" d="M231 637Q204 637 199 638T194 649Q194 676 205 682Q206 683 335 683Q594 683 608 681Q671 671 713 636T756 544Q756 480 698 429T565 360L555 357Q619 348 660 311T702 219Q702 146 630 78T453 1Q446 0 242 0Q42 0 39 2Q35 5 35 10Q35 17 37 24Q42 43 47 45Q51 46 62 46H68Q95 46 128 49Q142 52 147 61Q150 65 219 339T288 628Q288 635 231 637ZM649 544Q649 574 634 600T585 634Q578 636 493 637Q473 637 451 637T416 636H403Q388 635 384 626Q382 622 352 506Q352 503 351 500L320 374H401Q482 374 494 376Q554 386 601 434T649 544ZM595 229Q595 273 572 302T512 336Q506 337 429 337Q311 337 310 336Q310 334 293 263T258 122L240 52Q240 48 252 48T333 46Q422 46 429 47Q491 54 543 105T595 229Z"></path></g></g></g></svg></mjx-container> to argue with each other, they have to first assume that the other guy owns himself</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="29" data-class="invert" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<h2>The Failure of Particularism</h2>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="30" data-marpit-fragments="3" data-class="invert" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<h2>The Failure of Particularism</h2>
+<ul>
+<li data-marpit-fragment="1"><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: 0;" xmlns="http://www.w3.org/2000/svg" width="1.697ex" height="1.62ex" role="img" focusable="false" viewBox="0 -716 750 716"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D434" d="M208 74Q208 50 254 46Q272 46 272 35Q272 34 270 22Q267 8 264 4T251 0Q249 0 239 0T205 1T141 2Q70 2 50 0H42Q35 7 35 11Q37 38 48 46H62Q132 49 164 96Q170 102 345 401T523 704Q530 716 547 716H555H572Q578 707 578 706L606 383Q634 60 636 57Q641 46 701 46Q726 46 726 36Q726 34 723 22Q720 7 718 4T704 0Q701 0 690 0T651 1T578 2Q484 2 455 0H443Q437 6 437 9T439 27Q443 40 445 43L449 46H469Q523 49 533 63L521 213H283L249 155Q208 86 208 74ZM516 260Q516 271 504 416T490 562L463 519Q447 492 400 412L310 260L413 259Q516 259 516 260Z"></path></g></g></g></svg></mjx-container> being allowed to punch <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: 0;" xmlns="http://www.w3.org/2000/svg" width="1.717ex" height="1.545ex" role="img" focusable="false" viewBox="0 -683 759 683"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D435" d="M231 637Q204 637 199 638T194 649Q194 676 205 682Q206 683 335 683Q594 683 608 681Q671 671 713 636T756 544Q756 480 698 429T565 360L555 357Q619 348 660 311T702 219Q702 146 630 78T453 1Q446 0 242 0Q42 0 39 2Q35 5 35 10Q35 17 37 24Q42 43 47 45Q51 46 62 46H68Q95 46 128 49Q142 52 147 61Q150 65 219 339T288 628Q288 635 231 637ZM649 544Q649 574 634 600T585 634Q578 636 493 637Q473 637 451 637T416 636H403Q388 635 384 626Q382 622 352 506Q352 503 351 500L320 374H401Q482 374 494 376Q554 386 601 434T649 544ZM595 229Q595 273 572 302T512 336Q506 337 429 337Q311 337 310 336Q310 334 293 263T258 122L240 52Q240 48 252 48T333 46Q422 46 429 47Q491 54 543 105T595 229Z"></path></g></g></g></svg></mjx-container> but not the other way around is arbitrary and must be discarded</li>
+<li data-marpit-fragment="2">You have an objective, undeniable-and-thus-intersubjectively-ascertainable link to your own body</li>
+<li data-marpit-fragment="3">If arbitrarily coercing others to do what you want was a greater claim then it would be impossible to avoid conflicts in bodies</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="31" data-class="invert" data-footer="N. Stephan Kinsella, *How We Come to Own Ourselves*" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--footer:N. Stephan Kinsella, *How We Come to Own Ourselves*;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<blockquote>
+<p>Moreover, any outsider who claims another’s body cannot deny this objective link and its special status, since the outsider also necessarily presupposes this in his own case. This is so because in seeking dominion over the other, in asserting ownership over the other’s body, he has to presuppose his own ownership of his body, which demonstrates he does place a certain significance on this link, at the same time that he disregards the significance of the other’s link to his own body.</p>
+</blockquote>
+<footer>N. Stephan Kinsella, <em>How We Come to Own Ourselves</em></footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="32" data-class="invert" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<h2>Slavery as Anti-Human</h2>
+<p>To be an ethic for man it must be universal and it must ensure the survival of mankind.</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="33" data-class="invert" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<h2>Alternatives to Self-Ownership</h2>
+<p style='text-align: left; margin-bottom: 2rem;'>Rothbard has pointed out<sup>10</sup> that if you do not have a system of total self-ownership, two possibilities remain:</p>
+<ol>
+<li>universal and equal other-ownership, which he calls the “communist” ethic, or;</li>
+<li>partial ownership of one group by another.</li>
+</ol>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="34" data-marpit-fragments="3" data-class="invert" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<h2>The Failure of the Alternatives</h2>
+<ul>
+<li data-marpit-fragment="1">Universal co-ownership would imply the near immediate death of humanity</li>
+<li data-marpit-fragment="2">Universal co-ownership would be impossible to comply with</li>
+<li data-marpit-fragment="3">Partial ownership is particularistic, and thus false</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="35" data-class="invert" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<h1>The Impossibility of Group Ownership</h1>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="36" data-marpit-fragments="3" data-class="invert" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<h1>The Impossibility of Group Ownership</h1>
+<ul>
+<li data-marpit-fragment="1">A set of people <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex;" xmlns="http://www.w3.org/2000/svg" width="10.636ex" height="2.262ex" role="img" focusable="false" viewBox="0 -750 4701 1000"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><path data-c="7B" d="M434 -231Q434 -244 428 -250H410Q281 -250 230 -184Q225 -177 222 -172T217 -161T213 -148T211 -133T210 -111T209 -84T209 -47T209 0Q209 21 209 53Q208 142 204 153Q203 154 203 155Q189 191 153 211T82 231Q71 231 68 234T65 250T68 266T82 269Q116 269 152 289T203 345Q208 356 208 377T209 529V579Q209 634 215 656T244 698Q270 724 324 740Q361 748 377 749Q379 749 390 749T408 750H428Q434 744 434 732Q434 719 431 716Q429 713 415 713Q362 710 332 689T296 647Q291 634 291 499V417Q291 370 288 353T271 314Q240 271 184 255L170 250L184 245Q202 239 220 230T262 196T290 137Q291 131 291 1Q291 -134 296 -147Q306 -174 339 -192T415 -213Q429 -213 431 -216Q434 -219 434 -231Z"></path></g><g data-mml-node="mi" transform="translate(500,0)"><path data-c="1D434" d="M208 74Q208 50 254 46Q272 46 272 35Q272 34 270 22Q267 8 264 4T251 0Q249 0 239 0T205 1T141 2Q70 2 50 0H42Q35 7 35 11Q37 38 48 46H62Q132 49 164 96Q170 102 345 401T523 704Q530 716 547 716H555H572Q578 707 578 706L606 383Q634 60 636 57Q641 46 701 46Q726 46 726 36Q726 34 723 22Q720 7 718 4T704 0Q701 0 690 0T651 1T578 2Q484 2 455 0H443Q437 6 437 9T439 27Q443 40 445 43L449 46H469Q523 49 533 63L521 213H283L249 155Q208 86 208 74ZM516 260Q516 271 504 416T490 562L463 519Q447 492 400 412L310 260L413 259Q516 259 516 260Z"></path></g><g data-mml-node="mo" transform="translate(1250,0)"><path data-c="2C" d="M78 35T78 60T94 103T137 121Q165 121 187 96T210 8Q210 -27 201 -60T180 -117T154 -158T130 -185T117 -194Q113 -194 104 -185T95 -172Q95 -168 106 -156T131 -126T157 -76T173 -3V9L172 8Q170 7 167 6T161 3T152 1T140 0Q113 0 96 17Z"></path></g><g data-mml-node="mo" transform="translate(1694.7,0)"><path data-c="22EF" d="M78 250Q78 274 95 292T138 310Q162 310 180 294T199 251Q199 226 182 208T139 190T96 207T78 250ZM525 250Q525 274 542 292T585 310Q609 310 627 294T646 251Q646 226 629 208T586 190T543 207T525 250ZM972 250Q972 274 989 292T1032 310Q1056 310 1074 294T1093 251Q1093 226 1076 208T1033 190T990 207T972 250Z"></path></g><g data-mml-node="mo" transform="translate(3033.3,0)"><path data-c="2C" d="M78 35T78 60T94 103T137 121Q165 121 187 96T210 8Q210 -27 201 -60T180 -117T154 -158T130 -185T117 -194Q113 -194 104 -185T95 -172Q95 -168 106 -156T131 -126T157 -76T173 -3V9L172 8Q170 7 167 6T161 3T152 1T140 0Q113 0 96 17Z"></path></g><g data-mml-node="mi" transform="translate(3478,0)"><path data-c="1D44D" d="M58 8Q58 23 64 35Q64 36 329 334T596 635L586 637Q575 637 512 637H500H476Q442 637 420 635T365 624T311 598T266 548T228 469Q227 466 226 463T224 458T223 453T222 450L221 448Q218 443 202 443Q185 443 182 453L214 561Q228 606 241 651Q249 679 253 681Q256 683 487 683H718Q723 678 723 675Q723 673 717 649Q189 54 188 52L185 49H274Q369 50 377 51Q452 60 500 100T579 247Q587 272 590 277T603 282H607Q628 282 628 271Q547 5 541 2Q538 0 300 0H124Q58 0 58 8Z"></path></g><g data-mml-node="mo" transform="translate(4201,0)"><path data-c="7D" d="M65 731Q65 745 68 747T88 750Q171 750 216 725T279 670Q288 649 289 635T291 501Q292 362 293 357Q306 312 345 291T417 269Q428 269 431 266T434 250T431 234T417 231Q380 231 345 210T298 157Q293 143 292 121T291 -28V-79Q291 -134 285 -156T256 -198Q202 -250 89 -250Q71 -250 68 -247T65 -230Q65 -224 65 -223T66 -218T69 -214T77 -213Q91 -213 108 -210T146 -200T183 -177T207 -139Q208 -134 209 3L210 139Q223 196 280 230Q315 247 330 250Q305 257 280 270Q225 304 212 352L210 362L209 498Q208 635 207 640Q195 680 154 696T77 713Q68 713 67 716T65 731Z"></path></g></g></g></svg></mjx-container> commonly own a stick, there is a conflict over its use between <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: 0;" xmlns="http://www.w3.org/2000/svg" width="1.697ex" height="1.62ex" role="img" focusable="false" viewBox="0 -716 750 716"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D434" d="M208 74Q208 50 254 46Q272 46 272 35Q272 34 270 22Q267 8 264 4T251 0Q249 0 239 0T205 1T141 2Q70 2 50 0H42Q35 7 35 11Q37 38 48 46H62Q132 49 164 96Q170 102 345 401T523 704Q530 716 547 716H555H572Q578 707 578 706L606 383Q634 60 636 57Q641 46 701 46Q726 46 726 36Q726 34 723 22Q720 7 718 4T704 0Q701 0 690 0T651 1T578 2Q484 2 455 0H443Q437 6 437 9T439 27Q443 40 445 43L449 46H469Q523 49 533 63L521 213H283L249 155Q208 86 208 74ZM516 260Q516 271 504 416T490 562L463 519Q447 492 400 412L310 260L413 259Q516 259 516 260Z"></path></g></g></g></svg></mjx-container> and <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: 0;" xmlns="http://www.w3.org/2000/svg" width="1.717ex" height="1.545ex" role="img" focusable="false" viewBox="0 -683 759 683"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D435" d="M231 637Q204 637 199 638T194 649Q194 676 205 682Q206 683 335 683Q594 683 608 681Q671 671 713 636T756 544Q756 480 698 429T565 360L555 357Q619 348 660 311T702 219Q702 146 630 78T453 1Q446 0 242 0Q42 0 39 2Q35 5 35 10Q35 17 37 24Q42 43 47 45Q51 46 62 46H68Q95 46 128 49Q142 52 147 61Q150 65 219 339T288 628Q288 635 231 637ZM649 544Q649 574 634 600T585 634Q578 636 493 637Q473 637 451 637T416 636H403Q388 635 384 626Q382 622 352 506Q352 503 351 500L320 374H401Q482 374 494 376Q554 386 601 434T649 544ZM595 229Q595 273 572 302T512 336Q506 337 429 337Q311 337 310 336Q310 334 293 263T258 122L240 52Q240 48 252 48T333 46Q422 46 429 47Q491 54 543 105T595 229Z"></path></g></g></g></svg></mjx-container></li>
+<li data-marpit-fragment="2">Either <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: 0;" xmlns="http://www.w3.org/2000/svg" width="1.697ex" height="1.62ex" role="img" focusable="false" viewBox="0 -716 750 716"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D434" d="M208 74Q208 50 254 46Q272 46 272 35Q272 34 270 22Q267 8 264 4T251 0Q249 0 239 0T205 1T141 2Q70 2 50 0H42Q35 7 35 11Q37 38 48 46H62Q132 49 164 96Q170 102 345 401T523 704Q530 716 547 716H555H572Q578 707 578 706L606 383Q634 60 636 57Q641 46 701 46Q726 46 726 36Q726 34 723 22Q720 7 718 4T704 0Q701 0 690 0T651 1T578 2Q484 2 455 0H443Q437 6 437 9T439 27Q443 40 445 43L449 46H469Q523 49 533 63L521 213H283L249 155Q208 86 208 74ZM516 260Q516 271 504 416T490 562L463 519Q447 492 400 412L310 260L413 259Q516 259 516 260Z"></path></g></g></g></svg></mjx-container> is the just victor or <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: 0;" xmlns="http://www.w3.org/2000/svg" width="1.717ex" height="1.545ex" role="img" focusable="false" viewBox="0 -683 759 683"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D435" d="M231 637Q204 637 199 638T194 649Q194 676 205 682Q206 683 335 683Q594 683 608 681Q671 671 713 636T756 544Q756 480 698 429T565 360L555 357Q619 348 660 311T702 219Q702 146 630 78T453 1Q446 0 242 0Q42 0 39 2Q35 5 35 10Q35 17 37 24Q42 43 47 45Q51 46 62 46H68Q95 46 128 49Q142 52 147 61Q150 65 219 339T288 628Q288 635 231 637ZM649 544Q649 574 634 600T585 634Q578 636 493 637Q473 637 451 637T416 636H403Q388 635 384 626Q382 622 352 506Q352 503 351 500L320 374H401Q482 374 494 376Q554 386 601 434T649 544ZM595 229Q595 273 572 302T512 336Q506 337 429 337Q311 337 310 336Q310 334 293 263T258 122L240 52Q240 48 252 48T333 46Q422 46 429 47Q491 54 543 105T595 229Z"></path></g></g></g></svg></mjx-container> is</li>
+<li data-marpit-fragment="3">Both choices imply contradiction</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="37" data-class="invert" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<h1>Potential Solutions</h1>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="38" data-class="invert" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<h1>Potential Solutions</h1>
+<ul>
+<li>The Democratic Solution</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="39" data-class="invert" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<h1>Potential Solutions</h1>
+<ul>
+<li>The Democratic Solution - <span style='font-weight: 900; color: red; font-family: Cubano;'>FAIL</span></li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="40" data-class="invert" data-footer="Roderick T. Long, *In Defense of Public Space*" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--footer:Roderick T. Long, *In Defense of Public Space*;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<blockquote>
+<p>On the libertarian view, we have a right to the fruit of our labor, and we also have a right to what people freely give us. Public property can arise in both these ways.</p>
+</blockquote>
+<footer>Roderick T. Long, <em>In Defense of Public Space</em></footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="41" data-class="invert" data-footer="Roderick T. Long, *In Defense of Public Space*" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--footer:Roderick T. Long, *In Defense of Public Space*;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<blockquote>
+<p>Consider a village near a lake. It is common for the villagers to walk down to the lake to go fishing. In the early days of the community it’s hard to get to the lake because of all the bushes and fallen branches in the way. But over time, the way is cleared and a path forms — not through any centrally coordinated effort, but simply as a result of all the individuals walking that way day after day.</p>
+</blockquote>
+<footer>Roderick T. Long, <em>In Defense of Public Space</em></footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="42" data-class="invert" data-footer="Roderick T. Long, *In Defense of Public Space*" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--footer:Roderick T. Long, *In Defense of Public Space*;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<blockquote>
+<p>The cleared path is the product of labor — not any individual’s labor, but all of them together. If one villager decided to take advantage of the now-created path by setting up a gate and charging tolls, he would be violating the collective property right that the villagers together have earned.</p>
+</blockquote>
+<footer>Roderick T. Long, <em>In Defense of Public Space</em></footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="43" data-class="invert" data-footer="Roderick T. Long, *In Defense of Public Space*" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--footer:Roderick T. Long, *In Defense of Public Space*;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<blockquote>
+<p>Public property can also be the product of gift. In 19th-century England, it was common for roads to be built privately and then donated to the public for free use. This was done not out of altruism but because the roadbuilders owned land and businesses alongside the site of the new road, and they knew that having a road there would increase the value of their land and attract more customers to their businesses. Thus, the unorganized public can legitimately come to own land, both through original acquisition (the mixing of labor) and through voluntary transfer.</p>
+</blockquote>
+<footer>Roderick T. Long, <em>In Defense of Public Space</em></footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="44" data-class="invert" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<h1>Potential Solutions</h1>
+<ul>
+<li>The Democratic Solution - <span style='font-weight: 900; color: red; font-family: Cubano;'>FAIL</span></li>
+<li>Communal Labour</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="45" data-class="invert" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<h1>Potential Solutions</h1>
+<ul>
+<li>The Democratic Solution - <span style='font-weight: 900; color: red; font-family: Cubano;'>FAIL</span></li>
+<li>Communal Labour</li>
+<li>Title-Transfer to the Community</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="46" data-class="invert" data-footer="N. Stephan Kinsella, *Against Intellectual Property*" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--footer:N. Stephan Kinsella, *Against Intellectual Property*;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<blockquote>
+<p>As noted before, some libertarian IP advocates, such as Rand, hold that creation is the source of property rights. This confuses the nature and reasons for property rights, which lie in the undeniable fact of scarcity. Given scarcity and the correspondent possibility of conflict in the use of resources, conflicts are avoided and peace and cooperation are achieved by allocating property rights to such resources. And the purpose of property rights dictates the nature of such rules.</p>
+</blockquote>
+<footer>N. Stephan Kinsella, <em>Against Intellectual Property</em></footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="47" data-class="invert" data-footer="N. Stephan Kinsella, *Against Intellectual Property*" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--footer:N. Stephan Kinsella, *Against Intellectual Property*;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<blockquote>
+<p>For if the rules allocating property rights are to serve as objective rules that all can agree upon so as to avoid conflict, they cannot be biased or arbitrary. For this reason, unowned resources come to be owned—homesteaded or appropriated—by the first possessor.</p>
+</blockquote>
+<footer>N. Stephan Kinsella, <em>Against Intellectual Property</em></footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="48" data-class="invert" data-footer="N. Stephan Kinsella, *Against Intellectual Property*" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--footer:N. Stephan Kinsella, *Against Intellectual Property*;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<blockquote>
+<p>The general rule, then, is that ownership of a given scarce resource can be identified by determining who first occupied it. There are various ways to possess or occupy resources, and different ways to demonstrate or prove such occupation, depending upon the nature of the resource and the use to which it is put.</p>
+</blockquote>
+<footer>N. Stephan Kinsella, <em>Against Intellectual Property</em></footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="49" data-class="invert" data-footer="N. Stephan Kinsella, *Against Intellectual Property*" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--footer:N. Stephan Kinsella, *Against Intellectual Property*;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<blockquote>
+<p>Thus, I can pluck an apple from the wild and thereby homestead it, or I can fence in a plot of land for a farm. It is sometimes said that one form of occupation is “forming” or “creating” the thing. For example, I can sculpt a statue from a block of marble, or forge a sword from raw metal, or even “create” a farm on a plot of land.</p>
+</blockquote>
+<footer>N. Stephan Kinsella, <em>Against Intellectual Property</em></footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="50" data-class="invert" data-footer="N. Stephan Kinsella, *Against Intellectual Property*" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--footer:N. Stephan Kinsella, *Against Intellectual Property*;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<blockquote>
+<p>We can see from these examples that creation is relevant to the question of ownership of a given “created” scarce resource, such as a statue, sword, or farm, only to the extent that the act of creation is an act of occupation, or is otherwise evidence of first occupation. However, “creation” itself does not justify ownership in things; it is neither necessary nor sufficient.</p>
+</blockquote>
+<footer>N. Stephan Kinsella, <em>Against Intellectual Property</em></footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="51" data-class="invert" data-footer="N. Stephan Kinsella, *Against Intellectual Property*" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--footer:N. Stephan Kinsella, *Against Intellectual Property*;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<blockquote>
+<p>One cannot create some possibly disputed scarce resource without first using the raw materials used to create the item. But these raw materials are scarce, and either I own them or I do not. If not, then I do not own the resulting product. If I own the inputs, then, by virtue of such ownership, I own the resulting thing into which I transform them.</p>
+</blockquote>
+<footer>N. Stephan Kinsella, <em>Against Intellectual Property</em></footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="52" data-class="invert" data-footer="N. Stephan Kinsella, *Against Intellectual Property*" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--footer:N. Stephan Kinsella, *Against Intellectual Property*;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<blockquote>
+<p>Consider the forging of a sword. If I own some raw metal (because I mined it from ground I owned), then I own the same metal after I have shaped it into a sword. I do not need to rely on the fact of creation to own the sword, but only on my ownership of the factors used to make the sword.</p>
+</blockquote>
+<footer>N. Stephan Kinsella, <em>Against Intellectual Property</em></footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="53" data-class="invert" data-footer="N. Stephan Kinsella, *Against Intellectual Property*" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--footer:N. Stephan Kinsella, *Against Intellectual Property*;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<blockquote>
+<p>And I do not need creation to come to own the factors, since I can homestead them by simply mining them from the ground and thereby becoming the first possessor. On the other hand, if I fashion a sword using your metal, I do not own the resulting sword. In fact, I may owe you damages for trespass or conversion.</p>
+</blockquote>
+<footer>N. Stephan Kinsella, <em>Against Intellectual Property</em></footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="54" data-class="invert" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<h1>Potential Solutions</h1>
+<ul>
+<li>The Democratic Solution - <span style='font-weight: 900; color: red; font-family: Cubano;'>FAIL</span></li>
+<li>Communal Labour - <span style='font-weight: 900; color: red; font-family: Cubano;'>FAIL</span></li>
+<li>Title-Transfer to the Community</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="55" data-class="invert" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<h1>Potential Solutions</h1>
+<ul>
+<li>The Democratic Solution - <span style='font-weight: 900; color: red; font-family: Cubano;'>FAIL</span></li>
+<li>Communal Labour - <span style='font-weight: 900; color: red; font-family: Cubano;'>FAIL</span></li>
+<li>Title-Transfer to the Community - <span style='font-weight: 900; color: red; font-family: Cubano;'>FAIL</span></li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="56" data-class="invert" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<h1>Potential Solutions</h1>
+<ul>
+<li>The Democratic Solution - <span style='font-weight: 900; color: red; font-family: Cubano;'>FAIL</span></li>
+<li>Communal Labour - <span style='font-weight: 900; color: red; font-family: Cubano;'>FAIL</span></li>
+<li>Title-Transfer to the Community - <span style='font-weight: 900; color: red; font-family: Cubano;'>FAIL</span></li>
+<li>The polycentrist solution</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="57" data-class="invert" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<h1>Potential Solutions</h1>
+<ul>
+<li>The Democratic Solution - <span style='font-weight: 900; color: red; font-family: Cubano;'>FAIL</span></li>
+<li>Communal Labour - <span style='font-weight: 900; color: red; font-family: Cubano;'>FAIL</span></li>
+<li>Title-Transfer to the Community - <span style='font-weight: 900; color: red; font-family: Cubano;'>FAIL</span></li>
+<li>The polycentrist solution - <span style='font-weight: 900; color: red; font-family: Cubano;'>FAIL</span></li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="58" data-class="invert" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<h1>Potential Solutions</h1>
+<ul>
+<li>The Democratic Solution - <span style='font-weight: 900; color: red; font-family: Cubano;'>FAIL</span></li>
+<li>Communal Labour - <span style='font-weight: 900; color: red; font-family: Cubano;'>FAIL</span></li>
+<li>Title-Transfer to the Community - <span style='font-weight: 900; color: red; font-family: Cubano;'>FAIL</span></li>
+<li>The polycentrist solution - <span style='font-weight: 900; color: red; font-family: Cubano;'>FAIL</span></li>
+<li>Companies as a Counterexample</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="59" data-class="invert" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<h1>Potential Solutions</h1>
+<ul>
+<li>The Democratic Solution - <span style='font-weight: 900; color: red; font-family: Cubano;'>FAIL</span></li>
+<li>Communal Labour - <span style='font-weight: 900; color: red; font-family: Cubano;'>FAIL</span></li>
+<li>Title-Transfer to the Community - <span style='font-weight: 900; color: red; font-family: Cubano;'>FAIL</span></li>
+<li>The polycentrist solution - <span style='font-weight: 900; color: red; font-family: Cubano;'>FAIL</span></li>
+<li>Companies as a Counterexample - <span style='font-weight: 900; color: red; font-family: Cubano;'>FAIL</span></li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="60" data-class="invert" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<h1>The Blockean Proviso</h1>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="61" data-class="invert" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<p><img src="../images/donut-homestead.png" alt="" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="62" data-class="invert" data-footer="N. Stephan Kinsella, *Thoughts on the Latecomer and Homesteading Ideas; or, why the very idea of “ownership” implies that only libertarian principles are justifiable*" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<blockquote>
+<p>In a nutshell: de Jasay equates property with its owner’s “excluding” others from using it, for example by fencing in immovable property (e.g. land) or finding or creating (and keeping) movable property. Thus, the principle means “let ownership stand,” i.e., that claims to ownership of property appropriated from the state of nature or acquired ultimately through a chain of title tracing back to such an appropriation should be respected.</p>
+</blockquote>
+<footer>N. Stephan Kinsella, <em>Thoughts on the Latecomer and Homesteading Ideas; or, why the very idea of “ownership” implies that only libertarian principles are justifiable</em></footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="63" data-class="invert" data-footer="N. Stephan Kinsella, *Thoughts on the Latecomer and Homesteading Ideas; or, why the very idea of “ownership” implies that only libertarian principles are justifiable*" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<blockquote>
+<p>De Jasay uses this idea to demolish the criticism that homesteading unowned resources unilaterally and unjustifiably imposes on others moral duties to refrain from interfering.</p>
+</blockquote>
+<footer>N. Stephan Kinsella, <em>Thoughts on the Latecomer and Homesteading Ideas; or, why the very idea of “ownership” implies that only libertarian principles are justifiable</em></footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="64" data-class="invert" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<p><img src="../images/donut-homestead.png" alt="" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="65" data-class="invert" data-footer="N. Stephan Kinsella, *Thoughts on the Latecomer and Homesteading Ideas; or, why the very idea of “ownership” implies that only libertarian principles are justifiable*" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<blockquote>
+<p>Note that the de Jasayan idea of “let exclusion stand” or the Hoppean idea that the prior-later distinction is of crucial importance also sheds light on the nature of homesteading itself. Often the question is asked as to what types of acts constitute or are sufficient for homesteading (or “embordering” as Hoppe sometimes refers to it); what type of “labor” must be “mixed with” a thing; and to what property does the homesteading extend? What “counts” as “sufficient” homesteading? Etc.</p>
+</blockquote>
+<footer>N. Stephan Kinsella, <em>Thoughts on the Latecomer and Homesteading Ideas; or, why the very idea of “ownership” implies that only libertarian principles are justifiable</em></footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="66" data-class="invert" data-footer="N. Stephan Kinsella, *Thoughts on the Latecomer and Homesteading Ideas; or, why the very idea of “ownership” implies that only libertarian principles are justifiable*" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<blockquote>
+<p>And we can see that in a way the answer to these questions is related to the issue of what is the thing in dispute. In other words, if B claims ownership of a thing possessed (or formerly possessed) by A, then the very framing of the dispute helps to identify what the thing is and what counts as possession of it.</p>
+</blockquote>
+<footer>N. Stephan Kinsella, <em>Thoughts on the Latecomer and Homesteading Ideas; or, why the very idea of “ownership” implies that only libertarian principles are justifiable</em></footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="67" data-class="invert" data-footer="N. Stephan Kinsella, *Thoughts on the Latecomer and Homesteading Ideas; or, why the very idea of “ownership” implies that only libertarian principles are justifiable*" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<blockquote>
+<p>If B claims ownership of a given resource, he must want the right to control it according to its nature. Then the question becomes, did someone else previously control it (according to its nature); i.e., did someone else already homestead it, so that B is only a latecomer?</p>
+</blockquote>
+<footer>N. Stephan Kinsella, <em>Thoughts on the Latecomer and Homesteading Ideas; or, why the very idea of “ownership” implies that only libertarian principles are justifiable</em></footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="68" data-class="invert" data-footer="N. Stephan Kinsella, *Thoughts on the Latecomer and Homesteading Ideas; or, why the very idea of “ownership” implies that only libertarian principles are justifiable*" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<blockquote>
+<p>This ties in with de Jasay’s “let exclusion stand” principle, which rests on the idea that if someone is actually able to control a resource such that others are excluded, then this exclusion should “stand.” Of course, the physical nature of a given scarce resource and the way in which humans use such resources will determine the nature of actions needed to “control” it and exclude others.</p>
+</blockquote>
+<footer>N. Stephan Kinsella, <em>Thoughts on the Latecomer and Homesteading Ideas; or, why the very idea of “ownership” implies that only libertarian principles are justifiable</em></footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="69" data-class="invert" data-footer="N. Stephan Kinsella, *Thoughts on the Latecomer and Homesteading Ideas; or, why the very idea of “ownership” implies that only libertarian principles are justifiable*" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<blockquote>
+<p>De Jasay, as a matter of fact, considers two basic types of appropriation: “finding and keeping” and “enclosure.” The former applies primarily to movable objects that may be found, taken, and hidden or used exclusively. Since the thing has no other owner, prima facie no one is entitled to object to the first possessor claiming ownership.</p>
+</blockquote>
+<footer>N. Stephan Kinsella, <em>Thoughts on the Latecomer and Homesteading Ideas; or, why the very idea of “ownership” implies that only libertarian principles are justifiable</em></footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="70" data-class="invert" data-footer="N. Stephan Kinsella, *Thoughts on the Latecomer and Homesteading Ideas; or, why the very idea of “ownership” implies that only libertarian principles are justifiable*" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<blockquote>
+<p>For immovable property (land), possession is taken by “enclosing” the land and incurring exclusion costs, e.g., erecting a fence (again, similar to Hoppe’s “embordering”—establishing an objective, intersubjectively ascertainable border). As in the case with movables, others’ loss of the opportunity to appropriate the property does not give rise to a claim sufficient to oust the first possessor (if it did, it would be an ownership claim).</p>
+</blockquote>
+<footer>N. Stephan Kinsella, <em>Thoughts on the Latecomer and Homesteading Ideas; or, why the very idea of “ownership” implies that only libertarian principles are justifiable</em></footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="71" data-class="invert" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<p><img src="../images/donut-homestead.png" alt="" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="72" data-class="invert" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<h1>Direction vs Possession: What is Ownership?</h1>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="73" data-class="invert" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<h1>On the Impossibility of Intellectual Property Rights</h1>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="74" data-marpit-fragments="2" data-class="invert" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<h1>On the Impossibility of Intellectual Property Rights</h1>
+<ul>
+<li data-marpit-fragment="1">To say that person <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: 0;" xmlns="http://www.w3.org/2000/svg" width="1.697ex" height="1.62ex" role="img" focusable="false" viewBox="0 -716 750 716"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D434" d="M208 74Q208 50 254 46Q272 46 272 35Q272 34 270 22Q267 8 264 4T251 0Q249 0 239 0T205 1T141 2Q70 2 50 0H42Q35 7 35 11Q37 38 48 46H62Q132 49 164 96Q170 102 345 401T523 704Q530 716 547 716H555H572Q578 707 578 706L606 383Q634 60 636 57Q641 46 701 46Q726 46 726 36Q726 34 723 22Q720 7 718 4T704 0Q701 0 690 0T651 1T578 2Q484 2 455 0H443Q437 6 437 9T439 27Q443 40 445 43L449 46H469Q523 49 533 63L521 213H283L249 155Q208 86 208 74ZM516 260Q516 271 504 416T490 562L463 519Q447 492 400 412L310 260L413 259Q516 259 516 260Z"></path></g></g></g></svg></mjx-container> has a property right in <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: 0;" xmlns="http://www.w3.org/2000/svg" width="1.928ex" height="1.545ex" role="img" focusable="false" viewBox="0 -683 852 683"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D44B" d="M42 0H40Q26 0 26 11Q26 15 29 27Q33 41 36 43T55 46Q141 49 190 98Q200 108 306 224T411 342Q302 620 297 625Q288 636 234 637H206Q200 643 200 645T202 664Q206 677 212 683H226Q260 681 347 681Q380 681 408 681T453 682T473 682Q490 682 490 671Q490 670 488 658Q484 643 481 640T465 637Q434 634 411 620L488 426L541 485Q646 598 646 610Q646 628 622 635Q617 635 609 637Q594 637 594 648Q594 650 596 664Q600 677 606 683H618Q619 683 643 683T697 681T738 680Q828 680 837 683H845Q852 676 852 672Q850 647 840 637H824Q790 636 763 628T722 611T698 593L687 584Q687 585 592 480L505 384Q505 383 536 304T601 142T638 56Q648 47 699 46Q734 46 734 37Q734 35 732 23Q728 7 725 4T711 1Q708 1 678 1T589 2Q528 2 496 2T461 1Q444 1 444 10Q444 11 446 25Q448 35 450 39T455 44T464 46T480 47T506 54Q523 62 523 64Q522 64 476 181L429 299Q241 95 236 84Q232 76 232 72Q232 53 261 47Q262 47 267 47T273 46Q276 46 277 46T280 45T283 42T284 35Q284 26 282 19Q279 6 276 4T261 1Q258 1 243 1T201 2T142 2Q64 2 42 0Z"></path></g></g></g></svg></mjx-container> is to say that he should win any conflict over the use of <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: 0;" xmlns="http://www.w3.org/2000/svg" width="1.928ex" height="1.545ex" role="img" focusable="false" viewBox="0 -683 852 683"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D44B" d="M42 0H40Q26 0 26 11Q26 15 29 27Q33 41 36 43T55 46Q141 49 190 98Q200 108 306 224T411 342Q302 620 297 625Q288 636 234 637H206Q200 643 200 645T202 664Q206 677 212 683H226Q260 681 347 681Q380 681 408 681T453 682T473 682Q490 682 490 671Q490 670 488 658Q484 643 481 640T465 637Q434 634 411 620L488 426L541 485Q646 598 646 610Q646 628 622 635Q617 635 609 637Q594 637 594 648Q594 650 596 664Q600 677 606 683H618Q619 683 643 683T697 681T738 680Q828 680 837 683H845Q852 676 852 672Q850 647 840 637H824Q790 636 763 628T722 611T698 593L687 584Q687 585 592 480L505 384Q505 383 536 304T601 142T638 56Q648 47 699 46Q734 46 734 37Q734 35 732 23Q728 7 725 4T711 1Q708 1 678 1T589 2Q528 2 496 2T461 1Q444 1 444 10Q444 11 446 25Q448 35 450 39T455 44T464 46T480 47T506 54Q523 62 523 64Q522 64 476 181L429 299Q241 95 236 84Q232 76 232 72Q232 53 261 47Q262 47 267 47T273 46Q276 46 277 46T280 45T283 42T284 35Q284 26 282 19Q279 6 276 4T261 1Q258 1 243 1T201 2T142 2Q64 2 42 0Z"></path></g></g></g></svg></mjx-container></li>
+<li data-marpit-fragment="2">Ideas are not scarce, so there can't be conflicts over ideas</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="75" data-class="invert" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<h2>IP <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.025ex;" xmlns="http://www.w3.org/2000/svg" width="3.706ex" height="1.181ex" role="img" focusable="false" viewBox="0 -511 1638 522"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><path data-c="27F6" d="M84 237T84 250T98 270H1444Q1328 357 1301 493Q1301 494 1301 496T1300 499Q1300 511 1317 511H1320Q1329 511 1332 510T1338 506T1341 497T1344 481T1352 456Q1374 389 1425 336T1544 261Q1553 258 1553 250Q1553 244 1548 241T1524 231T1486 212Q1445 186 1415 152T1370 85T1349 35T1341 4Q1339 -6 1336 -8T1320 -11Q1300 -11 1300 0Q1300 7 1305 25Q1337 151 1444 230H98Q84 237 84 250Z"></path></g></g></g></svg></mjx-container> Ethical Stasis</h2>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="76" data-class="invert" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<h1>Related Reading</h1>
+<ul>
+<li>LiquidZulu, <em>Georgists Don’t Understand Rights</em></li>
+<li>Łukasz Dominiak, <em>The Blockian Proviso and the Rationality of Property Rights</em></li>
+<li>N. Stephan Kinsella, <em>Thoughts on the Latecomer and Homesteading Ideas; or, why the very idea of “ownership” implies that only libertarian principles are justifiable</em></li>
+</ul>
+</section>
+<script>!function(){"use strict";const t={h1:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"1"},style:"display: block; font-size: 2em; margin-block-start: 0.67em; margin-block-end: 0.67em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h2:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"2"},style:"display: block; font-size: 1.5em; margin-block-start: 0.83em; margin-block-end: 0.83em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h3:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"3"},style:"display: block; font-size: 1.17em; margin-block-start: 1em; margin-block-end: 1em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h4:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"4"},style:"display: block; margin-block-start: 1.33em; margin-block-end: 1.33em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h5:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"5"},style:"display: block; font-size: 0.83em; margin-block-start: 1.67em; margin-block-end: 1.67em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h6:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"6"},style:"display: block; font-size: 0.67em; margin-block-start: 2.33em; margin-block-end: 2.33em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},span:{proto:()=>HTMLSpanElement},pre:{proto:()=>HTMLElement,style:"display: block; font-family: monospace; white-space: pre; margin: 1em 0; --marp-auto-scaling-white-space: pre;"}},e="data-marp-auto-scaling-wrapper",i="data-marp-auto-scaling-svg",n="data-marp-auto-scaling-container";class s extends HTMLElement{constructor(){super(),this.svgPreserveAspectRatio="xMinYMid meet";const t=t=>([e])=>{const{width:i,height:n}=e.contentRect;this[t]={width:i,height:n},this.updateSVGRect()};this.attachShadow({mode:"open"}),this.containerObserver=new ResizeObserver(t("containerSize")),this.wrapperObserver=new ResizeObserver(((...e)=>{t("wrapperSize")(...e),this.flushSvgDisplay()}))}static get observedAttributes(){return["data-downscale-only"]}connectedCallback(){var t,s,o,r,a;this.shadowRoot.innerHTML=`\n<style>\n  svg[${i}] { display: block; width: 100%; height: auto; vertical-align: top; }\n  span[${n}] { display: table; white-space: var(--marp-auto-scaling-white-space, nowrap); width: max-content; }\n</style>\n<div ${e}>\n  <svg part="svg" ${i}>\n    <foreignObject><span ${n}><slot></slot></span></foreignObject>\n  </svg>\n</div>\n    `.split(/\n\s*/).join(""),this.wrapper=null!==(t=this.shadowRoot.querySelector(`div[${e}]`))&&void 0!==t?t:void 0;const l=this.svg;this.svg=null!==(o=null===(s=this.wrapper)||void 0===s?void 0:s.querySelector(`svg[${i}]`))&&void 0!==o?o:void 0,this.svg!==l&&(this.svgComputedStyle=this.svg?window.getComputedStyle(this.svg):void 0),this.container=null!==(a=null===(r=this.svg)||void 0===r?void 0:r.querySelector(`span[${n}]`))&&void 0!==a?a:void 0,this.observe()}disconnectedCallback(){this.svg=void 0,this.svgComputedStyle=void 0,this.wrapper=void 0,this.container=void 0,this.observe()}attributeChangedCallback(){this.observe()}flushSvgDisplay(){const{svg:t}=this;t&&(t.style.display="inline",requestAnimationFrame((()=>{t.style.display=""})))}observe(){this.containerObserver.disconnect(),this.wrapperObserver.disconnect(),this.wrapper&&this.wrapperObserver.observe(this.wrapper),this.container&&this.containerObserver.observe(this.container),this.svgComputedStyle&&this.observeSVGStyle(this.svgComputedStyle)}observeSVGStyle(t){const e=()=>{const i=(()=>{const e=t.getPropertyValue("--preserve-aspect-ratio");if(e)return e.trim();return`x${(({textAlign:t,direction:e})=>{if(t.endsWith("left"))return"Min";if(t.endsWith("right"))return"Max";if("start"===t||"end"===t){let i="rtl"===e;return"end"===t&&(i=!i),i?"Max":"Min"}return"Mid"})(t)}YMid meet`})();i!==this.svgPreserveAspectRatio&&(this.svgPreserveAspectRatio=i,this.updateSVGRect()),t===this.svgComputedStyle&&requestAnimationFrame(e)};e()}updateSVGRect(){var t,e,i,n,s,o,r;let a=Math.ceil(null!==(e=null===(t=this.containerSize)||void 0===t?void 0:t.width)&&void 0!==e?e:0);const l=Math.ceil(null!==(n=null===(i=this.containerSize)||void 0===i?void 0:i.height)&&void 0!==n?n:0);void 0!==this.dataset.downscaleOnly&&(a=Math.max(a,null!==(o=null===(s=this.wrapperSize)||void 0===s?void 0:s.width)&&void 0!==o?o:0));const c=null===(r=this.svg)||void 0===r?void 0:r.querySelector(":scope > foreignObject");if(null==c||c.setAttribute("width",`${a}`),null==c||c.setAttribute("height",`${l}`),this.svg&&(this.svg.setAttribute("viewBox",`0 0 ${a} ${l}`),this.svg.setAttribute("preserveAspectRatio",this.svgPreserveAspectRatio),this.svg.style.height=a<=0||l<=0?"0":""),this.container){const t=this.svgPreserveAspectRatio.toLowerCase();this.container.style.marginLeft=t.startsWith("xmid")||t.startsWith("xmax")?"auto":"0",this.container.style.marginRight=t.startsWith("xmi")?"auto":"0"}}}const o=(t,{attrs:e={},style:i})=>class extends t{constructor(...t){super(...t);for(const[t,i]of Object.entries(e))this.hasAttribute(t)||this.setAttribute(t,i);this.attachShadow({mode:"open"})}static get observedAttributes(){return["data-auto-scaling"]}connectedCallback(){this._update()}attributeChangedCallback(){this._update()}_update(){const t=i?`<style>:host { ${i} }</style>`:"";let e="<slot></slot>";const{autoScaling:n}=this.dataset;if(void 0!==n){e=`<marp-auto-scaling exportparts="svg:auto-scaling" ${"downscale-only"===n?"data-downscale-only":""}>${e}</marp-auto-scaling>`}this.shadowRoot.innerHTML=t+e}};let r;const a=Symbol();let l;const c="marpitSVGPolyfill:setZoomFactor,",d=Symbol(),g=Symbol();const h=()=>{const t="Apple Computer, Inc."===navigator.vendor,e=t?[u]:[],i={then:e=>(t?(async()=>{if(void 0===l){const t=document.createElement("canvas");t.width=10,t.height=10;const e=t.getContext("2d"),i=new Image(10,10),n=new Promise((t=>{i.addEventListener("load",(()=>t()))}));i.crossOrigin="anonymous",i.src="data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2210%22%20height%3D%2210%22%20viewBox%3D%220%200%201%201%22%3E%3CforeignObject%20width%3D%221%22%20height%3D%221%22%20requiredExtensions%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%22%3E%3Cdiv%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%22%20style%3D%22width%3A%201px%3B%20height%3A%201px%3B%20background%3A%20red%3B%20position%3A%20relative%22%3E%3C%2Fdiv%3E%3C%2FforeignObject%3E%3C%2Fsvg%3E",await n,e.drawImage(i,0,0),l=e.getImageData(5,5,1,1).data[3]<128}return l})().then((t=>{null==e||e(t?[u]:[])})):null==e||e([]),i)};return Object.assign(e,i)};let p,m;function u(t){const e="object"==typeof t&&t.target||document,i="object"==typeof t?t.zoom:t;window[g]||(Object.defineProperty(window,g,{configurable:!0,value:!0}),document.body.style.zoom=1.0001,document.body.offsetHeight,document.body.style.zoom=1,window.addEventListener("message",(({data:t,origin:e})=>{if(e===window.origin)try{if(t&&"string"==typeof t&&t.startsWith(c)){const[,e]=t.split(","),i=Number.parseFloat(e);Number.isNaN(i)||(m=i)}}catch(t){console.error(t)}})));let n=!1;Array.from(e.querySelectorAll("svg[data-marpit-svg]"),(t=>{var e,s,o,r;t.style.transform||(t.style.transform="translateZ(0)");const a=i||m||t.currentScale||1;p!==a&&(p=a,n=a);const l=t.getBoundingClientRect(),{length:c}=t.children;for(let i=0;i<c;i+=1){const n=t.children[i];if(n.getScreenCTM){const t=n.getScreenCTM();if(t){const i=null!==(s=null===(e=n.x)||void 0===e?void 0:e.baseVal.value)&&void 0!==s?s:0,c=null!==(r=null===(o=n.y)||void 0===o?void 0:o.baseVal.value)&&void 0!==r?r:0,d=n.children.length;for(let e=0;e<d;e+=1){const s=n.children[e];if("SECTION"===s.tagName){const{style:e}=s;e.transformOrigin||(e.transformOrigin=`${-i}px ${-c}px`),e.transform=`scale(${a}) matrix(${t.a}, ${t.b}, ${t.c}, ${t.d}, ${t.e-l.left}, ${t.f-l.top}) translateZ(0.0001px)`;break}}}}}})),!1!==n&&Array.from(e.querySelectorAll("iframe"),(({contentWindow:t})=>{null==t||t.postMessage(`${c}${n}`,"null"===window.origin?"*":window.origin)}))}function v({once:t=!1,target:e=document}={}){const i=function(t=document){if(t[d])return t[d];let e=!0;const i=()=>{e=!1,delete t[d]};Object.defineProperty(t,d,{configurable:!0,value:i});let n=[],s=!1;(async()=>{try{n=await h()}finally{s=!0}})();const o=()=>{for(const e of n)e({target:t});s&&0===n.length||e&&window.requestAnimationFrame(o)};return o(),i}(e);return t?(i(),()=>{}):i}p=1,m=void 0;const b=Symbol(),w=(e=document)=>{if("undefined"==typeof window)throw new Error("Marp Core's browser script is valid only in browser context.");if(((e=document)=>{const i=window[a];i||customElements.define("marp-auto-scaling",s);for(const n of Object.keys(t)){const s=`marp-${n}`,a=t[n].proto();null!=r||(r=!!document.createElement("div",{is:"marp-auto-scaling"}).outerHTML.startsWith("<div is")),r&&a!==HTMLElement?i||customElements.define(s,o(a,{style:t[n].style}),{extends:n}):(i||customElements.define(s,o(HTMLElement,t[n])),e.querySelectorAll(`${n}[is="${s}"]`).forEach((t=>{t.outerHTML=t.outerHTML.replace(new RegExp(`^<${n}`,"i"),`<${s}`).replace(new RegExp(`</${n}>$`,"i"),`</${s}>`)})))}window[a]=!0})(e),e[b])return e[b];const i=v({target:e}),n=()=>{i(),delete e[b]},l=Object.assign(n,{cleanup:n,update:()=>w(e)});return Object.defineProperty(e,b,{configurable:!0,value:l}),l},y=document.currentScript;w(y?y.getRootNode():document)}();
+</script></foreignObject></svg></div><script>/*!! License: https://unpkg.com/@marp-team/marp-cli@2.4.0/lib/bespoke.js.LICENSE.txt */
+!function(){"use strict";const e=document.body,t=(...e)=>history.replaceState(...e),n="presenter",r="next",o=["",n,r],i="bespoke-marp-",a=`data-${i}`,s=(e,{protocol:t,host:n,pathname:r,hash:o}=location)=>{const i=e.toString();return`${t}//${n}${r}${i?"?":""}${i}${o}`},l=()=>e.dataset.bespokeView,d=e=>new URLSearchParams(location.search).get(e),c=(e,n={})=>{var r;const o={location,setter:t,...n},i=new URLSearchParams(o.location.search);for(const t of Object.keys(e)){const n=e[t];"string"==typeof n?i.set(t,n):i.delete(t)}try{o.setter({...null!==(r=window.history.state)&&void 0!==r?r:{}},"",s(i,o.location))}catch(e){console.error(e)}},u=(()=>{const e="bespoke-marp";try{return localStorage.setItem(e,e),localStorage.removeItem(e),!0}catch(e){return!1}})(),f=e=>{try{return localStorage.getItem(e)}catch(e){return null}},m=(e,t)=>{try{return localStorage.setItem(e,t),!0}catch(e){return!1}},g=e=>{try{return localStorage.removeItem(e),!0}catch(e){return!1}},p=(e,t)=>{const n="aria-hidden";t?e.setAttribute(n,"true"):e.removeAttribute(n)},v=e=>{e.parent.classList.add(`${i}parent`),e.slides.forEach((e=>e.classList.add(`${i}slide`))),e.on("activate",(t=>{const n=`${i}active`,r=t.slide,o=r.classList,a=!o.contains(n);if(e.slides.forEach((e=>{e.classList.remove(n),p(e,!0)})),o.add(n),p(r,!1),a){const e=`${n}-ready`;o.add(e),document.body.clientHeight,o.remove(e)}}))},h=e=>{let t=0,n=0;Object.defineProperty(e,"fragments",{enumerable:!0,value:e.slides.map((e=>[null,...e.querySelectorAll("[data-marpit-fragment]")]))});const r=r=>void 0!==e.fragments[t][n+r],o=(r,o)=>{t=r,n=o,e.fragments.forEach(((e,t)=>{e.forEach(((e,n)=>{if(null==e)return;const i=t<r||t===r&&n<=o;e.setAttribute(`${a}fragment`,(i?"":"in")+"active");const s=`${a}current-fragment`;t===r&&n===o?e.setAttribute(s,"current"):e.removeAttribute(s)}))})),e.fragmentIndex=o;const i={slide:e.slides[r],index:r,fragments:e.fragments[r],fragmentIndex:o};e.fire("fragment",i)};e.on("next",(({fragment:i=!0})=>{if(i){if(r(1))return o(t,n+1),!1;const i=t+1;e.fragments[i]&&o(i,0)}else{const r=e.fragments[t].length;if(n+1<r)return o(t,r-1),!1;const i=e.fragments[t+1];i&&o(t+1,i.length-1)}})),e.on("prev",(({fragment:i=!0})=>{if(r(-1)&&i)return o(t,n-1),!1;const a=t-1;e.fragments[a]&&o(a,e.fragments[a].length-1)})),e.on("slide",(({index:t,fragment:n})=>{let r=0;if(void 0!==n){const o=e.fragments[t];if(o){const{length:e}=o;r=-1===n?e-1:Math.min(Math.max(n,0),e-1)}}o(t,r)})),o(0,0)},y=document,b=()=>!(!y.fullscreenEnabled&&!y.webkitFullscreenEnabled),w=()=>!(!y.fullscreenElement&&!y.webkitFullscreenElement),x=e=>{e.fullscreen=()=>{b()&&(async()=>{return w()?null===(e=y.exitFullscreen||y.webkitExitFullscreen)||void 0===e?void 0:e.call(y):((e=y.body)=>{var t;return null===(t=e.requestFullscreen||e.webkitRequestFullscreen)||void 0===t?void 0:t.call(e)})();var e})()},document.addEventListener("keydown",(t=>{"f"!==t.key&&"F11"!==t.key||t.altKey||t.ctrlKey||t.metaKey||!b()||(e.fullscreen(),t.preventDefault())}))},k=`${i}inactive`,$=(e=2e3)=>({parent:t,fire:n})=>{const r=t.classList,o=e=>n(`marp-${e?"":"in"}active`);let i;const a=()=>{i&&clearTimeout(i),i=setTimeout((()=>{r.add(k),o()}),e),r.contains(k)&&(r.remove(k),o(!0))};for(const e of["mousedown","mousemove","touchend"])document.addEventListener(e,a);setTimeout(a,0)},E=["AUDIO","BUTTON","INPUT","SELECT","TEXTAREA","VIDEO"],L=e=>{e.parent.addEventListener("keydown",(e=>{if(!e.target)return;const t=e.target;(E.includes(t.nodeName)||"true"===t.contentEditable)&&e.stopPropagation()}))},S=e=>{window.addEventListener("load",(()=>{for(const t of e.slides){const e=t.querySelector("marp-auto-scaling, [data-auto-scaling], [data-marp-fitting]");t.setAttribute(`${a}load`,e?"":"hideable")}}))},P=({interval:e=250}={})=>t=>{document.addEventListener("keydown",(e=>{if(" "===e.key&&e.shiftKey)t.prev();else if("ArrowLeft"===e.key||"ArrowUp"===e.key||"PageUp"===e.key)t.prev({fragment:!e.shiftKey});else if(" "!==e.key||e.shiftKey)if("ArrowRight"===e.key||"ArrowDown"===e.key||"PageDown"===e.key)t.next({fragment:!e.shiftKey});else if("End"===e.key)t.slide(t.slides.length-1,{fragment:-1});else{if("Home"!==e.key)return;t.slide(0)}else t.next();e.preventDefault()}));let n,r,o=0;t.parent.addEventListener("wheel",(i=>{let a=!1;const s=(e,t)=>{e&&(a=a||((e,t)=>((e,t)=>{const n="X"===t?"Width":"Height";return e[`client${n}`]<e[`scroll${n}`]})(e,t)&&((e,t)=>{const{overflow:n}=e,r=e[`overflow${t}`];return"auto"===n||"scroll"===n||"auto"===r||"scroll"===r})(getComputedStyle(e),t))(e,t)),(null==e?void 0:e.parentElement)&&s(e.parentElement,t)};if(0!==i.deltaX&&s(i.target,"X"),0!==i.deltaY&&s(i.target,"Y"),a)return;i.preventDefault();const l=Math.sqrt(i.deltaX**2+i.deltaY**2);if(void 0!==i.wheelDelta){if(void 0===i.webkitForce&&Math.abs(i.wheelDelta)<40)return;if(i.deltaMode===i.DOM_DELTA_PIXEL&&l<4)return}else if(i.deltaMode===i.DOM_DELTA_PIXEL&&l<12)return;r&&clearTimeout(r),r=setTimeout((()=>{n=0}),e);const d=Date.now()-o<e,c=l<=n;if(n=l,d||c)return;let u;(i.deltaX>0||i.deltaY>0)&&(u="next"),(i.deltaX<0||i.deltaY<0)&&(u="prev"),u&&(t[u](),o=Date.now())}))},T=(e=`.${i}osc`)=>{const t=document.querySelector(e);if(!t)return()=>{};const n=(e,n)=>{t.querySelectorAll(`[${a}osc=${JSON.stringify(e)}]`).forEach(n)};return b()||n("fullscreen",(e=>e.style.display="none")),u||n("presenter",(e=>{e.disabled=!0,e.title="Presenter view is disabled due to restricted localStorage."})),e=>{t.addEventListener("click",(t=>{if(t.target instanceof HTMLElement){const{bespokeMarpOsc:n}=t.target.dataset;n&&t.target.blur();const r={fragment:!t.shiftKey};"next"===n?e.next(r):"prev"===n?e.prev(r):"fullscreen"===n?null==e||e.fullscreen():"presenter"===n&&e.openPresenterView()}})),e.parent.appendChild(t),e.on("activate",(({index:t})=>{n("page",(n=>n.textContent=`Page ${t+1} of ${e.slides.length}`))})),e.on("fragment",(({index:t,fragments:r,fragmentIndex:o})=>{n("prev",(e=>e.disabled=0===t&&0===o)),n("next",(n=>n.disabled=t===e.slides.length-1&&o===r.length-1))})),e.on("marp-active",(()=>p(t,!1))),e.on("marp-inactive",(()=>p(t,!0))),b()&&(e=>{for(const t of["","webkit"])y.addEventListener(t+"fullscreenchange",e)})((()=>n("fullscreen",(e=>e.classList.toggle("exit",b()&&w())))))}},_=e=>{window.addEventListener("message",(t=>{if(t.origin!==window.origin)return;const[n,r]=t.data.split(":");if("navigate"===n){const[t,n]=r.split(",");let o=Number.parseInt(t,10),i=Number.parseInt(n,10)+1;i>=e.fragments[o].length&&(o+=1,i=0),e.slide(o,{fragment:i})}}))};var I=["area","base","br","col","command","embed","hr","img","input","keygen","link","meta","param","source","track","wbr"];let M=e=>String(e).replace(/[&<>"']/g,(e=>`&${A[e]};`)),A={"&":"amp","<":"lt",">":"gt",'"':"quot","'":"apos"},D="dangerouslySetInnerHTML",O={className:"class",htmlFor:"for"},C={};function N(e,t){let n=[],r="";t=t||{};for(let e=arguments.length;e-- >2;)n.push(arguments[e]);if("function"==typeof e)return t.children=n.reverse(),e(t);if(e){if(r+="<"+e,t)for(let e in t)!1!==t[e]&&null!=t[e]&&e!==D&&(r+=` ${O[e]?O[e]:M(e)}="${M(t[e])}"`);r+=">"}if(-1===I.indexOf(e)){if(t[D])r+=t[D].__html;else for(;n.length;){let e=n.pop();if(e)if(e.pop)for(let t=e.length;t--;)n.push(e[t]);else r+=!0===C[e]?e:M(e)}r+=e?`</${e}>`:""}return C[r]=!0,r}const B=({children:e})=>N(null,null,...e),q=`${i}presenter-`,K={container:`${q}container`,dragbar:`${q}dragbar-container`,next:`${q}next`,nextContainer:`${q}next-container`,noteContainer:`${q}note-container`,noteWrapper:`${q}note-wrapper`,noteButtons:`${q}note-buttons`,infoContainer:`${q}info-container`,infoPage:`${q}info-page`,infoPageText:`${q}info-page-text`,infoPagePrev:`${q}info-page-prev`,infoPageNext:`${q}info-page-next`,noteButtonsBigger:`${q}note-bigger`,noteButtonsSmaller:`${q}note-smaller`,infoTime:`${q}info-time`,infoTimer:`${q}info-timer`},F=e=>{const{title:t}=document;document.title="[Presenter view]"+(t?` - ${t}`:"");const n={},r=e=>(n[e]=n[e]||document.querySelector(`.${e}`),n[e]);document.body.appendChild((e=>{const t=document.createElement("div");return t.className=K.container,t.appendChild(e),t.insertAdjacentHTML("beforeend",N(B,null,N("div",{class:K.nextContainer},N("iframe",{class:K.next,src:"?view=next"})),N("div",{class:K.dragbar}),N("div",{class:K.noteContainer},N("div",{class:K.noteWrapper}),N("div",{class:K.noteButtons},N("button",{class:K.noteButtonsSmaller,tabindex:"-1",title:"Smaller notes font size"},"Smaller notes font size"),N("button",{class:K.noteButtonsBigger,tabindex:"-1",title:"Bigger notes font size"},"Bigger notes font size"))),N("div",{class:K.infoContainer},N("div",{class:K.infoPage},N("button",{class:K.infoPagePrev,tabindex:"-1",title:"Previous"},"Previous"),N("span",{class:K.infoPageText}),N("button",{class:K.infoPageNext,tabindex:"-1",title:"Next"},"Next")),N("time",{class:K.infoTime,title:"Current time"}),N("time",{class:K.infoTimer,title:"Timer"})))),t})(e.parent)),(e=>{let t=!1;r(K.dragbar).addEventListener("mousedown",(()=>{t=!0,r(K.dragbar).classList.add("active")})),window.addEventListener("mouseup",(()=>{t=!1,r(K.dragbar).classList.remove("active")})),window.addEventListener("mousemove",(e=>{if(!t)return;const n=e.clientX/document.documentElement.clientWidth*100;r(K.container).style.setProperty("--bespoke-marp-presenter-split-ratio",`${Math.max(0,Math.min(100,n))}%`)})),r(K.nextContainer).addEventListener("click",(()=>e.next()));const n=r(K.next),o=(i=n,(e,t)=>{var n;return null===(n=i.contentWindow)||void 0===n?void 0:n.postMessage(`navigate:${e},${t}`,"null"===window.origin?"*":window.origin)});var i;n.addEventListener("load",(()=>{r(K.nextContainer).classList.add("active"),o(e.slide(),e.fragmentIndex),e.on("fragment",(({index:e,fragmentIndex:t})=>o(e,t)))}));const a=document.querySelectorAll(".bespoke-marp-note");a.forEach((e=>{e.addEventListener("keydown",(e=>e.stopPropagation())),r(K.noteWrapper).appendChild(e)})),e.on("activate",(()=>a.forEach((t=>t.classList.toggle("active",t.dataset.index==e.slide())))));let s=0;const l=e=>{s=Math.max(-5,s+e),r(K.noteContainer).style.setProperty("--bespoke-marp-note-font-scale",(1.2**s).toFixed(4))},d=()=>l(1),c=()=>l(-1),u=r(K.noteButtonsBigger),f=r(K.noteButtonsSmaller);u.addEventListener("click",(()=>{u.blur(),d()})),f.addEventListener("click",(()=>{f.blur(),c()})),document.addEventListener("keydown",(e=>{"+"===e.key&&d(),"-"===e.key&&c()}),!0),e.on("activate",(({index:t})=>{r(K.infoPageText).textContent=`${t+1} / ${e.slides.length}`}));const m=r(K.infoPagePrev),g=r(K.infoPageNext);m.addEventListener("click",(t=>{m.blur(),e.prev({fragment:!t.shiftKey})})),g.addEventListener("click",(t=>{g.blur(),e.next({fragment:!t.shiftKey})})),e.on("fragment",(({index:t,fragments:n,fragmentIndex:r})=>{m.disabled=0===t&&0===r,g.disabled=t===e.slides.length-1&&r===n.length-1}));let p=new Date;const v=()=>{const e=new Date,t=e=>`${Math.floor(e)}`.padStart(2,"0"),n=e.getTime()-p.getTime(),o=t(n/1e3%60),i=t(n/1e3/60%60),a=t(n/36e5%24);r(K.infoTime).textContent=e.toLocaleTimeString(),r(K.infoTimer).textContent=`${a}:${i}:${o}`};v(),setInterval(v,250),r(K.infoTimer).addEventListener("click",(()=>{p=new Date}))})(e)},j=e=>{if(!(e=>e.syncKey&&"string"==typeof e.syncKey)(e))throw new Error("The current instance of Bespoke.js is invalid for Marp bespoke presenter plugin.");Object.defineProperties(e,{openPresenterView:{enumerable:!0,value:V},presenterUrl:{enumerable:!0,get:U}}),u&&document.addEventListener("keydown",(t=>{"p"!==t.key||t.altKey||t.ctrlKey||t.metaKey||(t.preventDefault(),e.openPresenterView())}))};function V(){const{max:e,floor:t}=Math,n=e(t(.85*window.innerWidth),640),r=e(t(.85*window.innerHeight),360);return window.open(this.presenterUrl,q+this.syncKey,`width=${n},height=${r},menubar=no,toolbar=no`)}function U(){const e=new URLSearchParams(location.search);return e.set("view","presenter"),e.set("sync",this.syncKey),s(e)}const X=e=>{const t=l();return t===r&&e.appendChild(document.createElement("span")),{"":j,[n]:F,[r]:_}[t]},H=e=>{e.on("activate",(t=>{document.querySelectorAll(".bespoke-progress-parent > .bespoke-progress-bar").forEach((n=>{n.style.flexBasis=100*t.index/(e.slides.length-1)+"%"}))}))},R=e=>{const t=Number.parseInt(e,10);return Number.isNaN(t)?null:t},W=(e={})=>{const t={history:!0,...e};return e=>{let n=!0;const r=e=>{const t=n;try{return n=!0,e()}finally{n=t}},o=(t={fragment:!0})=>{((t,n)=>{const{min:r,max:o}=Math,{fragments:i,slides:a}=e,s=o(0,r(t,a.length-1)),l=o(0,r(n||0,i[s].length-1));s===e.slide()&&l===e.fragmentIndex||e.slide(s,{fragment:l})})((R(location.hash.slice(1))||1)-1,t.fragment?R(d("f")||""):null)};e.on("fragment",(({index:e,fragmentIndex:r})=>{n||c({f:0===r||r.toString()},{location:{...location,hash:`#${e+1}`},setter:(...e)=>t.history?history.pushState(...e):history.replaceState(...e)})})),setTimeout((()=>{o(),window.addEventListener("hashchange",(()=>r((()=>{o({fragment:!1}),c({f:void 0})})))),window.addEventListener("popstate",(()=>{n||r((()=>o()))})),n=!1}),0)}},J=(e={})=>{var n;const r=e.key||(null===(n=window.history.state)||void 0===n?void 0:n.marpBespokeSyncKey)||Math.random().toString(36).slice(2),o=`bespoke-marp-sync-${r}`;var i;i={marpBespokeSyncKey:r},c({},{setter:(e,...n)=>t({...e,...i},...n)});const a=()=>{const e=f(o);return e?JSON.parse(e):Object.create(null)},s=e=>{const t=a(),n={...t,...e(t)};return m(o,JSON.stringify(n)),n},l=()=>{window.removeEventListener("pageshow",l),s((e=>({reference:(e.reference||0)+1})))};return e=>{l(),Object.defineProperty(e,"syncKey",{value:r,enumerable:!0});let t=!0;setTimeout((()=>{e.on("fragment",(e=>{t&&s((()=>({index:e.index,fragmentIndex:e.fragmentIndex})))}))}),0),window.addEventListener("storage",(n=>{if(n.key===o&&n.oldValue&&n.newValue){const r=JSON.parse(n.oldValue),o=JSON.parse(n.newValue);if(r.index!==o.index||r.fragmentIndex!==o.fragmentIndex)try{t=!1,e.slide(o.index,{fragment:o.fragmentIndex,forSync:!0})}finally{t=!0}}}));const n=()=>{const{reference:e}=a();void 0===e||e<=1?g(o):s((()=>({reference:e-1})))};window.addEventListener("pagehide",(e=>{e.persisted&&window.addEventListener("pageshow",l),n()})),e.on("destroy",n)}},{PI:Y,abs:z,sqrt:G,atan2:Q}=Math,Z={passive:!0},ee=({slope:e=-.7,swipeThreshold:t=30}={})=>n=>{let r;const o=n.parent,i=e=>{const t=o.getBoundingClientRect();return{x:e.pageX-(t.left+t.right)/2,y:e.pageY-(t.top+t.bottom)/2}};o.addEventListener("touchstart",(({touches:e})=>{r=1===e.length?i(e[0]):void 0}),Z),o.addEventListener("touchmove",(e=>{if(r)if(1===e.touches.length){e.preventDefault();const t=i(e.touches[0]),n=t.x-r.x,o=t.y-r.y;r.delta=G(z(n)**2+z(o)**2),r.radian=Q(n,o)}else r=void 0})),o.addEventListener("touchend",(o=>{if(r){if(r.delta&&r.delta>=t&&r.radian){const t=(r.radian-e+Y)%(2*Y)-Y;n[t<0?"next":"prev"](),o.stopPropagation()}r=void 0}}),Z)},te=new Map;te.clear(),te.set("none",{backward:{both:void 0,incoming:void 0,outgoing:void 0},forward:{both:void 0,incoming:void 0,outgoing:void 0}});const ne={both:"",outgoing:"outgoing-",incoming:"incoming-"},re={forward:"",backward:"-backward"},oe=e=>`--marp-bespoke-transition-animation-${e}`,ie=e=>`--marp-transition-${e}`,ae=oe("name"),se=oe("duration"),le=e=>new Promise((t=>{const n={},r=document.createElement("div"),o=e=>{r.remove(),t(e)};r.addEventListener("animationstart",(()=>o(n))),Object.assign(r.style,{animationName:e,animationDuration:"1s",animationFillMode:"both",animationPlayState:"paused",position:"absolute",pointerEvents:"none"}),document.body.appendChild(r);const i=getComputedStyle(r).getPropertyValue(ie("duration"));i&&(n.defaultDuration=i),((e,t)=>{requestAnimationFrame((()=>{e.style.animationPlayState="running",requestAnimationFrame((()=>t(void 0)))}))})(r,o)})),de=async e=>te.has(e)?te.get(e):(e=>{const t={},n=[];for(const[r,o]of Object.entries(ne))for(const[i,a]of Object.entries(re)){const s=`marp-${o}transition${a}-${e}`;n.push(le(s).then((e=>{t[i]=t[i]||{},t[i][r]=e?{...e,name:s}:void 0})))}return Promise.all(n).then((()=>t))})(e).then((t=>(te.set(e,t),t))),ce=e=>Object.values(e).flatMap(Object.values).every((e=>!e)),ue=(e,{type:t,backward:n})=>{const r=e[n?"backward":"forward"],o=(()=>{const e=r[t],n=e=>({[ae]:e.name});if(e)return n(e);if(r.both){const e=n(r.both);return"incoming"===t&&(e[oe("direction")]="reverse"),e}})();return!o&&n?ue(e,{type:t,backward:!1}):o||{[ae]:"__bespoke_marp_transition_no_animation__"}},fe=e=>{if(e)try{const t=JSON.parse(e);if((e=>{if("object"!=typeof e)return!1;const t=e;return"string"==typeof t.name&&(void 0===t.duration||"string"==typeof t.duration)})(t))return t}catch(e){}},me="_tSId",ge="_tA",pe="bespoke-marp-transition-warming-up",ve=window.matchMedia("(prefers-reduced-motion: reduce)"),he="__bespoke_marp_transition_reduced_outgoing__",ye="__bespoke_marp_transition_reduced_incoming__",be={forward:{both:void 0,incoming:{name:ye},outgoing:{name:he}},backward:{both:void 0,incoming:{name:ye},outgoing:{name:he}}},we=e=>{if(!document.startViewTransition)return;const t=t=>(void 0!==t&&(e._tD=t),e._tD);let n;t(!1),((...e)=>{const t=[...new Set(e).values()];return Promise.all(t.map((e=>de(e)))).then()})(...Array.from(document.querySelectorAll("section[data-transition], section[data-transition-back]")).flatMap((e=>[e.dataset.transition,e.dataset.transitionBack].flatMap((e=>{const t=fe(e);return[null==t?void 0:t.name,(null==t?void 0:t.builtinFallback)?`__builtin__${t.name}`:void 0]})).filter((e=>!!e))))).then((()=>{document.querySelectorAll("style").forEach((e=>{e.innerHTML=e.innerHTML.replace(/--marp-transition-duration:[^;}]*[;}]/g,(e=>e.slice(0,-1)+"!important"+e.slice(-1)))}))}));const r=(n,{back:r,cond:o})=>i=>{var a;const s=t();if(s)return!!i[ge]||!("object"!=typeof s||(s.skipTransition(),!i.forSync));if(!o(i))return!0;const l=e.slides[e.slide()],d=()=>{var e;return null!==(e=i.back)&&void 0!==e?e:r},c="data-transition"+(d()?"-back":""),u=l.querySelector(`section[${c}]`);if(!u)return!0;const f=fe(null!==(a=u.getAttribute(c))&&void 0!==a?a:void 0);return!f||((async(e,{builtinFallback:t=!0}={})=>{let n=await de(e);if(ce(n)){if(!t)return;return n=await de(`__builtin__${e}`),ce(n)?void 0:n}return n})(f.name,{builtinFallback:f.builtinFallback}).then((e=>{if(!e){t(!0);try{n(i)}finally{t(!1)}return}let r=e;ve.matches&&(console.warn("Use a constant animation to transition because preferring reduced motion by viewer has detected."),r=be);const o=document.getElementById(me);o&&o.remove();const a=document.createElement("style");a.id=me,document.head.appendChild(a),((e,t)=>{const n=[`:root{${ie("direction")}:${t.backward?-1:1};}`,":root:has(.bespoke-marp-inactive){cursor:none;}"],r=t=>{var n,o,i;const a=(null===(n=e[t].both)||void 0===n?void 0:n.defaultDuration)||(null===(o=e[t].outgoing)||void 0===o?void 0:o.defaultDuration)||(null===(i=e[t].incoming)||void 0===i?void 0:i.defaultDuration);return"forward"===t?a:a||r("forward")},o=t.duration||r(t.backward?"backward":"forward");void 0!==o&&n.push(`::view-transition-group(*){${se}:${o};}`);const i=e=>Object.entries(e).map((([e,t])=>`${e}:${t};`)).join("");return n.push(`::view-transition-old(root){${i(ue(e,{...t,type:"outgoing"}))}}`,`::view-transition-new(root){${i(ue(e,{...t,type:"incoming"}))}}`),n})(r,{backward:d(),duration:f.duration}).forEach((e=>{var t;return null===(t=a.sheet)||void 0===t?void 0:t.insertRule(e)}));const s=document.documentElement.classList;s.add(pe);let l=!1;const c=()=>{l||(n(i),l=!0,s.remove(pe))},u=()=>{t(!1),a.remove(),s.remove(pe)};try{t(!0);const e=document.startViewTransition(c);t(e),e.finished.finally(u)}catch(e){console.error(e),c(),u()}})),!1)};e.on("prev",r((t=>e.prev({...t,[ge]:!0})),{back:!0,cond:e=>{var t;return e.index>0&&!((null===(t=e.fragment)||void 0===t||t)&&n.fragmentIndex>0)}})),e.on("next",r((t=>e.next({...t,[ge]:!0})),{cond:t=>t.index+1<e.slides.length&&!(n.fragmentIndex+1<n.fragments.length)})),setTimeout((()=>{e.on("slide",r((t=>e.slide(t.index,{...t,[ge]:!0})),{cond:t=>{const n=e.slide();return t.index!==n&&(t.back=t.index<n,!0)}}))}),0),e.on("fragment",(e=>{n=e}))};let xe;const ke=()=>(void 0===xe&&(xe="wakeLock"in navigator&&navigator.wakeLock),xe),$e=async()=>{const e=ke();if(e)try{return await e.request("screen")}catch(e){console.warn(e)}return null},Ee=async()=>{if(!ke())return;let e;const t=()=>{e&&"visible"===document.visibilityState&&$e()};for(const e of["visibilitychange","fullscreenchange"])document.addEventListener(e,t);return e=await $e(),e};((t=document.getElementById("p"))=>{(()=>{const t=d("view");e.dataset.bespokeView=t===r||t===n?t:""})();const i=(e=>{const t=d(e);return c({[e]:void 0}),t})("sync")||void 0;var a,s,u,f,m,g,p,y,b,w,k,E;a=t,s=((...e)=>{const t=o.findIndex((e=>l()===e));return e.map((([e,n])=>e[t]&&n)).filter((e=>e))})([[1,1,0],J({key:i})],[[1,1,1],X(t)],[[1,1,0],L],[[1,1,1],v],[[1,0,0],$()],[[1,1,1],S],[[1,1,1],W({history:!1})],[[1,1,0],P()],[[1,1,0],x],[[1,0,0],H],[[1,1,0],ee()],[[1,0,0],T()],[[1,0,0],we],[[1,1,1],h],[[1,1,0],Ee]),f=1===(a.parent||a).nodeType?a.parent||a:document.querySelector(a.parent||a),m=[].filter.call("string"==typeof a.slides?f.querySelectorAll(a.slides):a.slides||f.children,(function(e){return"SCRIPT"!==e.nodeName})),g={},p=function(e,t){return(t=t||{}).index=m.indexOf(e),t.slide=e,t},w=function(e,t){m[e]&&(u&&b("deactivate",p(u,t)),u=m[e],b("activate",p(u,t)))},k=function(e,t){var n=m.indexOf(u)+e;b(e>0?"next":"prev",p(u,t))&&w(n,t)},E={off:y=function(e,t){g[e]=(g[e]||[]).filter((function(e){return e!==t}))},on:function(e,t){return(g[e]||(g[e]=[])).push(t),y.bind(null,e,t)},fire:b=function(e,t){return(g[e]||[]).reduce((function(e,n){return e&&!1!==n(t)}),!0)},slide:function(e,t){if(!arguments.length)return m.indexOf(u);b("slide",p(m[e],t))&&w(e,t)},next:k.bind(null,1),prev:k.bind(null,-1),parent:f,slides:m,destroy:function(e){b("destroy",p(u,e)),g={}}},(s||[]).forEach((function(e){e(E)})),u||w(0)})()}();</script></body></html>

@@ -13,8 +13,8 @@
     scrollSpy();
 </script>
 
-<a href="#0"
-    ><button id="scrollButton">
+<a title="scroll to top" href="#0"
+    ><button id="scrollButton" name="scroll to top">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"
             ><path
                 fill="currentColor"
@@ -44,16 +44,14 @@
      p-0
      grid
      place-items-center
+     scale-75
      hover:text-orange-500
-        focus:text-orange-500
-        focus:scale-150
-        focus:bottom-12
-        focus:right-12;
+     focus:text-orange-500;
     }
     button > svg {
         @apply w-5 h-5;
     }
     .show {
-        @apply opacity-100 translate-y-0;
+        @apply scale-100 opacity-100 translate-y-0;
     }
 </style>

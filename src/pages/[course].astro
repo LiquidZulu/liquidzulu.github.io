@@ -1,6 +1,7 @@
 ---
 import '../css/global.css';
 import { getCollection } from 'astro:content';
+import { readTimeMins, readTimeReadable } from '../util/readTime';
 
 export const getStaticPaths = () => {
     const courseInfo = {
@@ -32,6 +33,7 @@ for (let i = 1; i <= courseLessons.length; i++) {
 
 import Layout from '../layouts/Layout.astro';
 import { AstroCard, Navbar, Card, Footer, SkipToContent } from '../components';
+import { Debug } from 'astro/components';
 ---
 
 <Layout title={DATA[slug].title}>
@@ -47,6 +49,14 @@ import { AstroCard, Navbar, Card, Footer, SkipToContent } from '../components';
             <div class="max-w-lg">
                 <h1 class="mb-5 text-5xl font-bold">{DATA[slug].title}</h1>
                 <p class="mb-5">{DATA[slug].subtitle}</p>
+                <p class="mb-6 text-zinc-400">
+                    {
+                        readTimeReadable(
+                            readTimeMins,
+                            lessons.map(lesson => lesson.body).join('')
+                        )
+                    }
+                </p>
                 <a href="#1"
                     ><button
                         class="btn bg-gradient-to-r from-orange-500 to-amber-500 hover:scale-105"
@@ -80,7 +90,8 @@ import { AstroCard, Navbar, Card, Footer, SkipToContent } from '../components';
                                 available="true"
                                 img={`/thumb-${i.slug}.png`}
                                 button="go to lesson"
-                                uniform={true}>
+                                uniform={true}
+                                footer={readTimeReadable(readTimeMins, i.body)}>
                                 {i.data.description}
                             </Card>
                         </li>

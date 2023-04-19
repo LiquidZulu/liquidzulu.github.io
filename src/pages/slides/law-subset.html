@@ -1,0 +1,848 @@
+<!DOCTYPE html><html lang="en-GB"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"><meta name="apple-mobile-web-app-capable" content="yes"><meta http-equiv="X-UA-Compatible" content="ie=edge"><meta property="og:type" content="website"><meta name="twitter:card" content="summary"><style>@media screen{body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button{-webkit-tap-highlight-color:transparent;-webkit-appearance:none;appearance:none;background-color:transparent;border:0;color:inherit;cursor:pointer;font-size:inherit;opacity:.8;outline:none;padding:0;transition:opacity .2s linear}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:disabled,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:disabled,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:disabled,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button:disabled{cursor:not-allowed;opacity:.15!important}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:hover,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:hover,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:hover,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button:hover{opacity:1}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:active,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:active,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:hover:active,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button:hover:active{opacity:.6}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:not(:disabled),body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:not(:disabled),body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:hover:not(:disabled),body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button:hover:not(:disabled){transition:none}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev],body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button.bespoke-marp-presenter-info-page-prev{background:transparent url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJNNjggOTAgMjggNTBsNDAtNDAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button.bespoke-marp-presenter-info-page-next{background:transparent url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJtMzIgOTAgNDAtNDAtNDAtNDAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen]{background:transparent url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48ZGVmcz48c3R5bGU+LmF7ZmlsbDpub25lO3N0cm9rZTojZmZmO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2Utd2lkdGg6NXB4fTwvc3R5bGU+PC9kZWZzPjxyZWN0IGNsYXNzPSJhIiB4PSIxMCIgeT0iMjAiIHdpZHRoPSI4MCIgaGVpZ2h0PSI2MCIgcng9IjUuNjciLz48cGF0aCBjbGFzcz0iYSIgZD0iTTQwIDcwSDIwVjUwbTIwIDBMMjAgNzBtNDAtNDBoMjB2MjBtLTIwIDAgMjAtMjAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button.exit[data-bespoke-marp-osc=fullscreen],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button.exit[data-bespoke-marp-osc=fullscreen]{background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48ZGVmcz48c3R5bGU+LmF7ZmlsbDpub25lO3N0cm9rZTojZmZmO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2Utd2lkdGg6NXB4fTwvc3R5bGU+PC9kZWZzPjxyZWN0IGNsYXNzPSJhIiB4PSIxMCIgeT0iMjAiIHdpZHRoPSI4MCIgaGVpZ2h0PSI2MCIgcng9IjUuNjciLz48cGF0aCBjbGFzcz0iYSIgZD0iTTIwIDUwaDIwdjIwbS0yMCAwIDIwLTIwbTQwIDBINjBWMzBtMjAgMEw2MCA1MCIvPjwvc3ZnPg==")}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=presenter],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=presenter]{background:transparent url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBkPSJNODcuOCA0Ny41Qzg5IDUwIDg3LjcgNTIgODUgNTJIMzVhOC43IDguNyAwIDAgMS03LjItNC41bC0xNS42LTMxQzExIDE0IDEyLjIgMTIgMTUgMTJoNTBhOC44IDguOCAwIDAgMSA3LjIgNC41ek02MCA1MnYzNm0tMTAgMGgyME00NSA0MmgyMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS13aWR0aD0iNSIvPjwvc3ZnPg==") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button.bespoke-marp-presenter-note-bigger{background:transparent url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBkPSJNMTIgNTBoODBNNTIgOTBWMTAiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2Utd2lkdGg9IjUiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button.bespoke-marp-presenter-note-smaller{background:transparent url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBkPSJNMTIgNTBoODAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2Utd2lkdGg9IjUiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}}@keyframes __bespoke_marp_transition_reduced_outgoing__{0%{opacity:1}to{opacity:0}}@keyframes __bespoke_marp_transition_reduced_incoming__{0%{mix-blend-mode:plus-lighter;opacity:0}to{mix-blend-mode:plus-lighter;opacity:1}}.bespoke-marp-note,.bespoke-marp-osc,.bespoke-progress-parent{display:none;transition:none}@media screen{::view-transition-group(*){animation-duration:var(--marp-bespoke-transition-animation-duration,.5s);animation-timing-function:ease}::view-transition-new(*),::view-transition-old(*){animation-delay:0s;animation-direction:var(--marp-bespoke-transition-animation-direction,normal);animation-duration:var(--marp-bespoke-transition-animation-duration,.5s);animation-fill-mode:both;animation-name:var(--marp-bespoke-transition-animation-name,var(--marp-bespoke-transition-animation-name-fallback,__bespoke_marp_transition_no_animation__));mix-blend-mode:normal}::view-transition-old(*){--marp-bespoke-transition-animation-name-fallback:__bespoke_marp_transition_reduced_outgoing__;animation-timing-function:ease}::view-transition-new(*){--marp-bespoke-transition-animation-name-fallback:__bespoke_marp_transition_reduced_incoming__;animation-timing-function:ease}::view-transition-new(root),::view-transition-old(root){animation-timing-function:linear}::view-transition-new(__bespoke_marp_transition_osc__),::view-transition-old(__bespoke_marp_transition_osc__){animation-duration:0s!important;animation-name:__bespoke_marp_transition_osc__!important}::view-transition-new(__bespoke_marp_transition_osc__){opacity:0!important}.bespoke-marp-transition-warming-up::view-transition-group(*),.bespoke-marp-transition-warming-up::view-transition-new(*),.bespoke-marp-transition-warming-up::view-transition-old(*){animation-play-state:paused!important}body,html{height:100%;margin:0}body{background:#000;overflow:hidden}svg.bespoke-marp-slide{content-visibility:hidden;opacity:0;pointer-events:none;z-index:-1}svg.bespoke-marp-slide:not(.bespoke-marp-active) *{view-transition-name:none!important}svg.bespoke-marp-slide.bespoke-marp-active{content-visibility:visible;opacity:1;pointer-events:auto;z-index:0}svg.bespoke-marp-slide.bespoke-marp-active.bespoke-marp-active-ready *{animation-name:__bespoke_marp__!important}@supports not (content-visibility:hidden){svg.bespoke-marp-slide[data-bespoke-marp-load=hideable]{display:none}svg.bespoke-marp-slide[data-bespoke-marp-load=hideable].bespoke-marp-active{display:block}}}@media screen and (prefers-reduced-motion:reduce){svg.bespoke-marp-slide *{view-transition-name:none!important}}@media screen{[data-bespoke-marp-fragment=inactive]{visibility:hidden}body[data-bespoke-view=""] .bespoke-marp-parent,body[data-bespoke-view=next] .bespoke-marp-parent{bottom:0;left:0;position:absolute;right:0;top:0}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc{view-transition-name:__bespoke_marp_transition_osc__;background:rgba(0,0,0,.65);border-radius:7px;bottom:50px;color:#fff;contain:paint;display:block;font-family:Helvetica,Arial,sans-serif;font-size:16px;left:50%;line-height:0;opacity:1;padding:12px;position:absolute;touch-action:manipulation;transform:translateX(-50%);transition:opacity .2s linear;-webkit-user-select:none;user-select:none;white-space:nowrap;will-change:transform;z-index:1}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>*,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>*{margin-left:6px}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>:first-child,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>:first-child{margin-left:0}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>span,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>span{opacity:.8}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>span[data-bespoke-marp-osc=page],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>span[data-bespoke-marp-osc=page]{display:inline-block;min-width:140px;text-align:center}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen],body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=presenter],body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=presenter],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev]{height:32px;line-height:32px;width:32px}body[data-bespoke-view=""] .bespoke-marp-parent.bespoke-marp-inactive,body[data-bespoke-view=next] .bespoke-marp-parent.bespoke-marp-inactive{cursor:none}body[data-bespoke-view=""] .bespoke-marp-parent.bespoke-marp-inactive>.bespoke-marp-osc,body[data-bespoke-view=next] .bespoke-marp-parent.bespoke-marp-inactive>.bespoke-marp-osc{opacity:0;pointer-events:none}body[data-bespoke-view=""] svg.bespoke-marp-slide,body[data-bespoke-view=next] svg.bespoke-marp-slide{height:100%;left:0;position:absolute;top:0;width:100%}body[data-bespoke-view=""] .bespoke-progress-parent{background:#222;display:flex;height:5px;width:100%}body[data-bespoke-view=""] .bespoke-progress-parent+.bespoke-marp-parent{top:5px}body[data-bespoke-view=""] .bespoke-progress-parent .bespoke-progress-bar{background:#0288d1;flex:0 0 0;transition:flex-basis .2s cubic-bezier(0,1,1,1)}body[data-bespoke-view=next]{background:transparent}body[data-bespoke-view=presenter]{background:#161616}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container{display:grid;font-family:Helvetica,Arial,sans-serif;grid-template:"current dragbar next" minmax(140px,1fr) "current dragbar note" 2fr "info    dragbar note" 3em;grid-template-columns:minmax(3px,var(--bespoke-marp-presenter-split-ratio,66%)) 0 minmax(3px,1fr);height:100%;left:0;position:absolute;top:0;width:100%}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-parent{grid-area:current;overflow:hidden;position:relative}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-parent svg.bespoke-marp-slide{height:calc(100% - 40px);left:20px;pointer-events:none;position:absolute;top:20px;-webkit-user-select:none;user-select:none;width:calc(100% - 40px)}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-parent svg.bespoke-marp-slide.bespoke-marp-active{filter:drop-shadow(0 3px 10px rgba(0,0,0,.5))}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-dragbar-container{background:#0288d1;cursor:col-resize;grid-area:dragbar;margin-left:-3px;opacity:0;position:relative;transition:opacity .4s linear .1s;width:6px;z-index:10}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-dragbar-container:hover{opacity:1}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-dragbar-container.active{opacity:1;transition-delay:0s}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-next-container{background:#222;cursor:pointer;display:none;grid-area:next;overflow:hidden;position:relative}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-next-container.active{display:block}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-next-container iframe.bespoke-marp-presenter-next{background:transparent;border:0;display:block;filter:drop-shadow(0 3px 10px rgba(0,0,0,.5));height:calc(100% - 40px);left:20px;pointer-events:none;position:absolute;top:20px;-webkit-user-select:none;user-select:none;width:calc(100% - 40px)}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container{background:#222;color:#eee;grid-area:note;position:relative;z-index:1}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button{height:1.5em;line-height:1.5em;width:1.5em}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-presenter-note-wrapper{bottom:0;display:block;left:0;position:absolute;right:0;top:0}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-presenter-note-buttons{background:rgba(0,0,0,.65);border-radius:4px;bottom:0;display:flex;gap:4px;margin:12px;opacity:0;padding:6px;pointer-events:none;position:absolute;right:0;transition:opacity .2s linear}}@media screen{body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-presenter-note-buttons:focus-within,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-presenter-note-wrapper:focus-within+.bespoke-marp-presenter-note-buttons,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container:hover .bespoke-marp-presenter-note-buttons{opacity:1;pointer-events:auto}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note{word-wrap:break-word;box-sizing:border-box;font-size:calc(1.1em*var(--bespoke-marp-note-font-scale, 1));height:calc(100% - 40px);margin:20px;overflow:auto;padding-right:3px;scrollbar-color:hsla(0,0%,93%,.5) transparent;scrollbar-width:thin;white-space:pre-wrap;width:calc(100% - 40px)}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note::-webkit-scrollbar{width:6px}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note::-webkit-scrollbar-track{background:transparent}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note::-webkit-scrollbar-thumb{background:hsla(0,0%,93%,.5);border-radius:6px}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note:empty{pointer-events:none}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note.active{display:block}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note p:first-child{margin-top:0}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note p:last-child{margin-bottom:0}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container{align-items:center;box-sizing:border-box;color:#eee;display:flex;flex-wrap:nowrap;grid-area:info;justify-content:center;overflow:hidden;padding:0 10px}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-page,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-time,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-timer{box-sizing:border-box;display:block;padding:0 10px;white-space:nowrap;width:100%}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button{height:1.5em;line-height:1.5em;width:1.5em}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-page{order:2;text-align:center}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-page .bespoke-marp-presenter-info-page-text{display:inline-block;min-width:120px;text-align:center}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-time{color:#999;order:1;text-align:left}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-timer{color:#999;order:3;text-align:right}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-timer:hover{cursor:pointer}}@media print{.bespoke-marp-presenter-info-container,.bespoke-marp-presenter-next-container,.bespoke-marp-presenter-note-container{display:none}}</style><style>div#p>svg>foreignObject>section{width:1280px;height:720px;box-sizing:border-box;overflow:hidden;position:relative;scroll-snap-align:center center}div#p>svg>foreignObject>section:after{bottom:0;content:attr(data-marpit-pagination);padding:inherit;pointer-events:none;position:absolute;right:0}div#p>svg>foreignObject>section:not([data-marpit-pagination]):after{display:none}/* Normalization */div#p>svg>foreignObject>section :is(h1,marp-h1){font-size:2em;margin:0.67em 0}div#p>svg>foreignObject>section video::-webkit-media-controls{will-change:transform}@page{size:1280px 720px;margin:0}@media print{body,html{background-color:#fff;margin:0;page-break-inside:avoid;break-inside:avoid-page}div#p>svg>foreignObject>section{page-break-before:always;break-before:page}div#p>svg>foreignObject>section,div#p>svg>foreignObject>section *{-webkit-print-color-adjust:exact!important;animation-delay:0s!important;animation-duration:0s!important;color-adjust:exact!important;transition:none!important}div#p>svg[data-marpit-svg]{display:block;height:100vh;width:100vw}}div#p>svg>foreignObject>section mjx-container[jax=SVG]{direction:ltr}div#p>svg>foreignObject>section mjx-container[jax=SVG]>svg{overflow:visible;min-height:1px;min-width:1px}div#p>svg>foreignObject>section mjx-container[jax=SVG]>svg a{fill:blue;stroke:blue}div#p>svg>foreignObject>section mjx-container[jax=SVG][display=true]{display:block;text-align:center;margin:1em 0}div#p>svg>foreignObject>section mjx-container[jax=SVG][display=true][width=full]{display:flex}div#p>svg>foreignObject>section mjx-container[jax=SVG][justify=left]{text-align:left}div#p>svg>foreignObject>section mjx-container[jax=SVG][justify=right]{text-align:right}div#p>svg>foreignObject>section g[data-mml-node=merror]>g{fill:red;stroke:red}div#p>svg>foreignObject>section g[data-mml-node=merror]>rect[data-background]{fill:yellow;stroke:none}div#p>svg>foreignObject>section g[data-mml-node=mtable]>line[data-line],div#p>svg>foreignObject>section svg[data-table]>g>line[data-line]{stroke-width:70px;fill:none}div#p>svg>foreignObject>section g[data-mml-node=mtable]>rect[data-frame],div#p>svg>foreignObject>section svg[data-table]>g>rect[data-frame]{stroke-width:70px;fill:none}div#p>svg>foreignObject>section g[data-mml-node=mtable]>.mjx-dashed,div#p>svg>foreignObject>section svg[data-table]>g>.mjx-dashed{stroke-dasharray:140}div#p>svg>foreignObject>section g[data-mml-node=mtable]>.mjx-dotted,div#p>svg>foreignObject>section svg[data-table]>g>.mjx-dotted{stroke-linecap:round;stroke-dasharray:0,140}div#p>svg>foreignObject>section g[data-mml-node=mtable]>g>svg{overflow:visible}div#p>svg>foreignObject>section [jax=SVG] mjx-tool{display:inline-block;position:relative;width:0;height:0}div#p>svg>foreignObject>section [jax=SVG] mjx-tool>mjx-tip{position:absolute;top:0;left:0}div#p>svg>foreignObject>section mjx-tool>mjx-tip{display:inline-block;padding:.2em;border:1px solid #888;font-size:70%;background-color:#F8F8F8;color:black;box-shadow:2px 2px 5px #AAAAAA}div#p>svg>foreignObject>section g[data-mml-node=maction][data-toggle]{cursor:pointer}div#p>svg>foreignObject>section mjx-status{display:block;position:fixed;left:1em;bottom:1em;min-width:25%;padding:.2em .4em;border:1px solid #888;font-size:90%;background-color:#F8F8F8;color:black}div#p>svg>foreignObject>section foreignObject[data-mjx-xml]{font-family:initial;line-height:normal;overflow:visible}div#p>svg>foreignObject>section mjx-container[jax=SVG] path[data-c],div#p>svg>foreignObject>section mjx-container[jax=SVG] use[data-c]{stroke-width:3}@media print{div#p>svg>foreignObject>section mjx-container[jax=SVG] path[data-c],div#p>svg>foreignObject>section mjx-container[jax=SVG] use[data-c]{stroke-width:0}}div#p>svg>foreignObject>section img[data-marp-twemoji]{background:transparent;height:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;width:1em}
+/*!
+ * Marp / Marpit Uncover theme
+ *
+ * @theme uncover
+ * @author Yuki Hattori
+ *
+ * @auto-scaling true
+ * @size 16:9 1280px 720px
+ * @size 4:3 960px 720px
+ */div#p>svg>foreignObject>section{word-wrap:break-word;--color-background:#fdfcff;--color-background-code:#f2f1f4;--color-background-paginate:rgba(32,34,40,.05);--color-foreground:#202228;--color-highlight:#009dd5;--color-highlight-hover:#087eaa;--color-highlight-heading:#33b1dd;--color-header:rgba(32,34,40,.4);--color-header-shadow:rgba(253,252,255,.8);background:var(--color-background);flex-flow:column nowrap;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Open Sans,Helvetica Neue,sans-serif;font-size:40px;height:720px;justify-content:center;letter-spacing:3px;line-height:1.4;padding:30px 70px;position:relative;text-align:center;width:1280px;z-index:0}div#p>svg>foreignObject>section{--marpit-root-font-size:40px}div#p>svg>foreignObject>section,div#p>svg>foreignObject>section:after{color:var(--color-foreground);display:flex}div#p>svg>foreignObject>section:after{align-items:flex-end;background:linear-gradient(-45deg,var(--color-background-paginate) 50%,transparent 50%);background-size:cover;font-size:.6em;height:80px;justify-content:flex-end;padding:30px;text-align:right;text-shadow:0 0 5px var(--color-background);width:80px}div#p>svg>foreignObject>section:after{--marpit-root-font-size:.6em}div#p>svg>foreignObject>section:where(:not(.invert)) :is(pre,marp-pre) code.hljs{display:block;overflow-x:auto;padding:1em}div#p>svg>foreignObject>section:where(:not(.invert)) code.hljs{padding:3px 5px}div#p>svg>foreignObject>section:where(:not(.invert)) .hljs{background:#fff;color:#000}div#p>svg>foreignObject>section:where(:not(.invert)) .hljs-addition,div#p>svg>foreignObject>section:where(:not(.invert)) .hljs-meta,div#p>svg>foreignObject>section:where(:not(.invert)) .hljs-string,div#p>svg>foreignObject>section:where(:not(.invert)) .hljs-symbol,div#p>svg>foreignObject>section:where(:not(.invert)) .hljs-template-tag,div#p>svg>foreignObject>section:where(:not(.invert)) .hljs-template-variable{color:#756bb1}div#p>svg>foreignObject>section:where(:not(.invert)) .hljs-comment,div#p>svg>foreignObject>section:where(:not(.invert)) .hljs-quote{color:#636363}div#p>svg>foreignObject>section:where(:not(.invert)) .hljs-bullet,div#p>svg>foreignObject>section:where(:not(.invert)) .hljs-link,div#p>svg>foreignObject>section:where(:not(.invert)) .hljs-literal,div#p>svg>foreignObject>section:where(:not(.invert)) .hljs-number,div#p>svg>foreignObject>section:where(:not(.invert)) .hljs-regexp{color:#31a354}div#p>svg>foreignObject>section:where(:not(.invert)) .hljs-deletion,div#p>svg>foreignObject>section:where(:not(.invert)) .hljs-variable{color:#88f}div#p>svg>foreignObject>section:where(:not(.invert)) .hljs-built_in,div#p>svg>foreignObject>section:where(:not(.invert)) .hljs-doctag,div#p>svg>foreignObject>section:where(:not(.invert)) .hljs-keyword,div#p>svg>foreignObject>section:where(:not(.invert)) .hljs-name,div#p>svg>foreignObject>section:where(:not(.invert)) .hljs-section,div#p>svg>foreignObject>section:where(:not(.invert)) .hljs-selector-class,div#p>svg>foreignObject>section:where(:not(.invert)) .hljs-selector-id,div#p>svg>foreignObject>section:where(:not(.invert)) .hljs-selector-tag,div#p>svg>foreignObject>section:where(:not(.invert)) .hljs-strong,div#p>svg>foreignObject>section:where(:not(.invert)) .hljs-tag,div#p>svg>foreignObject>section:where(:not(.invert)) .hljs-title,div#p>svg>foreignObject>section:where(:not(.invert)) .hljs-type{color:#3182bd}div#p>svg>foreignObject>section:where(:not(.invert)) .hljs-emphasis{font-style:italic}div#p>svg>foreignObject>section:where(:not(.invert)) .hljs-attribute{color:#e6550d}div#p>svg>foreignObject>section:where(.invert){--color-background:#202228;--color-background-code:#2b2d33;--color-background-paginate:hsla(0,0%,100%,.05);--color-foreground:#fff;--color-highlight:#60d0f0;--color-highlight-hover:#88dcf4;--color-highlight-heading:#80d9f3;--color-header:hsla(0,0%,100%,.4);--color-header-shadow:rgba(32,34,40,.8)}div#p>svg>foreignObject>section:where(.invert) :is(pre,marp-pre) code.hljs{display:block;overflow-x:auto;padding:1em}div#p>svg>foreignObject>section:where(.invert) code.hljs{padding:3px 5px}div#p>svg>foreignObject>section:where(.invert) .hljs{background:#222;color:#fff}div#p>svg>foreignObject>section:where(.invert) .hljs-comment,div#p>svg>foreignObject>section:where(.invert) .hljs-quote{color:#777}div#p>svg>foreignObject>section:where(.invert) .hljs-built_in,div#p>svg>foreignObject>section:where(.invert) .hljs-bullet,div#p>svg>foreignObject>section:where(.invert) .hljs-deletion,div#p>svg>foreignObject>section:where(.invert) .hljs-link,div#p>svg>foreignObject>section:where(.invert) .hljs-literal,div#p>svg>foreignObject>section:where(.invert) .hljs-meta,div#p>svg>foreignObject>section:where(.invert) .hljs-number,div#p>svg>foreignObject>section:where(.invert) .hljs-params,div#p>svg>foreignObject>section:where(.invert) .hljs-regexp,div#p>svg>foreignObject>section:where(.invert) .hljs-symbol,div#p>svg>foreignObject>section:where(.invert) .hljs-tag,div#p>svg>foreignObject>section:where(.invert) .hljs-template-variable,div#p>svg>foreignObject>section:where(.invert) .hljs-variable{color:#ab875d}div#p>svg>foreignObject>section:where(.invert) .hljs-attribute,div#p>svg>foreignObject>section:where(.invert) .hljs-name,div#p>svg>foreignObject>section:where(.invert) .hljs-section,div#p>svg>foreignObject>section:where(.invert) .hljs-selector-class,div#p>svg>foreignObject>section:where(.invert) .hljs-selector-id,div#p>svg>foreignObject>section:where(.invert) .hljs-title,div#p>svg>foreignObject>section:where(.invert) .hljs-type{color:#9b869b}div#p>svg>foreignObject>section:where(.invert) .hljs-addition,div#p>svg>foreignObject>section:where(.invert) .hljs-keyword,div#p>svg>foreignObject>section:where(.invert) .hljs-selector-tag,div#p>svg>foreignObject>section:where(.invert) .hljs-string{color:#8f9c6c}div#p>svg>foreignObject>section:where(.invert) .hljs-emphasis{font-style:italic}div#p>svg>foreignObject>section:where(.invert) .hljs-strong{font-weight:700}div#p>svg>foreignObject>section>:first-child,div#p>svg>foreignObject>section[data-header]>:nth-child(2){margin-top:0}div#p>svg>foreignObject>section>:last-child,div#p>svg>foreignObject>section[data-footer]>:nth-last-child(2){margin-bottom:0}div#p>svg>foreignObject>section blockquote,div#p>svg>foreignObject>section p{margin:0 0 15px}div#p>svg>foreignObject>section :is(h1,marp-h1),div#p>svg>foreignObject>section :is(h2,marp-h2),div#p>svg>foreignObject>section :is(h3,marp-h3),div#p>svg>foreignObject>section :is(h4,marp-h4),div#p>svg>foreignObject>section :is(h5,marp-h5),div#p>svg>foreignObject>section :is(h6,marp-h6){margin:15px 0 30px}div#p>svg>foreignObject>section :is(h1,marp-h1) strong,div#p>svg>foreignObject>section :is(h2,marp-h2) strong,div#p>svg>foreignObject>section :is(h3,marp-h3) strong,div#p>svg>foreignObject>section :is(h4,marp-h4) strong,div#p>svg>foreignObject>section :is(h5,marp-h5) strong,div#p>svg>foreignObject>section :is(h6,marp-h6) strong{color:var(--color-highlight-heading);font-weight:inherit}div#p>svg>foreignObject>section :is(h1,marp-h1)::part(auto-scaling),div#p>svg>foreignObject>section :is(h2,marp-h2)::part(auto-scaling),div#p>svg>foreignObject>section :is(h3,marp-h3)::part(auto-scaling),div#p>svg>foreignObject>section :is(h4,marp-h4)::part(auto-scaling),div#p>svg>foreignObject>section :is(h5,marp-h5)::part(auto-scaling),div#p>svg>foreignObject>section :is(h6,marp-h6)::part(auto-scaling){max-height:660px}div#p>svg>foreignObject>section :is(h1,marp-h1){font-size:2em}div#p>svg>foreignObject>section :is(h2,marp-h2){font-size:1.7em}div#p>svg>foreignObject>section :is(h3,marp-h3){font-size:1.4em;letter-spacing:2px}div#p>svg>foreignObject>section :is(h4,marp-h4){font-size:1.2em;letter-spacing:2px}div#p>svg>foreignObject>section :is(h5,marp-h5){font-size:1em;letter-spacing:1px}div#p>svg>foreignObject>section :is(h6,marp-h6){font-size:.8em;letter-spacing:1px}div#p>svg>foreignObject>section footer,div#p>svg>foreignObject>section header{color:var(--color-header);font-size:.45em;left:70px;letter-spacing:1px;position:absolute;right:70px;text-shadow:0 1px 0 var(--color-header-shadow);z-index:1}div#p>svg>foreignObject>section header{top:30px}div#p>svg>foreignObject>section footer{bottom:30px}div#p>svg>foreignObject>section a{color:var(--color-highlight);text-decoration:none}div#p>svg>foreignObject>section a:hover{color:var(--color-highlight-hover);text-decoration:underline}div#p>svg>foreignObject>section ol,div#p>svg>foreignObject>section ul{margin:0 auto;text-align:left}div#p>svg>foreignObject>section>ol,div#p>svg>foreignObject>section>ul{margin-bottom:15px}div#p>svg>foreignObject>section code{font-family:SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;letter-spacing:0}div#p>svg>foreignObject>section :not(:is(pre,marp-pre))>code,div#p>svg>foreignObject>section>code{background:var(--color-background-code);color:var(--color-foreground);margin:-.2em .2em .2em;padding:.2em}div#p>svg>foreignObject>section :is(pre,marp-pre){--preserve-aspect-ratio:xMidYMid meet;filter:drop-shadow(0 4px 4px rgba(0,0,0,.2));font-size:70%;line-height:1.15;margin:15px 0 30px;text-align:left}div#p>svg>foreignObject>section :is(pre,marp-pre)::part(auto-scaling){max-height:570px}div#p>svg>foreignObject>section :is(pre,marp-pre)>code{background:var(--color-background-code);box-sizing:content-box;color:var(--color-foreground);display:block;margin:0 auto;min-width:456px;padding:.4em .6em}div#p>svg>foreignObject>section[data-size="4:3"] :is(pre,marp-pre)>code{min-width:328px}div#p>svg>foreignObject>section table{border-collapse:collapse;margin:0 auto 15px}div#p>svg>foreignObject>section table>tbody>tr>td,div#p>svg>foreignObject>section table>tbody>tr>th,div#p>svg>foreignObject>section table>thead>tr>td,div#p>svg>foreignObject>section table>thead>tr>th{padding:.15em .5em}div#p>svg>foreignObject>section table>thead>tr>td,div#p>svg>foreignObject>section table>thead>tr>th{border-bottom:3px solid}div#p>svg>foreignObject>section table>tbody>tr:not(:last-child)>td,div#p>svg>foreignObject>section table>tbody>tr:not(:last-child)>th{border-bottom:1px solid}div#p>svg>foreignObject>section blockquote{font-size:90%;line-height:1.3;padding:0 2em;position:relative;z-index:0}div#p>svg>foreignObject>section blockquote:after,div#p>svg>foreignObject>section blockquote:before{content:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBkPSJNNDQgMTkuMyAzOC45NCAwQzguMTQgOS41OSAwIDQwLjA1IDAgNTQuODNWMTAwaDQxLjQ3VjU0LjgzaC0yM2MtLjA0LS4yOC4yNS0yNy42NiAyNS41My0zNS41M3ptNTYgMEw5NC45NCAwQzY0LjE0IDkuNTkgNTYgNDAuMDUgNTYgNTQuODNWMTAwaDQxLjQ3VjU0LjgzaC0yM2MtLjA0LS4yOC4yNS0yNy42NiAyNS41My0zNS41M3oiIHN0eWxlPSJmaWxsOiM4ODg7b3BhY2l0eTouMzMiLz48L3N2Zz4=");height:auto;pointer-events:none;position:absolute;width:1em;z-index:-1}div#p>svg>foreignObject>section blockquote:before{left:0;top:0}div#p>svg>foreignObject>section blockquote:after{bottom:0;right:0;transform:rotate(180deg)}div#p>svg>foreignObject>section blockquote>:last-child{margin-bottom:0}div#p>svg>foreignObject>section mark{background:transparent;color:var(--color-highlight)}div#p>svg>foreignObject>section sup{color:#0ea5e9}div#p>svg>foreignObject>section[data-marpit-advanced-background=background]{columns:initial!important;display:block!important;padding:0!important}div#p>svg>foreignObject>section[data-marpit-advanced-background=background]:after,div#p>svg>foreignObject>section[data-marpit-advanced-background=background]:before,div#p>svg>foreignObject>section[data-marpit-advanced-background=content]:after,div#p>svg>foreignObject>section[data-marpit-advanced-background=content]:before{display:none!important}div#p>svg>foreignObject>section[data-marpit-advanced-background=background]>div[data-marpit-advanced-background-container]{all:initial;display:flex;flex-direction:row;height:100%;overflow:hidden;width:100%}div#p>svg>foreignObject>section[data-marpit-advanced-background=background]>div[data-marpit-advanced-background-container][data-marpit-advanced-background-direction=vertical]{flex-direction:column}div#p>svg>foreignObject>section[data-marpit-advanced-background=background][data-marpit-advanced-background-split]>div[data-marpit-advanced-background-container]{width:var(--marpit-advanced-background-split,50%)}div#p>svg>foreignObject>section[data-marpit-advanced-background=background][data-marpit-advanced-background-split=right]>div[data-marpit-advanced-background-container]{margin-left:calc(100% - var(--marpit-advanced-background-split, 50%))}div#p>svg>foreignObject>section[data-marpit-advanced-background=background]>div[data-marpit-advanced-background-container]>figure{all:initial;background-position:center;background-repeat:no-repeat;background-size:cover;flex:auto;margin:0}div#p>svg>foreignObject>section[data-marpit-advanced-background=content],div#p>svg>foreignObject>section[data-marpit-advanced-background=pseudo]{background:transparent!important}div#p>svg>foreignObject>section[data-marpit-advanced-background=pseudo],div#p>svg[data-marpit-svg]>foreignObject[data-marpit-advanced-background=pseudo]{pointer-events:none!important}div#p>svg>foreignObject>section[data-marpit-advanced-background-split]{width:100%;height:100%}</style></head><body><div class="bespoke-marp-osc"><button data-bespoke-marp-osc="prev" tabindex="-1" title="Previous slide">Previous slide</button><span data-bespoke-marp-osc="page"></span><button data-bespoke-marp-osc="next" tabindex="-1" title="Next slide">Next slide</button><button data-bespoke-marp-osc="fullscreen" tabindex="-1" title="Toggle fullscreen (f)">Toggle fullscreen</button><button data-bespoke-marp-osc="presenter" tabindex="-1" title="Open presenter view (p)">Open presenter view</button></div><div id="p"><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="1" data-class="invert" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<h1>7. An Elaboration on the Nature of Law as a Subset of Ethics</h1>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="2" data-class="invert" data-footer="Leonard Peikoff, *Fact and Value*" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--footer:Leonard Peikoff, *Fact and Value*;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<blockquote>
+<p>[...] value is objective (not intrinsic or subjective); value is based on and derives from the facts of reality (it does not derive from mystic authority or from whim, personal or social). Reality, we hold — along with the decision to remain in it, i.e., to stay alive — dictates and demands an entire code of values. Unlike the lower species, man does not pursue the proper values automatically; he must discover and choose them; but this does not imply subjectivism.</p>
+</blockquote>
+<footer>Leonard Peikoff, <em>Fact and Value</em></footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="3" data-class="invert" data-footer="Leonard Peikoff, *Fact and Value*" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--footer:Leonard Peikoff, *Fact and Value*;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<blockquote>
+<p>Every proper value-judgment is the identification of a fact: a given object or action advances man’s life (it is good): or it threatens man’s life (it is bad or an evil). The good, therefore, is a species of the true; it is a form of recognizing reality. The evil is a species of the false; it is a form of contradicting reality. Or: values are a type of facts; they are facts considered in relation to the choice to live.</p>
+</blockquote>
+<footer>Leonard Peikoff, <em>Fact and Value</em></footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="4" data-class="invert" data-footer="Leonard Peikoff, *Fact and Value*" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--footer:Leonard Peikoff, *Fact and Value*;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<blockquote>
+<p>[...] Existentially, an action of man [...] is good or bad according to its effects: its effects, positive or negative, on man’s life. Thus creating a skyscraper is good, murdering the architect is bad — both by the standard of life. But human action is not merely physical motion; it is a product of a man’s ideas and value-judgments, true or false, which themselves derive from a certain kind of mental cause; ultimately, from thought or from evasion.</p>
+</blockquote>
+<footer>Leonard Peikoff, <em>Fact and Value</em></footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="5" data-class="invert" data-footer="Leonard Peikoff, *Fact and Value*" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--footer:Leonard Peikoff, *Fact and Value*;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<blockquote>
+<p>[...] The skyscraper’s creator [...] functioned on the basis of proper value-judgments and true ideas, including a complex specialized knowledge; so he must have expended mental effort, focus, work; so one praises him morally and admires him. But the murderer [...] acted on ideas and value-judgments that defy reality; so he must have evaded and practiced whim-worship; so one condemns him morally and despises him.</p>
+</blockquote>
+<footer>Leonard Peikoff, <em>Fact and Value</em></footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="6" data-class="invert" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<h1>Agaisnt the Separation of Ethics and Law</h1>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="7" data-class="invert" data-footer="Murray N. Rothbard (1982), *The Ethics of Liberty*" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--footer:Murray N. Rothbard (1982), *The Ethics of Liberty*;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<blockquote>
+<p>It is often contended that the existence of extreme, or &quot;lifeboat,&quot; situations disproves any theory of absolute property rights, or indeed of any absolute rights of self-ownership whatsoever. It is claimed that since any theory of individual rights seems to break down or works unsatisfactorily in such fortunately rare situations, therefore there can be no concept of inviolable rights at all.</p>
+</blockquote>
+<footer>Murray N. Rothbard (1982), <em>The Ethics of Liberty</em></footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="8" data-class="invert" data-footer="Murray N. Rothbard (1982), *The Ethics of Liberty*" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--footer:Murray N. Rothbard (1982), *The Ethics of Liberty*;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<blockquote>
+<p>In a typical lifeboat situation, there are, let us say, eight places in a lifeboat putting out from a sinking ship, and there are more than eight people wishing to be saved. Who then is to decide who should be saved and who should die?</p>
+</blockquote>
+<footer>Murray N. Rothbard (1982), <em>The Ethics of Liberty</em></footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="9" data-class="invert" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<h2>The Lifeboat Situation</h2>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="10" data-marpit-fragments="3" data-class="invert" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<h2>The Lifeboat Situation</h2>
+<ul>
+<li data-marpit-fragment="1">Only 8 spots, more than 8 people, therefore there must be property rights in the spaces</li>
+<li data-marpit-fragment="2">Owner gets the say</li>
+<li data-marpit-fragment="3">If there are no rules set the homesteading principle applies</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="11" data-class="invert" data-footer="Murray N. Rothbard (1982), *The Ethics of Liberty*" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--footer:Murray N. Rothbard (1982), *The Ethics of Liberty*;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<blockquote>
+<p>If the owner of the boat or his representative (e. g. the captain of the ship) has died in the wreck, and if he has not laid down known rules in advance of the wreck for allocation of seats in such a crisis, then the lifeboat may be considered–at least temporarily for the emergency–abandoned and therefore unowned. At this point, our rules for unowned property come into play: namely, that unowned resources become the property of the first people possessing them.</p>
+</blockquote>
+<footer>Murray N. Rothbard (1982), <em>The Ethics of Liberty</em></footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="12" data-class="invert" data-footer="Murray N. Rothbard (1982), *The Ethics of Liberty*" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--footer:Murray N. Rothbard (1982), *The Ethics of Liberty*;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<blockquote>
+<p>In short, the first eight people to reach the boat are, in our theory, the proper &quot;owners&quot; and users of the boat. Anyone who throws them out of the boat then commits an act of aggression in violating the property right of the &quot;homesteader&quot; he throws out of the boat. After he returns to shore, then, the aggressor becomes liable for prosecution for his act of violation of property right (as well, perhaps, for murder of the person he ejected from the boat).</p>
+</blockquote>
+<footer>Murray N. Rothbard (1982), <em>The Ethics of Liberty</em></footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="13" data-class="invert" data-footer="Murray N. Rothbard (1982), *The Ethics of Liberty*" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--footer:Murray N. Rothbard (1982), *The Ethics of Liberty*;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<blockquote>
+<p>In the first place, a lifeboat situation is hardly a valid test of a theory of rights, or of any moral theory whatsoever. Problems of a moral theory in such an extreme situation do not invalidate a theory for normal situations. In any sphere of moral theory, we are trying to frame an ethic for man, based on his nature and the nature of the world-and this precisely means for normal nature, for the way life usually is, and not for rare and abnormal situations.</p>
+</blockquote>
+<footer>Murray N. Rothbard (1982), <em>The Ethics of Liberty</em></footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="14" data-class="invert" data-footer="Murray N. Rothbard (1982), *The Ethics of Liberty*" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--footer:Murray N. Rothbard (1982), *The Ethics of Liberty*;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<blockquote>
+<p>It is a wise maxim of the law, for precisely this reason, that &quot;hard cases make bad law.&quot; We are trying to frame an ethic for the way men generally live in the world; we are not, after all, interested in framing an ethic that focuses on situations that are rare, extreme, and not generally encountered.</p>
+</blockquote>
+<footer>Murray N. Rothbard (1982), <em>The Ethics of Liberty</em></footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="15" data-class="invert" data-footer="Murray N. Rothbard (1982), *The Ethics of Liberty*" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--footer:Murray N. Rothbard (1982), *The Ethics of Liberty*;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<blockquote>
+<p>Let us take an example, to illustrate our point, outside the sphere of property rights or rights in general, and within the sphere of ordinary ethical values. Most people would concede the principle that &quot;it is ethical for a parent to save his child from drowning.&quot; But, then, our lifeboat skeptic could arise and hurl this challenge: &quot;Aha, but suppose that two of your children are drowning and you can save only one. Which child would you choose?</p>
+</blockquote>
+<footer>Murray N. Rothbard (1982), <em>The Ethics of Liberty</em></footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="16" data-class="invert" data-footer="Murray N. Rothbard (1982), *The Ethics of Liberty*" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--footer:Murray N. Rothbard (1982), *The Ethics of Liberty*;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<blockquote>
+<p>And doesn't the fact that you would have to let one child die negate the very moral principle that you should save your drowning child?&quot; I doubt whether many ethicists would throw over the moral desirability or principle of saving one's child because it could not be fully applied in such a &quot;lifeboat&quot; situation. Yet why should the lifeboat case be different in the sphere of rights?</p>
+</blockquote>
+<footer>Murray N. Rothbard (1982), <em>The Ethics of Liberty</em></footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="17" data-class="invert" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<h2>Againt Multi-Sphere Ethics</h2>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="18" data-class="invert" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<h2>The Drowning Children Hypothetical</h2>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="19" data-class="invert" data-footer="Murray N. Rothbard (1982), *The Ethics of Liberty*" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--footer:Murray N. Rothbard (1982), *The Ethics of Liberty*;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<blockquote>
+<p>It may well be objected to our theory as follows: that a theory of property rights or even of self-ownership is derivable from the conditions by which man survives and flourishes in this world, and that therefore in this kind of extreme situation, where a man is faced with the choice of either saving himself or violating the property rights of the lifeboat owner (or, in the above example, of the &quot;homesteader&quot; in the boat), it is then ridiculous to expect him to surrender his life on behalf of the abstract principle of property rights.</p>
+</blockquote>
+<footer>Murray N. Rothbard (1982), <em>The Ethics of Liberty</em></footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="20" data-class="invert" data-footer="Murray N. Rothbard (1982), *The Ethics of Liberty*" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--footer:Murray N. Rothbard (1982), *The Ethics of Liberty*;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<blockquote>
+<p>Because of this kind of consideration, many libertarians who otherwise believe in property rights gravely weaken them on behalf of the &quot;contextualist&quot; contention that, given a choice between his life and aggressing against someone else's property or even life, it is moral for him to commit the aggression and that therefore in such a situation, these property rights cease to exist.</p>
+</blockquote>
+<footer>Murray N. Rothbard (1982), <em>The Ethics of Liberty</em></footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="21" data-class="invert" data-footer="Murray N. Rothbard (1982), *The Ethics of Liberty*" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--footer:Murray N. Rothbard (1982), *The Ethics of Liberty*;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<blockquote>
+<p><em><strong>The error here on the part of the &quot;contextualist&quot; libertarians is to confuse the question of the moral course of action for the person in such a tragic situation with the totally separate question of whether or not his seizing of lifeboat or plank space by force constitutes an invasion of someone else's property right.</strong></em> For we are not, in constructing a theory of liberty and property, i.e., a &quot;political&quot; ethic, concerned with all personal moral principles.</p>
+</blockquote>
+<footer>Murray N. Rothbard (1982), <em>The Ethics of Liberty</em></footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="22" data-class="invert" data-footer="Murray N. Rothbard (1982), *The Ethics of Liberty*" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--footer:Murray N. Rothbard (1982), *The Ethics of Liberty*;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<blockquote>
+<p>We are not herewith concerned whether it is moral or immoral for someone to lie, to be a good person, to develop his faculties, or be kind or mean to his neighbors. We are concerned, in this sort of discussion, solely with such &quot;political ethical&quot; questions as the proper role of violence, the sphere of rights, or the definitions of criminality and aggression.</p>
+</blockquote>
+<footer>Murray N. Rothbard (1982), <em>The Ethics of Liberty</em></footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="23" data-class="invert" data-footer="Murray N. Rothbard (1982), *The Ethics of Liberty*" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--footer:Murray N. Rothbard (1982), *The Ethics of Liberty*;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<blockquote>
+<p>Whether or not it is moral or immoral for &quot;Smith&quot;–the fellow excluded by the owner from the plank or the lifeboat–to force someone else out of the lifeboat, or whether he should die heroically instead, is not our concern, and not the proper concern of a theory of political ethics.</p>
+</blockquote>
+<footer>Murray N. Rothbard (1982), <em>The Ethics of Liberty</em></footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="24" data-class="invert" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<h2>Rothbard the Contextualist?</h2>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="25" data-marpit-fragments="3" data-class="invert" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<h2>Rothbard the Contextualist?</h2>
+<ul>
+<li data-marpit-fragment="1">If law was not a subset of ethics it would make no sense to analogise legal values to <em>ordinary</em> ethical values</li>
+<li data-marpit-fragment="2">Rothbard is correct that &quot;we are not, in constructing a theory of liberty and property [...] concerned with <strong>all</strong> personal moral principles&quot;</li>
+<li data-marpit-fragment="3">Nowhere does Rothbard directly endorse a separation of law and ethics</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="26" data-class="invert" data-footer="Murray N. Rothbard (1982), *The Ethics of Liberty*" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--footer:Murray N. Rothbard (1982), *The Ethics of Liberty*;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<blockquote>
+<p>Eric Mack's example fails to show a necessary conflict between property rights and moral principles. The conflict in his example is between property rights and the dictates of prudence or self-interest. But the latter is only dominant in morality if one adopts moral egoism, which indeed Professor Mack does, but which is only one possible moral theory.</p>
+</blockquote>
+<footer>Murray N. Rothbard (1982), <em>The Ethics of Liberty</em></footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="27" data-class="invert" data-footer="Murray N. Rothbard (1982), *The Ethics of Liberty*" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--footer:Murray N. Rothbard (1982), *The Ethics of Liberty*;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<blockquote>
+<p>The crucial point is that <em>even</em> if the contextualist libertarian may say that, given the tragic context, Smith <em>should</em> throw someone else out of the lifeboat to save his own life, he is <em>still</em> committing, at the very least, invasion of property rights, and probably also murder of the person thrown out.</p>
+</blockquote>
+<footer>Murray N. Rothbard (1982), <em>The Ethics of Liberty</em></footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="28" data-class="invert" data-footer="Murray N. Rothbard (1982), *The Ethics of Liberty*" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--footer:Murray N. Rothbard (1982), *The Ethics of Liberty*;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<blockquote>
+<p>So that even if one says that he should try to save his life by forcibly grabbing a seat in the lifeboat, he is still, in our view, liable to prosecution as a criminal invader of property right, and perhaps as a murderer as well. After he is convicted, it would be the /right/ of the lifeboat owner or the heir of the person tossed out to forgive Smith, to pardon him because of the unusual circumstances; but it would also be their right /not/ to pardon and to proceed with the full force of their legal right to punish.</p>
+</blockquote>
+<footer>Murray N. Rothbard (1982), <em>The Ethics of Liberty</em></footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="29" data-class="invert" data-footer="Murray N. Rothbard (1982), *The Ethics of Liberty*" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--footer:Murray N. Rothbard (1982), *The Ethics of Liberty*;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<blockquote>
+<p>Once again, we are concerned in this theory with the rights of the case, /not/ with whether or not a person chooses voluntarily to exercise his rights. In our view, the property owner or the heir of the killed would have a right to prosecute and to exact proper punishment upon the aggressor.</p>
+</blockquote>
+<footer>Murray N. Rothbard (1982), <em>The Ethics of Liberty</em></footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="30" data-class="invert" data-footer="Murray N. Rothbard (1982), *The Ethics of Liberty*" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--footer:Murray N. Rothbard (1982), *The Ethics of Liberty*;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<blockquote>
+<p>The fallacy of the contextualists is to confuse considerations of individual, personal morality (what should Smith do?) with the question of the rights of the case. The right of property continues, then, to be absolute, even in the tragic lifeboat situation.</p>
+</blockquote>
+<footer>Murray N. Rothbard (1982), <em>The Ethics of Liberty</em></footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="31" data-class="invert" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<h2>Rothbard the Contextualist?</h2>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="32" data-class="invert" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<h2>Contextualism as Polylogism</h2>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="33" data-class="invert" data-footer="Konrad Graf (2011), *Action-Based Jurisprudence: Praxeological Legal Theory in Relation to Economic Theory*" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--footer:Konrad Graf (2011), *Action-Based Jurisprudence: Praxeological Legal Theory in Relation to Economic Theory*;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<blockquote>
+<p>Placing deductive legal theory within praxeology enables its reconstruction as a categorical and definitional assessment of what types of actions are NAP infringements—separate from moral assessment of such infringements. In this view, an example of an ethical statement would be, &quot;One should not violate rights.&quot; Legal theory helps to make this goal actionable by supplying information concerning the question: &quot;What is 'violating rights?'&quot;</p>
+</blockquote>
+<footer>Konrad Graf (2011), <em>Action-Based Jurisprudence: Praxeological Legal Theory in Relation to Economic Theory</em></footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="34" data-class="invert" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<h2>The Meaning of Justification</h2>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="35" data-class="invert" data-footer="Konrad Graf (2011), *Action-Based Jurisprudence: Praxeological Legal Theory in Relation to Economic Theory*" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--footer:Konrad Graf (2011), *Action-Based Jurisprudence: Praxeological Legal Theory in Relation to Economic Theory*;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<blockquote>
+<p>There <em>is</em> an intuitive relationship between law and ethics. However, I argue that it is not one of a field to a sub-field, but rather an <em>advisory</em> relationship between two distinct fields. [...] If one takes on the moral objective of not aggressing, one is more likely to be <em>successful</em> at this in action with a clear idea of what aggression is. &quot;Rights infringements&quot; become one category of wrongs next to other non-legal categories of wrongs that a given ethical system may specify.</p>
+</blockquote>
+<footer>Konrad Graf (2011), <em>Action-Based Jurisprudence: Praxeological Legal Theory in Relation to Economic Theory</em></footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="36" data-class="invert" data-footer="Konrad Graf (2011), *Action-Based Jurisprudence: Praxeological Legal Theory in Relation to Economic Theory*" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--footer:Konrad Graf (2011), *Action-Based Jurisprudence: Praxeological Legal Theory in Relation to Economic Theory*;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<blockquote>
+<p>Yet the definition of <em>what constitutes</em> infringing rights is derived independently of ethics using the categorical, counterfactual method of praxeology. Although [Argumentation Ethics] establishes that no propositional argument against the NAP can succeed, it does not prevent human beings from infringing the NAP <em>anyway</em>.</p>
+</blockquote>
+<footer>Konrad Graf (2011), <em>Action-Based Jurisprudence: Praxeological Legal Theory in Relation to Economic Theory</em></footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="37" data-marpit-fragments="4" data-class="invert" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<h2>Aggression as an Error</h2>
+<ul>
+<li data-marpit-fragment="1">Aggression being evil doesn't prevent aggression the same as 1+1=2 doesn't prevent people from acting on the information that it is 3</li>
+<li data-marpit-fragment="2">Any norm that contradicts with the NAP is incoherent</li>
+<li data-marpit-fragment="3">Law is pointless if it is not a subset of ethics</li>
+<li data-marpit-fragment="4">Could one accept the NAP whilst agreeing entirely with the Marxists?</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="38" data-class="invert" data-footer="Hans-Hermann Hoppe (2005), *The Economics and Ethics of Private Property*" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--footer:Hans-Hermann Hoppe (2005), *The Economics and Ethics of Private Property*;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<blockquote>
+<p>[T]he praxeological proof of libertarianism has the advantage of offering a completely value-free justification of private property. It remains entirely in the realm of is-statements and never tries to derive an &quot;ought&quot; from an &quot;is.&quot; The structure of the argument is this: (a) justification is propositional justification—a priori true is-statement; (b) argumentation presupposes property in one's body and the homesteading principle—a priori true is-statement; and (c) then, no deviation from this ethic can be argumentatively justified—a priori true is-statement.</p>
+</blockquote>
+<footer>Hans-Hermann Hoppe (2005), <em>The Economics and Ethics of Private Property</em></footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="39" data-class="invert" data-footer="Hans-Hermann Hoppe (2005), *The Economics and Ethics of Private Property*" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--footer:Hans-Hermann Hoppe (2005), *The Economics and Ethics of Private Property*;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<blockquote>
+<p>The proof also offers a key to an understanding of the nature of the fact-value dichotomy: Ought-statements cannot be derived from is-statements. They belong to different logical realms. It is also clear, however, that one cannot even state that there are facts and values if no propositional exchanges exist, and that this practice of propositional exchanges in turn presupposes the acceptance of the private property ethic as valid.</p>
+</blockquote>
+<footer>Hans-Hermann Hoppe (2005), <em>The Economics and Ethics of Private Property</em></footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="40" data-class="invert" data-footer="Hans-Hermann Hoppe (2005), *The Economics and Ethics of Private Property*" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--footer:Hans-Hermann Hoppe (2005), *The Economics and Ethics of Private Property*;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<blockquote>
+<p>In other words, cognition and truth-seeking as such have a normative foundation, and the normative foundation on which cognition and truth rest is the recognition of private property rights.</p>
+</blockquote>
+<footer>Hans-Hermann Hoppe (2005), <em>The Economics and Ethics of Private Property</em></footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="41" data-class="invert" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<h2>The Quote Proves Nothing</h2>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="42" data-class="invert" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<ol>
+<li>I ought engage in aggression <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.439ex;" xmlns="http://www.w3.org/2000/svg" width="13.19ex" height="1.984ex" role="img" focusable="false" viewBox="0 -683 5830 877"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D44B" d="M42 0H40Q26 0 26 11Q26 15 29 27Q33 41 36 43T55 46Q141 49 190 98Q200 108 306 224T411 342Q302 620 297 625Q288 636 234 637H206Q200 643 200 645T202 664Q206 677 212 683H226Q260 681 347 681Q380 681 408 681T453 682T473 682Q490 682 490 671Q490 670 488 658Q484 643 481 640T465 637Q434 634 411 620L488 426L541 485Q646 598 646 610Q646 628 622 635Q617 635 609 637Q594 637 594 648Q594 650 596 664Q600 677 606 683H618Q619 683 643 683T697 681T738 680Q828 680 837 683H845Q852 676 852 672Q850 647 840 637H824Q790 636 763 628T722 611T698 593L687 584Q687 585 592 480L505 384Q505 383 536 304T601 142T638 56Q648 47 699 46Q734 46 734 37Q734 35 732 23Q728 7 725 4T711 1Q708 1 678 1T589 2Q528 2 496 2T461 1Q444 1 444 10Q444 11 446 25Q448 35 450 39T455 44T464 46T480 47T506 54Q523 62 523 64Q522 64 476 181L429 299Q241 95 236 84Q232 76 232 72Q232 53 261 47Q262 47 267 47T273 46Q276 46 277 46T280 45T283 42T284 35Q284 26 282 19Q279 6 276 4T261 1Q258 1 243 1T201 2T142 2Q64 2 42 0Z"></path></g><g data-mml-node="mo" transform="translate(1129.8,0)"><path data-c="27F6" d="M84 237T84 250T98 270H1444Q1328 357 1301 493Q1301 494 1301 496T1300 499Q1300 511 1317 511H1320Q1329 511 1332 510T1338 506T1341 497T1344 481T1352 456Q1374 389 1425 336T1544 261Q1553 258 1553 250Q1553 244 1548 241T1524 231T1486 212Q1445 186 1415 152T1370 85T1349 35T1341 4Q1339 -6 1336 -8T1320 -11Q1300 -11 1300 0Q1300 7 1305 25Q1337 151 1444 230H98Q84 237 84 250Z"></path></g><g data-mml-node="mi" transform="translate(3045.6,0)"><path data-c="1D45D" d="M23 287Q24 290 25 295T30 317T40 348T55 381T75 411T101 433T134 442Q209 442 230 378L240 387Q302 442 358 442Q423 442 460 395T497 281Q497 173 421 82T249 -10Q227 -10 210 -4Q199 1 187 11T168 28L161 36Q160 35 139 -51T118 -138Q118 -144 126 -145T163 -148H188Q194 -155 194 -157T191 -175Q188 -187 185 -190T172 -194Q170 -194 161 -194T127 -193T65 -192Q-5 -192 -24 -194H-32Q-39 -187 -39 -183Q-37 -156 -26 -148H-6Q28 -147 33 -136Q36 -130 94 103T155 350Q156 355 156 364Q156 405 131 405Q109 405 94 377T71 316T59 280Q57 278 43 278H29Q23 284 23 287ZM178 102Q200 26 252 26Q282 26 310 49T356 107Q374 141 392 215T411 325V331Q411 405 350 405Q339 405 328 402T306 393T286 380T269 365T254 350T243 336T235 326L232 322Q232 321 229 308T218 264T204 212Q178 106 178 102Z"></path></g><g data-mml-node="mo" transform="translate(3770.8,0)"><path data-c="2227" d="M318 591Q325 598 333 598Q344 598 348 591Q349 590 414 445T545 151T611 -4Q609 -22 591 -22Q588 -22 586 -21T581 -20T577 -17T575 -13T572 -9T570 -4L333 528L96 -4Q87 -20 80 -21Q78 -22 75 -22Q57 -22 55 -4Q55 2 120 150T251 444T318 591Z"></path></g><g data-mml-node="mi" transform="translate(4660,0)"><path data-c="AC" d="M56 323T56 336T70 356H596Q603 353 611 343V102Q598 89 591 89Q587 89 584 90T579 94T575 98T572 102L571 209V316H70Q56 323 56 336Z"></path></g><g data-mml-node="mi" transform="translate(5327,0)"><path data-c="1D45D" d="M23 287Q24 290 25 295T30 317T40 348T55 381T75 411T101 433T134 442Q209 442 230 378L240 387Q302 442 358 442Q423 442 460 395T497 281Q497 173 421 82T249 -10Q227 -10 210 -4Q199 1 187 11T168 28L161 36Q160 35 139 -51T118 -138Q118 -144 126 -145T163 -148H188Q194 -155 194 -157T191 -175Q188 -187 185 -190T172 -194Q170 -194 161 -194T127 -193T65 -192Q-5 -192 -24 -194H-32Q-39 -187 -39 -183Q-37 -156 -26 -148H-6Q28 -147 33 -136Q36 -130 94 103T155 350Q156 355 156 364Q156 405 131 405Q109 405 94 377T71 316T59 280Q57 278 43 278H29Q23 284 23 287ZM178 102Q200 26 252 26Q282 26 310 49T356 107Q374 141 392 215T411 325V331Q411 405 350 405Q339 405 328 402T306 393T286 380T269 365T254 350T243 336T235 326L232 322Q232 321 229 308T218 264T204 212Q178 106 178 102Z"></path></g></g></g></svg></mjx-container> (a priori true is-statement);</li>
+<li><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex;" xmlns="http://www.w3.org/2000/svg" width="9.569ex" height="2.262ex" role="img" focusable="false" viewBox="0 -750 4229.4 1000"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="AC" d="M56 323T56 336T70 356H596Q603 353 611 343V102Q598 89 591 89Q587 89 584 90T579 94T575 98T572 102L571 209V316H70Q56 323 56 336Z"></path></g><g data-mml-node="mo" transform="translate(667,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path></g><g data-mml-node="mi" transform="translate(1056,0)"><path data-c="1D45D" d="M23 287Q24 290 25 295T30 317T40 348T55 381T75 411T101 433T134 442Q209 442 230 378L240 387Q302 442 358 442Q423 442 460 395T497 281Q497 173 421 82T249 -10Q227 -10 210 -4Q199 1 187 11T168 28L161 36Q160 35 139 -51T118 -138Q118 -144 126 -145T163 -148H188Q194 -155 194 -157T191 -175Q188 -187 185 -190T172 -194Q170 -194 161 -194T127 -193T65 -192Q-5 -192 -24 -194H-32Q-39 -187 -39 -183Q-37 -156 -26 -148H-6Q28 -147 33 -136Q36 -130 94 103T155 350Q156 355 156 364Q156 405 131 405Q109 405 94 377T71 316T59 280Q57 278 43 278H29Q23 284 23 287ZM178 102Q200 26 252 26Q282 26 310 49T356 107Q374 141 392 215T411 325V331Q411 405 350 405Q339 405 328 402T306 393T286 380T269 365T254 350T243 336T235 326L232 322Q232 321 229 308T218 264T204 212Q178 106 178 102Z"></path></g><g data-mml-node="mo" transform="translate(1781.2,0)"><path data-c="2227" d="M318 591Q325 598 333 598Q344 598 348 591Q349 590 414 445T545 151T611 -4Q609 -22 591 -22Q588 -22 586 -21T581 -20T577 -17T575 -13T572 -9T570 -4L333 528L96 -4Q87 -20 80 -21Q78 -22 75 -22Q57 -22 55 -4Q55 2 120 150T251 444T318 591Z"></path></g><g data-mml-node="mi" transform="translate(2670.4,0)"><path data-c="AC" d="M56 323T56 336T70 356H596Q603 353 611 343V102Q598 89 591 89Q587 89 584 90T579 94T575 98T572 102L571 209V316H70Q56 323 56 336Z"></path></g><g data-mml-node="mi" transform="translate(3337.4,0)"><path data-c="1D45D" d="M23 287Q24 290 25 295T30 317T40 348T55 381T75 411T101 433T134 442Q209 442 230 378L240 387Q302 442 358 442Q423 442 460 395T497 281Q497 173 421 82T249 -10Q227 -10 210 -4Q199 1 187 11T168 28L161 36Q160 35 139 -51T118 -138Q118 -144 126 -145T163 -148H188Q194 -155 194 -157T191 -175Q188 -187 185 -190T172 -194Q170 -194 161 -194T127 -193T65 -192Q-5 -192 -24 -194H-32Q-39 -187 -39 -183Q-37 -156 -26 -148H-6Q28 -147 33 -136Q36 -130 94 103T155 350Q156 355 156 364Q156 405 131 405Q109 405 94 377T71 316T59 280Q57 278 43 278H29Q23 284 23 287ZM178 102Q200 26 252 26Q282 26 310 49T356 107Q374 141 392 215T411 325V331Q411 405 350 405Q339 405 328 402T306 393T286 380T269 365T254 350T243 336T235 326L232 322Q232 321 229 308T218 264T204 212Q178 106 178 102Z"></path></g><g data-mml-node="mo" transform="translate(3840.4,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></g></g></g></svg></mjx-container> (a priori true is-statement);</li>
+<li><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.186ex;" xmlns="http://www.w3.org/2000/svg" width="1.509ex" height="1.251ex" role="img" focusable="false" viewBox="0 -471 667 553"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><path data-c="2234" d="M273 411Q273 437 291 454T334 471Q358 471 375 454T393 411T376 368T333 351Q307 351 290 368T273 411ZM84 38Q110 38 126 21T143 -22Q143 -46 127 -64T83 -82Q57 -82 41 -65T24 -22Q24 4 41 21T84 38ZM524 -22Q524 4 541 21T584 38Q608 38 625 21T643 -22Q643 -45 627 -63T583 -82Q557 -82 541 -65T524 -22Z"></path></g></g></g></svg></mjx-container> I ought <em>not</em> engage in aggression <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: 0;" xmlns="http://www.w3.org/2000/svg" width="1.928ex" height="1.545ex" role="img" focusable="false" viewBox="0 -683 852 683"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D44B" d="M42 0H40Q26 0 26 11Q26 15 29 27Q33 41 36 43T55 46Q141 49 190 98Q200 108 306 224T411 342Q302 620 297 625Q288 636 234 637H206Q200 643 200 645T202 664Q206 677 212 683H226Q260 681 347 681Q380 681 408 681T453 682T473 682Q490 682 490 671Q490 670 488 658Q484 643 481 640T465 637Q434 634 411 620L488 426L541 485Q646 598 646 610Q646 628 622 635Q617 635 609 637Q594 637 594 648Q594 650 596 664Q600 677 606 683H618Q619 683 643 683T697 681T738 680Q828 680 837 683H845Q852 676 852 672Q850 647 840 637H824Q790 636 763 628T722 611T698 593L687 584Q687 585 592 480L505 384Q505 383 536 304T601 142T638 56Q648 47 699 46Q734 46 734 37Q734 35 732 23Q728 7 725 4T711 1Q708 1 678 1T589 2Q528 2 496 2T461 1Q444 1 444 10Q444 11 446 25Q448 35 450 39T455 44T464 46T480 47T506 54Q523 62 523 64Q522 64 476 181L429 299Q241 95 236 84Q232 76 232 72Q232 53 261 47Q262 47 267 47T273 46Q276 46 277 46T280 45T283 42T284 35Q284 26 282 19Q279 6 276 4T261 1Q258 1 243 1T201 2T142 2Q64 2 42 0Z"></path></g></g></g></svg></mjx-container> (a priori true ought-statement).</li>
+</ol>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="43" data-class="invert" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<p><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex;" xmlns="http://www.w3.org/2000/svg" width="38.702ex" height="2.262ex" role="img" focusable="false" viewBox="0 -750 17106.1 1000"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="AC" d="M56 323T56 336T70 356H596Q603 353 611 343V102Q598 89 591 89Q587 89 584 90T579 94T575 98T572 102L571 209V316H70Q56 323 56 336Z"></path></g><g data-mml-node="mtext" transform="translate(667,0)"><path data-c="4E" d="M42 46Q74 48 94 56T118 69T128 86V634H124Q114 637 52 637H25V683H232L235 680Q237 679 322 554T493 303L578 178V598Q572 608 568 613T544 627T492 637H475V683H483Q498 680 600 680Q706 680 715 683H724V637H707Q634 633 622 598L621 302V6L614 0H600Q585 0 582 3T481 150T282 443T171 605V345L172 86Q183 50 257 46H274V0H265Q250 3 150 3Q48 3 33 0H25V46H42Z"></path><path data-c="41" d="M255 0Q240 3 140 3Q48 3 39 0H32V46H47Q119 49 139 88Q140 91 192 245T295 553T348 708Q351 716 366 716H376Q396 715 400 709Q402 707 508 390L617 67Q624 54 636 51T687 46H717V0H708Q699 3 581 3Q458 3 437 0H427V46H440Q510 46 510 64Q510 66 486 138L462 209H229L209 150Q189 91 189 85Q189 72 209 59T259 46H264V0H255ZM447 255L345 557L244 256Q244 255 345 255H447Z" transform="translate(750,0)"></path><path data-c="50" d="M130 622Q123 629 119 631T103 634T60 637H27V683H214Q237 683 276 683T331 684Q419 684 471 671T567 616Q624 563 624 489Q624 421 573 372T451 307Q429 302 328 301H234V181Q234 62 237 58Q245 47 304 46H337V0H326Q305 3 182 3Q47 3 38 0H27V46H60Q102 47 111 49T130 61V622ZM507 488Q507 514 506 528T500 564T483 597T450 620T397 635Q385 637 307 637H286Q237 637 234 628Q231 624 231 483V342H302H339Q390 342 423 349T481 382Q507 411 507 488Z" transform="translate(1500,0)"></path></g><g data-mml-node="mo" transform="translate(3125.8,0)"><path data-c="27F6" d="M84 237T84 250T98 270H1444Q1328 357 1301 493Q1301 494 1301 496T1300 499Q1300 511 1317 511H1320Q1329 511 1332 510T1338 506T1341 497T1344 481T1352 456Q1374 389 1425 336T1544 261Q1553 258 1553 250Q1553 244 1548 241T1524 231T1486 212Q1445 186 1415 152T1370 85T1349 35T1341 4Q1339 -6 1336 -8T1320 -11Q1300 -11 1300 0Q1300 7 1305 25Q1337 151 1444 230H98Q84 237 84 250Z"></path></g><g data-mml-node="mi" transform="translate(5041.6,0)"><path data-c="1D45D" d="M23 287Q24 290 25 295T30 317T40 348T55 381T75 411T101 433T134 442Q209 442 230 378L240 387Q302 442 358 442Q423 442 460 395T497 281Q497 173 421 82T249 -10Q227 -10 210 -4Q199 1 187 11T168 28L161 36Q160 35 139 -51T118 -138Q118 -144 126 -145T163 -148H188Q194 -155 194 -157T191 -175Q188 -187 185 -190T172 -194Q170 -194 161 -194T127 -193T65 -192Q-5 -192 -24 -194H-32Q-39 -187 -39 -183Q-37 -156 -26 -148H-6Q28 -147 33 -136Q36 -130 94 103T155 350Q156 355 156 364Q156 405 131 405Q109 405 94 377T71 316T59 280Q57 278 43 278H29Q23 284 23 287ZM178 102Q200 26 252 26Q282 26 310 49T356 107Q374 141 392 215T411 325V331Q411 405 350 405Q339 405 328 402T306 393T286 380T269 365T254 350T243 336T235 326L232 322Q232 321 229 308T218 264T204 212Q178 106 178 102Z"></path></g><g data-mml-node="mo" transform="translate(5766.8,0)"><path data-c="2227" d="M318 591Q325 598 333 598Q344 598 348 591Q349 590 414 445T545 151T611 -4Q609 -22 591 -22Q588 -22 586 -21T581 -20T577 -17T575 -13T572 -9T570 -4L333 528L96 -4Q87 -20 80 -21Q78 -22 75 -22Q57 -22 55 -4Q55 2 120 150T251 444T318 591Z"></path></g><g data-mml-node="mi" transform="translate(6656,0)"><path data-c="AC" d="M56 323T56 336T70 356H596Q603 353 611 343V102Q598 89 591 89Q587 89 584 90T579 94T575 98T572 102L571 209V316H70Q56 323 56 336Z"></path></g><g data-mml-node="mi" transform="translate(7323,0)"><path data-c="1D45D" d="M23 287Q24 290 25 295T30 317T40 348T55 381T75 411T101 433T134 442Q209 442 230 378L240 387Q302 442 358 442Q423 442 460 395T497 281Q497 173 421 82T249 -10Q227 -10 210 -4Q199 1 187 11T168 28L161 36Q160 35 139 -51T118 -138Q118 -144 126 -145T163 -148H188Q194 -155 194 -157T191 -175Q188 -187 185 -190T172 -194Q170 -194 161 -194T127 -193T65 -192Q-5 -192 -24 -194H-32Q-39 -187 -39 -183Q-37 -156 -26 -148H-6Q28 -147 33 -136Q36 -130 94 103T155 350Q156 355 156 364Q156 405 131 405Q109 405 94 377T71 316T59 280Q57 278 43 278H29Q23 284 23 287ZM178 102Q200 26 252 26Q282 26 310 49T356 107Q374 141 392 215T411 325V331Q411 405 350 405Q339 405 328 402T306 393T286 380T269 365T254 350T243 336T235 326L232 322Q232 321 229 308T218 264T204 212Q178 106 178 102Z"></path></g><g data-mml-node="mtext" transform="translate(7826,0)"><path data-c="A0" d=""></path></g><g data-mml-node="mo" transform="translate(8353.8,0)"><path data-c="2234" d="M273 411Q273 437 291 454T334 471Q358 471 375 454T393 411T376 368T333 351Q307 351 290 368T273 411ZM84 38Q110 38 126 21T143 -22Q143 -46 127 -64T83 -82Q57 -82 41 -65T24 -22Q24 4 41 21T84 38ZM524 -22Q524 4 541 21T584 38Q608 38 625 21T643 -22Q643 -45 627 -63T583 -82Q557 -82 541 -65T524 -22Z"></path></g><g data-mml-node="mi" transform="translate(9298.6,0)"><path data-c="AC" d="M56 323T56 336T70 356H596Q603 353 611 343V102Q598 89 591 89Q587 89 584 90T579 94T575 98T572 102L571 209V316H70Q56 323 56 336Z"></path></g><g data-mml-node="mo" transform="translate(9965.6,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path></g><g data-mml-node="mi" transform="translate(10354.6,0)"><path data-c="AC" d="M56 323T56 336T70 356H596Q603 353 611 343V102Q598 89 591 89Q587 89 584 90T579 94T575 98T572 102L571 209V316H70Q56 323 56 336Z"></path></g><g data-mml-node="mtext" transform="translate(11021.6,0)"><path data-c="4E" d="M42 46Q74 48 94 56T118 69T128 86V634H124Q114 637 52 637H25V683H232L235 680Q237 679 322 554T493 303L578 178V598Q572 608 568 613T544 627T492 637H475V683H483Q498 680 600 680Q706 680 715 683H724V637H707Q634 633 622 598L621 302V6L614 0H600Q585 0 582 3T481 150T282 443T171 605V345L172 86Q183 50 257 46H274V0H265Q250 3 150 3Q48 3 33 0H25V46H42Z"></path><path data-c="41" d="M255 0Q240 3 140 3Q48 3 39 0H32V46H47Q119 49 139 88Q140 91 192 245T295 553T348 708Q351 716 366 716H376Q396 715 400 709Q402 707 508 390L617 67Q624 54 636 51T687 46H717V0H708Q699 3 581 3Q458 3 437 0H427V46H440Q510 46 510 64Q510 66 486 138L462 209H229L209 150Q189 91 189 85Q189 72 209 59T259 46H264V0H255ZM447 255L345 557L244 256Q244 255 345 255H447Z" transform="translate(750,0)"></path><path data-c="50" d="M130 622Q123 629 119 631T103 634T60 637H27V683H214Q237 683 276 683T331 684Q419 684 471 671T567 616Q624 563 624 489Q624 421 573 372T451 307Q429 302 328 301H234V181Q234 62 237 58Q245 47 304 46H337V0H326Q305 3 182 3Q47 3 38 0H27V46H60Q102 47 111 49T130 61V622ZM507 488Q507 514 506 528T500 564T483 597T450 620T397 635Q385 637 307 637H286Q237 637 234 628Q231 624 231 483V342H302H339Q390 342 423 349T481 382Q507 411 507 488Z" transform="translate(1500,0)"></path></g><g data-mml-node="mo" transform="translate(13202.6,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></g><g data-mml-node="mo" transform="translate(13869.3,0)"><path data-c="3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path></g><g data-mml-node="mtext" transform="translate(14925.1,0)"><path data-c="4E" d="M42 46Q74 48 94 56T118 69T128 86V634H124Q114 637 52 637H25V683H232L235 680Q237 679 322 554T493 303L578 178V598Q572 608 568 613T544 627T492 637H475V683H483Q498 680 600 680Q706 680 715 683H724V637H707Q634 633 622 598L621 302V6L614 0H600Q585 0 582 3T481 150T282 443T171 605V345L172 86Q183 50 257 46H274V0H265Q250 3 150 3Q48 3 33 0H25V46H42Z"></path><path data-c="41" d="M255 0Q240 3 140 3Q48 3 39 0H32V46H47Q119 49 139 88Q140 91 192 245T295 553T348 708Q351 716 366 716H376Q396 715 400 709Q402 707 508 390L617 67Q624 54 636 51T687 46H717V0H708Q699 3 581 3Q458 3 437 0H427V46H440Q510 46 510 64Q510 66 486 138L462 209H229L209 150Q189 91 189 85Q189 72 209 59T259 46H264V0H255ZM447 255L345 557L244 256Q244 255 345 255H447Z" transform="translate(750,0)"></path><path data-c="50" d="M130 622Q123 629 119 631T103 634T60 637H27V683H214Q237 683 276 683T331 684Q419 684 471 671T567 616Q624 563 624 489Q624 421 573 372T451 307Q429 302 328 301H234V181Q234 62 237 58Q245 47 304 46H337V0H326Q305 3 182 3Q47 3 38 0H27V46H60Q102 47 111 49T130 61V622ZM507 488Q507 514 506 528T500 564T483 597T450 620T397 635Q385 637 307 637H286Q237 637 234 628Q231 624 231 483V342H302H339Q390 342 423 349T481 382Q507 411 507 488Z" transform="translate(1500,0)"></path></g></g></g></svg></mjx-container></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="44" data-class="invert" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<h1>Dismantling Hume's Guillotine</h1>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="45" data-class="invert" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<h2>Values as Objective</h2>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="46" data-marpit-fragments="3" data-class="invert" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<h2>Values as Objective</h2>
+<ul>
+<li data-marpit-fragment="1">Insofar as a person is engaging in any form of evaluation or acting at all he is making the choice of existence (life) over non-existence (death). So life is an objective value</li>
+<li data-marpit-fragment="2">Anti-life means anti-existence which means anti-reality, this is an incoherent position</li>
+<li data-marpit-fragment="3">To think is moral, to evade is immoral</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="47" data-class="invert" data-footer="Leonard Peikoff, *Fact and Value*" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--footer:Leonard Peikoff, *Fact and Value*;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<blockquote>
+<p>In the objective approach, since every fact bears on the choice to live, every truth necessarily entails a value-judgment, and every value-judgment necessarily presupposes a truth. As Ayn Rand states the point in “The Objectivist Ethics”: “Knowledge, for any conscious organism, is the means of survival; to a living consciousness, every ‘is‘ implies an ‘ought.'”</p>
+</blockquote>
+<footer>Leonard Peikoff, <em>Fact and Value</em></footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="48" data-class="invert" data-footer="Leonard Peikoff, *Fact and Value*" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--footer:Leonard Peikoff, *Fact and Value*;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<blockquote>
+<p>Evaluation, accordingly, is not a compartmentalized function applicable only to some aspects of man’s life or of reality; if one chooses to live and to be objective, a process of evaluation is coextensive with and implicit in every act of cognition.</p>
+</blockquote>
+<footer>Leonard Peikoff, <em>Fact and Value</em></footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="49" data-class="invert" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<h2>The Moral Implications of Facts</h2>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="50" data-marpit-fragments="3" data-class="invert" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<h2>The Moral Implications of Facts</h2>
+<ul>
+<li data-marpit-fragment="1">Metaphysically given facts have a bearing on mans self-preservation</li>
+<li data-marpit-fragment="2">That the sun shines implies that you ought grow crops in the shine rather than the shade</li>
+<li data-marpit-fragment="3">&quot;All these evaluations are demanded by the cognitions involved [...].&quot;<sup>11</sup></li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="51" data-class="invert" data-footer="Leonard Peikoff, *Fact and Value*" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--footer:Leonard Peikoff, *Fact and Value*;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<blockquote>
+<p>[...] If the conscientious attempt to perceive reality by the use of one’s mind is the essence of honesty, no such rebellion can qualify as “honest.”</p>
+</blockquote>
+<footer>Leonard Peikoff, <em>Fact and Value</em></footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="52" data-class="invert" data-footer="Leonard Peikoff, *Fact and Value*" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--footer:Leonard Peikoff, *Fact and Value*;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<blockquote>
+<p>The originators, leaders and intellectual spokesmen of all such movements are necessarily evaders on a major scale; they are not merely mistaken, but are crusading irrationalists. The mass base of such movements are not evaders of the same kind; but most of the followers are dishonest in their own passive way. They are unthinking, intellectually irresponsible ballast, unconcerned with logic or truth.</p>
+</blockquote>
+<footer>Leonard Peikoff, <em>Fact and Value</em></footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="53" data-class="invert" data-footer="Leonard Peikoff, *Fact and Value*" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--footer:Leonard Peikoff, *Fact and Value*;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<blockquote>
+<p>They go along with corrupt trend-setters because their neighbors demand it, and/or because a given notion satisfies some out-of-context desire they happen to feel. People of this kind are not the helplessly ignorant, but the willfully self-deluded.</p>
+</blockquote>
+<footer>Leonard Peikoff, <em>Fact and Value</em></footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="54" data-class="invert" data-footer="Leonard Peikoff, *Fact and Value*" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--footer:Leonard Peikoff, *Fact and Value*;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<blockquote>
+<p><strong>EVEN IN REGARD</strong> to inherently dishonest movements, let me now add, a marginal third category of adherent is possible: the relatively small number who struggle conscientiously, but simply cannot grasp the issues and the monumental corruption involved. These are the handful who become Communists, “channelers,” etc. through a truly honest error of knowledge.</p>
+</blockquote>
+<footer>Leonard Peikoff, <em>Fact and Value</em></footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="55" data-class="invert" data-footer="Leonard Peikoff, *Fact and Value*" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--footer:Leonard Peikoff, *Fact and Value*;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<blockquote>
+<p>Leaving aside the retarded and the illiterate, who are effectively helpless in such matters, this third group consists almost exclusively of the very young — and precisely for this reason, these youngsters get out of such movements fast, on their own, without needing lectures from others; they get out as they reach maturity. Being conscientious and mentally active, they see first-hand what is going on in their movement and they identify what it means; so their initial enthusiasm turns to dismay and then to horror. (Andrei in <em>We the Living</em> may be taken as a fictional symbol here.)</p>
+</blockquote>
+<footer>Leonard Peikoff, <em>Fact and Value</em></footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="56" data-class="invert" data-footer="Leonard Peikoff, *Fact and Value*" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--footer:Leonard Peikoff, *Fact and Value*;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<blockquote>
+<p>The very honesty of such individuals limits their stay in the movement; they cannot tolerate for long the massiveness of the evil with which they have become involved. Nor, when such youngsters drop out, do they say to the world belligerently: “Don’t dare to judge me for my past, because my error was honest.”</p>
+</blockquote>
+<footer>Leonard Peikoff, <em>Fact and Value</em></footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="57" data-class="invert" data-footer="Leonard Peikoff, *Fact and Value*" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--footer:Leonard Peikoff, *Fact and Value*;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<blockquote>
+<p>On the contrary — and here I speak from my own personal experience of honest errors that I committed as a teenager — the best among these young people are contrite; they recognize the aid and comfort, inadvertent though it be, which they have been giving to error and evil, and they seek to make amends for it.</p>
+</blockquote>
+<footer>Leonard Peikoff, <em>Fact and Value</em></footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="58" data-class="invert" data-footer="Leonard Peikoff, *Fact and Value*" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--footer:Leonard Peikoff, *Fact and Value*;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<blockquote>
+<p>They expect those who know of their past creeds and allegiances to regard them with suspicion; they know that it is their own responsibility to demonstrate <em>objectively</em> and across time that they have changed, that they will not repeat their error tomorrow in another variant, that their error was innocent.</p>
+</blockquote>
+<footer>Leonard Peikoff, <em>Fact and Value</em></footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="59" data-class="invert" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<h2>Ethical Subjectivism as a Destruction of Ethics</h2>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="60" data-marpit-fragments="2" data-class="invert" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<h2>Ethical Subjectivism as a Destruction of Ethics</h2>
+<ul>
+<li data-marpit-fragment="1">Hume's guillotine implies the destruction of ethics</li>
+<li data-marpit-fragment="2">Certain norms are pre-supposed even in an ethical deliberation that seeks to undo ethics</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="61" data-class="invert" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<h2>Unreason <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.152ex;" xmlns="http://www.w3.org/2000/svg" width="3.016ex" height="1.437ex" role="img" focusable="false" viewBox="0 -568 1333 635"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><path data-c="22D8" d="M639 -48Q639 -54 634 -60T619 -67H618Q612 -67 536 -26Q430 33 329 88Q61 235 59 239Q56 243 56 250T59 261Q62 266 336 415T615 567L619 568Q622 567 625 567Q639 562 639 548Q639 540 633 534Q632 532 374 391L117 250L374 109Q632 -32 633 -34Q639 -40 639 -48ZM958 -48Q958 -54 953 -60T938 -67H937Q931 -67 855 -26Q749 33 648 88Q380 235 378 239Q375 243 375 250T378 261Q381 266 655 415T934 567L938 568Q941 567 944 567Q958 562 958 548Q958 540 952 534Q951 532 693 391L436 250L693 109Q951 -32 952 -34Q958 -40 958 -48ZM1277 -48Q1277 -54 1272 -60T1257 -67H1256Q1250 -67 1174 -26Q1068 33 967 88Q699 235 697 239Q694 243 694 250T697 261Q700 266 974 415T1253 567L1257 568Q1260 567 1263 567Q1277 562 1277 548Q1277 540 1271 534Q1270 532 1012 391L755 250L1012 109Q1270 -32 1271 -34Q1277 -40 1277 -48Z"></path></g></g></g></svg></mjx-container> Technologically Primitive</h2>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="62" data-class="invert" data-footer="Leonard Peikoff, *Fact and Value*" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--footer:Leonard Peikoff, *Fact and Value*;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<blockquote>
+<p>[...] To an individual in a division-of-labor society, it makes a life-or-death difference whether he is surrounded by producers or parasites, honest men or cheats, independent men or power-lusters. Just as one must distinguish between good and bad in relation to the realm of nature, so one must distinguish between good and bad in relation to the realm of man.</p>
+</blockquote>
+<footer>Leonard Peikoff, <em>Fact and Value</em></footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="63" data-class="invert" data-footer="Leonard Peikoff, *Fact and Value*" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--footer:Leonard Peikoff, *Fact and Value*;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<blockquote>
+<p>In Objectivist terms, this means a single fundamental issue: in the human realm, one must distinguish the rational from the irrational, the thinkers from the evaders. Such judgment tells one whether a man, in principle, is committed to reality — or to escaping from and fighting it.</p>
+</blockquote>
+<footer>Leonard Peikoff, <em>Fact and Value</em></footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="64" data-class="invert" data-footer="Leonard Peikoff, *Fact and Value*" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--footer:Leonard Peikoff, *Fact and Value*;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<blockquote>
+<p>In the one case, he is an ally and potential benefactor of the living; in the other, an enemy and potential destroyer. Thus the mandate of justice: identify the good (the rational) and the evil (the irrational) in men and their works — then, first, deal with, support and/or reward the good; and, second, boycott, condemn and/or punish the evil.</p>
+</blockquote>
+<footer>Leonard Peikoff, <em>Fact and Value</em></footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="65" data-class="invert" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<h2>Proper Moral Evaluation</h2>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="66" data-class="invert" data-footer="Leonard Peikoff, *Fact and Value*" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--footer:Leonard Peikoff, *Fact and Value*;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<blockquote>
+<p>Implicit in saying that a certain idea is true is a positive moral estimate of the mental processes that led to it (a credit to the individual for having worked to grasp reality), /and/ a positive estimate of the existential results to come (a true idea will have to yield pro-life results when men act on it). The same applies /mutatis mutandis/ to false ideas.</p>
+</blockquote>
+<footer>Leonard Peikoff, <em>Fact and Value</em></footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="67" data-class="invert" data-footer="Leonard Peikoff, *Fact and Value*" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--footer:Leonard Peikoff, *Fact and Value*;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<blockquote>
+<p>Implicit in saying that an idea contradicts the facts of reality is a negative estimate of the processes that led to it, and also of the effects the idea will have in practice, which have to be harmful. If one’s ideas are tied to reality at all and if one is guided by life as the standard, there is no way to identify an idea’s truth or falsehood without in some form also making such evaluations.</p>
+</blockquote>
+<footer>Leonard Peikoff, <em>Fact and Value</em></footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="68" data-class="invert" data-footer="Leonard Peikoff, *Fact and Value*" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--footer:Leonard Peikoff, *Fact and Value*;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<blockquote>
+<p>[...] Truth is a product of effort and leads in action to value(s); hence, one says, the true idea is not only true: it is also good. Falsehood, assuming it reaches a certain scale, is a product of evasion and leads to destruction; such an idea is not only false; it is also evil.</p>
+</blockquote>
+<footer>Leonard Peikoff, <em>Fact and Value</em></footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="69" data-class="invert" data-footer="Leonard Peikoff, *Fact and Value*" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--footer:Leonard Peikoff, *Fact and Value*;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<blockquote>
+<p>An employee, to take a relatively modest positive example, offers a man an idea for improving the operation of his business. His idea, the boss concludes after weighing the evidence, takes into account all the relevant facts; he’s right. So far, this is pure cognition, the outcome of which is expressed in a statement like: “I agree with you.” But no decent person, whether he knows philosophy or not, would stop there; he would not say unemotionally, like a dead fish: “Your idea is correct. Good day.”</p>
+</blockquote>
+<footer>Leonard Peikoff, <em>Fact and Value</em></footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="70" data-class="invert" data-footer="Leonard Peikoff, *Fact and Value*" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--footer:Leonard Peikoff, *Fact and Value*;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<blockquote>
+<p>On the contrary, precisely because the new idea represents a new grasp of reality, the moral kind of boss is enthusiastic, i.e., he /evaluates/ the idea. He cannot avoid seeing two things: this employee of mine had to innovate, struggle, think to reach the idea when no one else did, and: the idea will cut my costs, increase my customers, double my profits.</p>
+</blockquote>
+<footer>Leonard Peikoff, <em>Fact and Value</em></footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="71" data-class="invert" data-footer="Leonard Peikoff, *Fact and Value*" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--footer:Leonard Peikoff, *Fact and Value*;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<blockquote>
+<p>The boss, accordingly, is excited, he likes his employee, he praises him, he rewards him. He not only says about the idea: “true.” As an inevitable corollary, he says about it: “good.” That “good” is the evaluation or the “ought”; it represents the practice of justice and the tie to life.</p>
+</blockquote>
+<footer>Leonard Peikoff, <em>Fact and Value</em></footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="72" data-class="invert" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<h2>Error is Error</h2>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="73" data-class="invert" data-theme="uncover" data-style="sup {
+  color: #0ea5e9;
+}
+" class="invert" style="--class:invert;--theme:uncover;--style:sup {
+  color: #0ea5e9;
+}
+;">
+<h1>Related Reading</h1>
+<ul>
+<li>Leonard Peikoff, <em>Fact and Value</em></li>
+</ul>
+</section>
+<script>!function(){"use strict";const t={h1:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"1"},style:"display: block; font-size: 2em; margin-block-start: 0.67em; margin-block-end: 0.67em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h2:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"2"},style:"display: block; font-size: 1.5em; margin-block-start: 0.83em; margin-block-end: 0.83em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h3:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"3"},style:"display: block; font-size: 1.17em; margin-block-start: 1em; margin-block-end: 1em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h4:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"4"},style:"display: block; margin-block-start: 1.33em; margin-block-end: 1.33em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h5:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"5"},style:"display: block; font-size: 0.83em; margin-block-start: 1.67em; margin-block-end: 1.67em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h6:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"6"},style:"display: block; font-size: 0.67em; margin-block-start: 2.33em; margin-block-end: 2.33em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},span:{proto:()=>HTMLSpanElement},pre:{proto:()=>HTMLElement,style:"display: block; font-family: monospace; white-space: pre; margin: 1em 0; --marp-auto-scaling-white-space: pre;"}},e="data-marp-auto-scaling-wrapper",i="data-marp-auto-scaling-svg",n="data-marp-auto-scaling-container";class s extends HTMLElement{constructor(){super(),this.svgPreserveAspectRatio="xMinYMid meet";const t=t=>([e])=>{const{width:i,height:n}=e.contentRect;this[t]={width:i,height:n},this.updateSVGRect()};this.attachShadow({mode:"open"}),this.containerObserver=new ResizeObserver(t("containerSize")),this.wrapperObserver=new ResizeObserver(((...e)=>{t("wrapperSize")(...e),this.flushSvgDisplay()}))}static get observedAttributes(){return["data-downscale-only"]}connectedCallback(){var t,s,o,r,a;this.shadowRoot.innerHTML=`\n<style>\n  svg[${i}] { display: block; width: 100%; height: auto; vertical-align: top; }\n  span[${n}] { display: table; white-space: var(--marp-auto-scaling-white-space, nowrap); width: max-content; }\n</style>\n<div ${e}>\n  <svg part="svg" ${i}>\n    <foreignObject><span ${n}><slot></slot></span></foreignObject>\n  </svg>\n</div>\n    `.split(/\n\s*/).join(""),this.wrapper=null!==(t=this.shadowRoot.querySelector(`div[${e}]`))&&void 0!==t?t:void 0;const l=this.svg;this.svg=null!==(o=null===(s=this.wrapper)||void 0===s?void 0:s.querySelector(`svg[${i}]`))&&void 0!==o?o:void 0,this.svg!==l&&(this.svgComputedStyle=this.svg?window.getComputedStyle(this.svg):void 0),this.container=null!==(a=null===(r=this.svg)||void 0===r?void 0:r.querySelector(`span[${n}]`))&&void 0!==a?a:void 0,this.observe()}disconnectedCallback(){this.svg=void 0,this.svgComputedStyle=void 0,this.wrapper=void 0,this.container=void 0,this.observe()}attributeChangedCallback(){this.observe()}flushSvgDisplay(){const{svg:t}=this;t&&(t.style.display="inline",requestAnimationFrame((()=>{t.style.display=""})))}observe(){this.containerObserver.disconnect(),this.wrapperObserver.disconnect(),this.wrapper&&this.wrapperObserver.observe(this.wrapper),this.container&&this.containerObserver.observe(this.container),this.svgComputedStyle&&this.observeSVGStyle(this.svgComputedStyle)}observeSVGStyle(t){const e=()=>{const i=(()=>{const e=t.getPropertyValue("--preserve-aspect-ratio");if(e)return e.trim();return`x${(({textAlign:t,direction:e})=>{if(t.endsWith("left"))return"Min";if(t.endsWith("right"))return"Max";if("start"===t||"end"===t){let i="rtl"===e;return"end"===t&&(i=!i),i?"Max":"Min"}return"Mid"})(t)}YMid meet`})();i!==this.svgPreserveAspectRatio&&(this.svgPreserveAspectRatio=i,this.updateSVGRect()),t===this.svgComputedStyle&&requestAnimationFrame(e)};e()}updateSVGRect(){var t,e,i,n,s,o,r;let a=Math.ceil(null!==(e=null===(t=this.containerSize)||void 0===t?void 0:t.width)&&void 0!==e?e:0);const l=Math.ceil(null!==(n=null===(i=this.containerSize)||void 0===i?void 0:i.height)&&void 0!==n?n:0);void 0!==this.dataset.downscaleOnly&&(a=Math.max(a,null!==(o=null===(s=this.wrapperSize)||void 0===s?void 0:s.width)&&void 0!==o?o:0));const c=null===(r=this.svg)||void 0===r?void 0:r.querySelector(":scope > foreignObject");if(null==c||c.setAttribute("width",`${a}`),null==c||c.setAttribute("height",`${l}`),this.svg&&(this.svg.setAttribute("viewBox",`0 0 ${a} ${l}`),this.svg.setAttribute("preserveAspectRatio",this.svgPreserveAspectRatio),this.svg.style.height=a<=0||l<=0?"0":""),this.container){const t=this.svgPreserveAspectRatio.toLowerCase();this.container.style.marginLeft=t.startsWith("xmid")||t.startsWith("xmax")?"auto":"0",this.container.style.marginRight=t.startsWith("xmi")?"auto":"0"}}}const o=(t,{attrs:e={},style:i})=>class extends t{constructor(...t){super(...t);for(const[t,i]of Object.entries(e))this.hasAttribute(t)||this.setAttribute(t,i);this.attachShadow({mode:"open"})}static get observedAttributes(){return["data-auto-scaling"]}connectedCallback(){this._update()}attributeChangedCallback(){this._update()}_update(){const t=i?`<style>:host { ${i} }</style>`:"";let e="<slot></slot>";const{autoScaling:n}=this.dataset;if(void 0!==n){e=`<marp-auto-scaling exportparts="svg:auto-scaling" ${"downscale-only"===n?"data-downscale-only":""}>${e}</marp-auto-scaling>`}this.shadowRoot.innerHTML=t+e}};let r;const a=Symbol();let l;const c="marpitSVGPolyfill:setZoomFactor,",d=Symbol(),g=Symbol();const h=()=>{const t="Apple Computer, Inc."===navigator.vendor,e=t?[u]:[],i={then:e=>(t?(async()=>{if(void 0===l){const t=document.createElement("canvas");t.width=10,t.height=10;const e=t.getContext("2d"),i=new Image(10,10),n=new Promise((t=>{i.addEventListener("load",(()=>t()))}));i.crossOrigin="anonymous",i.src="data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2210%22%20height%3D%2210%22%20viewBox%3D%220%200%201%201%22%3E%3CforeignObject%20width%3D%221%22%20height%3D%221%22%20requiredExtensions%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%22%3E%3Cdiv%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%22%20style%3D%22width%3A%201px%3B%20height%3A%201px%3B%20background%3A%20red%3B%20position%3A%20relative%22%3E%3C%2Fdiv%3E%3C%2FforeignObject%3E%3C%2Fsvg%3E",await n,e.drawImage(i,0,0),l=e.getImageData(5,5,1,1).data[3]<128}return l})().then((t=>{null==e||e(t?[u]:[])})):null==e||e([]),i)};return Object.assign(e,i)};let p,m;function u(t){const e="object"==typeof t&&t.target||document,i="object"==typeof t?t.zoom:t;window[g]||(Object.defineProperty(window,g,{configurable:!0,value:!0}),document.body.style.zoom=1.0001,document.body.offsetHeight,document.body.style.zoom=1,window.addEventListener("message",(({data:t,origin:e})=>{if(e===window.origin)try{if(t&&"string"==typeof t&&t.startsWith(c)){const[,e]=t.split(","),i=Number.parseFloat(e);Number.isNaN(i)||(m=i)}}catch(t){console.error(t)}})));let n=!1;Array.from(e.querySelectorAll("svg[data-marpit-svg]"),(t=>{var e,s,o,r;t.style.transform||(t.style.transform="translateZ(0)");const a=i||m||t.currentScale||1;p!==a&&(p=a,n=a);const l=t.getBoundingClientRect(),{length:c}=t.children;for(let i=0;i<c;i+=1){const n=t.children[i];if(n.getScreenCTM){const t=n.getScreenCTM();if(t){const i=null!==(s=null===(e=n.x)||void 0===e?void 0:e.baseVal.value)&&void 0!==s?s:0,c=null!==(r=null===(o=n.y)||void 0===o?void 0:o.baseVal.value)&&void 0!==r?r:0,d=n.children.length;for(let e=0;e<d;e+=1){const s=n.children[e];if("SECTION"===s.tagName){const{style:e}=s;e.transformOrigin||(e.transformOrigin=`${-i}px ${-c}px`),e.transform=`scale(${a}) matrix(${t.a}, ${t.b}, ${t.c}, ${t.d}, ${t.e-l.left}, ${t.f-l.top}) translateZ(0.0001px)`;break}}}}}})),!1!==n&&Array.from(e.querySelectorAll("iframe"),(({contentWindow:t})=>{null==t||t.postMessage(`${c}${n}`,"null"===window.origin?"*":window.origin)}))}function v({once:t=!1,target:e=document}={}){const i=function(t=document){if(t[d])return t[d];let e=!0;const i=()=>{e=!1,delete t[d]};Object.defineProperty(t,d,{configurable:!0,value:i});let n=[],s=!1;(async()=>{try{n=await h()}finally{s=!0}})();const o=()=>{for(const e of n)e({target:t});s&&0===n.length||e&&window.requestAnimationFrame(o)};return o(),i}(e);return t?(i(),()=>{}):i}p=1,m=void 0;const b=Symbol(),w=(e=document)=>{if("undefined"==typeof window)throw new Error("Marp Core's browser script is valid only in browser context.");if(((e=document)=>{const i=window[a];i||customElements.define("marp-auto-scaling",s);for(const n of Object.keys(t)){const s=`marp-${n}`,a=t[n].proto();null!=r||(r=!!document.createElement("div",{is:"marp-auto-scaling"}).outerHTML.startsWith("<div is")),r&&a!==HTMLElement?i||customElements.define(s,o(a,{style:t[n].style}),{extends:n}):(i||customElements.define(s,o(HTMLElement,t[n])),e.querySelectorAll(`${n}[is="${s}"]`).forEach((t=>{t.outerHTML=t.outerHTML.replace(new RegExp(`^<${n}`,"i"),`<${s}`).replace(new RegExp(`</${n}>$`,"i"),`</${s}>`)})))}window[a]=!0})(e),e[b])return e[b];const i=v({target:e}),n=()=>{i(),delete e[b]},l=Object.assign(n,{cleanup:n,update:()=>w(e)});return Object.defineProperty(e,b,{configurable:!0,value:l}),l},y=document.currentScript;w(y?y.getRootNode():document)}();
+</script></foreignObject></svg></div><script>/*!! License: https://unpkg.com/@marp-team/marp-cli@2.4.0/lib/bespoke.js.LICENSE.txt */
+!function(){"use strict";const e=document.body,t=(...e)=>history.replaceState(...e),n="presenter",r="next",o=["",n,r],i="bespoke-marp-",a=`data-${i}`,s=(e,{protocol:t,host:n,pathname:r,hash:o}=location)=>{const i=e.toString();return`${t}//${n}${r}${i?"?":""}${i}${o}`},l=()=>e.dataset.bespokeView,d=e=>new URLSearchParams(location.search).get(e),c=(e,n={})=>{var r;const o={location,setter:t,...n},i=new URLSearchParams(o.location.search);for(const t of Object.keys(e)){const n=e[t];"string"==typeof n?i.set(t,n):i.delete(t)}try{o.setter({...null!==(r=window.history.state)&&void 0!==r?r:{}},"",s(i,o.location))}catch(e){console.error(e)}},u=(()=>{const e="bespoke-marp";try{return localStorage.setItem(e,e),localStorage.removeItem(e),!0}catch(e){return!1}})(),f=e=>{try{return localStorage.getItem(e)}catch(e){return null}},m=(e,t)=>{try{return localStorage.setItem(e,t),!0}catch(e){return!1}},g=e=>{try{return localStorage.removeItem(e),!0}catch(e){return!1}},p=(e,t)=>{const n="aria-hidden";t?e.setAttribute(n,"true"):e.removeAttribute(n)},v=e=>{e.parent.classList.add(`${i}parent`),e.slides.forEach((e=>e.classList.add(`${i}slide`))),e.on("activate",(t=>{const n=`${i}active`,r=t.slide,o=r.classList,a=!o.contains(n);if(e.slides.forEach((e=>{e.classList.remove(n),p(e,!0)})),o.add(n),p(r,!1),a){const e=`${n}-ready`;o.add(e),document.body.clientHeight,o.remove(e)}}))},h=e=>{let t=0,n=0;Object.defineProperty(e,"fragments",{enumerable:!0,value:e.slides.map((e=>[null,...e.querySelectorAll("[data-marpit-fragment]")]))});const r=r=>void 0!==e.fragments[t][n+r],o=(r,o)=>{t=r,n=o,e.fragments.forEach(((e,t)=>{e.forEach(((e,n)=>{if(null==e)return;const i=t<r||t===r&&n<=o;e.setAttribute(`${a}fragment`,(i?"":"in")+"active");const s=`${a}current-fragment`;t===r&&n===o?e.setAttribute(s,"current"):e.removeAttribute(s)}))})),e.fragmentIndex=o;const i={slide:e.slides[r],index:r,fragments:e.fragments[r],fragmentIndex:o};e.fire("fragment",i)};e.on("next",(({fragment:i=!0})=>{if(i){if(r(1))return o(t,n+1),!1;const i=t+1;e.fragments[i]&&o(i,0)}else{const r=e.fragments[t].length;if(n+1<r)return o(t,r-1),!1;const i=e.fragments[t+1];i&&o(t+1,i.length-1)}})),e.on("prev",(({fragment:i=!0})=>{if(r(-1)&&i)return o(t,n-1),!1;const a=t-1;e.fragments[a]&&o(a,e.fragments[a].length-1)})),e.on("slide",(({index:t,fragment:n})=>{let r=0;if(void 0!==n){const o=e.fragments[t];if(o){const{length:e}=o;r=-1===n?e-1:Math.min(Math.max(n,0),e-1)}}o(t,r)})),o(0,0)},y=document,b=()=>!(!y.fullscreenEnabled&&!y.webkitFullscreenEnabled),w=()=>!(!y.fullscreenElement&&!y.webkitFullscreenElement),x=e=>{e.fullscreen=()=>{b()&&(async()=>{return w()?null===(e=y.exitFullscreen||y.webkitExitFullscreen)||void 0===e?void 0:e.call(y):((e=y.body)=>{var t;return null===(t=e.requestFullscreen||e.webkitRequestFullscreen)||void 0===t?void 0:t.call(e)})();var e})()},document.addEventListener("keydown",(t=>{"f"!==t.key&&"F11"!==t.key||t.altKey||t.ctrlKey||t.metaKey||!b()||(e.fullscreen(),t.preventDefault())}))},k=`${i}inactive`,$=(e=2e3)=>({parent:t,fire:n})=>{const r=t.classList,o=e=>n(`marp-${e?"":"in"}active`);let i;const a=()=>{i&&clearTimeout(i),i=setTimeout((()=>{r.add(k),o()}),e),r.contains(k)&&(r.remove(k),o(!0))};for(const e of["mousedown","mousemove","touchend"])document.addEventListener(e,a);setTimeout(a,0)},E=["AUDIO","BUTTON","INPUT","SELECT","TEXTAREA","VIDEO"],L=e=>{e.parent.addEventListener("keydown",(e=>{if(!e.target)return;const t=e.target;(E.includes(t.nodeName)||"true"===t.contentEditable)&&e.stopPropagation()}))},S=e=>{window.addEventListener("load",(()=>{for(const t of e.slides){const e=t.querySelector("marp-auto-scaling, [data-auto-scaling], [data-marp-fitting]");t.setAttribute(`${a}load`,e?"":"hideable")}}))},P=({interval:e=250}={})=>t=>{document.addEventListener("keydown",(e=>{if(" "===e.key&&e.shiftKey)t.prev();else if("ArrowLeft"===e.key||"ArrowUp"===e.key||"PageUp"===e.key)t.prev({fragment:!e.shiftKey});else if(" "!==e.key||e.shiftKey)if("ArrowRight"===e.key||"ArrowDown"===e.key||"PageDown"===e.key)t.next({fragment:!e.shiftKey});else if("End"===e.key)t.slide(t.slides.length-1,{fragment:-1});else{if("Home"!==e.key)return;t.slide(0)}else t.next();e.preventDefault()}));let n,r,o=0;t.parent.addEventListener("wheel",(i=>{let a=!1;const s=(e,t)=>{e&&(a=a||((e,t)=>((e,t)=>{const n="X"===t?"Width":"Height";return e[`client${n}`]<e[`scroll${n}`]})(e,t)&&((e,t)=>{const{overflow:n}=e,r=e[`overflow${t}`];return"auto"===n||"scroll"===n||"auto"===r||"scroll"===r})(getComputedStyle(e),t))(e,t)),(null==e?void 0:e.parentElement)&&s(e.parentElement,t)};if(0!==i.deltaX&&s(i.target,"X"),0!==i.deltaY&&s(i.target,"Y"),a)return;i.preventDefault();const l=Math.sqrt(i.deltaX**2+i.deltaY**2);if(void 0!==i.wheelDelta){if(void 0===i.webkitForce&&Math.abs(i.wheelDelta)<40)return;if(i.deltaMode===i.DOM_DELTA_PIXEL&&l<4)return}else if(i.deltaMode===i.DOM_DELTA_PIXEL&&l<12)return;r&&clearTimeout(r),r=setTimeout((()=>{n=0}),e);const d=Date.now()-o<e,c=l<=n;if(n=l,d||c)return;let u;(i.deltaX>0||i.deltaY>0)&&(u="next"),(i.deltaX<0||i.deltaY<0)&&(u="prev"),u&&(t[u](),o=Date.now())}))},T=(e=`.${i}osc`)=>{const t=document.querySelector(e);if(!t)return()=>{};const n=(e,n)=>{t.querySelectorAll(`[${a}osc=${JSON.stringify(e)}]`).forEach(n)};return b()||n("fullscreen",(e=>e.style.display="none")),u||n("presenter",(e=>{e.disabled=!0,e.title="Presenter view is disabled due to restricted localStorage."})),e=>{t.addEventListener("click",(t=>{if(t.target instanceof HTMLElement){const{bespokeMarpOsc:n}=t.target.dataset;n&&t.target.blur();const r={fragment:!t.shiftKey};"next"===n?e.next(r):"prev"===n?e.prev(r):"fullscreen"===n?null==e||e.fullscreen():"presenter"===n&&e.openPresenterView()}})),e.parent.appendChild(t),e.on("activate",(({index:t})=>{n("page",(n=>n.textContent=`Page ${t+1} of ${e.slides.length}`))})),e.on("fragment",(({index:t,fragments:r,fragmentIndex:o})=>{n("prev",(e=>e.disabled=0===t&&0===o)),n("next",(n=>n.disabled=t===e.slides.length-1&&o===r.length-1))})),e.on("marp-active",(()=>p(t,!1))),e.on("marp-inactive",(()=>p(t,!0))),b()&&(e=>{for(const t of["","webkit"])y.addEventListener(t+"fullscreenchange",e)})((()=>n("fullscreen",(e=>e.classList.toggle("exit",b()&&w())))))}},_=e=>{window.addEventListener("message",(t=>{if(t.origin!==window.origin)return;const[n,r]=t.data.split(":");if("navigate"===n){const[t,n]=r.split(",");let o=Number.parseInt(t,10),i=Number.parseInt(n,10)+1;i>=e.fragments[o].length&&(o+=1,i=0),e.slide(o,{fragment:i})}}))};var I=["area","base","br","col","command","embed","hr","img","input","keygen","link","meta","param","source","track","wbr"];let M=e=>String(e).replace(/[&<>"']/g,(e=>`&${A[e]};`)),A={"&":"amp","<":"lt",">":"gt",'"':"quot","'":"apos"},D="dangerouslySetInnerHTML",O={className:"class",htmlFor:"for"},C={};function N(e,t){let n=[],r="";t=t||{};for(let e=arguments.length;e-- >2;)n.push(arguments[e]);if("function"==typeof e)return t.children=n.reverse(),e(t);if(e){if(r+="<"+e,t)for(let e in t)!1!==t[e]&&null!=t[e]&&e!==D&&(r+=` ${O[e]?O[e]:M(e)}="${M(t[e])}"`);r+=">"}if(-1===I.indexOf(e)){if(t[D])r+=t[D].__html;else for(;n.length;){let e=n.pop();if(e)if(e.pop)for(let t=e.length;t--;)n.push(e[t]);else r+=!0===C[e]?e:M(e)}r+=e?`</${e}>`:""}return C[r]=!0,r}const B=({children:e})=>N(null,null,...e),q=`${i}presenter-`,K={container:`${q}container`,dragbar:`${q}dragbar-container`,next:`${q}next`,nextContainer:`${q}next-container`,noteContainer:`${q}note-container`,noteWrapper:`${q}note-wrapper`,noteButtons:`${q}note-buttons`,infoContainer:`${q}info-container`,infoPage:`${q}info-page`,infoPageText:`${q}info-page-text`,infoPagePrev:`${q}info-page-prev`,infoPageNext:`${q}info-page-next`,noteButtonsBigger:`${q}note-bigger`,noteButtonsSmaller:`${q}note-smaller`,infoTime:`${q}info-time`,infoTimer:`${q}info-timer`},F=e=>{const{title:t}=document;document.title="[Presenter view]"+(t?` - ${t}`:"");const n={},r=e=>(n[e]=n[e]||document.querySelector(`.${e}`),n[e]);document.body.appendChild((e=>{const t=document.createElement("div");return t.className=K.container,t.appendChild(e),t.insertAdjacentHTML("beforeend",N(B,null,N("div",{class:K.nextContainer},N("iframe",{class:K.next,src:"?view=next"})),N("div",{class:K.dragbar}),N("div",{class:K.noteContainer},N("div",{class:K.noteWrapper}),N("div",{class:K.noteButtons},N("button",{class:K.noteButtonsSmaller,tabindex:"-1",title:"Smaller notes font size"},"Smaller notes font size"),N("button",{class:K.noteButtonsBigger,tabindex:"-1",title:"Bigger notes font size"},"Bigger notes font size"))),N("div",{class:K.infoContainer},N("div",{class:K.infoPage},N("button",{class:K.infoPagePrev,tabindex:"-1",title:"Previous"},"Previous"),N("span",{class:K.infoPageText}),N("button",{class:K.infoPageNext,tabindex:"-1",title:"Next"},"Next")),N("time",{class:K.infoTime,title:"Current time"}),N("time",{class:K.infoTimer,title:"Timer"})))),t})(e.parent)),(e=>{let t=!1;r(K.dragbar).addEventListener("mousedown",(()=>{t=!0,r(K.dragbar).classList.add("active")})),window.addEventListener("mouseup",(()=>{t=!1,r(K.dragbar).classList.remove("active")})),window.addEventListener("mousemove",(e=>{if(!t)return;const n=e.clientX/document.documentElement.clientWidth*100;r(K.container).style.setProperty("--bespoke-marp-presenter-split-ratio",`${Math.max(0,Math.min(100,n))}%`)})),r(K.nextContainer).addEventListener("click",(()=>e.next()));const n=r(K.next),o=(i=n,(e,t)=>{var n;return null===(n=i.contentWindow)||void 0===n?void 0:n.postMessage(`navigate:${e},${t}`,"null"===window.origin?"*":window.origin)});var i;n.addEventListener("load",(()=>{r(K.nextContainer).classList.add("active"),o(e.slide(),e.fragmentIndex),e.on("fragment",(({index:e,fragmentIndex:t})=>o(e,t)))}));const a=document.querySelectorAll(".bespoke-marp-note");a.forEach((e=>{e.addEventListener("keydown",(e=>e.stopPropagation())),r(K.noteWrapper).appendChild(e)})),e.on("activate",(()=>a.forEach((t=>t.classList.toggle("active",t.dataset.index==e.slide())))));let s=0;const l=e=>{s=Math.max(-5,s+e),r(K.noteContainer).style.setProperty("--bespoke-marp-note-font-scale",(1.2**s).toFixed(4))},d=()=>l(1),c=()=>l(-1),u=r(K.noteButtonsBigger),f=r(K.noteButtonsSmaller);u.addEventListener("click",(()=>{u.blur(),d()})),f.addEventListener("click",(()=>{f.blur(),c()})),document.addEventListener("keydown",(e=>{"+"===e.key&&d(),"-"===e.key&&c()}),!0),e.on("activate",(({index:t})=>{r(K.infoPageText).textContent=`${t+1} / ${e.slides.length}`}));const m=r(K.infoPagePrev),g=r(K.infoPageNext);m.addEventListener("click",(t=>{m.blur(),e.prev({fragment:!t.shiftKey})})),g.addEventListener("click",(t=>{g.blur(),e.next({fragment:!t.shiftKey})})),e.on("fragment",(({index:t,fragments:n,fragmentIndex:r})=>{m.disabled=0===t&&0===r,g.disabled=t===e.slides.length-1&&r===n.length-1}));let p=new Date;const v=()=>{const e=new Date,t=e=>`${Math.floor(e)}`.padStart(2,"0"),n=e.getTime()-p.getTime(),o=t(n/1e3%60),i=t(n/1e3/60%60),a=t(n/36e5%24);r(K.infoTime).textContent=e.toLocaleTimeString(),r(K.infoTimer).textContent=`${a}:${i}:${o}`};v(),setInterval(v,250),r(K.infoTimer).addEventListener("click",(()=>{p=new Date}))})(e)},j=e=>{if(!(e=>e.syncKey&&"string"==typeof e.syncKey)(e))throw new Error("The current instance of Bespoke.js is invalid for Marp bespoke presenter plugin.");Object.defineProperties(e,{openPresenterView:{enumerable:!0,value:V},presenterUrl:{enumerable:!0,get:U}}),u&&document.addEventListener("keydown",(t=>{"p"!==t.key||t.altKey||t.ctrlKey||t.metaKey||(t.preventDefault(),e.openPresenterView())}))};function V(){const{max:e,floor:t}=Math,n=e(t(.85*window.innerWidth),640),r=e(t(.85*window.innerHeight),360);return window.open(this.presenterUrl,q+this.syncKey,`width=${n},height=${r},menubar=no,toolbar=no`)}function U(){const e=new URLSearchParams(location.search);return e.set("view","presenter"),e.set("sync",this.syncKey),s(e)}const X=e=>{const t=l();return t===r&&e.appendChild(document.createElement("span")),{"":j,[n]:F,[r]:_}[t]},H=e=>{e.on("activate",(t=>{document.querySelectorAll(".bespoke-progress-parent > .bespoke-progress-bar").forEach((n=>{n.style.flexBasis=100*t.index/(e.slides.length-1)+"%"}))}))},R=e=>{const t=Number.parseInt(e,10);return Number.isNaN(t)?null:t},W=(e={})=>{const t={history:!0,...e};return e=>{let n=!0;const r=e=>{const t=n;try{return n=!0,e()}finally{n=t}},o=(t={fragment:!0})=>{((t,n)=>{const{min:r,max:o}=Math,{fragments:i,slides:a}=e,s=o(0,r(t,a.length-1)),l=o(0,r(n||0,i[s].length-1));s===e.slide()&&l===e.fragmentIndex||e.slide(s,{fragment:l})})((R(location.hash.slice(1))||1)-1,t.fragment?R(d("f")||""):null)};e.on("fragment",(({index:e,fragmentIndex:r})=>{n||c({f:0===r||r.toString()},{location:{...location,hash:`#${e+1}`},setter:(...e)=>t.history?history.pushState(...e):history.replaceState(...e)})})),setTimeout((()=>{o(),window.addEventListener("hashchange",(()=>r((()=>{o({fragment:!1}),c({f:void 0})})))),window.addEventListener("popstate",(()=>{n||r((()=>o()))})),n=!1}),0)}},J=(e={})=>{var n;const r=e.key||(null===(n=window.history.state)||void 0===n?void 0:n.marpBespokeSyncKey)||Math.random().toString(36).slice(2),o=`bespoke-marp-sync-${r}`;var i;i={marpBespokeSyncKey:r},c({},{setter:(e,...n)=>t({...e,...i},...n)});const a=()=>{const e=f(o);return e?JSON.parse(e):Object.create(null)},s=e=>{const t=a(),n={...t,...e(t)};return m(o,JSON.stringify(n)),n},l=()=>{window.removeEventListener("pageshow",l),s((e=>({reference:(e.reference||0)+1})))};return e=>{l(),Object.defineProperty(e,"syncKey",{value:r,enumerable:!0});let t=!0;setTimeout((()=>{e.on("fragment",(e=>{t&&s((()=>({index:e.index,fragmentIndex:e.fragmentIndex})))}))}),0),window.addEventListener("storage",(n=>{if(n.key===o&&n.oldValue&&n.newValue){const r=JSON.parse(n.oldValue),o=JSON.parse(n.newValue);if(r.index!==o.index||r.fragmentIndex!==o.fragmentIndex)try{t=!1,e.slide(o.index,{fragment:o.fragmentIndex,forSync:!0})}finally{t=!0}}}));const n=()=>{const{reference:e}=a();void 0===e||e<=1?g(o):s((()=>({reference:e-1})))};window.addEventListener("pagehide",(e=>{e.persisted&&window.addEventListener("pageshow",l),n()})),e.on("destroy",n)}},{PI:Y,abs:z,sqrt:G,atan2:Q}=Math,Z={passive:!0},ee=({slope:e=-.7,swipeThreshold:t=30}={})=>n=>{let r;const o=n.parent,i=e=>{const t=o.getBoundingClientRect();return{x:e.pageX-(t.left+t.right)/2,y:e.pageY-(t.top+t.bottom)/2}};o.addEventListener("touchstart",(({touches:e})=>{r=1===e.length?i(e[0]):void 0}),Z),o.addEventListener("touchmove",(e=>{if(r)if(1===e.touches.length){e.preventDefault();const t=i(e.touches[0]),n=t.x-r.x,o=t.y-r.y;r.delta=G(z(n)**2+z(o)**2),r.radian=Q(n,o)}else r=void 0})),o.addEventListener("touchend",(o=>{if(r){if(r.delta&&r.delta>=t&&r.radian){const t=(r.radian-e+Y)%(2*Y)-Y;n[t<0?"next":"prev"](),o.stopPropagation()}r=void 0}}),Z)},te=new Map;te.clear(),te.set("none",{backward:{both:void 0,incoming:void 0,outgoing:void 0},forward:{both:void 0,incoming:void 0,outgoing:void 0}});const ne={both:"",outgoing:"outgoing-",incoming:"incoming-"},re={forward:"",backward:"-backward"},oe=e=>`--marp-bespoke-transition-animation-${e}`,ie=e=>`--marp-transition-${e}`,ae=oe("name"),se=oe("duration"),le=e=>new Promise((t=>{const n={},r=document.createElement("div"),o=e=>{r.remove(),t(e)};r.addEventListener("animationstart",(()=>o(n))),Object.assign(r.style,{animationName:e,animationDuration:"1s",animationFillMode:"both",animationPlayState:"paused",position:"absolute",pointerEvents:"none"}),document.body.appendChild(r);const i=getComputedStyle(r).getPropertyValue(ie("duration"));i&&(n.defaultDuration=i),((e,t)=>{requestAnimationFrame((()=>{e.style.animationPlayState="running",requestAnimationFrame((()=>t(void 0)))}))})(r,o)})),de=async e=>te.has(e)?te.get(e):(e=>{const t={},n=[];for(const[r,o]of Object.entries(ne))for(const[i,a]of Object.entries(re)){const s=`marp-${o}transition${a}-${e}`;n.push(le(s).then((e=>{t[i]=t[i]||{},t[i][r]=e?{...e,name:s}:void 0})))}return Promise.all(n).then((()=>t))})(e).then((t=>(te.set(e,t),t))),ce=e=>Object.values(e).flatMap(Object.values).every((e=>!e)),ue=(e,{type:t,backward:n})=>{const r=e[n?"backward":"forward"],o=(()=>{const e=r[t],n=e=>({[ae]:e.name});if(e)return n(e);if(r.both){const e=n(r.both);return"incoming"===t&&(e[oe("direction")]="reverse"),e}})();return!o&&n?ue(e,{type:t,backward:!1}):o||{[ae]:"__bespoke_marp_transition_no_animation__"}},fe=e=>{if(e)try{const t=JSON.parse(e);if((e=>{if("object"!=typeof e)return!1;const t=e;return"string"==typeof t.name&&(void 0===t.duration||"string"==typeof t.duration)})(t))return t}catch(e){}},me="_tSId",ge="_tA",pe="bespoke-marp-transition-warming-up",ve=window.matchMedia("(prefers-reduced-motion: reduce)"),he="__bespoke_marp_transition_reduced_outgoing__",ye="__bespoke_marp_transition_reduced_incoming__",be={forward:{both:void 0,incoming:{name:ye},outgoing:{name:he}},backward:{both:void 0,incoming:{name:ye},outgoing:{name:he}}},we=e=>{if(!document.startViewTransition)return;const t=t=>(void 0!==t&&(e._tD=t),e._tD);let n;t(!1),((...e)=>{const t=[...new Set(e).values()];return Promise.all(t.map((e=>de(e)))).then()})(...Array.from(document.querySelectorAll("section[data-transition], section[data-transition-back]")).flatMap((e=>[e.dataset.transition,e.dataset.transitionBack].flatMap((e=>{const t=fe(e);return[null==t?void 0:t.name,(null==t?void 0:t.builtinFallback)?`__builtin__${t.name}`:void 0]})).filter((e=>!!e))))).then((()=>{document.querySelectorAll("style").forEach((e=>{e.innerHTML=e.innerHTML.replace(/--marp-transition-duration:[^;}]*[;}]/g,(e=>e.slice(0,-1)+"!important"+e.slice(-1)))}))}));const r=(n,{back:r,cond:o})=>i=>{var a;const s=t();if(s)return!!i[ge]||!("object"!=typeof s||(s.skipTransition(),!i.forSync));if(!o(i))return!0;const l=e.slides[e.slide()],d=()=>{var e;return null!==(e=i.back)&&void 0!==e?e:r},c="data-transition"+(d()?"-back":""),u=l.querySelector(`section[${c}]`);if(!u)return!0;const f=fe(null!==(a=u.getAttribute(c))&&void 0!==a?a:void 0);return!f||((async(e,{builtinFallback:t=!0}={})=>{let n=await de(e);if(ce(n)){if(!t)return;return n=await de(`__builtin__${e}`),ce(n)?void 0:n}return n})(f.name,{builtinFallback:f.builtinFallback}).then((e=>{if(!e){t(!0);try{n(i)}finally{t(!1)}return}let r=e;ve.matches&&(console.warn("Use a constant animation to transition because preferring reduced motion by viewer has detected."),r=be);const o=document.getElementById(me);o&&o.remove();const a=document.createElement("style");a.id=me,document.head.appendChild(a),((e,t)=>{const n=[`:root{${ie("direction")}:${t.backward?-1:1};}`,":root:has(.bespoke-marp-inactive){cursor:none;}"],r=t=>{var n,o,i;const a=(null===(n=e[t].both)||void 0===n?void 0:n.defaultDuration)||(null===(o=e[t].outgoing)||void 0===o?void 0:o.defaultDuration)||(null===(i=e[t].incoming)||void 0===i?void 0:i.defaultDuration);return"forward"===t?a:a||r("forward")},o=t.duration||r(t.backward?"backward":"forward");void 0!==o&&n.push(`::view-transition-group(*){${se}:${o};}`);const i=e=>Object.entries(e).map((([e,t])=>`${e}:${t};`)).join("");return n.push(`::view-transition-old(root){${i(ue(e,{...t,type:"outgoing"}))}}`,`::view-transition-new(root){${i(ue(e,{...t,type:"incoming"}))}}`),n})(r,{backward:d(),duration:f.duration}).forEach((e=>{var t;return null===(t=a.sheet)||void 0===t?void 0:t.insertRule(e)}));const s=document.documentElement.classList;s.add(pe);let l=!1;const c=()=>{l||(n(i),l=!0,s.remove(pe))},u=()=>{t(!1),a.remove(),s.remove(pe)};try{t(!0);const e=document.startViewTransition(c);t(e),e.finished.finally(u)}catch(e){console.error(e),c(),u()}})),!1)};e.on("prev",r((t=>e.prev({...t,[ge]:!0})),{back:!0,cond:e=>{var t;return e.index>0&&!((null===(t=e.fragment)||void 0===t||t)&&n.fragmentIndex>0)}})),e.on("next",r((t=>e.next({...t,[ge]:!0})),{cond:t=>t.index+1<e.slides.length&&!(n.fragmentIndex+1<n.fragments.length)})),setTimeout((()=>{e.on("slide",r((t=>e.slide(t.index,{...t,[ge]:!0})),{cond:t=>{const n=e.slide();return t.index!==n&&(t.back=t.index<n,!0)}}))}),0),e.on("fragment",(e=>{n=e}))};let xe;const ke=()=>(void 0===xe&&(xe="wakeLock"in navigator&&navigator.wakeLock),xe),$e=async()=>{const e=ke();if(e)try{return await e.request("screen")}catch(e){console.warn(e)}return null},Ee=async()=>{if(!ke())return;let e;const t=()=>{e&&"visible"===document.visibilityState&&$e()};for(const e of["visibilitychange","fullscreenchange"])document.addEventListener(e,t);return e=await $e(),e};((t=document.getElementById("p"))=>{(()=>{const t=d("view");e.dataset.bespokeView=t===r||t===n?t:""})();const i=(e=>{const t=d(e);return c({[e]:void 0}),t})("sync")||void 0;var a,s,u,f,m,g,p,y,b,w,k,E;a=t,s=((...e)=>{const t=o.findIndex((e=>l()===e));return e.map((([e,n])=>e[t]&&n)).filter((e=>e))})([[1,1,0],J({key:i})],[[1,1,1],X(t)],[[1,1,0],L],[[1,1,1],v],[[1,0,0],$()],[[1,1,1],S],[[1,1,1],W({history:!1})],[[1,1,0],P()],[[1,1,0],x],[[1,0,0],H],[[1,1,0],ee()],[[1,0,0],T()],[[1,0,0],we],[[1,1,1],h],[[1,1,0],Ee]),f=1===(a.parent||a).nodeType?a.parent||a:document.querySelector(a.parent||a),m=[].filter.call("string"==typeof a.slides?f.querySelectorAll(a.slides):a.slides||f.children,(function(e){return"SCRIPT"!==e.nodeName})),g={},p=function(e,t){return(t=t||{}).index=m.indexOf(e),t.slide=e,t},w=function(e,t){m[e]&&(u&&b("deactivate",p(u,t)),u=m[e],b("activate",p(u,t)))},k=function(e,t){var n=m.indexOf(u)+e;b(e>0?"next":"prev",p(u,t))&&w(n,t)},E={off:y=function(e,t){g[e]=(g[e]||[]).filter((function(e){return e!==t}))},on:function(e,t){return(g[e]||(g[e]=[])).push(t),y.bind(null,e,t)},fire:b=function(e,t){return(g[e]||[]).reduce((function(e,n){return e&&!1!==n(t)}),!0)},slide:function(e,t){if(!arguments.length)return m.indexOf(u);b("slide",p(m[e],t))&&w(e,t)},next:k.bind(null,1),prev:k.bind(null,-1),parent:f,slides:m,destroy:function(e){b("destroy",p(u,e)),g={}}},(s||[]).forEach((function(e){e(E)})),u||w(0)})()}();</script></body></html>

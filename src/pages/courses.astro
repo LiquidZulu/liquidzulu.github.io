@@ -1,7 +1,15 @@
 ---
 import '../css/global.css';
+import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 import { Blob, Navbar, Icon, Card, Footer, SkipToContent } from '../components';
+import { readTimeMins, readTimeReadable } from '../util/readTime';
+
+const courses = {
+    'libertarian-ethics': {
+        lessons: await getCollection('libertarian-ethics'),
+    },
+};
 ---
 
 <Layout title="Courses | Philosophy Distilled">
@@ -14,31 +22,42 @@ import { Blob, Navbar, Icon, Card, Footer, SkipToContent } from '../components';
             class="!fill-slate-50 opacity-[0.015] absolute w-[130vmin] h-[130vmin] -rotate-12 right-[-40vmin] bottom-[-25vmin]"
         />
         <div
-            class="gridlines overflow-hidden grid place-items-center blur-none w-[100vw] min-h-[100vh]">
-            <div
-                class="justify-center my-16 flex flex-row flex-wrap space-x-8 space-y-8">
-                <div id="cards"></div>
-                <Card
-                    href="/libertarian-ethics"
-                    title="The Fundamentals of Libertarian Ethics"
-                    img="/thumb-libertarian-ethics.png"
-                    available="true"
-                    button="go to course">
-                    The single fastest route from novice to <span
-                        class="emphasis pr-[0.03rem]">expert</span
-                    > in Austrian legal theory.
-                </Card>
-                <Card
-                    href=""
-                    title="The Fundamentals of Austrian Economics"
-                    img="/under-construction.png"
-                />
-                <Card
-                    href=""
-                    title="The Fundamentals of Objectivism"
-                    img="/under-construction.png"
-                />
-            </div>
+            class="gridlines overflow-hidden grid place-items-center blur-none p-[5vw] w-[100vw] min-h-[100vh]">
+            <ul
+                class="flex flex-row justify-center flex-wrap gap-6 lg:gap-8 w-[90vw] mb-32">
+                <li class="text-sm">
+                    <Card
+                        href="/libertarian-ethics"
+                        title="The Fundamentals of Libertarian Ethics"
+                        img="/thumb-libertarian-ethics.png"
+                        available="true"
+                        button="go to course"
+                        footer={readTimeReadable(
+                            readTimeMins,
+                            courses['libertarian-ethics'].lessons
+                                .map(lesson => lesson.body)
+                                .join('')
+                        )}>
+                        The single fastest route from novice to <span
+                            class="emphasis pr-[0.03rem]">expert</span
+                        > in Austrian legal theory.
+                    </Card>
+                </li>
+                <li class="text-sm">
+                    <Card
+                        href=""
+                        title="The Fundamentals of Austrian Economics"
+                        img="/under-construction.png"
+                    />
+                </li>
+                <li class="text-sm">
+                    <Card
+                        href=""
+                        title="The Fundamentals of Objectivism"
+                        img="/under-construction.png"
+                    />
+                </li>
+            </ul>
         </div>
     </main>
     <Footer />
