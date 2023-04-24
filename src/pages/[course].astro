@@ -9,6 +9,7 @@ export const getStaticPaths = () => {
             title: 'The Fundamentals of Libertarian Ethics',
             subtitle:
                 'The single fastest route from novice to expert in Austrian legal theory.',
+            kofi: 'https://ko-fi.com/s/fb084707f5',
         },
     };
 
@@ -75,7 +76,7 @@ import { Debug } from 'astro/components';
             <AstroCard
                 title={DATA[slug].title}
                 body="Without support from people like you I cannot make these courses. So please, consider purchasing this course at whatever price you deem appropriate."
-                href="https://ko-fi.com/liquidzulu"
+                href={DATA[slug].kofi}
             />
         </div>
         <div class="p-[5vw] grid w-[100vw]">
