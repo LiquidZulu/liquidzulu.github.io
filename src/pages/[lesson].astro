@@ -27,13 +27,13 @@ export const getStaticPaths = () => {
     }));
 };
 
-const { course } = Astro.params;
+const { lesson } = Astro.params;
 const courseTitles = {
     'libertarian-ethics': 'The Fundamentals of Libertarian Ethics',
 };
 const DATA = Astro.props;
 const slugs = Object.keys(DATA);
-const slug = Astro.url.href.split('/').pop();
+const slug = lesson; //Astro.url.href.split('/').pop();
 const prevNext = paginationPrevNext(slugs, slug);
 
 const courseLessons = await getCollection(DATA[slug]);
