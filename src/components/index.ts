@@ -5,6 +5,7 @@ export { default as Card } from './Card.astro';
 export { default as Footer } from './Footer.astro';
 export { default as Icon } from './Icon.astro';
 export { default as LessonPagination } from './LessonPagination.astro';
+export { default as Logo } from './Logo.astro';
 export { default as Navbar } from './Navbar.astro';
 export { default as NoisePanel } from './NoisePanel.astro';
 export { default as ScrollShow } from './ScrollShow.astro';

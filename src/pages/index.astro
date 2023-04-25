@@ -4,6 +4,7 @@ import {
     Blob,
     Card,
     Icon,
+    Logo,
     Navbar,
     NoisePanel,
     Footer,
@@ -25,23 +26,19 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout title="LiquidZulu | Philosophy Distilled" slug="index">
     <Blob />
-    <main class="bg-slate-900 text-slate-50 w-[100vw] overflow-hidden">
+    <main class="bg-slate-900 text-slate-50 w-screen">
         <SkipToContent href="#1" />
         <Navbar />
-        <Icon
-            icon="logo"
-            class="!fill-slate-50 opacity-[0.015] absolute w-[130vmin] h-[130vmin] -rotate-12 right-[-40vmin] bottom-[-25vmin]"
-        />
+        <Logo />
         <div class="gridlines blur-none w-[100vw]">
             <div class="h-[100svh] h-[100vh] top-0 grid place-items-center">
-                <div
-                    class="mx-6 flex flex-wrap w-full justify-center items-center">
+                <div class="mx-6 flex flex-wrap w-full justify-center items-center">
                     <!--mb-[-9vh]">-->
                     <div class="space-y-5 text-center grow">
                         <h1 class="text-slate-50 text-6xl font-black">
                             Philosophy Distilled
                         </h1>
-                        <h2 class="text-slate-300 text-3xl font-medium">
+                        <h2 class="text-slate-300 text-2xl md:text-3xl font-medium">
                             Your path to <span class="emphasis">expertise</span>
                             starts here.
                         </h2>
