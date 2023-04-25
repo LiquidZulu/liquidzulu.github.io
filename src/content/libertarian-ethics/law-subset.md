@@ -2,7 +2,7 @@
 title: "An Elaboration on the Nature of Law as a Subset of Ethics"
 description: "A worrying tendency exists among libertarians, where it is often said that law is not a subset of ethics. In other words, these libertarians claim that there is such a thing as a crime that ought be committed. Insofar as this tendency is perpetuated, law is relegated to being a pointless field with no reason for existing. Hence I demonstrate that law properly understood is to be placed as a subset of ethics, dealing with the question of which party in a conflict ought have possession."
 n: 7
-date: something
+date: 2023-04-25
 ---
 
 > [&#x2026;] value is objective (not intrinsic or subjective); value is based on and derives from the facts of reality (it does not derive from mystic authority or from whim, personal or social). Reality, we hold — along with the decision to remain in it, i.e., to stay alive — dictates and demands an entire code of values. Unlike the lower species, man does not pursue the proper values automatically; he must discover and choose them; but this does not imply subjectivism. Every proper value-judgment is the identification of a fact: a given object or action advances man’s life (it is good): or it threatens man’s life (it is bad or an evil). The good, therefore, is a species of the true; it is a form of recognizing reality. The evil is a species of the false; it is a form of contradicting reality. Or: values are a type of facts; they are facts considered in relation to the choice to live.

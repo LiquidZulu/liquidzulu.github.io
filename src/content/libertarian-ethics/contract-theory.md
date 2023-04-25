@@ -2,7 +2,7 @@
 title: "Contract Theory"
 description: "The proper theory of contracts deals with the question of when a given transfer of title to property is legitimate and thus justly enforceable. This theory illuminates the answer to certain pernicious questions such as: can a man sell himself into slavery? Is fractional reserve banking legitimate, or a form of fraud?"
 n: 4
-date: something
+date: 2023-04-25
 ---
 
 > The right of property implies the right to make contracts about that property: to give it away or to exchange titles of ownership for the property of another person. Unfortunately, many libertarians, devoted to the right to make contracts, hold the contract itself to be an absolute, and therefore maintain that any voluntary contract whatever must be legally enforceable in the free society.

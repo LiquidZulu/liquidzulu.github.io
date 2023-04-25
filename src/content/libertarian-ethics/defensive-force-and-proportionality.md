@@ -2,7 +2,7 @@
 title: "Defensive Force and Proportionality"
 description: "The questions of what types of defense and what types of punishment are legitimate are of great imporance to the legal theorist. The libertarian theory of non-aggression provides objective and insightful answers to both."
 n: 6
-date: something
+date: 2023-04-25
 ---
 
 > No doubt punishment serves many purposes. It can deter crime and prevent the offender from committing further crimes. Punishment can even rehabilitate some criminals, if it is not capital. It can satisfy a victim’s longing for revenge, or his relatives’ desire to avenge. Punishment can also be used as a lever to gain restitution, recompense for some of the damage caused by the crime. For these reasons, the issue of punishment is, and always has been, of vital concern to civilized people. They want to know the effects of punishment and effective ways of carrying it out.
@@ -17,7 +17,7 @@ This document is part of a course which you can find [here](https://liquidzulu.g
 
 ## The Theory of Dialogical Estoppel
 
-Thusfar this course has elucidated theories and examples denoting what is and is not aggression. Now that we know what it means to be criminal, this final lesson will answer the question of what actions are just in defending against and punishing aggressions.
+Thusfar this course has elucidated theories and examples denoting what is and is not aggression. Now that we know what it means to be criminal, this lesson will answer the question of what actions are just in defending against and punishing aggressions.
 
 > [First,] [w]hat does it mean to punish? Dictionary definitions are easy to come by, but in the sense that interests those of us who want to punish, punishment is the infliction of physical force on a person, in response to something that he has done or has failed to do. Punishment thus comprises physical violence committed against a person’s body, or against any other property that a person legitimately owns, against any rights that a person has. Punishment is for, or in response to, some action, inaction, feature, or status of the person punished; otherwise, it is simply random violence, which is not usually considered to be punishment. Thus when we punish a person, it is because we consider him to be a wrongdoer of some sort. We typically want to teach him or others a lesson, or exact vengeance or restitution, for what he has done.<sup><a id="fnr.2" class="footref" href="#fn.2" role="doc-backlink">2</a></sup>
 

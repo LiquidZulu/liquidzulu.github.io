@@ -2,7 +2,7 @@
 title: "Homesteading and Property Rights"
 description: "The homesteading principle, which is central to the question of how men attain a property right over some scarce means, is to be properly understood as implied directly by the Non-Aggression Principle. The primacy of the connection between a homesteader and the resource in question cannot be denied by anyone without contradiction, as a prior-later distinction is required for any thought or denial to take place."
 n: 3
-date: something
+date: 2023-04-25
 ---
 
 > [&#x2026;] the first user and possessor of a good is either its owner or he is not. If he is not, then who is? The person who takes it from him by force? If forcefully taking possession from a prior owner entitles the new possessor to the thing, then there is no such thing as ownership, but only mere possession. But such a rule — that a later user may acquire something by taking it from the previous owner — does not avoid conflicts, it rather authorizes them.
@@ -77,7 +77,7 @@ Universal co-ownership fails on the grounds that it would imply the near immedia
 Partial ownership of one group by another doesn’t necessarily mean the death of humanity, but it is not universal&#x2014;instead of being an ethic for humans it is an ethic which implies a set of sub-humans ruled by humans. This is thus a particularistic ethic&#x2014;it&rsquo;s a norm of the form one rule for thee and another for me. But if the partial ownership ethic was truly rational it must be able to be derived from the nature of the entities that it applies to. Thus there would have to be some principled difference between the group of humans and the group of sub-humans. We know that legal ethics are derived from argumentation, and as such they would have to apply to all beings with the potential to argue. Therefore there could be no relevant difference between different groups of humans with respect to law, as all humans qua acting being have the potential to engage in argumentation. One could come up with any number of selection criteria to split mankind into different sets; perhaps one wants to split man into different races, or nations, or into northern and southern hemispheres, etc. The point of note is that these different groups do not have different logics&#x2014;so any conclusions derived that apply to arguing beings as such would have to apply to all of them.
 
 
-# The Impossibility of Group Ownership
+# On the Impossibility of Group Ownership
 
 Now that we have a theory of property that accounts for both self-ownership and external ownership, we can begin to address some implications of this theory, the first of which is that ownership is necessarily individual&#x2014;that is, group ownership is strictly impossible. Consider a set of people, $\{A,\cdots,Z\}$, who each commonly own a stick. What is to be done about a conflict over the use of this stick between $A$ and $B$? There are two possibilities, either $A$ is said to be the just victor, or $B$ is. If $A$, then he owns the stick and $B$ does not, if $B$ then he owns the stick, and $A$ does not. But both options contradict the presumption that every member in the set owned the stick, therefore group ownership simply cannot occur.
 
