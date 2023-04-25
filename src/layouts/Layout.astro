@@ -10,10 +10,7 @@ export interface Props {
     MJ: boolean;
 }
 
-const { title, description, ptype, published, MJ } = Astro.props;
-
-const slug =
-    Astro.url.pathname == '/' ? 'index' : Astro.url.pathname.split('/').pop();
+const { title, description, ptype, published, MJ, slug } = Astro.props;
 
 const META = {
     title: !!title ? title : 'LiquidZulu | Philosophy Distilled',

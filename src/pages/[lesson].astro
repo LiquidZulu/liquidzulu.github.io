@@ -158,7 +158,8 @@ import { Debug } from 'astro/components';
     description={lessonInfo.data.description}
     ptype="article"
     published={lessonInfo.data.date}
-    MJ={true}>
+    MJ={true}
+    slug={slug}>
     <SkipToContent href="#md-content" />
     <Navbar path={`courses/${DATA[slug]}/${slug}`} />
     <div

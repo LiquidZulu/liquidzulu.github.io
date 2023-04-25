@@ -37,7 +37,7 @@ import { AstroCard, Navbar, Card, Footer, SkipToContent } from '../components';
 import { Debug } from 'astro/components';
 ---
 
-<Layout title={DATA[slug].title}>
+<Layout title={DATA[slug].title} slug={slug}>
     <SkipToContent href="#1" />
     <Navbar path={`courses/${slug}`} />
     <div
