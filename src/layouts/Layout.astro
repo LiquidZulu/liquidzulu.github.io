@@ -25,7 +25,9 @@ const META = {
 };
 ---
 
-<html lang="en">
+<html
+    class="scroll-smooth bg-slate-900 overflow-x-hidden relative md:static"
+    lang="en">
     <head>
         <SEO
             charset="UTF-8"
@@ -91,7 +93,7 @@ const META = {
         }
     </head>
     <body
-        class="bg-slate-900 -z-50 text-slate-50 w-screen overflow-x-hidden relative !scroll-smooth bg-slate-900 overflow-x-hidden relative">
+        class="bg-slate-900 -z-50 text-slate-50 w-screen overflow-x-hidden relative">
         <slot />
         <ScrollUp />
     </body>
