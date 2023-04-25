@@ -2,7 +2,7 @@
 import '../css/global.css';
 import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
-import { Blob, Navbar, Icon, Card, Footer, SkipToContent } from '../components';
+import { Blob, Navbar, Icon, Logo, Card, Footer, SkipToContent } from '../components';
 import { readTimeMins, readTimeReadable } from '../util/readTime';
 
 const courses = {
@@ -15,12 +15,9 @@ const courses = {
 <Layout title="Courses | Philosophy Distilled" slug="courses">
     <SkipToContent href="#cards" />
     <Blob height={100} />
-    <main class="bg-slate-900 text-slate-50 w-[100vw] min-h-[100vh] z-20">
+    <main class="bg-slate-900 text-slate-50 w-screen min-h-screen z-20 relative">
         <Navbar path="courses" />
-        <Icon
-            icon="logo"
-            class="!fill-slate-50 opacity-[0.015] absolute w-[130vmin] h-[130vmin] -rotate-12 right-[-40vmin] bottom-[-25vmin]"
-        />
+        <Logo />
         <div
             class="gridlines overflow-hidden grid place-items-center blur-none p-[5vw] w-[100vw] min-h-[100vh]">
             <ul

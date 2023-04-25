@@ -51,7 +51,7 @@ const { height } = Astro.props;
 </script>
 
 <div
-    class=`overflow-hidden ${!!height ? 'h-[' + height + 'vh] w-[100vw] top-0 absolute' : ''}`>
+    class=`overflow-hidden ${!!height ? 'h-[' + height + 'vh] w-screen top-0 fixed' : ''}`>
     <div id="blob-main" class="bg-gradient-to-r from-violet-900 to-fuchsia-900">
     </div>
     <div id="blob-minor" class="bg-gradient-to-r from-pink-900 to-rose-900">
@@ -59,12 +59,12 @@ const { height } = Astro.props;
     <div id="blob-follow" class="hide"></div>
     <img
         alt=""
-        class="absolute w-[300vmin] max-w-none right-[-90vmin]"
+        class="fixed w-[300vmin] right-[-90vmin]"
         src="tailwind-blur.png"
     />
     <div
         id="blur"
-        class=`t-0 min-h-[100vh] ${!!height ? '' : 'h-[200vh]'} w-full absolute`>
+        class=`t-0 min-h-[100vh] ${!!height ? '' : 'h-[200vh]'} w-full fixed`>
     </div>
 </div>
 
@@ -79,7 +79,7 @@ const { height } = Astro.props;
             background-color: white;
             height: 100px;
             aspect-ratio: 1;
-            position: absolute;
+            position: fixed;
             translate: -50% -50%;
         }
 
@@ -90,7 +90,7 @@ const { height } = Astro.props;
         #blob-main {
             height: 50vmax;
             aspect-ratio: 1;
-            position: absolute;
+            position: fixed;
             left: -5%;
             top: 50%;
             scale: 1.2 0.9;
@@ -101,7 +101,7 @@ const { height } = Astro.props;
         #blob-minor {
             height: 70vmax;
             aspect-ratio: 1;
-            position: absolute;
+            position: fixed;
             left: -40%;
             top: -60%;
             scale: 1.2 1.1;
