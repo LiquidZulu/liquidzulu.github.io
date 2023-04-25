@@ -29,29 +29,33 @@ const { sidebar, pagination } = Astro.props;
 
 <script>
     // astro is being smelly and not letting me put this in the class constructor and I also cant remember the old way of passing frontmatter variables to the client. Why change it!?
-    const prevNext = [
-        document.getElementById('prev').href,
-        document.getElementById('next').href,
+    const prevNextSmelly = [
+        document.getElementById('prev'),
+        document.getElementById('next'),
     ];
 
-    document.onkeydown = e => {
-        switch (e.keyCode) {
-            // left arrow
-            case 37: {
-                {
-                    window.location = prevNext[0];
+    if (!!prevNextSmelly[0] && !!prevNextSmelly[1]) {
+        const prevNext = [prevNextSmelly[0].href, prevNextSmelly[1].href];
+
+        document.onkeydown = e => {
+            switch (e.keyCode) {
+                // left arrow
+                case 37: {
+                    {
+                        window.location = prevNext[0];
+                    }
+                    break;
                 }
-                break;
-            }
-            // right arrow
-            case 39: {
-                {
-                    window.location = prevNext[1];
+                // right arrow
+                case 39: {
+                    {
+                        window.location = prevNext[1];
+                    }
+                    break;
                 }
-                break;
             }
-        }
-    };
+        };
+    }
 </script>
 
 <pagination-div
