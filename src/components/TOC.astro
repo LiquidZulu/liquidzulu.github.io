@@ -8,120 +8,133 @@ import { Debug } from 'astro/components';
 ---
 
 <script>
-    class TOCSidebar extends HTMLElement {
-        constructor() {
-            super();
+    try {
+        class TOCSidebar extends HTMLElement {
+            constructor() {
+                super();
 
-            // WHY do you force me to use JSON.parse on the client mr astro?
-            const headings = JSON.parse(this.dataset.headings);
+                // WHY do you force me to use JSON.parse on the client mr astro?
+                const headings = JSON.parse(this.dataset.headings);
 
-            const sidebarHeadings = headings.map(h => ({
-                slug: h.slug,
-                el: document.getElementById(`sidebar-section-${h.slug}`),
-            }));
-
-            let headingEls = [];
-            headings
-                .map(h => document.getElementById(h.slug))
-                .forEach(el => {
-                    headingEls.push(el);
-                });
-
-            const heightUpScreen = 60 / 100;
-
-            const sectionHighlighter = () => {
-                const heights = headingEls.map(el => ({
-                    height:
-                        el.getBoundingClientRect().y -
-                        window.innerHeight * (1 - heightUpScreen),
-                    id: el.id,
+                const sidebarHeadings = headings.map(h => ({
+                    slug: h.slug,
+                    el: document.getElementById(`sidebar-section-${h.slug}`),
                 }));
 
-                const modClass = (
-                    element: HTMLElement,
-                    add: string[],
-                    remove: string[]
-                ) => {
-                    [
-                        ['add', add],
-                        ['remove', remove],
-                    ].forEach(([m, classlist]: any) => {
-                        // shut up TS, forEach does in fact exist here
-                        classlist.forEach((c: any) => {
-                            element.classList[m as any as 'add' | 'remove'](c);
+                let headingEls = [];
+                headings
+                    .map(h => document.getElementById(h.slug))
+                    .forEach(el => {
+                        headingEls.push(el);
+                    });
+
+                const heightUpScreen = 60 / 100;
+
+                const sectionHighlighter = () => {
+                    const heights = headingEls.map(el => ({
+                        height:
+                            el.getBoundingClientRect().y -
+                            window.innerHeight * (1 - heightUpScreen),
+                        id: el.id,
+                    }));
+
+                    const modClass = (
+                        element: HTMLElement,
+                        add: string[],
+                        remove: string[]
+                    ) => {
+                        [
+                            ['add', add],
+                            ['remove', remove],
+                        ].forEach(([m, classlist]: any) => {
+                            // shut up TS, forEach does in fact exist here
+                            classlist.forEach((c: any) => {
+                                element.classList[m as any as 'add' | 'remove'](
+                                    c
+                                );
+                            });
                         });
+                    };
+
+                    const highlightThisElementPlease = (
+                        element,
+                        usure: bool
+                    ) => {
+                        if (usure) {
+                            modClass(
+                                element,
+                                [
+                                    'text-gray-400',
+                                    'bg-zinc-800',
+                                    'rounded-md',
+                                    'cursor-default',
+                                    'pl-[0.5rem]',
+                                    'ml-[-0.5rem]',
+                                ],
+                                ['text-gray-600']
+                            );
+                        } else {
+                            modClass(
+                                element,
+                                ['text-gray-600'],
+                                [
+                                    'text-gray-400',
+                                    'bg-zinc-800',
+                                    'rounded-md',
+                                    'cursor-default',
+                                    'pl-[0.5rem]',
+                                    'ml-[-0.5rem]',
+                                ]
+                            );
+                        }
+                    };
+
+                    // the first el > 0 is the next heading off the bottom of the page
+                    const toHighlight =
+                        heights.findIndex(e => e.height > 0) - 1;
+
+                    sidebarHeadings.forEach(h => {
+                        switch (toHighlight) {
+                            // if findIndex cant find it
+                            case -2: {
+                                // reached bottom
+                                if (heights[heights.length - 1].height < 0) {
+                                    if (
+                                        h.slug == heights[heights.length - 1].id
+                                    )
+                                        highlightThisElementPlease(h.el, true);
+                                    else
+                                        highlightThisElementPlease(h.el, false);
+                                }
+                                break;
+                            }
+                            // if all are off the bottom of the page
+                            case -1: {
+                                {
+                                    highlightThisElementPlease(h.el, false);
+                                }
+                                break;
+                            }
+
+                            default:
+                                if (h.slug == heights[toHighlight].id) {
+                                    highlightThisElementPlease(h.el, true);
+                                } else {
+                                    highlightThisElementPlease(h.el, false);
+                                }
+                        }
                     });
                 };
 
-                const highlightThisElementPlease = (element, usure: bool) => {
-                    if (usure) {
-                        modClass(
-                            element,
-                            [
-                                'text-gray-400',
-                                'bg-zinc-800',
-                                'rounded-md',
-                                'cursor-default',
-                                'pl-[0.5rem]',
-                                'ml-[-0.5rem]',
-                            ],
-                            ['text-gray-600']
-                        );
-                    } else {
-                        modClass(
-                            element,
-                            ['text-gray-600'],
-                            [
-                                'text-gray-400',
-                                'bg-zinc-800',
-                                'rounded-md',
-                                'cursor-default',
-                                'pl-[0.5rem]',
-                                'ml-[-0.5rem]',
-                            ]
-                        );
-                    }
-                };
-
-                // the first el > 0 is the next heading off the bottom of the page
-                const toHighlight = heights.findIndex(e => e.height > 0) - 1;
-
-                sidebarHeadings.forEach(h => {
-                    switch (toHighlight) {
-                        // if findIndex cant find it
-                        case -2: {
-                            // reached bottom
-                            if (heights[heights.length - 1].height < 0) {
-                                if (h.slug == heights[heights.length - 1].id)
-                                    highlightThisElementPlease(h.el, true);
-                                else highlightThisElementPlease(h.el, false);
-                            }
-                            break;
-                        }
-                        // if all are off the bottom of the page
-                        case -1: {
-                            {
-                                highlightThisElementPlease(h.el, false);
-                            }
-                            break;
-                        }
-
-                        default:
-                            if (h.slug == heights[toHighlight].id) {
-                                highlightThisElementPlease(h.el, true);
-                            } else {
-                                highlightThisElementPlease(h.el, false);
-                            }
-                    }
-                });
-            };
-
-            document.addEventListener('scroll', sectionHighlighter);
-            sectionHighlighter();
+                document.addEventListener('scroll', sectionHighlighter);
+                sectionHighlighter();
+            }
         }
-    }
 
-    customElements.define('toc-sidebar', TOCSidebar);
+        customElements.define('toc-sidebar', TOCSidebar);
+    } catch (e) {
+        // get rid of those pesky error messages
+    }
 </script>
 
 <toc-sidebar

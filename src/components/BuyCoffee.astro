@@ -1,16 +1,18 @@
 <script>
     const scrollCoffee = document.getElementById('scrollCoffee');
 
-    function scrollSpy() {
-        if (window.scrollY > 4000) {
-            scrollCoffee.classList.add('show');
-        } else {
-            scrollCoffee.classList.remove('show');
+    if (!!scrollCoffee) {
+        function scrollSpy() {
+            if (window.scrollY > 4000) {
+                scrollCoffee.classList.add('show');
+            } else {
+                scrollCoffee.classList.remove('show');
+            }
         }
-    }
 
-    window.addEventListener('scroll', scrollSpy);
-    scrollSpy();
+        window.addEventListener('scroll', scrollSpy);
+        scrollSpy();
+    }
 </script>
 
 <a
