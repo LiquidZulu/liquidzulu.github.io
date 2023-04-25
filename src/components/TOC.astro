@@ -8,7 +8,6 @@ import { Debug } from 'astro/components';
 ---
 
 <script>
-    // text-gray-600 hover:text-gray-400
     class TOCSidebar extends HTMLElement {
         constructor() {
             super();
@@ -125,7 +124,6 @@ import { Debug } from 'astro/components';
     customElements.define('toc-sidebar', TOCSidebar);
 </script>
 
-<!-- WHY HAS THIS BROKEN!? EDIT: I think I remember fixing this -->
 <toc-sidebar
     data-headings={JSON.stringify(headings)}
     tabindex="-1"
