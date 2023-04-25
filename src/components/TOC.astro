@@ -8,11 +8,11 @@ import { Debug } from 'astro/components';
 ---
 
 <script>
-    try {
-        class TOCSidebar extends HTMLElement {
-            constructor() {
-                super();
+    class TOCSidebar extends HTMLElement {
+        constructor() {
+            super();
 
+            if (!!this.dataset.headings) {
                 // WHY do you force me to use JSON.parse on the client mr astro?
                 const headings = JSON.parse(this.dataset.headings);
 
@@ -130,11 +130,9 @@ import { Debug } from 'astro/components';
                 sectionHighlighter();
             }
         }
-
-        customElements.define('toc-sidebar', TOCSidebar);
-    } catch (e) {
-        // get rid of those pesky error messages
     }
+
+    customElements.define('toc-sidebar', TOCSidebar);
 </script>
 
 <toc-sidebar
