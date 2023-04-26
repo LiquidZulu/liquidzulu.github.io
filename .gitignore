@@ -19,3 +19,7 @@ pnpm-debug.log*
 
 # macOS-specific files
 .DS_Store
+
+# nixago: ignore-linked-files
+lefthook.yml
+treefmt.toml
