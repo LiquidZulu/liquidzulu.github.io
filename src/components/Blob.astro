@@ -15,24 +15,24 @@ const { height } = Astro.props;
             b.classList.add('hide');
         };
 
-        const follow = ({ pageX, pageY }) => {
-            if (isNaN(pageX) || isNaN(pageY)) return;
+        const follow = ({ clientX, clientY }) => {
+            if (isNaN(clientX) || isNaN(clientY)) return;
 
             blob.animate(
                 {
-                    left: `${pageX}px`,
-                    top: `${pageY}px`,
+                    left: `${clientX}px`,
+                    top: `${clientY}px`,
                 },
                 { duration: 3000, fill: 'forwards' }
             );
         };
 
         const init = e => {
-            const { pageX, pageY } = e;
+            const { clientX, clientY } = e;
             blob.animate(
                 {
-                    left: `${pageX}px`,
-                    top: `${pageY}px`,
+                    left: `${clientX}px`,
+                    top: `${clientY}px`,
                 },
                 { duration: 0, fill: 'forwards' }
             );
