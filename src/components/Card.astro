@@ -23,7 +23,6 @@ const { href, title, img, available, button, uniform, footer } = Astro.props;
             el.style.webkitLineClamp = Math.floor(lines);
             el.style.height =
                 Math.floor(lines) * parseInt(el.style.lineHeight) + 'px';
-            console.log(el.offsetHeight, lines * parseInt(el.style.lineHeight));
         });
 
     truncate();
