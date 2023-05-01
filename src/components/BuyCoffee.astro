@@ -5,7 +5,9 @@
         function scrollSpy() {
             if (window.scrollY > 4000) {
                 scrollCoffee.classList.add('show');
+                scrollCoffee.classList.remove('hide');
             } else {
+                scrollCoffee.classList.add('hide');
                 scrollCoffee.classList.remove('show');
             }
         }
@@ -17,20 +19,23 @@
 
 <a
     id="scrollCoffee"
-    class="scale-75 duration-300 transition-all opacity-0 ease-in-out translate-y-8 hidden md:block fixed bottom-[1.5rem] right-[4.2rem] hover:right-[4.5rem] hover:scale-110"
+    class="hide duration-300 transition-all ease-in-out fixed bottom-5 right-[4.2rem] hover:right-[4.5rem] hover:scale-110"
     href="https://ko-fi.com/liquidzulu/tiers"
     target="_blank">
-    <img
-        height="36"
-        style="border:0px;height:36px;"
-        src="https://storage.ko-fi.com/cdn/kofi1.png?v=3"
-        border="0"
-        alt="Buy Me a Coffee at ko-fi.com"
-    />
+    <button
+        class="h-10 flex content-center bg-slate-900 rounded-full py-0 px-2 border-none">
+        <img class="h-full shrink" src="/kofi.png" />
+        <p class="cubano h-full grid place-items-center mr-1">
+            Get this course on video!
+        </p>
+    </button>
 </a>
 
 <style>
+    .hide {
+        @apply opacity-0 translate-y-8 hidden kofi-logo:block scale-75;
+    }
     .show {
-        @apply md:opacity-100 md:translate-y-0 scale-100;
+        @apply opacity-0 translate-y-8 scale-75 kofi-logo:opacity-100 kofi-logo:translate-y-0 kofi-logo:scale-100;
     }
 </style>
