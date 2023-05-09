@@ -23,3 +23,6 @@ pnpm-debug.log*
 # nixago: ignore-linked-files
 lefthook.yml
 treefmt.toml
+
+# unlighthouse
+.unlighthouse
