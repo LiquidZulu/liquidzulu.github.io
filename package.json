@@ -7,7 +7,8 @@
         "start": "astro dev",
         "build": "astro build",
         "preview": "astro preview",
-        "astro": "astro"
+        "astro": "astro",
+        "perf": "./unlighthouse"
     },
     "dependencies": {
         "@astrojs/prefetch": "^0.1.2",
