@@ -155,12 +155,24 @@ import { Debug } from 'astro/components';
                   table-of-contents:block
                   border-r-4
                   border-zinc-800`}>
-    <div class="space-y-0">
-        <LessonPagination pagination={pagination} sidebar={true} />
-        <p class="!text-xs !text-left !mt-1 !text-zinc-600">
-            hint: use your arrow-keys to navigate
-        </p>
-    </div>
+    {
+        (() => {
+            if (!!pagination) {
+                return (
+                    <div class="space-y-0">
+                        <LessonPagination
+                            pagination={pagination}
+                            sidebar={true}
+                        />
+                        <p class="!text-xs !text-left !mt-1 !text-zinc-600">
+                            hint: use your arrow-keys to navigate
+                        </p>
+                    </div>
+                );
+            }
+        })()
+    }
+
     <ul>
         <li class="cubano border-b-2 border-zinc-700 text-lg">Sections</li>
         <li>
@@ -177,37 +189,49 @@ import { Debug } from 'astro/components';
             }
         </li>
 
-        <li class="cubano border-b-2 border-zinc-700 text-lg mt-6">
-            Other Lessons
-        </li>
-        <li>
-            {
-                (() => {
-                    let count = 1;
-                    return pagination.all.map(i =>
-                        i.slug === slug ? (
-                            <div class="pl-[0.5rem] ml-[-0.5rem] text-gray-400 bg-zinc-800 rounded-md cursor-default hover:text-gray-400 focus:text-gray-400">
-                                <div class="p-1 my-1 flex items-center">
-                                    <span class="mr-auto text-lg pr-2">
-                                        {count++ + '. ' + i.data.title}
-                                    </span>
-                                </div>
-                            </div>
-                        ) : (
-                            <a
-                                class="transition-all text-gray-600 hover:text-gray-400 focus:text-gray-400"
-                                href={`/${i.slug}#md-content`}>
-                                <div class="p-1 my-1 flex items-center">
-                                    <span class="mr-auto text-lg pr-2">
-                                        {count++ + '. ' + i.data.title}
-                                    </span>
-                                </div>
-                            </a>
-                        )
+        {
+            (() => {
+                if (!!pagination) {
+                    return (
+                        <>
+                            <li class="cubano border-b-2 border-zinc-700 text-lg mt-6">
+                                Other Lessons
+                            </li>
+                            <li>
+                                {(() => {
+                                    let count = 1;
+                                    return pagination.all.map(i =>
+                                        i.slug === slug ? (
+                                            <div class="pl-[0.5rem] ml-[-0.5rem] text-gray-400 bg-zinc-800 rounded-md cursor-default hover:text-gray-400 focus:text-gray-400">
+                                                <div class="p-1 my-1 flex items-center">
+                                                    <span class="mr-auto text-lg pr-2">
+                                                        {count++ +
+                                                            '. ' +
+                                                            i.data.title}
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        ) : (
+                                            <a
+                                                class="transition-all text-gray-600 hover:text-gray-400 focus:text-gray-400"
+                                                href={`/${i.slug}#md-content`}>
+                                                <div class="p-1 my-1 flex items-center">
+                                                    <span class="mr-auto text-lg pr-2">
+                                                        {count++ +
+                                                            '. ' +
+                                                            i.data.title}
+                                                    </span>
+                                                </div>
+                                            </a>
+                                        )
+                                    );
+                                })()}
+                            </li>
+                        </>
                     );
-                })()
-            }
-        </li>
+                }
+            })()
+        }
     </ul>
 </toc-sidebar>
 

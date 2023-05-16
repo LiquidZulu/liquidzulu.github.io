@@ -5,74 +5,29 @@ import { paginationPrevNext } from '../util/paginationPrevNext';
 import { getCollection, getEntryBySlug } from 'astro:content';
 import { readTimeMins, readTimeReadable } from '../util/readTime';
 
-export const getStaticPaths = () => {
-    const lessons = {
-        'libertarian-ethics': [
-            'the-nature-of-law',
-            'the-nap',
-            'homesteading-and-property-rights',
-            'contract-theory',
-            'childrens-rights',
-            'defensive-force-and-proportionality',
-            'law-subset',
-        ],
-    };
-
-    let slugs = [];
-    Object.values(lessons).forEach(i => i.forEach(j => slugs.push(j)));
-
-    return slugs.map(i => ({
-        params: { lesson: i },
-        props: invert(lessons),
-    }));
+export const getStaticPaths = async () => {
+    const scripts = await getCollection('scripts');
+    return scripts.map(i => ({ params: { script: i.slug } }));
 };
 
-const { lesson } = Astro.params;
-const courseTitles = {
-    'libertarian-ethics': 'The Fundamentals of Libertarian Ethics',
-};
-const DATA = Astro.props;
-const slugs = Object.keys(DATA);
-const slug = lesson; //Astro.url.href.split('/').pop();
-const prevNext = paginationPrevNext(slugs, slug);
-
-const courseLessons = await getCollection(DATA[slug]);
-
-// astro confuses the <= with the beginning of a JSX fragment
-let lessons = [];
-for (let i = 1; i <= courseLessons.length; i++) {
-    lessons.push(courseLessons.find(l => l.data.n == String(i)));
-}
-
-const pagination = {
-    home: DATA[slug],
-    all: lessons,
-    n: slugs.findIndex(e => e === slug),
-    prevNext: prevNext,
-};
-
-const lessonInfo = await getEntryBySlug(DATA[slug], slug);
-const { Content, headings } = await lessonInfo.render();
+const { script } = Astro.params;
+const slug = script;
+const scriptInfo = await getEntryBySlug('scripts', slug);
+const { Content, headings } = await scriptInfo.render();
 
 import Layout from '../layouts/Layout.astro';
-import {
-    BuyCoffee,
-    LessonPagination,
-    Navbar,
-    Footer,
-    SkipToContent,
-    TOC,
-} from '../components';
+import { BuyCoffee, Navbar, Footer, SkipToContent, TOC } from '../components';
 
 import { Debug } from 'astro/components';
 ---
 
 <script>
     // this does that thing on mises.org where it highlights the footnote you just clicked on
-    const removeHighlights = () =>
+    const removeHighlights = () => {
         document
             .querySelectorAll('.fn-highlight')
             .forEach(el => el.classList.remove('fn-highlight'));
+    };
 
     const fnHighlight = fn => {
         // remove highlight from footnotes before highlighting, so that multiple dont get highlighted
@@ -154,14 +109,14 @@ import { Debug } from 'astro/components';
 </script>
 
 <Layout
-    title={lessonInfo.data.title + ' | ' + courseTitles[DATA[slug]]}
-    description={lessonInfo.data.description}
+    title={scriptInfo.data.title}
+    description={scriptInfo.data.description}
     ptype="article"
-    published={lessonInfo.data.date}
+    published={scriptInfo.data.date}
     MJ={true}
     slug={slug}>
     <SkipToContent href="#md-content" />
-    <Navbar path={`courses/${DATA[slug]}/${slug}`} />
+    <Navbar path={`scripts/${slug}`} />
     <div
         class="absolute h-[100vh] h-[100svh] w-[100vw] blur-sm brightness-[0.25] saturate-[0.7]"
         style=`background-image: url(/thumb-${slug}.png); background-repeat: no-repeat; background-size: cover;`>
@@ -171,11 +126,11 @@ import { Debug } from 'astro/components';
         <div class="hero-content text-center text-neutral-content">
             <div class="max-w-2xl">
                 <h1 class="mb-7 text-5xl font-bold">
-                    {lessonInfo.data.title}
+                    {scriptInfo.data.title}
                 </h1>
-                <p class="mb-5 text-xl">{lessonInfo.data.description}</p>
+                <p class="mb-5 text-xl">{scriptInfo.data.description}</p>
                 <p class="text-zinc-400">
-                    {readTimeReadable(readTimeMins, lessonInfo.body)}
+                    {readTimeReadable(readTimeMins, scriptInfo.body)}
                 </p>
             </div>
         </div>
@@ -185,18 +140,14 @@ import { Debug } from 'astro/components';
         <a href="#md-content">👇</a>
     </div>
     <main id="md-content" class="w-[100vw] bg-zinc-900 flex flex-row">
-        <TOC slug={slug} pagination={pagination} headings={headings} />
-        <div
-            class="min-[1132px]:hidden block fixed bottom-8 grid place-items-center w-[100vw]">
-            <LessonPagination pagination={pagination} />
-        </div>
+        <TOC slug={slug} headings={headings} />
         <article
             class="min-[1132px]:w-[80vw] w-[100vw] bg-zinc-800 text-justify md:p-16 p-6">
             <Content />
         </article>
     </main>
     <Footer noShadow={true} />
-    <BuyCoffee>Get this course on video!</BuyCoffee>
+    <BuyCoffee>Like this content? Click here for more!</BuyCoffee>
 </Layout>
 
 <!-- is:global required to apply styles to the rendered MD -->
