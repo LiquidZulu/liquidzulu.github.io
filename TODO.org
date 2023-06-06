@@ -3,6 +3,7 @@
 * TODO
 + Add main social proof (I am thinking some prominent box in the hero that cycles through prominent testimoinals)
 + Add secondary social proof (tailwindcss-style testimonials section further down page)
++ update hero images to LazyImage's
 * Videos
 + https://www.youtube.com/watch?v=GTNgiTK-ic8
 + https://www.youtube.com/watch?v=bdqSEBSXBPk

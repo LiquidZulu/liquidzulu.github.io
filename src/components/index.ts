@@ -4,6 +4,7 @@ export { default as BuyCoffee } from './BuyCoffee.astro';
 export { default as Card } from './Card.astro';
 export { default as Footer } from './Footer.astro';
 export { default as Icon } from './Icon.astro';
+export { default as LazyImage } from './LazyImage.astro';
 export { default as LessonPagination } from './LessonPagination.astro';
 export { default as Logo } from './Logo.astro';
 export { default as Navbar } from './Navbar.astro';
