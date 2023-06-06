@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+# usage: minimages .webp thumb to minify all of the .webp's in /public/images/thumb
+
+command find "$(pwd)/public/images/$2" | command grep $1 | command grep -v .min | xargs ./scripts/minimage

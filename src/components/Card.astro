@@ -1,5 +1,5 @@
 ---
-import NoisePanel from './NoisePanel.astro';
+import { NoisePanel, LazyImage } from './';
 
 export interface Props {
     title: string;
@@ -43,9 +43,9 @@ const { href, title, img, available, button, uniform, footer } = Astro.props;
         <figure class="overflow-hidden w-96">
             {
                 !!available ? (
-                    <img src={img} />
+                    <LazyImage slug={img} />
                 ) : (
-                    <img class="saturate-[0.8]" src={img} />
+                    <LazyImage className="saturate-[0.8]" slug={img} />
                 )
             }
         </figure>

@@ -42,7 +42,7 @@ import { Debug } from 'astro/components';
     <Navbar path={`courses/${slug}`} />
     <div
         class="footer-shadow absolute h-screen w-screen blur-sm brightness-[0.25] saturate-[0.7]"
-        style=`background-image: url(/thumb-${slug}.png); background-repeat: no-repeat; background-size: cover; background-position: top`>
+        style=`background-image: url(/images/thumb/${slug}.webp); background-repeat: no-repeat; background-size: cover; background-position: top`>
     </div>
     <div class="hero min-h-screen bg-transparent">
         <div class="hero-overlay bg-opacity-60"></div>
@@ -89,7 +89,7 @@ import { Debug } from 'astro/components';
                                 title={i.data.title}
                                 href={`/${i.slug}`}
                                 available="true"
-                                img={`/thumb-${i.slug}.png`}
+                                img={`thumb/${i.slug}.webp`}
                                 button="go to lesson"
                                 uniform={true}
                                 footer={readTimeReadable(readTimeMins, i.body)}>

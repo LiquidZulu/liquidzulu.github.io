@@ -1,19 +1,16 @@
 ---
-title: "The Moral Case For Open Borders"
+title: 'The Moral Case For Open Borders'
 description: "The open borders argument has been unfairly maligned as either an insane leftist talking point or a grift forwarded by big business to destroy local cultures and depreciate wages. In reality borders are a moral evil that should be immediately abolished. Here's why."
 date: 2023-05-16
 ---
 
 This document is the script for a video which you can find [here](https://youtu.be/I3sa7J-i8ZY). Due to it being intended as a video experience, it may not read well in certain parts, but regardless I provide this script for your enjoyment or for reading the footnotes and reference material.
 
-
 # Main Body
-
 
 ## Intro
 
 The open borders argument has been unfairly maligned as either an insane leftist talking point or a grift forwarded by big business to destroy local cultures and depreciate wages. In reality borders are a moral evil that should be immediately abolished. Here&rsquo;s why.
-
 
 ## The Moral Case for Open Borders
 
@@ -23,14 +20,13 @@ Consider Crusoe and Friday on a desert island, how is it that either man can com
 
 We have seen that assigning property right via mere verbal decree cannot avoid conflicts so we are left only with the option that the property right is assigned to the first man who appropriated the good from nature. The state performed no such appropriation. There are vast swathes of many countries that are completely untouched by man; surely if a martian were to fly his ship and touch down in rural Siberia, there are many locations he could do so where no man had ever stepped foot before. Yet, the Russian government would claim that he is trespassing on their land&#x2014;thus states assert that they gain property right by fiat&#x2013;by merely declaring to the world that they own a given thing&#x2013;rather than by actually going out and appropriating goods from nature.
 
-Thus the open borders stance, which can also be called a free-immigration stance, which holds that the state does not have a right to prevent any immigration is correct. Some will take umbrage with the nomenclature, claiming that the correct stance is not one of open state borders but of closed (restricted) private property borders. These people are simply confused; the open borders stance *is* the one that respects private property. Nobody thinks that open borders means that trespassing on your neighbours lawn is no longer a crime, this is a strawman argument against open borders. Thus I am fundamentally an advocate of open borders or free immigration, I will not slink away from this stance nor will I adjust my speech to say, &ldquo;umm actually, I support private borders.&rdquo;
-
+Thus the open borders stance, which can also be called a free-immigration stance, which holds that the state does not have a right to prevent any immigration is correct. Some will take umbrage with the nomenclature, claiming that the correct stance is not one of open state borders but of closed (restricted) private property borders. These people are simply confused; the open borders stance _is_ the one that respects private property. Nobody thinks that open borders means that trespassing on your neighbours lawn is no longer a crime, this is a strawman argument against open borders. Thus I am fundamentally an advocate of open borders or free immigration, I will not slink away from this stance nor will I adjust my speech to say, &ldquo;umm actually, I support private borders.&rdquo;
 
 ## The Social Contract
 
 There are a number of potential counters to my thesis here, the first of which is that there is such a thing as a &ldquo;social contract,&rdquo; which all men agree to as part of their participation in society, and this contract grants the state the right to exclude people from the communally held land on the citizens&rsquo; behalf. Such a notion is ludicrous at every level of analysis.
 
-First, I recall signing no such contract, nor does anyone else, and this point is not rescued by any notion of &ldquo;implicit&rdquo; consent either, because we know that there are a group of people called anarchists who explicitly *don&rsquo;t* consent to the actions the state takes &ldquo;on their behalf.&rdquo; If a man is explicitly *not* consenting, how could it possibly be that he is implicitly consenting?
+First, I recall signing no such contract, nor does anyone else, and this point is not rescued by any notion of &ldquo;implicit&rdquo; consent either, because we know that there are a group of people called anarchists who explicitly _don&rsquo;t_ consent to the actions the state takes &ldquo;on their behalf.&rdquo; If a man is explicitly _not_ consenting, how could it possibly be that he is implicitly consenting?
 
 Second, a contract defines a set of transfers of title to property,<sup><a id="fnr.4" class="footref" href="#fn.4" role="doc-backlink">4</a></sup> if nobody owned the land in the middle of rural Siberia in the first place, how could title to it possibly be transferred to the state or to anyone else? Moreover, even if this social contract is thought of not as a regular contract but as a method of the citizens &ldquo;delegating rights&rdquo; to the state this point is not saved, for none of the citizens had the right to exclude people from entering or appropriating the land in rural Siberia as none owned this land.
 
@@ -40,50 +36,47 @@ Third, this social contract requires a notion of group property, but group prope
 
 There are some supposed-counterexamples to this thesis, but I demonstrate the falsehood of each in my course, so I will not go over any of them here.
 
-
 ## The Hoppean Argument
 
 So the notion of a social contract cannot serve to justify any manner of immigration restrictions enforced by the state, but there is a purported natural rights defense of restricted borders forwarded by Hans-Hermann Hoppe:
 
 > The phenomena of trade and immigration are different in a fundamental respect, and the meaning of “free” and “restricted” in conjunction with both terms is categorically different. People can move and migrate; goods and services, of themselves, cannot.
-> 
+>
 > Put differently, while someone can migrate from one place to another without anyone else wanting him to do so, goods and services cannot be shipped from place to place unless both sender and receiver agree. Trivial as this distinction may appear, it has momentous consequences. For free in conjunction with trade then means trade by invitation of private households and firms only; and restricted trade does not mean protection of households and firms from uninvited goods or services, but invasion and abrogation of the right of private households and firms to extend or deny invitations to their own property. In contrast, free in conjunction with immigration does not mean immigration by invitation of individual households and firms, but unwanted invasion or forced integration; and restricted immigration actually means, or at least can mean, the protection of private households and firms from unwanted invasion and forced integration. Hence, in advocating free trade and restricted immigration, one follows the same principle: requiring an invitation for people as for goods and services.<sup><a id="fnr.6" class="footref" href="#fn.6" role="doc-backlink">6</a></sup>
 
 But this invitation requirement certainly does not apply to that unowned land in rural Siberia&#x2014;nobody owns it and as such the Martians or other immigrants require nobody else&rsquo;s permission or invitation to go there. It is certainly the case, however, that invitation or permission is required when going onto the actual property of others, but this is not in dispute by anyone&#x2014;it has never been forwarded by any open-borders advocate that open borders means that trespass is no longer a crime. Rather open borders specifically means the position that the government should not be permitted to restrict immigration from outside of the country to inside of that country. Block highlights the position by analogising this to domestic migration:
 
 > I shall contend that emigration, migration, and immigration all fall under the rubric of “victimless crime.” That is, not a one of these three per se violates the non-aggression axiom. Therefore, at least for the libertarian, no restrictions or prohibitions whatsoever should be placed in the path of these essentially peaceful activities.
-> 
+>
 > Immigration across national boundaries should be analyzed in an identical manner to that migration which takes place within a country. If it is non-invasive for Jones to change his locale from one place in Misesania to another in that country, then it cannot be invasive for him to move from Rothbardania to Misesania. Alternatively, if migration across international borders is somehow illegitimate, this should apply to the domestic variety as well. As long as the immigrant moves to a piece of private property whose owner is willing to take him in (maybe for a fee), there can be nothing untoward about such a transaction. This, along with all other capitalist acts between consenting adults, must be considered valid in the libertarian world. Note that there is no freedom of movement of the person per se. This is always subject to the willingness of property owners in the host nation to accept the immigrant onto their land.<sup><a id="fnr.7" class="footref" href="#fn.7" role="doc-backlink">7</a></sup>
-
 
 ## The Motte and Bailey of Immigration Restrictions
 
-So if the Hoppean stance is taken to mean *only* that borders are restricted to the extent that is desired by *individual* property owners it is fine, but this unobjectionable thesis has been used to spiral out far beyond this point:
+So if the Hoppean stance is taken to mean _only_ that borders are restricted to the extent that is desired by _individual_ property owners it is fine, but this unobjectionable thesis has been used to spiral out far beyond this point:
 
 > Moreover, hand in hand with the institution of a government comes the institution of public property and goods, that is, of property and goods owned collectively by all domestic residents and controlled and administered by the government. The larger or smaller the amount of public-government ownership, the greater or lesser will be the potential problem of forced integration.
-> 
+>
 > [&#x2026;] in non-socialist countries such as the U.S., Switzerland, and the Federal Republic of Germany, which are favorite immigration destinations, a government-admitted immigrant could not move just anywhere. The immigrant’s freedom of movement would be severely restricted by the extent of private property, and private land ownership in particular. Yet, by proceeding on public roads, or with public means of transportation, and in staying on public land and in public parks and buildings, an immigrant can potentially cross every domestic resident’s path, even move into anyone’s immediate neighborhood and practically land on his very doorsteps. The smaller the quantity of public property, the less acute the problem will be. But as long as there exists any public property, it cannot be entirely escaped.<sup><a id="fnr.8" class="footref" href="#fn.8" role="doc-backlink">8</a></sup>
 
-So here we see that Hoppe is not classing &ldquo;forced integration&rdquo; as *merely* those instances where an immigrant literally trespasses on some private property, but also those situations where an immigrant &ldquo;crosses the path&rdquo; of a private property owner via some public possession that the owner is situated near. But this does not imply that the immigrant has violated the rights of the private property owners around the roads that he is using. After all, is it a criminal act by a man from Michigan to use the roads in Indiana or Ohio? Clearly not, there is no such thing as collective property rights, it is not the case that the taxpaying collective come to acquire a collective property right in those resources produced by the stolen tax funds. There simply does not exist a chain of title transfer linking the roads and libraries and other public institutions to a taxpaying collective, nor could there be any such chain. This is because public ownership implies a contradiction, as explained earlier.
+So here we see that Hoppe is not classing &ldquo;forced integration&rdquo; as _merely_ those instances where an immigrant literally trespasses on some private property, but also those situations where an immigrant &ldquo;crosses the path&rdquo; of a private property owner via some public possession that the owner is situated near. But this does not imply that the immigrant has violated the rights of the private property owners around the roads that he is using. After all, is it a criminal act by a man from Michigan to use the roads in Indiana or Ohio? Clearly not, there is no such thing as collective property rights, it is not the case that the taxpaying collective come to acquire a collective property right in those resources produced by the stolen tax funds. There simply does not exist a chain of title transfer linking the roads and libraries and other public institutions to a taxpaying collective, nor could there be any such chain. This is because public ownership implies a contradiction, as explained earlier.
 
 It is pointed out also by Hoppe that due to the differing meanings of free-trade and free-immigration, it might be the case that immigration is not mutually beneficial. But whether immigration is mutually beneficial or whether some random third party is upset by the immigration is entirely irrelevant. The same is true, after all, for free-trade. That some random third party is pissed off about John and Sarah trading fish does not imply that this third parties rights are being violated&#x2014;similarly, some third party being pissed off about a Pakistani or Mexican moving to rural Siberia has absolutely no bearing on the issue of the rights of the case. Law and legal analysis is concerned only with those situations where there is conflict,<sup><a id="fnr.9" class="footref" href="#fn.9" role="doc-backlink">9</a></sup> nobody owns rural Siberia and thus there can be no conflicts over its use. Hoppe presents his argument as follows:
 
 > There can be shipments (immigrants) without willing domestic recipients. In this case, immigrants are foreign invaders, and immigration represents an act of invasion. Surely, a government’s basic protective function includes the prevention of foreign invasions and the expulsion of foreign invaders.
-> 
+>
 > [&#x2026;]
-> 
+>
 > Now, if the government excludes a person while there exists a domestic resident who wants to admit this very person onto his property, the result is forced exclusion; and if the government admits a person while there exists no domestic resident who wants to have this person on his property, the result is forced integration.<sup><a id="fnr.10" class="footref" href="#fn.10" role="doc-backlink">10</a></sup>
 
 But the question must be asked of exactly who this invasion is against&#x2014;the taxpaying collective? There is no such thing as a collective property right, accordingly an immigrant using public roads and parks is not per se invading against any individual taxpayers. There is also the easy counterexample of an immigrant going to virgin land such as the rural Siberia example mentioned previously&#x2014;such an immigrant needs no invitation from anyone, as nobody owns those barren wastes.
 
 Moreover, if &ldquo;restricted&rdquo; immigration is to be used as a label for free-immigration sans those immigrations which are aggressive then we must also apply &ldquo;restricted&rdquo; immigration to the question of murder, or rape. On this view to be anti-rape or murder is to be in favour of closed, or at least restricted, borders&#x2014;it is the claim that me moving my knife from outside of your body to inside of it without your consent makes me rightly classed as an illegal alien, or immigrant. This is clearly well outside of the normal understanding of what a national border consists of, and forms nothing more than a motte to the bailey of taxpayer socialism.
 
-
 ## The Homeless Question
 
 This bailey is highlighted specifically in what Anglo Libertarian dubs the &ldquo;Homeless Question.&rdquo; Consider Dave Smith taking his children to the local state-run park and there he sees that a bum has homesteaded one of the climbing frames as a nice platform to consume his narcotics. It is assumed for this scenario that the bum does not pay any taxes towards the upkeep of the park and that Dave Smith does. The question is; does Dave Smith have a right to exclude the bum from using the park?<sup><a id="fnr.11" class="footref" href="#fn.11" role="doc-backlink">11</a></sup> Those in the taxpayer socialism camp claim that Dave Smith has a greater claim to the park than the bum because of the taxes he has paid towards the construction and upkeep of the park. But surely this cannot be the case, for as was explained there is no chain of title transfer that denotes Dave Smith as the owner of the park, and further he could not communally own it with every other taxpayer. The taxes were robbed from him, this does not transfer titles. Moreover, surely his claim is better than the one the government has, but not better than the bum who has actually homesteaded part of that park; homesteaders have the property right rather than any random latecomer. If Dave Smith doesn&rsquo;t own the park and neither does the state, then our theory must treat the park as being unowned until such a time as someone comes along and homesteads part or all of it; the homeless bum has done just that.
 
-Allow me to analyse this claim more broadly, the taxpayer socialist says not only that taxpayers have a superior claim to non-taxpayers, but that &ldquo;in the meantime&rdquo; those tax-funded public possessions ought be run as if they were privately owned. Any argument about what the solution is &ldquo;in the meantime&rdquo; is flawed, for what is legal now does not become illegal in the future, and what is illegal now doesnt become legal in the future. It is either the case that the correct answer is that immigration is free or restricted, it cannot be anything else. It cannot be that right now the correct answer is closed borders but in the nebulous *future* natural law flips and it becomes the correct answer to have open borders. It is pointed out in this discussion by those in the Hoppe camp that we don&rsquo;t live in a perfect libertarian society, we live in a statist one, as if this observation is of any substance or changes anything about the argument. Indeed, we do not live in that libertarian society, so we should be advocating that society is shifted into one of strict adherence to natural law; closed borders and restricted immigration are criminal and thus must be strongly opposed.
+Allow me to analyse this claim more broadly, the taxpayer socialist says not only that taxpayers have a superior claim to non-taxpayers, but that &ldquo;in the meantime&rdquo; those tax-funded public possessions ought be run as if they were privately owned. Any argument about what the solution is &ldquo;in the meantime&rdquo; is flawed, for what is legal now does not become illegal in the future, and what is illegal now doesnt become legal in the future. It is either the case that the correct answer is that immigration is free or restricted, it cannot be anything else. It cannot be that right now the correct answer is closed borders but in the nebulous _future_ natural law flips and it becomes the correct answer to have open borders. It is pointed out in this discussion by those in the Hoppe camp that we don&rsquo;t live in a perfect libertarian society, we live in a statist one, as if this observation is of any substance or changes anything about the argument. Indeed, we do not live in that libertarian society, so we should be advocating that society is shifted into one of strict adherence to natural law; closed borders and restricted immigration are criminal and thus must be strongly opposed.
 
 With that in mind Anglo presents the argument that &ldquo;in the meantime&rdquo; public possessions ought be run as if they were privately owned as follows:
 
@@ -96,7 +89,7 @@ After all, it could very well be the case that every single taxpayer who has fun
 The only alternative to the taxpaying collective demonstrating their will via democratic vote is to have some arbitrary individual assert what this collective wants without any reference to their actual stated opinions on the matter. This is a complete rejection of the premise that these possessions ought be run as the taxpayer collective wants. The correct solution, again, is that these possessions ought be brought under the exclusive control of heroic homesteaders, such as the drunk bum who uses the park for his own purposes. Anglo rejects this application of homesteading, stating the following:
 
 > Acknowledging that state property does not actually have a legitimate owner, it could be considered exactly the same as abandoned property. At that point it can be homesteaded by the first person who gets there and wants to claim it. So if a hobo sleeps in a state-owned kids playground they have homesteaded the available property and become the rightful owner. But here&rsquo;s a problem with that as a solution: the government does not give a shit about [the] rightful homestead principle and to be honest neither does the hobo. It&rsquo;s quite absurd to imagine walking up to a drug-addled half-conscious homeless person and saying to them, &ldquo;how do you do fellow libertarian? I see you&rsquo;ve done a mighty fine job homesteading this vacant property, would you like to trade my pen for one of your cigarette&rsquo;s?&rdquo; and then getting an intelligible response back from them.
-> 
+>
 > Then after that, the government would just enforce its illegitimate claim and kick them out anyway and you&rsquo;ve achieved nothing. My point there doesn&rsquo;t refute the homestead principle theory, it only calls it impractical and useless under current conditions. But the homestead principle also does not refute my point that a taxpayer has a greater claim than a non-taxpayer. While the government does enforce its illegitimate claims this emulation is the best way to start working towards creating a society where the homestead principle is actually used and respected. If we don&rsquo;t take these steps then it will remain useless and these steps are supported by the just principle of differing strength&rsquo;s in property rights claims.<sup><a id="fnr.15" class="footref" href="#fn.15" role="doc-backlink">15</a></sup>
 
 First, whether the government or the hobo understands the homestead principle in explicit terms is entirely irrelevant to the rights of the case. Surely our property theory extends to those who do not yet understand it, as these people can still have conflicts. So the homeless bum may not be intellectually capable of explicating the non-aggression principle or explaining the praxeologic foundations of law, but nevertheless he still has a property right in those goods which he initially possesses from the state of nature, in the exact same way that 2 and 2 make 4 whether any individual is aware of this or not. Also whether the government will end up enforcing their illegitimate claim after your respecting of the homeless persons claim is irrelevant to the question of whether the homeless persons claim was legitimate or not. The question is this: would some random taxpayer have the right to exclude this homeless person from the park? If they do have this right then this random taxpayer (who is a latecomer to the park) is said to be the proper owner of the park and nobody else is. We see here the problem with Anglo&rsquo;s analysis, he says that his point is not a refutation of the homestead principle and that the homestead principle is not a refutation of his point, but clearly these two principles are completely incompatible. Either the homesteader is said to be the owner or some random taxpayer is. It is also not made clear by Anglo or anyone else to my knowledge how exactly the taxpayers have a greater claim to the public park than people who have not paid these taxes. This may seem like an intuitive solution, but a first principles derivation must be able to be provided if it is to be included in any rational theory of property. Nothing less will do.
@@ -104,71 +97,68 @@ First, whether the government or the hobo understands the homestead principle in
 It is also worth attacking the strategic point made by Hoppeans, Anglo included:
 
 > If you had a button in front of you and every time you pressed it $1 million were diverted from the ATF&rsquo;s budget to fund government housing what would you do? If you wouldn&rsquo;t press it or at least press it as many times as it took so that all the computers, AC, vehicles, and police equipment in all ATF offices across the US had to be removed leaving the agency completely unable to function then quite frankly you are useless to the libertarian cause and unless you removed every single dollar from the ATF&rsquo;s budget you&rsquo;re hardly much use at all.
-> 
+>
 > [&#x2026;]
-> 
+>
 > If we don&rsquo;t do this then we are a movement that will never actually do any moving until our objectives are already achieved. How do you achieve your objective when you refuse to move towards it? That&rsquo;s anyone&rsquo;s guess. We can ponder as much as we like about the perfect way that things should be done, but we can fall into the trap of only doing this rather than also looking outside at the imperfect world and trying to make it better. If something can be done with government property whilst it is illegitimately held we need to explore what is preferable and to what ends.<sup><a id="fnr.16" class="footref" href="#fn.16" role="doc-backlink">16</a></sup>
 
 This point fails on the grounds that it is a disanalogy, pressing the button which diverts funding from the ATF does not cause any extra aggressions to be performed, having the Hoppean management of public possessions does cause such extra aggressions to be performed when contrasted with the open borders lack of management. This is a fundamental misunderstanding of strategy often seen in neo-prags,<sup><a id="fnr.17" class="footref" href="#fn.17" role="doc-backlink">17</a></sup> the principle is that it is the role of strategy and planning to denote which goals are more urgent to be achieved&#x2014;that is, which aggressions must more urgently be stopped. This presumes that the goal is the stopping of aggression, not the implementation of more aggression. Such an implementation of additional aggression is completely counterproductive in pushing for the very thing that the libertarian is trying to destroy. We are and must be libertarians, not liberty-utilitarians, the difference is subtle but dire. The liberty-utilitarian destroys the cause of liberty in his warping of it, this completely undermines the strategic goal of pushing a hardline natural rights philosophy onto the public consciousness. As Rothbard has pointed out, such individuals have a duty on their own premises to shut up and to pretend to be full adherents of non-aggression.<sup><a id="fnr.18" class="footref" href="#fn.18" role="doc-backlink">18</a></sup>
-
 
 ## Welfare and Immigration
 
 There is also the argument that welfare programs make a free immigration policy untenable, as explained by Hoppe:
 
 > According to proponents of unconditional free immigration, the U.S. qua high-wage area would invariably benefit from free immigration; hence, it should enact a policy of open borders, regardless of any existing conditions, i.e., even if the U.S. were ensnarled in protectionism and domestic welfare. Yet surely, such a proposal strikes a reasonable person as fantastic. Assume that the U.S., or better still Switzerland, declared that there would no longer be any border controls, that anyone who could pay the fare might enter the country, and, as a resident then be entitled to every “normal” domestic welfare provision. Can there be any doubt how disastrous such an experiment would turn out in the present world?. The U.S., and Switzerland even faster, would be overrun by millions of third-world immigrants, because life on and off American and Swiss public streets is comfortable compared to life in many areas of the third world. Welfare costs would skyrocket, and the strangled economy disintegrate and collapse, as the subsistence fund—the stock of capital accumulated in and inherited from the past—was plundered. Civilization in the U.S. and Switzerland would vanish, just as it once did from Rome and Greece.
-> 
+>
 > Since unconditional free immigration must be regarded as a prescription for national suicide, the typical position among free traders is the alternative of conditional free immigration. According to this view, the U.S. and Switzerland would have to first return to unrestricted free trade and abolish all tax-funded welfare programs, and only then should they open their borders to everyone who wanted to come. In the meantime, while the welfare state is still in place, immigration would have to be made subject to the condition that immigrants are excluded from domestic welfare entitlements.
 
 But such an argument applies equally to children who can be viewed as immigrants from Storkistan. It is surely abhorrent to advocate that the state impose restrictions on births until such a time that welfare is abolished. We must, as legal scholars, separate the crime of taxing citizens for welfare and the crime of restricting immigration. It may well be strategically beneficial to focus your efforts on removing the welfare first, but it is not legally justifiable to keep the immigration restrictions in place until this goal is achieved. Moreover, if the Hoppean is to be annoyed by the presence of non-taxpaying foreigners and bums in the country, is it not proper for him to endorse a stance that tax-evasion is criminal? If it is the taxpaying-collective that jointly owns the land in the United States for instance, does the Hoppean advocate a policy of deporting tax evaders, or children, or the homeless? This example makes it clear that the Hoppean places blame on those heroic enough to violate state edicts, which is a strange stance for supposed-anarchists, as anarchists we must adopt a hardline natural rights philosophy, and to learn such a philosophy you have to watch this video where I explain that anarcho-capitalism is the solution to law.
 
-
 # References
 
--   Ace Archist, *Immigration, Privatization, and Ownership in The Statist Commonwealth*.
+-   Ace Archist, _Immigration, Privatization, and Ownership in The Statist Commonwealth_.
 -   Anglo Libertarian, &ldquo;The Homeless Question,&rdquo; <https://www.youtube.com/watch?v=jiP_1gAbApA>
--   Block, Walter. &ldquo;Rejoinder to Hoppe on Immigration,&rdquo; *Journal of Libertarian Studies* 22, No. 1 (2011): 771–792.
--   Christopher Chase Rachels, &ldquo;The Libertarian Case Against Open Borders,&rdquo; in idem. *White, Right, and Libertarian*
+-   Block, Walter. &ldquo;Rejoinder to Hoppe on Immigration,&rdquo; _Journal of Libertarian Studies_ 22, No. 1 (2011): 771–792.
+-   Christopher Chase Rachels, &ldquo;The Libertarian Case Against Open Borders,&rdquo; in idem. _White, Right, and Libertarian_
 -   Jeff Deist, &ldquo;Immigration Roundtable,&rdquo; <https://mises.org/library/immigration-roundtable>
 -   Springtime of Nations, &ldquo;Hoppe&rsquo;s Worst Idea,&rdquo; <https://www.youtube.com/watch?v=NO7G2oc4bPU>
 -   Stephan Kinsella, &ldquo;I&rsquo;m Pro-Immigration and Pro-Open Borders,&rdquo; <https://www.stephankinsella.com/2010/04/im-pro-immigration-and-pro-open-borders/>
--   Walter Block, &ldquo;A Libertarian Case for Free Immigration,&rdquo; *Journal of Libertarian Studies* 13:2 (Summer 1998): 167-186
-
+-   Walter Block, &ldquo;A Libertarian Case for Free Immigration,&rdquo; _Journal of Libertarian Studies_ 13:2 (Summer 1998): 167-186
 
 # Footnotes
 
-<sup><a id="fn.1" href="#fnr.1">1</a></sup> For an economic/utilitarian analysis of open borders see Ludwig von Mises, &ldquo;Freedom of Movement,&rdquo; in idem., *Liberalism*.
+<sup><a id="fn.1" href="#fnr.1">1</a></sup> For an economic/utilitarian analysis of open borders see Ludwig von Mises, &ldquo;Freedom of Movement,&rdquo; in idem., _Liberalism_.
 
-<sup><a id="fn.2" href="#fnr.2">2</a></sup> See LiquidZulu, &ldquo;Homesteading and Property Rights,&rdquo; in idem., *The Fundamentals of Libertarian Ethics*, <https://liquidzulu.github.io/homesteading-and-property-rights/>
+<sup><a id="fn.2" href="#fnr.2">2</a></sup> See LiquidZulu, &ldquo;Homesteading and Property Rights,&rdquo; in idem., _The Fundamentals of Libertarian Ethics_, <https://liquidzulu.github.io/homesteading-and-property-rights/>
 
-<sup><a id="fn.3" href="#fnr.3">3</a></sup> LiquidZulu, *The Fundamentals of Libertarian Ethics*, <https://liquidzulu.github.io/libertarian-ethics/>
+<sup><a id="fn.3" href="#fnr.3">3</a></sup> LiquidZulu, _The Fundamentals of Libertarian Ethics_, <https://liquidzulu.github.io/libertarian-ethics/>
 
-<sup><a id="fn.4" href="#fnr.4">4</a></sup> See LiquidZulu, &ldquo;Contract Theory,&rdquo; in idem., *The Fundamentals of Libertarian Ethics*, <https://liquidzulu.github.io/contract-theory/>
+<sup><a id="fn.4" href="#fnr.4">4</a></sup> See LiquidZulu, &ldquo;Contract Theory,&rdquo; in idem., _The Fundamentals of Libertarian Ethics_, <https://liquidzulu.github.io/contract-theory/>
 
-<sup><a id="fn.5" href="#fnr.5">5</a></sup> LiquidZulu, &ldquo;On the Impossibility of Group Ownership,&rdquo; in idem. *The Fundamentals of Libertarian Ethics*, <https://liquidzulu.github.io/homesteading-and-property-rights/#on-the-impossibility-of-group-ownership>
+<sup><a id="fn.5" href="#fnr.5">5</a></sup> LiquidZulu, &ldquo;On the Impossibility of Group Ownership,&rdquo; in idem. _The Fundamentals of Libertarian Ethics_, <https://liquidzulu.github.io/homesteading-and-property-rights/#on-the-impossibility-of-group-ownership>
 
-<sup><a id="fn.6" href="#fnr.6">6</a></sup> Hans-Hermann Hoppe, &ldquo;The Case for Free Trade and Restricted Immigration,&rdquo; *Journal of Libertarian Studies* 13:2 (Summer 1998): 221-233
+<sup><a id="fn.6" href="#fnr.6">6</a></sup> Hans-Hermann Hoppe, &ldquo;The Case for Free Trade and Restricted Immigration,&rdquo; _Journal of Libertarian Studies_ 13:2 (Summer 1998): 221-233
 
-<sup><a id="fn.7" href="#fnr.7">7</a></sup> Walter Block, &ldquo;A Libertarian Case for Free Immigration,&rdquo; *Journal of Libertarian Studies* 13:2 (Summer 1998): 167-186
+<sup><a id="fn.7" href="#fnr.7">7</a></sup> Walter Block, &ldquo;A Libertarian Case for Free Immigration,&rdquo; _Journal of Libertarian Studies_ 13:2 (Summer 1998): 167-186
 
-<sup><a id="fn.8" href="#fnr.8">8</a></sup> Hans-Hermann Hoppe, &ldquo;The Case for Free Trade and Restricted Immigration,&rdquo; *Journal of Libertarian Studies* 13:2 (Summer 1998): 221-233
+<sup><a id="fn.8" href="#fnr.8">8</a></sup> Hans-Hermann Hoppe, &ldquo;The Case for Free Trade and Restricted Immigration,&rdquo; _Journal of Libertarian Studies_ 13:2 (Summer 1998): 221-233
 
-<sup><a id="fn.9" href="#fnr.9">9</a></sup> See LiquidZulu, &ldquo;The Nature of Law,&rdquo; in idem. *The Fundamentals of Libertarian Ethics*, <https://liquidzulu.github.io/the-nature-of-law>
+<sup><a id="fn.9" href="#fnr.9">9</a></sup> See LiquidZulu, &ldquo;The Nature of Law,&rdquo; in idem. _The Fundamentals of Libertarian Ethics_, <https://liquidzulu.github.io/the-nature-of-law>
 
-<sup><a id="fn.10" href="#fnr.10">10</a></sup> Hans-Hermann Hoppe, &ldquo;The Case for Free Trade and Restricted Immigration,&rdquo; *Journal of Libertarian Studies* 13:2 (Summer 1998): 221-233
+<sup><a id="fn.10" href="#fnr.10">10</a></sup> Hans-Hermann Hoppe, &ldquo;The Case for Free Trade and Restricted Immigration,&rdquo; _Journal of Libertarian Studies_ 13:2 (Summer 1998): 221-233
 
 <sup><a id="fn.11" href="#fnr.11">11</a></sup> If he does have such a right, he would be allowed to exclude non-taxpaying children from using the park to play on for him to take drugs.
 
-<sup><a id="fn.12" href="#fnr.12">12</a></sup> Anglo Libertarian, *The Homeless Question*, t. 5:35
+<sup><a id="fn.12" href="#fnr.12">12</a></sup> Anglo Libertarian, _The Homeless Question_, t. 5:35
 
 <sup><a id="fn.13" href="#fnr.13">13</a></sup> See @JackalopeRider1, <https://twitter.com/JackalopeRider1/status/1600492099136376832> ([archived](https://archive.ph/eZNAj)).
 
-<sup><a id="fn.14" href="#fnr.14">14</a></sup> Hans-Hermann Hoppe, &ldquo;On Time Preference, Government, and the Process of Decivilization,&rdquo; in idem., *Democracy: The God That Failed*.
+<sup><a id="fn.14" href="#fnr.14">14</a></sup> Hans-Hermann Hoppe, &ldquo;On Time Preference, Government, and the Process of Decivilization,&rdquo; in idem., _Democracy: The God That Failed_.
 
-<sup><a id="fn.15" href="#fnr.15">15</a></sup> Anglo Libertarian, *The Homeless Question*, t. 16:10
+<sup><a id="fn.15" href="#fnr.15">15</a></sup> Anglo Libertarian, _The Homeless Question_, t. 16:10
 
-<sup><a id="fn.16" href="#fnr.16">16</a></sup> Anglo Libertarian, *The Homeless Question*, t. 3:48
+<sup><a id="fn.16" href="#fnr.16">16</a></sup> Anglo Libertarian, _The Homeless Question_, t. 3:48
 
-<sup><a id="fn.17" href="#fnr.17">17</a></sup> See LiquidZulu, *These People are Destroying Libertarianism*, <https://www.youtube.com/watch?v=064I02yeLhg>
+<sup><a id="fn.17" href="#fnr.17">17</a></sup> See LiquidZulu, _These People are Destroying Libertarianism_, <https://www.youtube.com/watch?v=064I02yeLhg>
 
-<sup><a id="fn.18" href="#fnr.18">18</a></sup> Murray Rothbard, *On The Duty of Natural Outlaws to Shut Up*
+<sup><a id="fn.18" href="#fnr.18">18</a></sup> Murray Rothbard, _On The Duty of Natural Outlaws to Shut Up_

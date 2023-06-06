@@ -1,74 +1,74 @@
- .animation-bounce-left {
-     animation: bounce-left 1s infinite;
- }
- .animation-bounce-right {
-     animation: bounce-right 1s infinite;
- }
+.animation-bounce-left {
+    animation: bounce-left 1s infinite;
+}
+.animation-bounce-right {
+    animation: bounce-right 1s infinite;
+}
 
- @keyframes bounce-left {
-     0%,
-     100% {
-         transform: translateX(-25%);
-         animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
-     }
-     50% {
-         transform: translateX(0);
-         animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
-     }
- }
+@keyframes bounce-left {
+    0%,
+    100% {
+        transform: translateX(-25%);
+        animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+    }
+    50% {
+        transform: translateX(0);
+        animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    }
+}
 
- @keyframes bounce-right {
-     0%,
-     100% {
-         transform: translateX(25%);
-         animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
-     }
-     50% {
-         transform: translateX(0);
-         animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
-     }
- }
+@keyframes bounce-right {
+    0%,
+    100% {
+        transform: translateX(25%);
+        animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+    }
+    50% {
+        transform: translateX(0);
+        animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    }
+}
 
- .gridlines {
-     --size: 32px;
-     --bg-size: var(--size) var(--size), var(--size) var(--size);
+.gridlines {
+    --size: 32px;
+    --bg-size: var(--size) var(--size), var(--size) var(--size);
 
-     --grid-color: rgba(255, 255, 255, 0.015);
+    --grid-color: rgba(255, 255, 255, 0.015);
 
-     z-index: 10 !important;
-     background-image: linear-gradient(var(--grid-color) 1px, transparent 1px),
-         linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
-     background-size: var(--bg-size);
-     background-position: -1px -1px, -1px -1px;
- }
+    z-index: 10 !important;
+    background-image: linear-gradient(var(--grid-color) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+    background-size: var(--bg-size);
+    background-position: -1px -1px, -1px -1px;
+}
 
- .gradient-text {
-     color: rgba(0, 0, 0, 0);
-     @apply bg-clip-text;
- }
+.gradient-text {
+    color: rgba(0, 0, 0, 0);
+    @apply bg-clip-text;
+}
 
- .cubano {
-     font-family: Cubano;
- }
+.cubano {
+    font-family: Cubano;
+}
 
- p > .emphasis {
-     @apply text-3xl;
- }
+p > .emphasis {
+    @apply text-3xl;
+}
 
- .emphasis.italic {
-     @apply pr-[0.35rem];
- }
+.emphasis.italic {
+    @apply pr-[0.35rem];
+}
 
- .emphasis {
-     @apply cubano
+.emphasis {
+    @apply cubano
        gradient-text
        font-black
        bg-gradient-to-t
        from-orange-500
        to-amber-500
        uppercase;
- }
+}
 
- .footer-shadow {
-     box-shadow: 0 0 10vh 10vh black;
- }
+.footer-shadow {
+    box-shadow: 0 0 10vh 10vh black;
+}

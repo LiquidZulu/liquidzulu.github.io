@@ -1,16 +1,15 @@
 ---
-title: "The Non-Aggression Principle"
-description: "The Non-Aggression Principle is an axiom of law that assigns the property right to the individual who did not initiate a given conflict. Furthermore, justification as such implies a pre-supposition of the validity of this principle, making any denial of it a performative or dialectic contradiction."
+title: 'The Non-Aggression Principle'
+description: 'The Non-Aggression Principle is an axiom of law that assigns the property right to the individual who did not initiate a given conflict. Furthermore, justification as such implies a pre-supposition of the validity of this principle, making any denial of it a performative or dialectic contradiction.'
 n: 2
 date: 2023-04-25
 ---
 
 > Cognition and truth-seeking as such have a value [normative] foundation. And the normative foundation on which cognition and truth rest is the recognition of private property rights.
-> 
+>
 > &#x2014;Hans-Hermann Hoppe<sup><a id="fnr.1" class="footref" href="#fn.1" role="doc-backlink">1</a></sup>
 
 This document is part of a course which you can find [here](https://liquidzulu.github.io/libertarian-ethics). I provide the textual version for free to the public to make people aware of the facts contained within and to (hopefully) convince people to purchase the video course. This course is intended primarily as a video experience, and that is where my focus will be in terms of quality, so I do encourage you to check it out if this content is at all interesting to you. The course is sold on a pay-what-you-want model and is copyleft, meaning other people have the right to re-publish it at will. I simply encourage anyone who appreciates the work put into this course to purchase it such that I may make more in the future, and if you do choose to republish any section, please credit me and extend to your audience my request to purchase.
-
 
 # Definition
 
@@ -18,12 +17,11 @@ In the previous lesson we discovered some necessary facts about the nature of la
 
 We call this central axiom the Non-Aggression Principle, or NAP, and it can be stated as follows: the non-aggressor ought be the director, or that the aggressor ought not be the director (these statements are contra-positive). Let’s break that down, here aggression is defined as the initiation of conflict, so in any contest over some property $\alpha$, if $A$ is the aggressor and $B$ the non-aggressor, $B$ ought be the one to direct the use of $\alpha$ and $A$ ought not.
 
-
 # The Argument from Argument
 
 The term &rsquo;axiom&rsquo; has a precise meaning in philosophy, unlike in mathematics where axioms are merely inter-consistent but arbitrarily chosen rules,<sup><a id="fnr.2" class="footref" href="#fn.2" role="doc-backlink">2</a></sup> praxeological axioms are self-evident propositions. A proposition is self-evident if you must accept its validity in attempting to dispute its validity. We saw above how the law of non-contradiction is a self-evident proposition, in disputing anything at all you first must accept that the law of non-contradiction holds.
 
-Similarly, in disputing the NAP you pre-suppose its truth as it is implied by the very nature of argumentation. First, recall that argumentation does not exist in a normative void, that is to say there are certain norms which are pre-supposed in the very act of arguing. Consider what it would mean for this not to be the case: if argumentation had no particular normative structure it would lose any meaning&#x2014;literally any action a man takes could be considered an argumentation: such as eating an apple, or swinging from tree, or shooting someone through the head. It is because of the fact that certain norms *define* a dialectic as such that there is such a thing called argumentation in the first place.
+Similarly, in disputing the NAP you pre-suppose its truth as it is implied by the very nature of argumentation. First, recall that argumentation does not exist in a normative void, that is to say there are certain norms which are pre-supposed in the very act of arguing. Consider what it would mean for this not to be the case: if argumentation had no particular normative structure it would lose any meaning&#x2014;literally any action a man takes could be considered an argumentation: such as eating an apple, or swinging from tree, or shooting someone through the head. It is because of the fact that certain norms _define_ a dialectic as such that there is such a thing called argumentation in the first place.
 
 Second, the validity of any truth claim must be raised and decided upon in the course of an argumentation, so the normative structure of argumentation in particular has the special status of being the practical pre-condition for ascertaining the truth or validity of any statement. This is known as the a priori of argumentation, which is another self-evident proposition&#x2014;if you were to dispute it, you would first have to start arguing thus pre-supposing its truth.
 
@@ -35,21 +33,19 @@ Consider what it would mean to say that this is not the case, that violence is p
 
 > Looked at from another angle, participants in argumentation indisputably need to use and control the scarce resources in the world to survive; otherwise, they would perish. But because their scarcity makes conflict over the uses of resources possible, only norms that determine the proper ownership can avoid conflict over these scarce goods. That such norms are valuable cannot be denied, because anyone who is alive in the world and participating in the practical activity of argumentation cannot deny the value of being able to control scarce resources and the value of avoiding conflicts over such scarce resources.<sup><a id="fnr.4" class="footref" href="#fn.4" role="doc-backlink">4</a></sup>
 
-
 # The Contradiction of Rights-Scepticism
 
 A further proof of the existence of rights is found by considering what it would mean to deny that rights exist. Kinsella introduces the concept as follows:
 
-> If any right at all exists, it is a right of $A$ to have or do $X$ without $B$&rsquo;s preventing it; and, therefore, $A$ can legitimately use force against $B$ to *enforce* the right. $A$ is concerned with the enforceability of his right to $X$, and this enforceability is all that $A$ requires in order to be secure in his right to $X$. For a rights-skeptic meaningfully to challenge $A$&rsquo;s asserted right, the skeptic must challenge the *enforceability* of the right, instead of merely challenging the existence of the right. Nothing less will do. If the skeptic does not deny that $A$&rsquo;s proposed enforcement of his purported right is legitimate, then the skeptic has not denied $A$&rsquo;s right to $X$, because what it *means* to have a right is to be able to legitimately enforce it. If the skeptic maintains, then, that $A$ has no right to $X$, indeed, no rights at all since there are no rights, the skeptic must also maintain that $A$&rsquo;s enforcement of his purported right to $X$ is not justified.<sup><a id="fnr.5" class="footref" href="#fn.5" role="doc-backlink">5</a></sup>
+> If any right at all exists, it is a right of $A$ to have or do $X$ without $B$&rsquo;s preventing it; and, therefore, $A$ can legitimately use force against $B$ to _enforce_ the right. $A$ is concerned with the enforceability of his right to $X$, and this enforceability is all that $A$ requires in order to be secure in his right to $X$. For a rights-skeptic meaningfully to challenge $A$&rsquo;s asserted right, the skeptic must challenge the _enforceability_ of the right, instead of merely challenging the existence of the right. Nothing less will do. If the skeptic does not deny that $A$&rsquo;s proposed enforcement of his purported right is legitimate, then the skeptic has not denied $A$&rsquo;s right to $X$, because what it _means_ to have a right is to be able to legitimately enforce it. If the skeptic maintains, then, that $A$ has no right to $X$, indeed, no rights at all since there are no rights, the skeptic must also maintain that $A$&rsquo;s enforcement of his purported right to $X$ is not justified.<sup><a id="fnr.5" class="footref" href="#fn.5" role="doc-backlink">5</a></sup>
 
-This presents a problem for the rights-sceptic, however, because he must hold that enforcement&#x2013;i.e. the use of force--*requires* justification. But *merely* challenging $A$&rsquo;s use of force is not enough, the rights-sceptic can&rsquo;t just express distaste at the enforcement he must attack the legitimacy of said use of force. But in order to challenge the legitimacy of $A$ using force against $B$ to enforce the right, he must hold that $B$ has a right to not have this force used against him&#x2014;i.e. that $B$ or someone else can legitimately use force to *stop* $A$&rsquo;s use of force. But then he is in contradiction, because he must recognise a right held by $B$ in his denial that rights exist.
+This presents a problem for the rights-sceptic, however, because he must hold that enforcement&#x2013;i.e. the use of force--_requires_ justification. But _merely_ challenging $A$&rsquo;s use of force is not enough, the rights-sceptic can&rsquo;t just express distaste at the enforcement he must attack the legitimacy of said use of force. But in order to challenge the legitimacy of $A$ using force against $B$ to enforce the right, he must hold that $B$ has a right to not have this force used against him&#x2014;i.e. that $B$ or someone else can legitimately use force to _stop_ $A$&rsquo;s use of force. But then he is in contradiction, because he must recognise a right held by $B$ in his denial that rights exist.
 
 > More common-sensically, this demonstration points out the inconsistency on the part of a rights-skeptic who engages in discourse about the propriety of rights at all. If there are no rights, then there is no such thing as the justifiable or legitimate use of force, but neither is there such a thing as the unjust use of force. But if there is no unjust use of force, what is it, exactly, that a rights-skeptic is concerned about? If individuals delude themselves into thinking that they have natural rights, and, acting on this assumption, go about enforcing these rights as if they are true, the skeptic has no grounds to complain. To the extent the skeptic complains about people enforcing these illusory rights, he begins to attribute rights to those having force used against them. Any rights-skeptic can only shut up,<sup><a id="fnr.6" class="footref" href="#fn.6" role="doc-backlink">6</a></sup> because he contradicts himself the moment he objects to others&rsquo; acting as if they have rights.
-> 
+>
 > [&#x2026;]
-> 
+>
 > Indeed, another way to respond to a rights-skeptic would be to propose to physically harm him. If there are no rights, as he maintains, then he cannot object to being harmed. So, presumably, any rights-skeptic would change his position and admit there were rights (if only so as to be able to object to being harmed)&#x2014;or there would soon be no more rights-skeptics left alive to give rights-advocates any trouble.
-
 
 # Indirect and Joint Aggression
 
@@ -71,12 +67,11 @@ To re-iterate this point allow me to quote Kinsella:<sup><a id="fnr.9" class="fo
 
 This &ldquo;black box&rdquo; thinking is crucial; consider what would happen if it was discovered some day that firearms are actually sentient and are capable of choosing not to accept a trigger press and that this is the cause of bullet jams. Would this suddenly absolve everyone who has used a firearm to kill another of any criminal responsibility? Surely not, none of these people knew that firearms were sentient and could refuse to shoot, to the gunmen the firearm is a means towards the end of shooting a bullet at their victim(s), this does not change if it is later discovered that firearms have a mind of their own.
 
-> If it is illegal to hit someone [&#x2026;] this means that it is illegal to *cause* another person to be hit; that is to say, it is illegal to use physical objects, including one&rsquo;s fist, in a way that will cause the unwanted physical contact with another person.
-> 
+> If it is illegal to hit someone [&#x2026;] this means that it is illegal to _cause_ another person to be hit; that is to say, it is illegal to use physical objects, including one&rsquo;s fist, in a way that will cause the unwanted physical contact with another person.
+>
 > [&#x2026;]
-> 
-> In analyzing action through the lens of the praxeological means-ends structure to determine if it amounts to aggression, we ask if the actor employed *means* to achieve the end of invading the borders of another’s property or body—in other words, we ask if he *caused* the border invasion. The means employed can be inanimate or nonhuman means governed solely by causal laws (a gun), or it can include other humans who are employed as means to achieve the illicit end desired. The latter category includes both innocent humans that one employs to cause a border invasion and culpable humans that one conspires (cooperates) with to achieve the illicit end.<sup><a id="fnr.10" class="footref" href="#fn.10" role="doc-backlink">10</a></sup>
-
+>
+> In analyzing action through the lens of the praxeological means-ends structure to determine if it amounts to aggression, we ask if the actor employed _means_ to achieve the end of invading the borders of another’s property or body—in other words, we ask if he _caused_ the border invasion. The means employed can be inanimate or nonhuman means governed solely by causal laws (a gun), or it can include other humans who are employed as means to achieve the illicit end desired. The latter category includes both innocent humans that one employs to cause a border invasion and culpable humans that one conspires (cooperates) with to achieve the illicit end.<sup><a id="fnr.10" class="footref" href="#fn.10" role="doc-backlink">10</a></sup>
 
 # Communication and Social Norms
 
@@ -84,34 +79,32 @@ We can use this analysis to highlight also the guilt of Henry II of England, who
 
 What this shows is that social norms and understanding of language can influence whether a given set of words demonstrate an aggression or not. So it may be the case that if I am in a seedy bar and I go up to the biggest, toughest guy in there and call his mother a whore I am in fact communicating to him that I want a fight. Or another case is when I have a mailbox on my front door and a path leading to it, this can be seen as communicating to couriers that I want them to deliver packages by walking up to my door over my path and placing packages inside the mailbox. This demonstrates the limits of what Kinsella dubs &ldquo;armchair theorising,&rdquo;<sup><a id="fnr.11" class="footref" href="#fn.11" role="doc-backlink">11</a></sup> one cannot say with certainty whether a given action is aggression without having all of the relevant information provided, which is why judges are necessary in a rational legal system&#x2014;the judge is able to analyse all of the relevant details to determine who is at fault. The job of the jurist sitting in his armchair is to explicate objective principles and perhaps to apply them to various simple hypothetical scenarios, where all relevant details can be provided.
 
-
 # Related Reading
 
--   Hans-Hermann Hoppe (2005), “On The Ultimate Justification of the Ethics of Private Property,” in idem. *The Economics and Ethics of Private Property* second ed.
--   Kris Borer (2010), *Cause No Conflict*
--   N. Stephan Kinsella, *Dialogical Arguments for Libertarian Rights*
-
+-   Hans-Hermann Hoppe (2005), “On The Ultimate Justification of the Ethics of Private Property,” in idem. _The Economics and Ethics of Private Property_ second ed.
+-   Kris Borer (2010), _Cause No Conflict_
+-   N. Stephan Kinsella, _Dialogical Arguments for Libertarian Rights_
 
 # Footnotes
 
 <sup><a id="fn.1" href="#fnr.1">1</a></sup> Hans-Hermann Hoppe (1988), “The Ultimate Justification of the Private Property Ethic,” (Liberty), <https://libertyunbound.com/wp-content/uploads/2020/08/Liberty_Magazine_September_1988.pdf>
 
-<sup><a id="fn.2" href="#fnr.2">2</a></sup> See Ludwig von Mises (1962), “The Starting Point of Praxeological Thinking,” in idem. *The Ultimate Foundation of Economic Science*.
+<sup><a id="fn.2" href="#fnr.2">2</a></sup> See Ludwig von Mises (1962), “The Starting Point of Praxeological Thinking,” in idem. _The Ultimate Foundation of Economic Science_.
 
 <sup><a id="fn.3" href="#fnr.3">3</a></sup> I am indebted to The French are Harlequins for this particular summary.
 
-<sup><a id="fn.4" href="#fnr.4">4</a></sup> N. Stephan Kinsella, &ldquo;Argumentation Ethics,&rdquo; in idem. *Dialogical Arguments for Libertarian Rights*.
+<sup><a id="fn.4" href="#fnr.4">4</a></sup> N. Stephan Kinsella, &ldquo;Argumentation Ethics,&rdquo; in idem. _Dialogical Arguments for Libertarian Rights_.
 
-<sup><a id="fn.5" href="#fnr.5">5</a></sup> N. Stephan Kinsella, &ldquo;Rights-Skepticism,&rdquo; in idem. *Dialogical Arguments for Libertarian Rights*.
+<sup><a id="fn.5" href="#fnr.5">5</a></sup> N. Stephan Kinsella, &ldquo;Rights-Skepticism,&rdquo; in idem. _Dialogical Arguments for Libertarian Rights_.
 
-<sup><a id="fn.6" href="#fnr.6">6</a></sup> (my footnote, not Kinsella&rsquo;s): Murray Rothbard (1985), *On The Duty Of Natural Outlaws To Shut Up*.
+<sup><a id="fn.6" href="#fnr.6">6</a></sup> (my footnote, not Kinsella&rsquo;s): Murray Rothbard (1985), _On The Duty Of Natural Outlaws To Shut Up_.
 
-<sup><a id="fn.7" href="#fnr.7">7</a></sup> N. Stephan Kinsella and Patrick Tinsley, *Causation and Aggression*
+<sup><a id="fn.7" href="#fnr.7">7</a></sup> N. Stephan Kinsella and Patrick Tinsley, _Causation and Aggression_
 
 <sup><a id="fn.8" href="#fnr.8">8</a></sup> Adolf Reinarch (2000), &ldquo;On The Concept of Causality in the Current Criminal Law,&rdquo; p. 14. Trans. Berit Brogaard. Jonathan Sandford, ed. (1998) and Ed Rackley (2000); unpublished draft translation; available at www.stephankinsella.com/texts.
 
-<sup><a id="fn.9" href="#fnr.9">9</a></sup> N. Stephan Kinsella and Patrick Tinsley, *Causation and Aggression*.
+<sup><a id="fn.9" href="#fnr.9">9</a></sup> N. Stephan Kinsella and Patrick Tinsley, _Causation and Aggression_.
 
 <sup><a id="fn.10" href="#fnr.10">10</a></sup> ibid.
 
-<sup><a id="fn.11" href="#fnr.11">11</a></sup> See N. Stephan Kinsella, *The Limits of Armchair Theorizing: The Case of Threats*
+<sup><a id="fn.11" href="#fnr.11">11</a></sup> See N. Stephan Kinsella, _The Limits of Armchair Theorizing: The Case of Threats_

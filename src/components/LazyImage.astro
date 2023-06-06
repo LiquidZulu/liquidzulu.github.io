@@ -1,0 +1,76 @@
+---
+// https://blog.webdevsimplified.com/2023-05/lazy-load-images/
+// https://www.youtube.com/watch?v=hJ7Rg1821Q0
+// ffmpeg -i slug.webp -vf scale=20:-1 slug.min.jpg
+const { slug, className } = Astro.props;
+---
+
+<script>
+    const lazyLoadDivs = document.querySelectorAll('.image-lazy-load');
+
+    for (let i = 0; i < lazyLoadDivs.length; ++i) {
+        const img = lazyLoadDivs[i].querySelector('img');
+        lazyLoadDivs[i].classList.add('not-loaded');
+
+        const loaded = () => {
+            lazyLoadDivs[i].classList.remove('not-loaded');
+            lazyLoadDivs[i].classList.add('loaded');
+        };
+
+        if (img.complete) {
+            loaded();
+        } else {
+            img.addEventListener('load', loaded);
+        }
+    }
+</script>
+
+<div
+    class="image-lazy-load"
+    style={`background-image: url(/images/${slug}.min.jpg);`}>
+    <img class={className} src={`/images/${slug}`} loading="lazy" />
+</div>
+
+<style lang="scss">
+    .image-lazy-load {
+        @apply bg-cover bg-center relative w-full h-full;
+
+        img {
+            @apply transition-all duration-300 object-cover object-center w-full h-full;
+        }
+
+        &.not-loaded {
+            &::before {
+                content: '';
+                position: absolute;
+                inset: 0;
+                animation: image-lazy-load-skeleton 2.5s infinite;
+            }
+
+            & > img {
+                @apply opacity-0;
+            }
+        }
+
+        &.loaded {
+            &.loaded::before {
+                content: none;
+            }
+
+            & > img {
+                @apply opacity-100;
+            }
+        }
+    }
+
+    @keyframes image-lazy-load-skeleton {
+        0%,
+        100% {
+            background-color: rgba(255, 255, 255, 0);
+        }
+
+        50% {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+    }
+</style>
