@@ -133,7 +133,7 @@ Eso goes on and tries to claim that I was taking part in a Raid on this server, 
 
 ![img](/blog/against-esoteric-entity/raid.jpg)
 
-This is simply false. I joined the server, sent my response, watched Donnie Darko, and saw that I had been banned. Discord&rsquo;s community guidelines<sup><a id="fnr.7" class="footref" href="#fn.7" role="doc-backlink">7</a></sup> defines a raid under their &ldquo;Respect Each Other&rdquo; policy as follows:
+This is simply false. I joined the server, sent my response, watched *Donnie Darko*, and saw that I had been banned. Discord&rsquo;s community guidelines<sup><a id="fnr.7" class="footref" href="#fn.7" role="doc-backlink">7</a></sup> defines a raid under their &ldquo;Respect Each Other&rdquo; policy as follows:
 
 > coordinating server joins for the purposes of harassing server members
 
