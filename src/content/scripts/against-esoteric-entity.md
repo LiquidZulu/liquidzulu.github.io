@@ -66,14 +66,14 @@ So:
 -   the description says &ldquo;I discuss the Backalley Philosophy critiques of Hoppe with Esoteric Entity&rdquo;&#x2014;this is what was planned;
 -   I open the debate by explaining that I watched the series in question to try and get some points of contention to discuss&#x2014;this is what was planned, I already told him in the DMs that I was watching over his series for this purpose, not a blindside;
 -   Eso agrees with the above, that we did indeed plan to discuss his critiques of Hoppe;
--   Eso then wants to discuss &ldquo;various topics&rdquo; on the stream, citing the fact that the discussion is free-form, and assuming &ldquo;various topics&rdquo; means what was planned, i.e. his *various* criticisms of Hoppe, then this is of course what was planned (perhaps he wanted to instead discuss which sporting event is most entertaining, or at what time of year potatoes are easiest to plant, which woudl definitely not be what was planned).
+-   Eso then wants to discuss &ldquo;various topics&rdquo; on the stream, citing the fact that the discussion is free-form, and assuming &ldquo;various topics&rdquo; means what was planned, i.e. his *various* criticisms of Hoppe, then this is of course what was planned (perhaps he wanted to instead discuss which sporting event is most entertaining, or at what time of year potatoes are easiest to plant, which would definitely not be what was planned).
 
 On all counts the stream itself is in perfect lockstep with what was planned in the DMs&#x2014;I did *not* lie about what the debate was. I was clear the entire time that I wanted to debate his criticisms of Hoppe, if he studied for some topic other than this he is a fool, and it is not my job to ensure that he is not foolish. If there was some manner of confusion over what the topic was supposed to be, the correct response to this would be for Eso to ask for a clarification whenever he felt it going off-track (which if he did would call into question exactly how free-form the discussion was), the correct response is *not* to pretend as if we were still on amicable terms and to concoct and spread lies about me behind my back.
 
 
 ## Claim: &ldquo;LiquidZulu Constantly Asked Loaded Questions&rdquo;
 
-It is at this point that a common theme in Eso&rsquo;s accusations crops up: namely that he makes an accusation with zero evidence where the burden is on him. I certainly questioned him a lot during the discussion (which was the entire point), but which specific questions does he think are loaded? Note that a loaded question doesn&rsquo;t just mean a question that is weally weally hawd to ansuw, rather a loaded question has baked-in a controversial assumption, with the idea being that the loaded-questioner is trying to sneak some premise past his opponent. It is on Eso to provide the evidence that I was doing this (the correct time to do that would either be during the discussion itself, or after I confronted him about this debacle. See: [2](#org590d9bd)).
+It is at this point that a common theme in Eso&rsquo;s accusations crops up: namely that he makes an accusation with zero evidence where the burden is on him. I certainly questioned him a lot during the discussion (which was the entire point), but which specific questions does he think are loaded? Note that a loaded question doesn&rsquo;t just mean a question that is weally weally hawd to ansuw, rather a loaded question has baked-in a controversial assumption, with the idea being that the loaded-questioner is trying to sneak some premise past his opponent. It is on Eso to provide the evidence that I was doing this (the correct time to do that would either be during the discussion itself, or after I confronted him about this debacle. See: [2](#orgde83d20)).
 
 
 ## Claim: &ldquo;LiquidZulu Constantly Interrupted Eso&rdquo;
@@ -82,7 +82,7 @@ The point about Eso requiring evidence still stands, but on its face this claim 
 
 ![img](/blog/against-esoteric-entity/ignis.png)
 
-Now, after almost two hours of discussion, if ones interlocutor keeps treading the same tired ground it is entirely proper for one to interrupt in order that the conversation may move forward. Unless of course Eso was not intending to actually move the discussion forward and was instead looking to trap us in an endless whirlpool of nonsense (which would be evidence that *he* is a grifter, not me. See: [1.5](#org615edfe)).
+Now, after almost two hours of discussion, if ones interlocutor keeps treading the same tired ground it is entirely proper for one to interrupt in order that the conversation may move forward. Unless of course Eso was not intending to actually move the discussion forward and was instead looking to trap us in an endless whirlpool of nonsense (which would be evidence that *he* is a grifter, not me. See: [1.5](#org532fa24)).
 
 
 ## CLaim: &ldquo;LiquidZulu is a Raging Narcissist&rdquo;
@@ -113,7 +113,7 @@ On the other hand, it is proven in this post that Esoteric Entity is willing to 
 
 # Esoteric Entity Banned Me For Trying To Defend Myself
 
-Below is my initial response after joining the server where he was making his allegations against me, attached are some select screenshots from our DMs, but this is superceded by [1.1](#org06be5b0):
+Below is my initial response after joining the server where he was making his allegations against me, attached are some select screenshots from our DMs, but this is superceded by [1.1](#org4391b8b):
 
 ![img](/blog/against-esoteric-entity/my-response.png)
 
