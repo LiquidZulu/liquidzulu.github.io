@@ -113,7 +113,7 @@ On the other hand, it is proven in this post that Esoteric Entity is willing to 
 
 # Esoteric Entity Banned Me For Trying To Defend Myself
 
-Below is my initial response after joining the server where he was making his allegations against me, attached are some select screenshots from our DMs, but this is superceded by [Claim: &ldquo;LiquidZulu Lied About the Debate Topic&rdquo;](#org3261527):
+Below is my initial response after joining the server where he was making his allegations against me, attached are some select screenshots from our DMs, but this is superceded by [Claim: &ldquo;LiquidZulu Lied About the Debate Topic&rdquo;](#claim-liquidzulu-lied-about-the-debate-topic):
 
 ![img](/blog/against-esoteric-entity/my-response.png)
 
