@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+direnv status | grep -i "loaded rc path" | awk '{print $4}' | xargs dirname

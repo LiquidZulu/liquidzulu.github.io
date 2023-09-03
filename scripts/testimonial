@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-
-name=$@
-slug=$(echo "$name" | ./scripts/get-slug)
-file="./src/content/testimonials/$slug.md"
-
-touch "$file"
-printf -- "---\nname: '$name'\nslug: '$slug'\njob: ''\nlink: ''\nfor: ['']\n---\n\nLorem ipsum dolor sit amet." >"$file"

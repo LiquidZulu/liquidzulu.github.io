@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+name=$@
+slug=$(echo "$name" | get-slug)
+file="$(direnvlocation)/src/content/testimonials/$slug.md"
+printf -- "Removing $file"
+rm "$file"
