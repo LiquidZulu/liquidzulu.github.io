@@ -121,7 +121,7 @@ Instead of responding to me and backing up a single one of his claims, he banned
 
 ![img](/blog/against-esoteric-entity/eso-drama.jpg)
 
-Strange, I seem to recall that it was Eso who was bitching about me and trying to spread lies about our interactions. Oh, I get it: its not drama for him to concoct an elaborate tail explaining how he dindu nuffin and how I am the big bad guy, but it *is* drama for me to respond to these accusations. Moreover, not only did Eso ban me from that server to prevent me from defending myself further, but he also deleted all of my messages, such that nobody can even see what defense I was able to get out:
+Strange, I seem to recall that it was Eso who was bitching about me and trying to spread lies about our interactions. Oh, I get it: its not drama for him to concoct an elaborate tale explaining how he dindu nuffin and how I am the big bad guy, but it *is* drama for me to respond to these accusations. Moreover, not only did Eso ban me from that server to prevent me from defending myself further, but he also deleted all of my messages, such that nobody can even see what defense I was able to get out:
 
 ![img](/blog/against-esoteric-entity/messages-deleted.png)
 
