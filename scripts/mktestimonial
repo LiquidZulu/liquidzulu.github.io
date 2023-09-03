@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+name=$@
+slug=$(echo "$name" | get-slug)
+file="$(direnvlocation)/src/content/testimonials/$slug.md"
+
+touch "$file"
+output="---\nname: '$name'\nslug: '$slug'\njob: ''\nlink: ''\nfor: ['']\n---\n\nLorem ipsum dolor sit amet."
+printf -- "$output" >"$file"
+printf -- "$output"

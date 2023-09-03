@@ -1,0 +1,55 @@
+#!/usr/bin/env node
+
+if (process.argv.length < 3)
+    throw new Error('You must specify the script. EXAMPLE: whatitdo get-slug');
+
+const scripts = {
+    'get-slug': {
+        help: `A utility function for mapping "Barack Obama" → "barack-obama"`,
+        example: `echo "Barack Obama" | get-slug`,
+    },
+
+    minimage: {
+        help: 'A wrapper for ffmpeg that minifies images',
+        example: 'minimage image1.png imgage2.png ...',
+    },
+
+    minimages: {
+        help: 'Minifies all images in public/images/$2 with the specified extension',
+        example:
+            "minimages .webp thumb\n   ↳ This would minify all .webp's in public/images/thumb.",
+    },
+
+    mktestimonial: {
+        help: 'Generates a testimonial file in src/content/testimonials with the specified name',
+        example: 'mktestimonial Barack Obama',
+    },
+
+    rmtestimonial: {
+        help: 'Removes the specified testimonial',
+        example: 'rmtestimonial barack-obama',
+    },
+
+    unlighthouse: {
+        help: 'Runs unlighthouse on the public liquidzulu.github.io site',
+    },
+
+    whatitdo: {
+        help: 'A utility function that describes the given scripts',
+        example: 'whatitdo get-slug minimage ...',
+    },
+};
+
+let output = '';
+
+for (let script of process.argv.slice(2)) {
+    if (!!scripts[script]) {
+        output += `\n${script}\t\t${scripts[script].help}${
+            !!scripts[script].example
+                ? `\n\n - ${scripts[script].example}\n\n`
+                : '\n\n'
+        }`;
+    }
+}
+
+console.log(output);
