@@ -8,10 +8,14 @@ import prefetch from '@astrojs/prefetch';
 // https://astro.build/config
 
 // https://astro.build/config
-import compress from "astro-compress";
+//import compress from "astro-compress";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://liquidzulu.github.io',
-  integrations: [tailwind(), prefetch(), compress()]
+    site: 'https://liquidzulu.github.io',
+    integrations: [
+        tailwind(),
+        prefetch(),
+        //compress()
+    ],
 });
