@@ -73,7 +73,7 @@ On all counts the stream itself is in perfect lockstep with what was planned in 
 
 ## Claim: &ldquo;LiquidZulu Constantly Asked Loaded Questions&rdquo;
 
-It is at this point that a common theme in Eso&rsquo;s accusations crops up: namely that he makes an accusation with zero evidence where the burden is on him. I certainly questioned him a lot during the discussion (which was the entire point), but which specific questions does he think are loaded? Note that a loaded question doesn&rsquo;t just mean a question that is weally weally hawd to ansuw, rather a loaded question has baked-in a controversial assumption, with the idea being that the loaded-questioner is trying to sneak some premise past his opponent. It is on Eso to provide the evidence that I was doing this (the correct time to do that would either be during the discussion itself, or after I confronted him about this debacle. See: [2](#orgde83d20)).
+It is at this point that a common theme in Eso&rsquo;s accusations crops up: namely that he makes an accusation with zero evidence where the burden is on him. I certainly questioned him a lot during the discussion (which was the entire point), but which specific questions does he think are loaded? Note that a loaded question doesn&rsquo;t just mean a question that is weally weally hawd to ansuw, rather a loaded question has baked-in a controversial assumption, with the idea being that the loaded-questioner is trying to sneak some premise past his opponent. It is on Eso to provide the evidence that I was doing this (the correct time to do that would either be during the discussion itself, or after I confronted him about this debacle).<sup><a id="fnr.3" class="footref" href="#fn.3" role="doc-backlink">3</a></sup>
 
 
 ## Claim: &ldquo;LiquidZulu Constantly Interrupted Eso&rdquo;
@@ -82,17 +82,17 @@ The point about Eso requiring evidence still stands, but on its face this claim 
 
 ![img](/blog/against-esoteric-entity/ignis.png)
 
-Now, after almost two hours of discussion, if ones interlocutor keeps treading the same tired ground it is entirely proper for one to interrupt in order that the conversation may move forward. Unless of course Eso was not intending to actually move the discussion forward and was instead looking to trap us in an endless whirlpool of nonsense (which would be evidence that *he* is a grifter, not me. See: [1.5](#org532fa24)).
+Now, after almost two hours of discussion, if ones interlocutor keeps treading the same tired ground it is entirely proper for one to interrupt in order that the conversation may move forward. Unless of course Eso was not intending to actually move the discussion forward and was instead looking to trap us in an endless whirlpool of nonsense (which would be evidence that *he* is a grifter, not me. See: [Claim: &ldquo;LiquidZulu is a Grifter&rdquo;](#claim-liquidzulu-is-a-grifter)).
 
 
 ## CLaim: &ldquo;LiquidZulu is a Raging Narcissist&rdquo;
 
-Eso claims here that he has &ldquo;seen screenshots&rdquo; which evidence a &ldquo;raging&rdquo; narcissism on my part, but of course he does not provide a single one of these screenshots nor does he allow me to even defend myself on this count. Quite on the contrary to Eso&rsquo;s claims, the Mayo Clinic says that &ldquo;people with narcissistic personality disorder have trouble handling anything they view as criticism.&rdquo;<sup><a id="fnr.3" class="footref" href="#fn.3" role="doc-backlink">3</a></sup> Now, who does that sound like to you? Someone who cannot appropriately handle criticism, perhaps concocting various lies to pass the blame onto another, and maybe such a person would prevent the individual who is the target of their lies from responding on the Discord server that they are being spouted on. Do I think that Eso is a narcissist? No. I am no psychologist, but there appears to be a very specific list of symptoms for classing an individual as a narcissist, but if Eso wishes to lob stones from his greenhouse, he should not be surprised when they come flying back.
+Eso claims here that he has &ldquo;seen screenshots&rdquo; which evidence a &ldquo;raging&rdquo; narcissism on my part, but of course he does not provide a single one of these screenshots nor does he allow me to even defend myself on this count. Quite on the contrary to Eso&rsquo;s claims, the Mayo Clinic says that &ldquo;people with narcissistic personality disorder have trouble handling anything they view as criticism.&rdquo;<sup><a id="fnr.4" class="footref" href="#fn.4" role="doc-backlink">4</a></sup> Now, who does that sound like to you? Someone who cannot appropriately handle criticism, perhaps concocting various lies to pass the blame onto another, and maybe such a person would prevent the individual who is the target of their lies from responding on the Discord server that they are being spouted on. Do I think that Eso is a narcissist? No. I am no psychologist, but there appears to be a very specific list of symptoms for classing an individual as a narcissist, but if Eso wishes to lob stones from his greenhouse, he should not be surprised when they come flying back.
 
 
 ## Claim: &ldquo;LiquidZulu is a Grifter&rdquo;
 
-I shall rest my response here on the analysis of grifting by ShortFatOtaku.<sup><a id="fnr.4" class="footref" href="#fn.4" role="doc-backlink">4</a></sup> He defines a grifter as:
+I shall rest my response here on the analysis of grifting by ShortFatOtaku.<sup><a id="fnr.5" class="footref" href="#fn.5" role="doc-backlink">5</a></sup> He defines a grifter as:
 
 > a person who is willing to lie, cheat, or steal to make money. They will say things that they explicitly know to be false, or they will completely abandon the idea of consistency in their pursuits.
 
@@ -106,14 +106,14 @@ This accusation is completely false. I do not ever say knowingly false things, I
 -   Immanuel Kant is the most evil philosopher of all time, and;
 -   planned obsolescence is good?
 
-Sure, various subsets of my beliefs could be collected into a valid grift, but the entire corpus of what I openly and loudly state online completely rules this out. My acceptance of Hoppe and various arguments that he makes would set me up for a nice neo-prag<sup><a id="fnr.5" class="footref" href="#fn.5" role="doc-backlink">5</a></sup> or paleo-libertarian grift; but then my open hatred of neo-prags and religion would surely disqualify me. My love of Ayn Rand and Objectivism could also work, but then my open and constant arguments against intellectual property and Objectivism as a &ldquo;closed system&rdquo; would have me burned at the proverbial stake. My support for open borders gains me popularity with leftists, which is then immediately shot down by my assertions that planned obsolescence is good and that people should be free to discriminate against blacks, Jews, disableds, or any other protected group that they wish. Which group exactly am I grifting for? Where are the gaping inconsistiencies in my position? I am one of the few libertarians who are so consistent that I will argue against the morality of stealing a penny to save humanity, or violating the rights of the suicidal to stop them from committing suicide. I&rsquo;m more consistent than Walter fucking Block on that point&#x2014;quite a strange strategy for grifting, but certainly not strange if my goal is to be consistent and honest.
+Sure, various subsets of my beliefs could be collected into a valid grift, but the entire corpus of what I openly and loudly state online completely rules this out. My acceptance of Hoppe and various arguments that he makes would set me up for a nice neo-prag<sup><a id="fnr.6" class="footref" href="#fn.6" role="doc-backlink">6</a></sup> or paleo-libertarian grift; but then my open hatred of neo-prags and religion would surely disqualify me. My love of Ayn Rand and Objectivism could also work, but then my open and constant arguments against intellectual property and Objectivism as a &ldquo;closed system&rdquo; would have me burned at the proverbial stake. My support for open borders gains me popularity with leftists, which is then immediately shot down by my assertions that planned obsolescence is good and that people should be free to discriminate against blacks, Jews, disableds, or any other protected group that they wish. Which group exactly am I grifting for? Where are the gaping inconsistiencies in my position? I am one of the few libertarians who are so consistent that I will argue against the morality of stealing a penny to save humanity, or violating the rights of the suicidal to stop them from committing suicide. I&rsquo;m more consistent than Walter fucking Block on that point&#x2014;quite a strange strategy for grifting, but certainly not strange if my goal is to be consistent and honest.
 
 On the other hand, it is proven in this post that Esoteric Entity is willing to openly lie and prevent any counters to his lies to be heard&#x2014;if either party is the grifter here, it is him, not me.
 
 
 # Esoteric Entity Banned Me For Trying To Defend Myself
 
-Below is my initial response after joining the server where he was making his allegations against me, attached are some select screenshots from our DMs, but this is superceded by [1.1](#org4391b8b):
+Below is my initial response after joining the server where he was making his allegations against me, attached are some select screenshots from our DMs, but this is superceded by [Claim: &ldquo;LiquidZulu Lied About the Debate Topic&rdquo;](#org66f7194):
 
 ![img](/blog/against-esoteric-entity/my-response.png)
 
@@ -133,7 +133,7 @@ Eso goes on and tries to claim that I was taking part in a Raid on this server, 
 
 ![img](/blog/against-esoteric-entity/raid.jpg)
 
-This is simply false. I joined the server, sent my response, watched Donnie Darko, and saw that I had been banned. Discord&rsquo;s community guidelines<sup><a id="fnr.6" class="footref" href="#fn.6" role="doc-backlink">6</a></sup> defines a raid under their &ldquo;Respect Each Other&rdquo; policy as follows:
+This is simply false. I joined the server, sent my response, watched Donnie Darko, and saw that I had been banned. Discord&rsquo;s community guidelines<sup><a id="fnr.7" class="footref" href="#fn.7" role="doc-backlink">7</a></sup> defines a raid under their &ldquo;Respect Each Other&rdquo; policy as follows:
 
 > coordinating server joins for the purposes of harassing server members
 
@@ -146,10 +146,12 @@ No such coordination took place, Ignis showed me what was being said and invited
 
 <sup><a id="fn.2" href="#fnr.2">2</a></sup> <https://www.youtube.com/playlist?list=PLmfCIj-pVxS8_QnlfjifQRugzjTsZpAz6> (<https://archive.ph/nFR0m>)
 
-<sup><a id="fn.3" href="#fnr.3">3</a></sup> <https://www.mayoclinic.org/diseases-conditions/narcissistic-personality-disorder/symptoms-causes/syc-20366662> (<https://archive.ph/notmB>)
+<sup><a id="fn.3" href="#fnr.3">3</a></sup> See [here](#esoteric-entity-banned-me-for-trying-to-defend-myself).
 
-<sup><a id="fn.4" href="#fnr.4">4</a></sup> ShortFatOtaku, *What Is A Grifter?*, <https://youtu.be/AcXIhqvssdE>
+<sup><a id="fn.4" href="#fnr.4">4</a></sup> <https://www.mayoclinic.org/diseases-conditions/narcissistic-personality-disorder/symptoms-causes/syc-20366662> (<https://archive.ph/notmB>)
 
-<sup><a id="fn.5" href="#fnr.5">5</a></sup> See: LiquidZulu, *These People Are Destroying Libertarianism*, <https://youtu.be/064I02yeLhg>
+<sup><a id="fn.5" href="#fnr.5">5</a></sup> ShortFatOtaku, *What Is A Grifter?*, <https://youtu.be/AcXIhqvssdE>
 
-<sup><a id="fn.6" href="#fnr.6">6</a></sup> <https://discord.com/guidelines> (<https://archive.ph/oUhXS>)
+<sup><a id="fn.6" href="#fnr.6">6</a></sup> See: LiquidZulu, *These People Are Destroying Libertarianism*, <https://youtu.be/064I02yeLhg>
+
+<sup><a id="fn.7" href="#fnr.7">7</a></sup> <https://discord.com/guidelines> (<https://archive.ph/oUhXS>)
