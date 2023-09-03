@@ -85,7 +85,7 @@ The point about Eso requiring evidence still stands, but on its face this claim 
 Now, after almost two hours of discussion, if ones interlocutor keeps treading the same tired ground it is entirely proper for one to interrupt in order that the conversation may move forward. Unless of course Eso was not intending to actually move the discussion forward and was instead looking to trap us in an endless whirlpool of nonsense (which would be evidence that *he* is a grifter, not me. See: [Claim: &ldquo;LiquidZulu is a Grifter&rdquo;](#claim-liquidzulu-is-a-grifter)).
 
 
-## CLaim: &ldquo;LiquidZulu is a Raging Narcissist&rdquo;
+## Claim: &ldquo;LiquidZulu is a Raging Narcissist&rdquo;
 
 Eso claims here that he has &ldquo;seen screenshots&rdquo; which evidence a &ldquo;raging&rdquo; narcissism on my part, but of course he does not provide a single one of these screenshots nor does he allow me to even defend myself on this count. Quite on the contrary to Eso&rsquo;s claims, the Mayo Clinic says that &ldquo;people with narcissistic personality disorder have trouble handling anything they view as criticism.&rdquo;<sup><a id="fnr.4" class="footref" href="#fn.4" role="doc-backlink">4</a></sup> Now, who does that sound like to you? Someone who cannot appropriately handle criticism, perhaps concocting various lies to pass the blame onto another, and maybe such a person would prevent the individual who is the target of their lies from responding on the Discord server that they are being spouted on. Do I think that Eso is a narcissist? No. I am no psychologist, but there appears to be a very specific list of symptoms for classing an individual as a narcissist, but if Eso wishes to lob stones from his greenhouse, he should not be surprised when they come flying back.
 
@@ -113,7 +113,7 @@ On the other hand, it is proven in this post that Esoteric Entity is willing to 
 
 # Esoteric Entity Banned Me For Trying To Defend Myself
 
-Below is my initial response after joining the server where he was making his allegations against me, attached are some select screenshots from our DMs, but this is superceded by [Claim: &ldquo;LiquidZulu Lied About the Debate Topic&rdquo;](#org66f7194):
+Below is my initial response after joining the server where he was making his allegations against me, attached are some select screenshots from our DMs, but this is superceded by [Claim: &ldquo;LiquidZulu Lied About the Debate Topic&rdquo;](#org3261527):
 
 ![img](/blog/against-esoteric-entity/my-response.png)
 
