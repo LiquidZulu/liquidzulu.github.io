@@ -32,7 +32,6 @@ const scripts = {
 
     smupdate: {
         help: 'Updates all git submodules',
-        example: 'smupdate',
     },
 
     unlighthouse: {
