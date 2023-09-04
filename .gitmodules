@@ -1,0 +1,3 @@
+[submodule "src/content/brain"]
+	path = src/content/brain
+	url = https://github.com/LiquidZulu/brain
