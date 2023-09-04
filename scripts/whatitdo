@@ -30,6 +30,11 @@ const scripts = {
         example: 'rmtestimonial barack-obama',
     },
 
+    smupdate: {
+        help: 'Updates all git submodules',
+        example: 'smupdate',
+    },
+
     unlighthouse: {
         help: 'Runs unlighthouse on the public liquidzulu.github.io site',
     },
