@@ -1,0 +1,214 @@
+---
+import '../css/global.css';
+import { invert } from '../util/invert';
+import {
+    wikilinksToHypertextLinks,
+    wikilinksToMdLinks,
+    procWikilink,
+} from '../util/wikilinks';
+import { paginationPrevNext } from '../util/paginationPrevNext';
+import { getCollection, getEntryBySlug } from 'astro:content';
+import { Debug } from 'astro/components';
+import { readTimeMins, readTimeReadable } from '../util/readTime';
+import { getNoteDescription } from '../util/getNoteDescription';
+
+export const getStaticPaths = async () => {
+    const brain = await getCollection('brain');
+    return brain.map(i => ({ params: { note: i.slug } }));
+};
+
+const { note } = Astro.params;
+const slug = note;
+const noteInfo = await getEntryBySlug('brain', slug);
+
+/* const modifiedNoteInfo = {
+    ...noteInfo, // spread is fine for now, even though it is slow as a bitch
+    body: wikilinksToMdLinks(noteInfo.body),
+}; */
+
+const { Content, headings } = await noteInfo.render();
+
+/* import { remark } from 'remark';
+import remarkObsidian from 'remark-obsidian';
+const ContentStr = String(
+    await remark().use(remarkObsidian).process(noteInfo.body)
+); */
+
+import Layout from '../layouts/Layout.astro';
+import { BuyCoffee, Navbar, Footer, SkipToContent, TOC } from '../components';
+---
+
+<Layout
+    title={`${noteInfo.id.split('.')[0]} | Brain`}
+    description={getNoteDescription(noteInfo.body)}
+    ptype="article"
+    published={noteInfo.data.date}
+    MJ={true}
+    slug={slug}>
+    <!-- <Debug {noteInfo} /> -->
+    <SkipToContent href="#md-content" />
+    <Navbar path={`brain/${slug}`} />
+    <main id="md-content" class="w-[100vw] bg-[#0B0F13] flex">
+        <article
+            class="max-w-[64rem] m-auto min-h-[80vh] mt-6 text-justify md:p-16 p-6">
+            <!-- {noteInfo.body} -->
+            <div class="mb-[8rem]">
+                <h1 class="text-6xl font-bold text-center mt-24 mb-8">
+                    {noteInfo.id.split('.')[0]}
+                </h1>
+                <ul class="!list-none scale justify-center flex w-full !m-0">
+                    {
+                        (() => {
+                            try {
+                                return noteInfo.data.tags.map(x => (
+                                    <li class="inline mx-1">
+                                        <a
+                                            href={`/brain/tag/${x}`}
+                                            class="rounded-full bg-violet-900/50 hover:bg-violet-900 py-1 px-2 !text-white !no-underline text-xs">
+                                            #{x}
+                                        </a>
+                                    </li>
+                                ));
+                            } catch (e) {
+                                let x = noteInfo.data.tags;
+                                return (
+                                    <li class="inline mx-1">
+                                        <a
+                                            href={`/brain/tag/${x}`}
+                                            class="rounded-full bg-[#7C3AED]/50 hover:bg-[#7C3AED] py-1 px-2 !text-white !no-underline text-xs">
+                                            #{x}
+                                        </a>
+                                    </li>
+                                );
+                            }
+                        })()
+                    }
+                </ul>
+            </div>
+            <Content />
+            <!-- <Fragment set:html={ContentStr} /> -->
+        </article>
+    </main>
+    <Footer noShadow={true} />
+    <BuyCoffee>Like this content? Click here for more!</BuyCoffee>
+</Layout>
+
+<!-- is:global required to apply styles to the rendered MD -->
+<style is:global lang="scss">
+    .link-exists {
+        @apply text-[#7C3AED] hover:text-[#9e67fc];
+    }
+
+    .link-doesnt-exist {
+        @apply text-[#7C3AED]/50 cursor-not-allowed;
+    }
+
+    .footnotes {
+        a {
+            color: #7c3aed !important;
+        }
+    }
+
+    .fn-highlight {
+        @apply bg-zinc-600 rounded-sm p-[0.5rem] m-[-0.5rem];
+    }
+    #md-content {
+        .section-heading-link {
+            -webkit-mask: url('/link.svg') no-repeat 50% 50%;
+            mask: url('/link.svg') no-repeat 50% 50%;
+            -webkit-mask-size: cover;
+            mask-size: cover;
+            @apply shrink-0 w-[2.5rem] h-[2rem] overflow-visible bg-slate-50 opacity-[0] ml-[-2.5rem] mr-2 transition-all;
+
+            &:focus {
+                @apply opacity-[0.8] bg-sky-500 scale-110;
+            }
+        }
+        .header-wrapper {
+            @apply flex items-center justify-center;
+
+            &:hover {
+                .section-heading-link {
+                    @apply opacity-[0.2];
+                }
+            }
+        }
+        /*
+        // abandoned because I cant turn a ::before into a link
+        h1::before,
+        h2::before,
+        h3::before,
+        h4::before {
+        content: '';
+        -webkit-mask: url('/link.svg') no-repeat 50% 50%;
+        mask: url('/link.svg') no-repeat 50% 50%;
+        -webkit-mask-size: cover;
+        mask-size: cover;
+        display: inline-block;
+        width: 2rem;
+        height: 2rem;
+        @apply bg-slate-50 opacity-[0.2];
+        }*/
+        .h1 {
+            @apply text-6xl font-bold text-center mt-24 mb-16;
+        }
+
+        .h2 {
+            @apply text-5xl font-bold text-center mt-20 mb-12;
+        }
+
+        .h3 {
+            @apply text-5xl font-semibold text-center mt-16 mb-10;
+        }
+
+        .h4 {
+            @apply text-4xl font-semibold text-center mt-8 mb-4;
+        }
+
+        p,
+        ol {
+            @apply my-4 text-justify text-lg min-[2000px]:text-2xl min-[2500px]:text-3xl;
+        }
+
+        blockquote {
+            @apply border-l-4 border-[#7C3AED] pl-4;
+        }
+
+        img {
+            margin: auto;
+        }
+
+        article {
+            ol,
+            ul {
+                @apply ml-6;
+            }
+
+            ol {
+                @apply list-decimal;
+            }
+
+            ul {
+                @apply list-disc;
+            }
+
+            /* a {
+               @apply text-sky-500;
+
+               &:not(.footref) {
+               @apply hover:link;
+               }
+               } */
+
+            .footnotes {
+                & ~ p {
+                    @apply text-left;
+                }
+
+                & li::marker {
+                    @apply text-zinc-500;
+                }
+            }
+        }
+    }
+</style>
