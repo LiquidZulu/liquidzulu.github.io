@@ -55,7 +55,7 @@ import {
         <TailwindSearch collection={notes} />
     </Navbar>
 
-    <main class="w-[100vw] bg-[#0B0F13]">
+    <main class="w-full bg-[#0B0F13]">
         <h1 class="text-center text-6xl pt-32">
             Results for <a
                 href={`/brain/tag/${tag}`}
@@ -64,7 +64,7 @@ import {
             </a>
         </h1>
         <ul
-            class="my-32 flex flex-row justify-center flex-wrap gap-3 w-[90vw] m-auto">
+            class="py-32 flex flex-row justify-center flex-wrap gap-3 w-[90vw] m-auto">
             {
                 brain
                     .filter(x => hasTag(x.data.tags, tag))
