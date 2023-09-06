@@ -49,7 +49,10 @@ import {
 import BrainNavbar from '../BrainNavbar.astro';
 ---
 
-<Layout title={`${tag} | Brain`} description={''} slug={''}>
+<Layout
+    title={`${tag} | Brain`}
+    description={'My brain, online.'}
+    slug={'brain'}>
     <!-- <Debug {noteInfo} /> -->
     <SkipToContent href="#md-content" />
     <BrainNavbar tag={tag} />
