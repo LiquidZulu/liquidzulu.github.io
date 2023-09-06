@@ -1,0 +1,54 @@
+---
+import {
+    Icon,
+    TailwindSearch,
+    BuyCoffee,
+    Navbar,
+    Footer,
+    SkipToContent,
+} from '../../components';
+
+import { hasTag } from '../../util/hasTag';
+
+const { note, tag } = Astro.props;
+
+import { getCollection, getEntry } from 'astro:content';
+const collection = await getCollection('brain');
+const notes = collection
+    .filter(x => !hasTag(x.data.tags, 'meta'))
+    .filter(x => !hasTag(x.data.tags, 'year'))
+    .map(x => x.id.split('.')[0]);
+
+import BrainTag from './BrainTag.astro';
+---
+
+<nav class="absolute px-[2vw] py-[1vh] flex z-50">
+    <div class="text-sm breadcrumbs w-[48vw]">
+        <ul>
+            <li>
+                <a href="/brain"
+                    ><Icon
+                        icon="brain"
+                        class={`fill-zinc-500 transition-all ease-in-out hover:scale-110 w-8 h-8 icon-brain`}
+                    /></a
+                >
+            </li>
+            {
+                !!note ? (
+                    <li>
+                        <a href={`/brain/note/${note}`}>{note}</a>
+                    </li>
+                ) : !!tag ? (
+                    <li>
+                        <BrainTag name={tag} />
+                    </li>
+                ) : (
+                    ''
+                )
+            }
+        </ul>
+    </div>
+    <div class="mt-[1vh] w-[48vw] grid place-items-end">
+        <TailwindSearch collection={notes} />
+    </div>
+</nav>

@@ -1,15 +1,15 @@
 ---
-import '../../css/global.css';
-import { invert } from '../../util/invert';
-import { hasTag } from '../../util/hasTag';
+import '../../../css/global.css';
+import { invert } from '../../../util/invert';
+import { hasTag } from '../../../util/hasTag';
 import {
     wikilinksToHypertextLinks,
     wikilinksToMdLinks,
     procWikilink,
-} from '../../util/wikilinks';
+} from '../../../util/wikilinks';
 import { getCollection, getEntryBySlug } from 'astro:content';
 import { Debug } from 'astro/components';
-import { getNoteDescription } from '../../util/getNoteDescription';
+import { getNoteDescription } from '../../../util/getNoteDescription';
 
 export const getStaticPaths = async () => {
     const brain = await getCollection('brain');
@@ -28,14 +28,16 @@ const notes = brain
 
 const { Content, headings } = await noteInfo.render();
 
-import Layout from '../../layouts/Layout.astro';
+import Layout from '../../../layouts/Layout.astro';
 import {
     TailwindSearch,
     BuyCoffee,
-    Navbar,
     Footer,
     SkipToContent,
-} from '../../components';
+} from '../../../components';
+
+import BrainNavbar from '../BrainNavbar.astro';
+import BrainTag from '../BrainTag.astro';
 ---
 
 <Layout
@@ -47,9 +49,7 @@ import {
     slug={slug}>
     <!-- <Debug {noteInfo} /> -->
     <SkipToContent href="#md-content" />
-    <Navbar path={`brain/${slug}`}>
-        <TailwindSearch collection={notes} />
-    </Navbar>
+    <BrainNavbar note={slug} />
     <main id="md-content" class="w-[100vw] bg-[#0B0F13] flex">
         <article
             class="max-w-[64rem] m-auto min-h-[80vh] mt-6 text-justify md:p-16 p-6">
@@ -64,22 +64,14 @@ import {
                             try {
                                 return noteInfo.data.tags.map(x => (
                                     <li class="inline mx-1">
-                                        <a
-                                            href={`/brain/tag/${x}`}
-                                            class="rounded-full bg-violet-900/50 hover:bg-violet-900 py-1 px-2 !text-white !no-underline text-xs">
-                                            #{x}
-                                        </a>
+                                        <BrainTag name={x} />
                                     </li>
                                 ));
                             } catch (e) {
                                 let x = noteInfo.data.tags;
                                 return (
                                     <li class="inline mx-1">
-                                        <a
-                                            href={`/brain/tag/${x}`}
-                                            class="rounded-full bg-[#7C3AED]/50 hover:bg-[#7C3AED] py-1 px-2 !text-white !no-underline text-xs">
-                                            #{x}
-                                        </a>
+                                        <BrainTag name={x} />
                                     </li>
                                 );
                             }

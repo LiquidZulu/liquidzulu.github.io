@@ -41,19 +41,18 @@ import Layout from '../../../layouts/Layout.astro';
 import {
     TailwindSearch,
     BuyCoffee,
-    Navbar,
     NoisePanel,
     Footer,
     SkipToContent,
 } from '../../../components';
+
+import BrainNavbar from '../BrainNavbar.astro';
 ---
 
 <Layout title={`${tag} | Brain`} description={''} slug={''}>
     <!-- <Debug {noteInfo} /> -->
     <SkipToContent href="#md-content" />
-    <Navbar path={`brain/tag/${tag}`}>
-        <TailwindSearch collection={notes} />
-    </Navbar>
+    <BrainNavbar tag={tag} />
 
     <main class="w-full bg-[#0B0F13]">
         <h1 class="text-center text-6xl pt-32">
@@ -70,7 +69,9 @@ import {
                     .filter(x => hasTag(x.data.tags, tag))
                     .map(x => (
                         <li class="grow">
-                            <a class="text-center" href={`/brain/${x.slug}`}>
+                            <a
+                                class="text-center"
+                                href={`/brain/note/${x.slug}`}>
                                 <NoisePanel xtraClasses="p-4 hover:ring hover:ring-offset-2 hover:ring-offset-transparent hover:ring-[#7C3AED] bg-zinc-900 ring-zinc-800">
                                     {x.id.split('.')[0]}
                                 </NoisePanel>

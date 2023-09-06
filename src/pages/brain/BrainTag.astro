@@ -1,0 +1,9 @@
+---
+const { name } = Astro.props;
+---
+
+<a
+    href={`/brain/tag/${name}`}
+    class="rounded-full bg-violet-900/50 hover:bg-violet-900 py-1 px-2 !text-white !no-underline text-xs">
+    #{name}
+</a>
