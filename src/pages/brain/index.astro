@@ -17,7 +17,13 @@ const notes = collection
     .filter(x => !hasTag(x.data.tags, 'meta'))
     .filter(x => !hasTag(x.data.tags, 'year'))
     .map(x => x.id.split('.')[0]);
-const randomNotes = notes.sort(() => 0.5 - Math.random()).slice(0, 100);
+
+const nRandomNotes = 100;
+const marquees = ['480s', '560s', '390s', '610s'];
+const nPerMarquee = Math.ceil(nRandomNotes / marquees.length);
+const randomNotes = notes
+    .sort(() => 0.5 - Math.random())
+    .slice(0, nRandomNotes);
 
 import Layout from '../../layouts/Layout.astro';
 import {
@@ -49,58 +55,26 @@ import {
                 Here are {randomNotes.length} random articles:
             </div>
             <div class="pt-[3rem]">
-                <Marquee time="480s">
-                    {
-                        randomNotes.slice(25 * 0, 25 + 25 * 0).map(x => (
-                            <li>
-                                <a href={`/brain/${getSlug(x)}`}>
-                                    <NoisePanel xtraClasses="p-4 my-3 hover:ring hover:ring-offset-2 hover:ring-offset-transparent hover:ring-[#7C3AED] bg-zinc-900 ring-zinc-800">
-                                        {x}
-                                    </NoisePanel>
-                                </a>
-                            </li>
-                        ))
-                    }
-                </Marquee>
-                <Marquee time="560s" reverse>
-                    {
-                        randomNotes.slice(25 * 1, 25 + 25 * 1).map(x => (
-                            <li>
-                                <a href={`/brain/${getSlug(x)}`}>
-                                    <NoisePanel xtraClasses="p-4 my-3 hover:ring hover:ring-offset-2 hover:ring-offset-transparent hover:ring-[#7C3AED] bg-zinc-900 ring-zinc-800">
-                                        {x}
-                                    </NoisePanel>
-                                </a>
-                            </li>
-                        ))
-                    }
-                </Marquee>
-                <Marquee time="390s">
-                    {
-                        randomNotes.slice(25 * 2, 25 + 25 * 2).map(x => (
-                            <li>
-                                <a href={`/brain/${getSlug(x)}`}>
-                                    <NoisePanel xtraClasses="p-4 my-3 hover:ring hover:ring-offset-2 hover:ring-offset-transparent hover:ring-[#7C3AED] bg-zinc-900 ring-zinc-800">
-                                        {x}
-                                    </NoisePanel>
-                                </a>
-                            </li>
-                        ))
-                    }
-                </Marquee>
-                <Marquee time="610s" reverse>
-                    {
-                        randomNotes.slice(25 * 3, 25 + 25 * 3).map(x => (
-                            <li>
-                                <a href={`/brain/${getSlug(x)}`}>
-                                    <NoisePanel xtraClasses="p-4 my-3 hover:ring hover:ring-offset-2 hover:ring-offset-transparent hover:ring-[#7C3AED] bg-zinc-900 ring-zinc-800">
-                                        {x}
-                                    </NoisePanel>
-                                </a>
-                            </li>
-                        ))
-                    }
-                </Marquee>
+                {
+                    marquees.map((time, index) => (
+                        <Marquee time={time} reverse={index % 2 == 0}>
+                            {randomNotes
+                                .slice(
+                                    nPerMarquee * index,
+                                    nPerMarquee + nPerMarquee * index
+                                )
+                                .map(x => (
+                                    <li>
+                                        <a href={`/brain/${getSlug(x)}`}>
+                                            <NoisePanel xtraClasses="p-4 my-3 hover:ring hover:ring-offset-2 hover:ring-offset-transparent hover:ring-[#7C3AED] bg-zinc-900 ring-zinc-800">
+                                                {x}
+                                            </NoisePanel>
+                                        </a>
+                                    </li>
+                                ))}
+                        </Marquee>
+                    ))
+                }
             </div>
         </div>
         <Footer noShadow={true} />
