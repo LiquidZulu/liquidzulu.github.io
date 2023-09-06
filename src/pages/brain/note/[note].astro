@@ -95,31 +95,42 @@ import BrainTag from '../BrainTag.astro';
             <Content />
             <!-- <Fragment set:html={ContentStr} /> -->
         </article>
-        <div>
-            <div class="divider">
-                <span class="font-semibold">BACKLINKS</span>
-            </div>
-            <ul
-                class="py-16 flex flex-row justify-center flex-wrap gap-3 w-[90vw] m-auto">
-                {
-                    backlinks[slug].map(x => (
-                        <li class="grow">
-                            <a
-                                class="text-center backlink"
-                                href={`/brain/note/${x}`}>
-                                <NoisePanel xtraClasses="p-4 hover:ring hover:ring-offset-2 hover:ring-offset-transparent hover:ring-[#7C3AED] bg-zinc-900 ring-zinc-800">
-                                    {
-                                        brain
-                                            .find(entry => entry.slug == x)
-                                            .id.split('.')[0]
-                                    }
-                                </NoisePanel>
-                            </a>
-                        </li>
-                    ))
+        {
+            (() => {
+                try {
+                    return (
+                        <div>
+                            <div class="divider">
+                                <span class="font-semibold">BACKLINKS</span>
+                            </div>
+                            <ul class="py-16 flex flex-row justify-center flex-wrap gap-3 w-[90vw] m-auto">
+                                {backlinks[slug].map(x => (
+                                    <li class="grow">
+                                        <a
+                                            class="text-center backlink"
+                                            href={`/brain/note/${x}`}>
+                                            <NoisePanel xtraClasses="p-4 hover:ring hover:ring-offset-2 hover:ring-offset-transparent hover:ring-[#7C3AED] bg-zinc-900 ring-zinc-800">
+                                                {
+                                                    brain
+                                                        .find(
+                                                            entry =>
+                                                                entry.slug == x
+                                                        )
+                                                        .id.split('.')[0]
+                                                }
+                                            </NoisePanel>
+                                        </a>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    );
+                } catch (e) {
+                    return '';
                 }
-            </ul>
-        </div>
+            })()
+        }
+
         <Footer noShadow={true} />
     </main>
     <BuyCoffee>Like this content? Click here for more!</BuyCoffee>
