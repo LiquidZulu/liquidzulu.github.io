@@ -74,8 +74,13 @@ const { collection } = Astro.props;
             for (let i = 0; i < collection.length; ++i) {
                 collectionElements[i].style.display = 'none';
             }
-            for (let match of search) {
-                document.getElementById(match.item).style.display = 'block';
+            for (let i = search.length - 1; i >= 0; --i) {
+                const matchedEl = document.getElementById(search[i].item);
+                fuzzy_search_results.insertBefore(
+                    matchedEl,
+                    fuzzy_search_results.children[0]
+                );
+                matchedEl.style.display = 'block';
             }
         });
 

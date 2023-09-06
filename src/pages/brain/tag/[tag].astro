@@ -1,0 +1,84 @@
+---
+import '../../../css/global.css';
+import { hasTag } from '../../../util/hasTag';
+import { getCollection, getEntryBySlug } from 'astro:content';
+import { Debug } from 'astro/components';
+
+export const getStaticPaths = async () =>
+    [
+        'year',
+        'metaphysics',
+        'epistemology',
+        'philosophy',
+        'book',
+        'fiction',
+        'politics',
+        'person',
+        'meta',
+        'axiom',
+        'praxeology',
+        'economics',
+        'non-fiction',
+        'ethics',
+        'aesthetics',
+        'history-of-philosophy',
+    ].map(x => ({
+        params: {
+            tag: x,
+        },
+    }));
+
+import { getCollection, getEntryBySlug } from 'astro:content';
+const brain = await getCollection('brain');
+const notes = brain
+    .filter(x => !hasTag(x.data.tags, 'meta'))
+    .filter(x => !hasTag(x.data.tags, 'year'))
+    .map(x => x.id.split('.')[0]);
+
+const { tag } = Astro.params;
+
+import Layout from '../../../layouts/Layout.astro';
+import {
+    TailwindSearch,
+    BuyCoffee,
+    Navbar,
+    NoisePanel,
+    Footer,
+    SkipToContent,
+} from '../../../components';
+---
+
+<Layout title={`${tag} | Brain`} description={''} slug={''}>
+    <!-- <Debug {noteInfo} /> -->
+    <SkipToContent href="#md-content" />
+    <Navbar path={`brain/tag/${tag}`}>
+        <TailwindSearch collection={notes} />
+    </Navbar>
+
+    <main class="w-[100vw] bg-[#0B0F13]">
+        <h1 class="text-center text-6xl pt-32">
+            Results for <a
+                href={`/brain/tag/${tag}`}
+                class="rounded-full bg-violet-900/50 hover:bg-violet-900 py-2 px-4 !text-white !no-underline">
+                #{tag}
+            </a>
+        </h1>
+        <ul
+            class="my-32 flex flex-row justify-center flex-wrap gap-3 w-[90vw] m-auto">
+            {
+                brain
+                    .filter(x => hasTag(x.data.tags, tag))
+                    .map(x => (
+                        <li class="grow">
+                            <a class="text-center" href={`/brain/${x.slug}`}>
+                                <NoisePanel xtraClasses="p-4 hover:ring hover:ring-offset-2 hover:ring-offset-transparent hover:ring-[#7C3AED] bg-zinc-900 ring-zinc-800">
+                                    {x.id.split('.')[0]}
+                                </NoisePanel>
+                            </a>
+                        </li>
+                    ))
+            }
+        </ul>
+    </main>
+    <Footer noShadow={true} />
+</Layout>
