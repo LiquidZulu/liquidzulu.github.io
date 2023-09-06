@@ -24,7 +24,7 @@ export default defineConfig({
                         data: Object.assign(node.data, {
                             hProperties: Object.assign(node.data.hProperties, {
                                 href: filesProc.some(e => e == node.data.target)
-                                    ? './' +
+                                    ? '/brain/' +
                                       slugify(
                                           node.data.hProperties.href
                                       ).toLowerCase()
