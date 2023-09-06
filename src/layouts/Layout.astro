@@ -26,9 +26,11 @@ const META = {
 ---
 
 <html
+    transition:animate="fade"
     class="scroll-smooth bg-slate-900 static overflow-x-hidden md:overflow-x-visible"
     lang="en">
     <head>
+        <slot name="head" />
         <SEO
             charset="UTF-8"
             title={META.title}

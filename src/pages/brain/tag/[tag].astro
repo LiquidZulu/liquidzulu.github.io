@@ -1,4 +1,5 @@
 ---
+import { ViewTransitions } from 'astro:transitions';
 import '../../../css/global.css';
 import { hasTag } from '../../../util/hasTag';
 import { getCollection, getEntryBySlug } from 'astro:content';
@@ -53,6 +54,7 @@ import BrainNavbar from '../BrainNavbar.astro';
     title={`${tag} | Brain`}
     description={'My brain, online.'}
     slug={'brain'}>
+    <ViewTransitions slot="head" />
     <!-- <Debug {noteInfo} /> -->
     <SkipToContent href="#md-content" />
     <BrainNavbar tag={tag} />

@@ -12,6 +12,9 @@ const filesProc = files
     .map(file => file.split('.')[0]);
 
 export default defineConfig({
+    experimental: {
+        viewTransitions: true,
+    },
     site: 'https://liquidzulu.github.io',
     integrations: [tailwind(), prefetch()],
     markdown: {
