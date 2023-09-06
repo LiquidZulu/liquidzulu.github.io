@@ -107,6 +107,13 @@ import BrainTag from '../BrainTag.astro';
         @apply bg-zinc-600 rounded-sm p-[0.5rem] m-[-0.5rem];
     }
     #md-content {
+        a:not(.link-exists, .link-doesnt-exist, .brain-tag) {
+            &::after {
+                content: '↵';
+            }
+            @apply text-[#7C3AED] hover:text-[#9e67fc];
+        }
+
         .section-heading-link {
             -webkit-mask: url('/link.svg') no-repeat 50% 50%;
             mask: url('/link.svg') no-repeat 50% 50%;
