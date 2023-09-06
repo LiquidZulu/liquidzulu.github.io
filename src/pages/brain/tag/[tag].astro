@@ -1,0 +1,57 @@
+---
+import '../../../css/global.css';
+import { hasTag } from '../../../util/hasTag';
+import { getCollection, getEntryBySlug } from 'astro:content';
+import { Debug } from 'astro/components';
+
+export const getStaticPaths = async () =>
+    [
+        'year',
+        'metaphysics',
+        'epistemology',
+        'philosophy',
+        'book',
+        'fiction',
+        'politics',
+        'person',
+        'meta',
+        'axiom',
+        'praxeology',
+        'economics',
+        'non-fiction',
+        'ethics',
+        'aesthetics',
+        'history-of-philosophy',
+    ].map(x => ({
+        params: {
+            tag: x,
+        },
+    }));
+
+import { getCollection, getEntryBySlug } from 'astro:content';
+const brain = await getCollection('brain');
+const notes = brain
+    .filter(x => !hasTag(x.data.tags, 'meta'))
+    .filter(x => !hasTag(x.data.tags, 'year'))
+    .map(x => x.id.split('.')[0]);
+
+const { tag } = Astro.params;
+
+import Layout from '../../../layouts/Layout.astro';
+import {
+    TailwindSearch,
+    BuyCoffee,
+    Navbar,
+    Footer,
+    SkipToContent,
+} from '../../../components';
+---
+
+<Layout title={`${tag} | Brain`} description={''} slug={''}>
+    <!-- <Debug {noteInfo} /> -->
+    <SkipToContent href="#md-content" />
+    <Navbar path={`brain/tag/${tag}`}>
+        <TailwindSearch collection={notes} />
+    </Navbar>
+    <Footer noShadow={true} />
+</Layout>
