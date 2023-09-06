@@ -33,6 +33,7 @@ const { collection } = Astro.props;
 >
 
 <dialog
+    transition:slide
     id="fuzzy_search_modal"
     class="bg-zinc-800 text-zinc-400 p-4 rounded-md">
     <input
@@ -54,6 +55,18 @@ const { collection } = Astro.props;
         li.id = x;
         li.style.display = 'none';
         return li;
+    });
+    window.addEventListener('click', e => {
+        if (
+            ![
+                document.getElementById('fuzzy_search_button'),
+                document.getElementById('fuzzy_search_modal'),
+                document.getElementById('fuzzy_search_input'),
+                document.getElementById('fuzzy_search_results'),
+            ].includes(e.srcElement)
+        ) {
+            document.getElementById('fuzzy_search_modal').close();
+        }
     });
     window.addEventListener('load', () => {
         let pressedKeys = {};
@@ -105,6 +118,8 @@ const { collection } = Astro.props;
             document.getElementById('fuzzy_search_input'),
             document.getElementById('fuzzy_search_results'),
         ];
+
+        fuzzy_search_modal.close();
 
         fuzzy_search_button.addEventListener('click', () => {
             fuzzy_search_modal.showModal();
