@@ -1,5 +1,7 @@
 import { regexReplace } from './regexReplace';
 import { getSlug } from './getSlug';
+import { invertLinks } from './invert';
+import type { CollectionEntry } from 'astro:content';
 
 export const wikilinkRegex = /\[\[(([^\]\|]+)(\|[^\]]+)?)\]\]/g;
 
@@ -21,3 +23,29 @@ export const wikilinksToHypertextLinks = (md: string): string =>
             procWikilink(x)
         )
     );
+
+export const computeOutlinks = (
+    collection: Array<CollectionEntry<'brain'>>
+): { [key: string]: string[] } => {
+    let backlinks = {};
+    for (let entry of collection) {
+        regexReplace(entry.body, wikilinkRegex, x => {
+            const link = getSlug(x)
+                .replaceAll('[', '')
+                .replaceAll(']', '')
+                .split('|')[0];
+
+            backlinks[entry.slug] == undefined
+                ? (backlinks[entry.slug] = [link])
+                : backlinks[entry.slug].push(link);
+            return '';
+        });
+    }
+    return backlinks;
+};
+
+export const computeBacklinks = (
+    collection: Array<CollectionEntry<'brain'>>
+): { [key: string]: string[] } => {
+    return invertLinks(computeOutlinks(collection));
+};

@@ -10,7 +10,7 @@ import {
 
 import { hasTag } from '../../util/hasTag';
 
-const { note, tag } = Astro.props;
+const { note, tag, backlinks } = Astro.props;
 
 import { getCollection, getEntry } from 'astro:content';
 const collection = await getCollection('brain');
