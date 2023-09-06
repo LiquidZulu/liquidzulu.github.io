@@ -1,0 +1,127 @@
+---
+import Fuse from 'fuse.js';
+const { collection } = Astro.props;
+---
+
+<script define:vars={{ collection: collection }} defer>
+    const collectionElements = collection.map(x => {
+        let li = document.createElement('li');
+        let a = document.createElement('a');
+        a.innerText = x;
+        a.href = '/brain/' + x.replaceAll(' ', '-').toLowerCase();
+        li.appendChild(a);
+        li.id = x;
+        li.style.display = 'none';
+        return li;
+    });
+    window.addEventListener('load', () => {
+        let pressedKeys = {};
+        const [key_alt, key_x] = [18, 88];
+        const [el_alt, el_x] = [
+            document.getElementById('fuzzy_search_key_alt'),
+            document.getElementById('fuzzy_search_key_x'),
+        ];
+        document.onkeydown = e => {
+            pressedKeys[e.keyCode] = true;
+            switch (e.keyCode) {
+                case key_alt: {
+                    el_alt.classList.remove('bg-slate-700');
+                    break;
+                }
+                case key_x: {
+                    el_x.classList.remove('bg-slate-700');
+                    if (pressedKeys[key_alt]) {
+                        fuzzy_search_modal.showModal();
+                    }
+                    break;
+                }
+            }
+        };
+        document.onkeyup = e => {
+            pressedKeys[e.keyCode] = false;
+            switch (e.keyCode) {
+                case key_alt: {
+                    el_alt.classList.add('bg-slate-700');
+                    break;
+                }
+                case key_x: {
+                    el_x.classList.add('bg-slate-700');
+                    break;
+                }
+            }
+        };
+
+        const fuse = new Fuse(collection);
+
+        const [
+            fuzzy_search_button,
+            fuzzy_search_modal,
+            fuzzy_search_input,
+            fuzzy_search_results,
+        ] = [
+            document.getElementById('fuzzy_search_button'),
+            document.getElementById('fuzzy_search_modal'),
+            document.getElementById('fuzzy_search_input'),
+            document.getElementById('fuzzy_search_results'),
+        ];
+
+        fuzzy_search_button.addEventListener('click', () => {
+            fuzzy_search_modal.showModal();
+        });
+
+        fuzzy_search_input.addEventListener('input', e => {
+            const search = fuse.search(fuzzy_search_input.value);
+            for (let i = 0; i < collection.length; ++i) {
+                collectionElements[i].style.display = 'none';
+            }
+            for (let match of search) {
+                document.getElementById(match.item).style.display = 'block';
+            }
+        });
+
+        for (let i = 0; i < collection.length; ++i) {
+            fuzzy_search_results.appendChild(collectionElements[i]);
+        }
+    });
+</script>
+
+<button
+    id="fuzzy_search_button"
+    type="button"
+    class="hidden w-64 lg:flex items-center text-sm leading-6 text-slate-400 rounded-md ring-1 ring-slate-900/10 shadow-sm py-1.5 pl-2 pr-3 hover:ring-slate-300 bg-slate-800 highlight-white/5 hover:bg-slate-700"
+    ><svg
+        width="24"
+        height="24"
+        fill="none"
+        aria-hidden="true"
+        class="mr-3 flex-none"
+        ><path
+            d="m19 19-3.5-3.5"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"></path><circle
+            cx="11"
+            cy="11"
+            r="6"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"></circle></svg
+    >Fuzzy search<span class="ml-auto pl-3 flex-none text-xs font-semibold"
+        ><kbd id="fuzzy_search_key_alt" class="kbd bg-slate-700">Alt</kbd>
+        <kbd id="fuzzy_search_key_x" class="kbd bg-slate-700">x</kbd></span
+    ></button
+>
+
+<dialog
+    id="fuzzy_search_modal"
+    class="bg-slate-800 text-slate-400 p-4 rounded-md">
+    <input
+        id="fuzzy_search_input"
+        type="text"
+        placeholder="Type here"
+        class="input w-full max-w-xs bg-slate-800 placeholder-slate-400"
+    />
+    <ul id="fuzzy_search_results" class="list-none w-[40vw] h-[30vh]"></ul>
+</dialog>

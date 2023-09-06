@@ -1,0 +1,83 @@
+---
+import '../../css/global.css';
+import { invert } from '../../util/invert';
+import { getSlug } from '../../util/getSlug';
+import { hasTag } from '../../util/hasTag';
+import {
+    wikilinksToHypertextLinks,
+    wikilinksToMdLinks,
+    procWikilink,
+} from '../../util/wikilinks';
+import { Debug } from 'astro/components';
+import { Marquee, NoisePanel } from '../../components';
+
+import { getCollection, getEntry } from 'astro:content';
+const collection = await getCollection('brain');
+const notes = collection
+    .filter(x => !hasTag(x.data.tags, 'meta'))
+    .filter(x => !hasTag(x.data.tags, 'year'))
+    .map(x => x.id.split('.')[0]);
+
+const nRandomNotes = 100;
+const marquees = ['480s', '560s', '390s', '610s'];
+const nPerMarquee = Math.ceil(nRandomNotes / marquees.length);
+const randomNotes = notes
+    .sort(() => 0.5 - Math.random())
+    .slice(0, nRandomNotes);
+
+import Layout from '../../layouts/Layout.astro';
+import {
+    TailwindSearch,
+    BuyCoffee,
+    Navbar,
+    Footer,
+    SkipToContent,
+} from '../../components';
+---
+
+<Layout
+    title={`Brain | Philosophy Distilled`}
+    description={'My brain online'}
+    MJ={true}>
+    <!-- <Debug {noteInfo} /> -->
+    <SkipToContent href="#md-content" />
+    <Navbar path={`brain`}>
+        <TailwindSearch collection={notes} />
+    </Navbar>
+    <main id="md-content" class="w-full bg-[#0B0F13]">
+        <div class="h-[100svh] h-[100vh] w-full top-0">
+            <div class="text-center grow mx-auto pt-[17rem]">
+                <h1 class="text-slate-50 text-6xl font-black">
+                    My brain, online.
+                </h1>
+            </div>
+            <div class="text-xl text-center grow mx-auto pt-[10rem]">
+                Here are {randomNotes.length} random articles:
+            </div>
+            <div class="pt-[3rem]">
+                {
+                    marquees.map((time, index) => (
+                        <Marquee time={time} reverse={index % 2 == 0}>
+                            {randomNotes
+                                .slice(
+                                    nPerMarquee * index,
+                                    nPerMarquee + nPerMarquee * index
+                                )
+                                .map(x => (
+                                    <li>
+                                        <a href={`/brain/${getSlug(x)}`}>
+                                            <NoisePanel xtraClasses="p-4 my-3 hover:ring hover:ring-offset-2 hover:ring-offset-transparent hover:ring-[#7C3AED] bg-zinc-900 ring-zinc-800">
+                                                {x}
+                                            </NoisePanel>
+                                        </a>
+                                    </li>
+                                ))}
+                        </Marquee>
+                    ))
+                }
+            </div>
+        </div>
+        <Footer noShadow={true} />
+        <BuyCoffee>Like this content? Click here for more!</BuyCoffee>
+    </main>
+</Layout>
