@@ -1,3 +1,5 @@
+import { wikilinksToPlaintext } from './wikilinks';
+
 export const getNoteDescription = (note: string): string => {
-    return note.trim();
+    return wikilinksToPlaintext(note.trim());
 };
