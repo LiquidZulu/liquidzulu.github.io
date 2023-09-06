@@ -1,4 +1,58 @@
+---
+import Fuse from 'fuse.js';
+const { collection } = Astro.props;
+---
+
+<script define:vars={{ collection: collection }} defer>
+    const collectionElements = collection.map(x => {
+        let li = document.createElement('li');
+        let a = document.createElement('a');
+        a.innerText = x;
+        a.href = '/brain/' + x.replaceAll(' ', '-').toLowerCase();
+        li.appendChild(a);
+        li.id = x;
+        li.style.display = 'none';
+        return li;
+    });
+    window.addEventListener('load', () => {
+        console.log('blah');
+        const fuse = new Fuse(collection);
+
+        const [
+            fuzzy_search_button,
+            fuzzy_search_modal,
+            fuzzy_search_input,
+            fuzzy_search_results,
+        ] = [
+            document.getElementById('fuzzy_search_button'),
+            document.getElementById('fuzzy_search_modal'),
+            document.getElementById('fuzzy_search_input'),
+            document.getElementById('fuzzy_search_results'),
+        ];
+
+        fuzzy_search_button.addEventListener('click', () => {
+            fuzzy_search_modal.showModal();
+        });
+
+        fuzzy_search_input.addEventListener('input', e => {
+            const search = fuse.search(fuzzy_search_input.value);
+            console.log(search);
+            for (let i = 0; i < collection.length; ++i) {
+                collectionElements[i].style.display = 'none';
+            }
+            for (let match of search) {
+                document.getElementById(match.item).style.display = 'block';
+            }
+        });
+
+        for (let i = 0; i < collection.length; ++i) {
+            fuzzy_search_results.appendChild(collectionElements[i]);
+        }
+    });
+</script>
+
 <button
+    id="fuzzy_search_button"
     type="button"
     class="hidden w-64 lg:flex items-center text-sm leading-6 text-slate-400 rounded-md ring-1 ring-slate-900/10 shadow-sm py-1.5 pl-2 pr-3 hover:ring-slate-300 bg-slate-800 highlight-white/5 hover:bg-slate-700"
     ><svg
@@ -24,3 +78,15 @@
         >Alt x</span
     ></button
 >
+
+<dialog
+    id="fuzzy_search_modal"
+    class="bg-slate-800 text-slate-400 p-4 rounded-md">
+    <input
+        id="fuzzy_search_input"
+        type="text"
+        placeholder="Type here"
+        class="input w-full max-w-xs bg-slate-800 placeholder-slate-400"
+    />
+    <div id="fuzzy_search_results" class="list-none"></div>
+</dialog>

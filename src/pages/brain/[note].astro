@@ -1,6 +1,7 @@
 ---
 import '../../css/global.css';
 import { invert } from '../../util/invert';
+import { hasTag } from '../../util/hasTag';
 import {
     wikilinksToHypertextLinks,
     wikilinksToMdLinks,
@@ -18,6 +19,12 @@ export const getStaticPaths = async () => {
 const { note } = Astro.params;
 const slug = note;
 const noteInfo = await getEntryBySlug('brain', slug);
+
+const brain = await getCollection('brain');
+const notes = brain
+    .filter(x => !hasTag(x.data.tags, 'meta'))
+    .filter(x => !hasTag(x.data.tags, 'year'))
+    .map(x => x.id.split('.')[0]);
 
 const { Content, headings } = await noteInfo.render();
 
@@ -41,7 +48,7 @@ import {
     <!-- <Debug {noteInfo} /> -->
     <SkipToContent href="#md-content" />
     <Navbar path={`brain/${slug}`}>
-        <TailwindSearch />
+        <TailwindSearch collection={notes} />
     </Navbar>
     <main id="md-content" class="w-[100vw] bg-[#0B0F13] flex">
         <article

@@ -2,6 +2,7 @@
 import '../../css/global.css';
 import { invert } from '../../util/invert';
 import { getSlug } from '../../util/getSlug';
+import { hasTag } from '../../util/hasTag';
 import {
     wikilinksToHypertextLinks,
     wikilinksToMdLinks,
@@ -9,14 +10,6 @@ import {
 } from '../../util/wikilinks';
 import { Debug } from 'astro/components';
 import { Marquee, NoisePanel } from '../../components';
-
-const hasTag = (tags, tag) => {
-    try {
-        return tags.includes(tag);
-    } catch (e) {
-        return tags == tag;
-    }
-};
 
 import { getCollection, getEntry } from 'astro:content';
 const collection = await getCollection('brain');
@@ -43,7 +36,7 @@ import {
     <!-- <Debug {noteInfo} /> -->
     <SkipToContent href="#md-content" />
     <Navbar path={`brain`}>
-        <TailwindSearch />
+        <TailwindSearch collection={notes} />
     </Navbar>
     <main id="md-content" class="w-full bg-[#0B0F13]">
         <div class="h-[100svh] h-[100vh] w-full top-0">
