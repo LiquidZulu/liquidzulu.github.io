@@ -3,12 +3,16 @@ export const regexReplace = (
     regex: RegExp,
     replacer: (x: string) => string
 ): string => {
-    let newStr = str;
-    const matches = str.match(regex);
+    try {
+        let newStr = str;
+        const matches = str.match(regex);
 
-    for (let match of matches) {
-        newStr = newStr.replace(match, replacer(match));
+        for (let match of matches) {
+            newStr = newStr.replace(match, replacer(match));
+        }
+
+        return newStr;
+    } catch (e) {
+        return str;
     }
-
-    return newStr;
 };
