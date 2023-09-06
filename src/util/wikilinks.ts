@@ -24,6 +24,11 @@ export const wikilinksToHypertextLinks = (md: string): string =>
         )
     );
 
+export const wikilinksToPlaintext = (md: string): string =>
+    regexReplace(md, wikilinkRegex, x =>
+        ((y: [string, string]) => y[1])(procWikilink(x))
+    );
+
 export const computeOutlinks = (
     collection: Array<CollectionEntry<'brain'>>
 ): { [key: string]: string[] } => {
