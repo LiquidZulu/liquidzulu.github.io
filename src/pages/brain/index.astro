@@ -1,4 +1,5 @@
 ---
+import { ViewTransitions } from 'astro:transitions';
 import '../../css/global.css';
 import { invert } from '../../util/invert';
 import { getSlug } from '../../util/getSlug';
@@ -42,6 +43,7 @@ import BrainNavbar from './BrainNavbar.astro';
     description={'My brain, online.'}
     MJ={true}
     slug="brain">
+    <ViewTransitions slot="head" />
     <!-- <Debug {noteInfo} /> -->
     <SkipToContent href="#md-content" />
     <BrainNavbar />
