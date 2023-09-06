@@ -8,7 +8,7 @@ const { collection } = Astro.props;
         let li = document.createElement('li');
         let a = document.createElement('a');
         a.innerText = x;
-        a.href = '/brain/' + x.replaceAll(' ', '-').toLowerCase();
+        a.href = '/brain/note/' + x.replaceAll(' ', '-').toLowerCase();
         li.appendChild(a);
         li.id = x;
         li.style.display = 'none';
