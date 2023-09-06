@@ -27,12 +27,14 @@ const randomNotes = notes
 
 import Layout from '../../layouts/Layout.astro';
 import {
+    Icon,
     TailwindSearch,
     BuyCoffee,
-    Navbar,
     Footer,
     SkipToContent,
 } from '../../components';
+
+import BrainNavbar from './BrainNavbar.astro';
 ---
 
 <Layout
@@ -41,9 +43,7 @@ import {
     MJ={true}>
     <!-- <Debug {noteInfo} /> -->
     <SkipToContent href="#md-content" />
-    <Navbar path={`brain`}>
-        <TailwindSearch collection={notes} />
-    </Navbar>
+    <BrainNavbar />
     <main id="md-content" class="w-full bg-[#0B0F13]">
         <div class="h-[100svh] h-[100vh] w-full top-0">
             <div class="text-center grow mx-auto pt-[17rem]">
@@ -65,7 +65,7 @@ import {
                                 )
                                 .map(x => (
                                     <li>
-                                        <a href={`/brain/${getSlug(x)}`}>
+                                        <a href={`/brain/note/${getSlug(x)}`}>
                                             <NoisePanel xtraClasses="p-4 my-3 hover:ring hover:ring-offset-2 hover:ring-offset-transparent hover:ring-[#7C3AED] bg-zinc-900 ring-zinc-800">
                                                 {x}
                                             </NoisePanel>
