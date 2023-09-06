@@ -15,7 +15,42 @@ const { collection } = Astro.props;
         return li;
     });
     window.addEventListener('load', () => {
-        console.log('blah');
+        let pressedKeys = {};
+        const [key_alt, key_x] = [18, 88];
+        const [el_alt, el_x] = [
+            document.getElementById('fuzzy_search_key_alt'),
+            document.getElementById('fuzzy_search_key_x'),
+        ];
+        document.onkeydown = e => {
+            pressedKeys[e.keyCode] = true;
+            switch (e.keyCode) {
+                case key_alt: {
+                    el_alt.classList.remove('bg-slate-700');
+                    break;
+                }
+                case key_x: {
+                    el_x.classList.remove('bg-slate-700');
+                    if (pressedKeys[key_alt]) {
+                        fuzzy_search_modal.showModal();
+                    }
+                    break;
+                }
+            }
+        };
+        document.onkeyup = e => {
+            pressedKeys[e.keyCode] = false;
+            switch (e.keyCode) {
+                case key_alt: {
+                    el_alt.classList.add('bg-slate-700');
+                    break;
+                }
+                case key_x: {
+                    el_x.classList.add('bg-slate-700');
+                    break;
+                }
+            }
+        };
+
         const fuse = new Fuse(collection);
 
         const [
@@ -36,7 +71,6 @@ const { collection } = Astro.props;
 
         fuzzy_search_input.addEventListener('input', e => {
             const search = fuse.search(fuzzy_search_input.value);
-            console.log(search);
             for (let i = 0; i < collection.length; ++i) {
                 collectionElements[i].style.display = 'none';
             }
@@ -75,7 +109,8 @@ const { collection } = Astro.props;
             stroke-linecap="round"
             stroke-linejoin="round"></circle></svg
     >Fuzzy search<span class="ml-auto pl-3 flex-none text-xs font-semibold"
-        >Alt x</span
+        ><kbd id="fuzzy_search_key_alt" class="kbd bg-slate-700">Alt</kbd>
+        <kbd id="fuzzy_search_key_x" class="kbd bg-slate-700">x</kbd></span
     ></button
 >
 
@@ -88,5 +123,5 @@ const { collection } = Astro.props;
         placeholder="Type here"
         class="input w-full max-w-xs bg-slate-800 placeholder-slate-400"
     />
-    <div id="fuzzy_search_results" class="list-none"></div>
+    <ul id="fuzzy_search_results" class="list-none w-[40vw] h-[30vh]"></ul>
 </dialog>
