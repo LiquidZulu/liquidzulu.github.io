@@ -1,16 +1,14 @@
 ---
-import '../css/global.css';
-import { invert } from '../util/invert';
+import '../../css/global.css';
+import { invert } from '../../util/invert';
 import {
     wikilinksToHypertextLinks,
     wikilinksToMdLinks,
     procWikilink,
-} from '../util/wikilinks';
-import { paginationPrevNext } from '../util/paginationPrevNext';
+} from '../../util/wikilinks';
 import { getCollection, getEntryBySlug } from 'astro:content';
 import { Debug } from 'astro/components';
-import { readTimeMins, readTimeReadable } from '../util/readTime';
-import { getNoteDescription } from '../util/getNoteDescription';
+import { getNoteDescription } from '../../util/getNoteDescription';
 
 export const getStaticPaths = async () => {
     const brain = await getCollection('brain');
@@ -21,21 +19,16 @@ const { note } = Astro.params;
 const slug = note;
 const noteInfo = await getEntryBySlug('brain', slug);
 
-/* const modifiedNoteInfo = {
-    ...noteInfo, // spread is fine for now, even though it is slow as a bitch
-    body: wikilinksToMdLinks(noteInfo.body),
-}; */
-
 const { Content, headings } = await noteInfo.render();
 
-/* import { remark } from 'remark';
-import remarkObsidian from 'remark-obsidian';
-const ContentStr = String(
-    await remark().use(remarkObsidian).process(noteInfo.body)
-); */
-
-import Layout from '../layouts/Layout.astro';
-import { BuyCoffee, Navbar, Footer, SkipToContent, TOC } from '../components';
+import Layout from '../../layouts/Layout.astro';
+import {
+    TailwindSearch,
+    BuyCoffee,
+    Navbar,
+    Footer,
+    SkipToContent,
+} from '../../components';
 ---
 
 <Layout
@@ -47,7 +40,9 @@ import { BuyCoffee, Navbar, Footer, SkipToContent, TOC } from '../components';
     slug={slug}>
     <!-- <Debug {noteInfo} /> -->
     <SkipToContent href="#md-content" />
-    <Navbar path={`brain/${slug}`} />
+    <Navbar path={`brain/${slug}`}>
+        <TailwindSearch />
+    </Navbar>
     <main id="md-content" class="w-[100vw] bg-[#0B0F13] flex">
         <article
             class="max-w-[64rem] m-auto min-h-[80vh] mt-6 text-justify md:p-16 p-6">

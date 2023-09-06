@@ -1,5 +1,4 @@
 ---
-import { Debug } from 'astro/components';
 const { path } = Astro.props;
 let pathArr = [];
 
@@ -46,11 +45,13 @@ if (!!path) {
         </ul>
     </div>
     <div class="mt-[1vh] w-[48vw] grid place-items-end">
-        <a rel="prefetch" href="/courses">
-            <button
-                class="btn bg-gradient-to-r from-orange-500 to-amber-500 hover:scale-105">
-                courses
-            </button>
-        </a>
+        <slot>
+            <a rel="prefetch" href="/courses">
+                <button
+                    class="btn bg-gradient-to-r from-orange-500 to-amber-500 hover:scale-105">
+                    courses
+                </button>
+            </a>
+        </slot>
     </div>
 </nav>
