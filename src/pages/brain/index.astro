@@ -10,11 +10,19 @@ import {
 import { Debug } from 'astro/components';
 import { Marquee, NoisePanel } from '../../components';
 
+const hasTag = (tags, tag) => {
+    try {
+        return tags.includes(tag);
+    } catch (e) {
+        return tags == tag;
+    }
+};
+
 import { getCollection, getEntry } from 'astro:content';
 const collection = await getCollection('brain');
 const notes = collection
-    .filter(x => x.data.tags !== 'meta')
-    .filter(x => x.data.tags !== 'year')
+    .filter(x => !hasTag(x.data.tags, 'meta'))
+    .filter(x => !hasTag(x.data.tags, 'year'))
     .map(x => x.id.split('.')[0]);
 const randomNotes = notes.sort(() => 0.5 - Math.random()).slice(0, 100);
 
