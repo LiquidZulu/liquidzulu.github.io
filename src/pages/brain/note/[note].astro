@@ -107,7 +107,7 @@ import _ from 'lodash';
         {
             (() => {
                 try {
-                    return (
+                    return backlinks[slug].length > 0 ? (
                         <div transition:animate="slide">
                             <div class="divider">
                                 <span class="font-semibold">BACKLINKS</span>
@@ -133,6 +133,8 @@ import _ from 'lodash';
                                 ))}
                             </ul>
                         </div>
+                    ) : (
+                        ''
                     );
                 } catch (e) {
                     return '';
