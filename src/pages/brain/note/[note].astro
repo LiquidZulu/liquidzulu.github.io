@@ -41,7 +41,7 @@ import {
     NoisePanel,
 } from '../../../components';
 
-import { BrainNavbar, BrainTag } from '../components';
+import { BrainNavbar, BrainTag, BrainPanel } from '../components';
 ---
 
 <Layout
@@ -117,7 +117,7 @@ import { BrainNavbar, BrainTag } from '../components';
                                         <a
                                             class="text-center backlink"
                                             href={`/brain/note/${x}`}>
-                                            <NoisePanel xtraClasses="p-4 hover:ring hover:ring-offset-2 hover:ring-offset-transparent hover:ring-[#7C3AED] bg-zinc-900 ring-zinc-800">
+                                            <BrainPanel>
                                                 {
                                                     brain
                                                         .find(
@@ -126,7 +126,7 @@ import { BrainNavbar, BrainTag } from '../components';
                                                         )
                                                         .id.split('.')[0]
                                                 }
-                                            </NoisePanel>
+                                            </BrainPanel>
                                         </a>
                                     </li>
                                 ))}
