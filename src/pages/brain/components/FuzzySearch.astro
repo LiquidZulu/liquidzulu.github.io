@@ -6,7 +6,7 @@ const { collection } = Astro.props;
 <button
     id="fuzzy_search_button"
     type="button"
-    class="hidden w-64 lg:flex items-center text-sm leading-6 text-zinc-400 rounded-md ring-1 ring-zinc-900/10 shadow-sm py-1.5 pl-2 pr-3 hover:ring-zinc-300 bg-zinc-800 highlight-white/5 hover:bg-zinc-700"
+    class="border border-zinc-100 hidden w-64 lg:flex items-center text-sm leading-6 text-zinc-100 rounded-sm ring-1 ring-zinc-900/10 shadow-sm py-1.5 pl-2 pr-3 hover:ring-zinc-300 highlight-white/5 hover:bg-zinc-700"
     ><svg
         width="24"
         height="24"
@@ -27,22 +27,28 @@ const { collection } = Astro.props;
             stroke-linecap="round"
             stroke-linejoin="round"></circle></svg
     >Fuzzy search<span class="ml-auto pl-3 flex-none text-xs font-semibold"
-        ><kbd id="fuzzy_search_key_alt" class="kbd bg-zinc-700">Alt</kbd>
-        <kbd id="fuzzy_search_key_x" class="kbd bg-zinc-700">X</kbd></span
+        ><kbd
+            id="fuzzy_search_key_alt"
+            class="kbd border border-zinc-100 bg-[#0B0F13] rounded-sm">Alt</kbd
+        >
+        <kbd
+            id="fuzzy_search_key_x"
+            class="kbd border border-zinc-100 bg-[#0B0F13] rounded-sm">X</kbd
+        ></span
     ></button
 >
 
 <dialog
     transition:slide
     id="fuzzy_search_modal"
-    class="bg-zinc-800 text-zinc-400 p-4 rounded-md">
+    class="bg-[#0B0F13] text-zinc-100 p-4 rounded-md border border-zinc-100">
     <input
         id="fuzzy_search_input"
         type="text"
         placeholder="Type here"
-        class="input w-full max-w-xs bg-zinc-800 placeholder-zinc-400"
+        class="bg-[#0B0F13] border border-zinc-100 input w-full placeholder-zinc-400 rounded-sm"
     />
-    <ul id="fuzzy_search_results" class="list-none w-[40vw] h-[30vh]"></ul>
+    <ul id="fuzzy_search_results" class="list-none w-[40vw] h-[30vh] pt-2"></ul>
 </dialog>
 
 <script define:vars={{ collection: collection }} defer>
@@ -79,11 +85,11 @@ const { collection } = Astro.props;
             pressedKeys[e.keyCode] = true;
             switch (e.keyCode) {
                 case key_alt: {
-                    el_alt.classList.remove('bg-zinc-700');
+                    el_alt.classList.add('bg-zinc-700');
                     break;
                 }
                 case key_x: {
-                    el_x.classList.remove('bg-zinc-700');
+                    el_x.classList.add('bg-zinc-700');
                     if (pressedKeys[key_alt]) {
                         fuzzy_search_modal.showModal();
                     }
@@ -95,11 +101,11 @@ const { collection } = Astro.props;
             pressedKeys[e.keyCode] = false;
             switch (e.keyCode) {
                 case key_alt: {
-                    el_alt.classList.add('bg-zinc-700');
+                    el_alt.classList.remove('bg-zinc-700');
                     break;
                 }
                 case key_x: {
-                    el_x.classList.add('bg-zinc-700');
+                    el_x.classList.remove('bg-zinc-700');
                     break;
                 }
             }

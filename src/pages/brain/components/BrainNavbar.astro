@@ -1,7 +1,6 @@
 ---
 import {
     Icon,
-    TailwindSearch,
     BuyCoffee,
     Navbar,
     Footer,
@@ -19,7 +18,7 @@ const notes = collection
     .filter(x => !hasTag(x.data.tags, 'year'))
     .map(x => x.id.split('.')[0]);
 
-import BrainTag from './BrainTag.astro';
+import { BrainTag, FuzzySearch } from './';
 ---
 
 <nav class="absolute px-[2vw] py-[1vh] flex z-50" transition:persist>
@@ -49,6 +48,6 @@ import BrainTag from './BrainTag.astro';
         </ul>
     </div>
     <div class="mt-[1vh] w-[48vw] grid place-items-end">
-        <TailwindSearch collection={notes} />
+        <FuzzySearch collection={notes} />
     </div>
 </nav>
