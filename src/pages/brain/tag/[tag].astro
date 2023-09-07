@@ -47,7 +47,7 @@ import {
     SkipToContent,
 } from '../../../components';
 
-import BrainNavbar from '../BrainNavbar.astro';
+import { BrainNavbar, BrainPanel } from '../components';
 ---
 
 <Layout
@@ -84,9 +84,7 @@ import BrainNavbar from '../BrainNavbar.astro';
                             <a
                                 class="text-center"
                                 href={`/brain/note/${x.slug}`}>
-                                <NoisePanel xtraClasses="p-4 hover:ring hover:ring-offset-2 hover:ring-offset-transparent hover:ring-[#7C3AED] bg-zinc-900 ring-zinc-800">
-                                    {x.id.split('.')[0]}
-                                </NoisePanel>
+                                <BrainPanel>{x.id.split('.')[0]}</BrainPanel>
                             </a>
                         </li>
                     ))

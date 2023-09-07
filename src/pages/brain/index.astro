@@ -10,7 +10,6 @@ import {
     procWikilink,
 } from '../../util/wikilinks';
 import { Debug } from 'astro/components';
-import { Marquee, NoisePanel } from '../../components';
 
 import { getCollection, getEntry } from 'astro:content';
 const collection = await getCollection('brain');
@@ -28,6 +27,7 @@ const randomNotes = notes
 
 import Layout from '../../layouts/BrainLayout.astro';
 import {
+    Marquee,
     Icon,
     TailwindSearch,
     BuyCoffee,
@@ -35,7 +35,7 @@ import {
     SkipToContent,
 } from '../../components';
 
-import BrainNavbar from './BrainNavbar.astro';
+import { BrainNavbar, BrainPanel } from './components';
 ---
 
 <Layout
@@ -72,11 +72,9 @@ import BrainNavbar from './BrainNavbar.astro';
                                     nPerMarquee + nPerMarquee * index
                                 )
                                 .map(x => (
-                                    <li>
+                                    <li class="my-3">
                                         <a href={`/brain/note/${getSlug(x)}`}>
-                                            <NoisePanel xtraClasses="p-4 my-3 hover:ring hover:ring-offset-2 hover:ring-offset-transparent hover:ring-[#7C3AED] bg-zinc-900 ring-zinc-800">
-                                                {x}
-                                            </NoisePanel>
+                                            <BrainPanel>{x}</BrainPanel>
                                         </a>
                                     </li>
                                 ))}
