@@ -32,7 +32,7 @@ const backlinks = computeBacklinks(brain);
 
 const { Content, headings } = await noteInfo.render();
 
-import Layout from '../../../layouts/Layout.astro';
+import Layout from '../../../layouts/BrainLayout.astro';
 import {
     TailwindSearch,
     BuyCoffee,
@@ -41,8 +41,7 @@ import {
     NoisePanel,
 } from '../../../components';
 
-import BrainNavbar from '../BrainNavbar.astro';
-import BrainTag from '../BrainTag.astro';
+import { BrainNavbar, BrainTag } from '../components';
 ---
 
 <Layout
@@ -52,7 +51,12 @@ import BrainTag from '../BrainTag.astro';
     published={noteInfo.data.date}
     MJ={true}
     slug={'brain'}>
-    <ViewTransitions slot="head" />
+    <!-- <ViewTransitions slot="head" /> -->
+    <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Oswald&family=Phudu&family=Bebas+Neue"
+        slot="head"
+    />
     <!-- <Debug {noteInfo} /> -->
     <SkipToContent href="#md-content" />
     <BrainNavbar note={slug} />
@@ -71,22 +75,23 @@ import BrainTag from '../BrainTag.astro';
             class="max-w-[64rem] m-auto min-h-[80vh] mt-6 text-justify md:p-16 p-6">
             <!-- {noteInfo.body} -->
             <div class="mb-[8rem]">
-                <h1 class="text-6xl font-bold text-center mt-24 mb-8">
+                <h1 class="oswald text-6xl font-bold text-center mt-24 mb-8">
                     {noteInfo.id.split('.')[0]}
                 </h1>
-                <ul class="!list-none scale justify-center flex w-full !m-0">
+                <ul
+                    class="!list-none scale justify-center flex flex-wrap w-full !m-0">
                     {
                         (() => {
                             try {
                                 return noteInfo.data.tags.map(x => (
-                                    <li class="inline mx-1">
+                                    <li class="mx-1">
                                         <BrainTag name={x} />
                                     </li>
                                 ));
                             } catch (e) {
                                 let x = noteInfo.data.tags;
                                 return (
-                                    <li class="inline mx-1">
+                                    <li class="mx-1">
                                         <BrainTag name={x} />
                                     </li>
                                 );

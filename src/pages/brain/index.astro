@@ -10,7 +10,6 @@ import {
     procWikilink,
 } from '../../util/wikilinks';
 import { Debug } from 'astro/components';
-import { Marquee, NoisePanel } from '../../components';
 
 import { getCollection, getEntry } from 'astro:content';
 const collection = await getCollection('brain');
@@ -26,8 +25,9 @@ const randomNotes = notes
     .sort(() => 0.5 - Math.random())
     .slice(0, nRandomNotes);
 
-import Layout from '../../layouts/Layout.astro';
+import Layout from '../../layouts/BrainLayout.astro';
 import {
+    Marquee,
     Icon,
     TailwindSearch,
     BuyCoffee,
@@ -35,7 +35,7 @@ import {
     SkipToContent,
 } from '../../components';
 
-import BrainNavbar from './BrainNavbar.astro';
+import { BrainNavbar, BrainPanel } from './components';
 ---
 
 <Layout
@@ -43,14 +43,19 @@ import BrainNavbar from './BrainNavbar.astro';
     description={'My brain, online.'}
     MJ={true}
     slug="brain">
-    <ViewTransitions slot="head" />
+    <!-- <ViewTransitions slot="head" /> -->
+    <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Oswald&family=Phudu&family=Bebas+Neue"
+        slot="head"
+    />
     <!-- <Debug {noteInfo} /> -->
     <SkipToContent href="#md-content" />
     <BrainNavbar />
     <main id="md-content" class="w-full bg-[#0B0F13]">
-        <div class="h-[100svh] h-[100vh] w-full top-0">
+        <div class="w-full top-0">
             <div class="text-center grow mx-auto pt-[17rem]">
-                <h1 class="text-slate-50 text-6xl font-black">
+                <h1 class="oswald text-slate-50 text-6xl font-black">
                     My brain, online.
                 </h1>
             </div>
@@ -67,17 +72,113 @@ import BrainNavbar from './BrainNavbar.astro';
                                     nPerMarquee + nPerMarquee * index
                                 )
                                 .map(x => (
-                                    <li>
+                                    <li class="my-3">
                                         <a href={`/brain/note/${getSlug(x)}`}>
-                                            <NoisePanel xtraClasses="p-4 my-3 hover:ring hover:ring-offset-2 hover:ring-offset-transparent hover:ring-[#7C3AED] bg-zinc-900 ring-zinc-800">
-                                                {x}
-                                            </NoisePanel>
+                                            <BrainPanel>{x}</BrainPanel>
                                         </a>
                                     </li>
                                 ))}
                         </Marquee>
                     ))
                 }
+            </div>
+            <div class="divider animate-pulse">FIND OUT MORE</div>
+            <div
+                class="text-center text-2xl mt-[-1rem] rotate-90 animate-pulse">
+                »
+            </div>
+            <div class="text-center grow mx-auto py-[12rem]">
+                <h2 class="oswald text-slate-50 text-6xl font-black pb-6">
+                    I have a goal.
+                </h2>
+                <p
+                    class="max-w-[64rem] m-auto mt-6 text-justify text-lg md:px-16 px-6">
+                    <b>I want to integrate the entirety of philosophy</b>. There
+                    already exists various wikis and knowledge-bases online
+                    which cover different areas to different degrees of
+                    accuracy: I want to beat them all. My plan to do this is to
+                    break down every topic into <i>atomic</i> notes, which can then
+                    be used as building blocks towards further conclusions which
+                    are themselves building blocks.
+                </p>
+                <p
+                    class="max-w-[64rem] m-auto mt-6 text-justify text-lg md:px-16 px-6">
+                    Previous treatises on philosophy–however good they may
+                    be–suffer from the fact that the information in them is all
+                    locked-away in massive (often non-digital) tomes, that
+                    cannot be easily queried. This site will fix this problem.
+                    There can exist notes on this site that contain only a
+                    single syllogism, where each premise–rather than being in
+                    plaintext–is itself a link to a previous note, and this
+                    previous note links to still prior notes until one may break
+                    down any argument into its most basic building blocks—its <i
+                        >atoms</i
+                    >.
+                </p>
+                <p
+                    class="max-w-[64rem] m-auto mt-6 text-justify text-lg md:px-16 px-6">
+                    To illustrate this with a concrete example, consider <a
+                        class="text-[#7C3AED] hover:text-[#9e67fc]"
+                        href="/brain/note/objectivism">Objectivism</a
+                    > and <a
+                        class="text-[#7C3AED] hover:text-[#9e67fc]"
+                        href="/brain/note/austrian-economics">Austrianism</a
+                    >. Both are heterodox schools of thought, and both get their
+                    respective domains correct, but little work has been done to
+                    integrate the two. Objectivists are correct about <a
+                        class="text-[#7C3AED] hover:text-[#9e67fc]"
+                        href="/brain/note/metaphysics">Metaphysics</a
+                    > and <a
+                        class="text-[#7C3AED] hover:text-[#9e67fc]"
+                        href="/brain/note/epistemology">Epistemology</a
+                    >, but they suffer when it comes to the more remote
+                    derivations from these core areas in law. But law is
+                    precisely one of those areas that the Austrians excel
+                    at—these two schools complement each other perfectly, and
+                    require complete integration.
+                </p>
+                <p
+                    class="max-w-[64rem] m-auto mt-6 text-justify text-lg md:px-16 px-6">
+                    <i>That</i> is where this site comes in: with <i>atomic</i> notes
+                    on the entire body of philosophy it would be trivial to work
+                    ones way back from various remote conclusions in economics straight
+                    to the heart of metaphysics. It would be easy to demonstrate
+                    which conclusions are consistent with the foundation, and which
+                    ones need more work.
+                </p>
+                <h2 class="oswald text-slate-50 text-6xl font-black pb-6 pt-20">
+                    Consider supporting this mission:
+                </h2>
+                <p
+                    class="max-w-[64rem] m-auto mt-6 text-justify text-lg md:px-16 px-6">
+                    Due to the nature of this project in particular, I will be
+                    keeping every single note entirely open and free for use by
+                    the public in any way they see fit. Because of this there
+                    can be no paywalls on this site, but I have also various <a
+                        class="text-sky-500 hover:link"
+                        href="/">courses</a
+                    > available that you are able to purchase for whatever price
+                    you see fit, if you think the information here is up-to-scratch
+                    and you want to see it integrated into some particular subject
+                    matter. If you are not interested in those courses, you can also
+                    support me directly at <a
+                        class="text-sky-500 hover:link"
+                        href="https://ko-fi.com/liquidzulu">my Ko-Fi site</a
+                    >, if you wish to support this mission and see it succeed.
+                </p>
+                <h2 class="oswald text-slate-50 text-6xl font-black pb-6 pt-20">
+                    Downloading this knowledge-base
+                </h2>
+                <p
+                    class="max-w-[64rem] m-auto mt-6 text-justify text-lg md:px-16 px-6">
+                    If you do not wish to use this website for interacting with
+                    my brain, you can <a
+                        class="text-sky-500 hover:link"
+                        href="https://github.com/LiquidZulu/brain"
+                        >download it here</a
+                    >, the entire content of this site is stored on an Obsidian
+                    vault, that you can run locally.
+                </p>
             </div>
         </div>
         <Footer noShadow={true} />
