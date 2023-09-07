@@ -55,13 +55,19 @@ import BrainNavbar from '../BrainNavbar.astro';
     description={'My brain, online.'}
     slug={'brain'}>
     <ViewTransitions slot="head" />
+    <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Oswald&family=Phudu&family=Bebas+Neue"
+        slot="head"
+    />
     <!-- <Debug {noteInfo} /> -->
     <SkipToContent href="#md-content" />
     <BrainNavbar tag={tag} />
 
     <main class="w-full bg-[#0B0F13]">
         <h1 class="text-center text-6xl pt-32" transition:animate="slide">
-            Results for <a
+            <span class="oswald">Results for</span>
+            <a
                 href={`/brain/tag/${tag}`}
                 class="rounded-full bg-violet-900/50 hover:bg-violet-900 py-2 px-4 !text-white !no-underline">
                 #{tag}

@@ -51,6 +51,18 @@
     font-family: Cubano;
 }
 
+.oswald {
+    font-family: 'Oswald';
+}
+
+.phudu {
+    font-family: 'Phudu';
+}
+
+.bebas {
+    font-family: 'Bebas Neue';
+}
+
 p > .emphasis {
     @apply text-3xl;
 }
