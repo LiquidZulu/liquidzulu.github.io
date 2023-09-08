@@ -1,8 +1,8 @@
 ---
-const { time, reverse } = Astro.props;
+const { time, reverse, xtraClasses } = Astro.props;
 ---
 
-<div class="marquee">
+<div class={`marquee ${!!xtraClasses ? xtraClasses : ''}`}>
     <ul
         style={`animation: scroll ${time} linear infinite;${
             !!reverse ? ' animation-direction: reverse;' : ''
