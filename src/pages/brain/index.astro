@@ -61,12 +61,20 @@ import { BrainDivider, BrainNavbar, BrainPanel } from './components';
                 </h1>
             </div>
             <div class="text-xl text-center grow mx-auto pt-[10rem]">
-                Here are {randomNotes.length} random articles:
+                Here are <span class="md:inline hidden"
+                    >{randomNotes.length}</span
+                ><span class="md:hidden inline">{randomNotes.length / 2}</span> random
+                articles:
             </div>
             <div class="pt-[3rem]">
                 {
                     marquees.map((time, index) => (
-                        <Marquee time={time} reverse={index % 2 == 0}>
+                        <Marquee
+                            time={time}
+                            reverse={index % 2 == 0}
+                            xtraClasses={`${
+                                index >= 2 ? 'md:flex hidden' : ''
+                            }`}>
                             {randomNotes
                                 .slice(
                                     nPerMarquee * index,
