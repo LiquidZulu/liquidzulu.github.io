@@ -35,7 +35,7 @@ import {
     SkipToContent,
 } from '../../components';
 
-import { BrainNavbar, BrainPanel } from './components';
+import { BrainDivider, BrainNavbar, BrainPanel } from './components';
 ---
 
 <Layout
@@ -55,7 +55,7 @@ import { BrainNavbar, BrainPanel } from './components';
     <BrainNavbar />
     <main id="md-content" class="w-full bg-[#0B0F13]">
         <div class="w-full top-0">
-            <div class="text-center grow mx-auto pt-[25.5vh]">
+            <div class="text-center grow mx-auto pt-[23vh]">
                 <h1 class="oswald text-slate-50 text-6xl font-black">
                     My brain, online.
                 </h1>
@@ -83,9 +83,15 @@ import { BrainNavbar, BrainPanel } from './components';
                     ))
                 }
             </div>
-            <div class="divider animate-pulse">FIND OUT MORE</div>
+
+            <BrainDivider>
+                <div class="divider animate-pulse font-semibold">
+                    FIND OUT MORE
+                </div>
+            </BrainDivider>
+
             <div
-                class="text-center text-2xl mt-[-1rem] rotate-90 animate-pulse">
+                class="text-center text-2xl mt-[-2rem] rotate-90 animate-pulse">
                 »
             </div>
             <div class="text-center grow mx-auto py-[12rem]">

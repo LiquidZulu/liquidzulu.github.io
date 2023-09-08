@@ -40,7 +40,7 @@ import {
     NoisePanel,
 } from '../../../components';
 
-import { BrainNavbar, BrainTag, BrainPanel } from '../components';
+import { BrainDivider, BrainNavbar, BrainTag, BrainPanel } from '../components';
 
 import _ from 'lodash';
 ---
@@ -110,9 +110,9 @@ import _ from 'lodash';
                 try {
                     return backlinks[slug].length > 0 ? (
                         <div transition:animate="slide">
-                            <div class="divider">
+                            <BrainDivider>
                                 <span class="font-semibold">BACKLINKS</span>
-                            </div>
+                            </BrainDivider>
                             <ul class="py-16 flex flex-row justify-center flex-wrap gap-3 w-[90vw] m-auto">
                                 {_.uniq(backlinks[slug]).map(x => (
                                     <li class="grow">
