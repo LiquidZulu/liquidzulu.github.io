@@ -4,7 +4,7 @@ name: Auto approve PRs by dependabot
 on: pull_request_target
 
 jobs:
-    autoapprove:
+    approve:
         name: Approve dependabot PR
         runs-on: ubuntu-latest
         steps:
@@ -13,10 +13,10 @@ jobs:
               if: github.actor == 'dependabot[bot]' || github.actor == 'dependabot-preview[bot]'
               with:
                   github-token: ${{ secrets.GITHUB_TOKEN }}
-    auto-merge:
-        name: Merge dependabot PR
-        uses: KeisukeYamashita/auto-pull-request-merge@v1
-        with:
-            intervalSeconds: 100
-            timeoutSeconds: 30
-            labels: ['dependencies']
+    merge:
+        - name: Merge dependabot PR
+          uses: KeisukeYamashita/auto-pull-request-merge@v1
+          with:
+              intervalSeconds: 100
+              timeoutSeconds: 30
+              labels: ['dependencies']
