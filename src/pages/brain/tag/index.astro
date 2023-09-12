@@ -1,0 +1,88 @@
+---
+import { ViewTransitions } from 'astro:transitions';
+import '../../../css/global.css';
+import { hasTag } from '../../../util/hasTag';
+import { getCollection, getEntryBySlug } from 'astro:content';
+import { Debug } from 'astro/components';
+
+import { getCollection, getEntryBySlug } from 'astro:content';
+export const brain = await getCollection('brain');
+const notes = brain
+    .filter(x => !hasTag(x.data.tags, 'meta'))
+    .filter(x => !hasTag(x.data.tags, 'year'))
+    .map(x => x.id.split('.')[0]);
+
+const { tag } = Astro.params;
+
+import Layout from '../../../layouts/BrainLayout.astro';
+import {
+    TailwindSearch,
+    BuyCoffee,
+    NoisePanel,
+    Footer,
+    SkipToContent,
+} from '../../../components';
+
+import { BrainNavbar, BrainPanel } from '../components';
+
+// sets are never actually constant, js lies
+export const tags = (() => {
+    const tagSet = new Set();
+    for (let entry of brain) {
+        typeof entry.data.tags == typeof []
+            ? entry.data.tags.forEach(x => tagSet.add(x))
+            : tagSet.add(entry.data.tags);
+
+        if (!entry.data.tags)
+            throw new Error(`Tags undefined at ${JSON.stringify(entry.id)}`);
+    }
+    return Array.from(tagSet);
+})();
+
+export const getStaticPaths = async () =>
+    tags.map(x => ({
+        params: {
+            tag: x,
+        },
+    }));
+---
+
+<Layout
+    title={`${tag} | Brain`}
+    description={'My brain, online.'}
+    slug={'brain'}>
+    <!-- <ViewTransitions slot="head" /> -->
+    <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Oswald&family=Phudu&family=Bebas+Neue&display=swap"
+        slot="head"
+        defer
+    />
+    <!-- <Debug {noteInfo} /> -->
+    <SkipToContent href="#md-content" />
+    <BrainNavbar tag={tag} />
+
+    <main class="w-full bg-[#0B0F13]">
+        <h1
+            class="text-center text-6xl pt-32 oswald"
+            transition:animate="slide">
+            Available tags:
+        </h1>
+        <ul
+            transition:animate="slide"
+            class="py-32 flex flex-row justify-center flex-wrap gap-3 w-[90vw] m-auto">
+            {
+                tags.map(x => (
+                    <li>
+                        <a
+                            href={`/brain/tag/${tag}`}
+                            class="inline-block rounded-full bg-violet-900/50 hover:bg-violet-900 py-2 px-4 !text-white !no-underline">
+                            #{x}
+                        </a>
+                    </li>
+                ))
+            }
+        </ul>
+        <Footer noShadow={true} bg />
+    </main>
+</Layout>
