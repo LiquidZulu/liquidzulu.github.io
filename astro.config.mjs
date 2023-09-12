@@ -5,6 +5,7 @@ import remarkWikilink from '@portaljs/remark-wiki-link';
 import { visit } from 'unist-util-visit';
 import slugify from 'slugify';
 import { readdir } from 'node:fs/promises';
+import { regexReplace } from './src/util/regexReplace';
 
 const files = await readdir('./src/content/brain');
 const filesProc = files
@@ -22,6 +23,23 @@ export default defineConfig({
         remarkPlugins: [
             remarkWikilink,
             () => ast => {
+                // wouldn't this look so much nicer if js had some sort of piping syntax?
+                visit(ast, 'text', node =>
+                    Object.assign(node, {
+                        value: regexReplace(
+                            // replace -- with endash
+                            regexReplace(
+                                // replace --- with emdash
+                                regexReplace(node.value, /—/g, x => '--'), // normalise text to have only --- and --, not any rendered dashes, which is contributed, I believe, by gfm
+                                /---/g,
+                                x => '—'
+                            ),
+                            /--/g,
+                            x => '–'
+                        ),
+                    })
+                );
+
                 visit(ast, 'wikiLink', node =>
                     Object.assign(node, {
                         data: Object.assign(node.data, {
