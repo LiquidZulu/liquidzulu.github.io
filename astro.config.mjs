@@ -26,11 +26,12 @@ export default defineConfig({
                 // wouldn't this look so much nicer if js had some sort of piping syntax?
                 visit(ast, 'text', node =>
                     Object.assign(node, {
+                        // replace -- with endash
                         value: regexReplace(
-                            // replace -- with endash
+                            // replace --- with emdash
                             regexReplace(
-                                // replace --- with emdash
-                                regexReplace(node.value, /—/g, x => '--'), // normalise text to have only --- and --, not any rendered dashes, which is contributed, I believe, by gfm
+                                // normalise text to have only --- and --, not any rendered dashes, which is contributed, I believe, by gfm
+                                regexReplace(node.value, /—/g, x => '--'),
                                 /---/g,
                                 x => '—'
                             ),
