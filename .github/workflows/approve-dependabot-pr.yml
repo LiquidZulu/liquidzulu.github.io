@@ -19,4 +19,4 @@ jobs:
               with:
                   intervalSeconds: 100
                   timeoutSeconds: 30
-                  labels: ['dependencies']
+                  labels: 'dependencies'
