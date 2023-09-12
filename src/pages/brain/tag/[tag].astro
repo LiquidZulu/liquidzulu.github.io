@@ -5,32 +5,8 @@ import { hasTag } from '../../../util/hasTag';
 import { getCollection, getEntryBySlug } from 'astro:content';
 import { Debug } from 'astro/components';
 
-export const getStaticPaths = async () =>
-    [
-        'year',
-        'metaphysics',
-        'epistemology',
-        'philosophy',
-        'book',
-        'fiction',
-        'politics',
-        'person',
-        'meta',
-        'axiom',
-        'praxeology',
-        'economics',
-        'non-fiction',
-        'ethics',
-        'aesthetics',
-        'history-of-philosophy',
-    ].map(x => ({
-        params: {
-            tag: x,
-        },
-    }));
-
 import { getCollection, getEntryBySlug } from 'astro:content';
-const brain = await getCollection('brain');
+export const brain = await getCollection('brain');
 const notes = brain
     .filter(x => !hasTag(x.data.tags, 'meta'))
     .filter(x => !hasTag(x.data.tags, 'year'))
@@ -48,6 +24,27 @@ import {
 } from '../../../components';
 
 import { BrainNavbar, BrainPanel } from '../components';
+
+// sets are never actually constant, js lies
+export const tags = (() => {
+    const tagSet = new Set();
+    for (let entry of brain) {
+        typeof entry.data.tags == typeof []
+            ? entry.data.tags.forEach(x => tagSet.add(x))
+            : tagSet.add(entry.data.tags);
+
+        if (!entry.data.tags)
+            throw new Error(`Tags undefined at ${JSON.stringify(entry.id)}`);
+    }
+    return Array.from(tagSet);
+})();
+
+export const getStaticPaths = async () =>
+    tags.map(x => ({
+        params: {
+            tag: x,
+        },
+    }));
 ---
 
 <Layout
