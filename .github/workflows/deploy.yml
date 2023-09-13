@@ -5,6 +5,11 @@ on:
     # Using a different branch name? Replace `main` with your branch’s name
     push:
         branches: [source]
+    # Also trigger it when dependabot PRs are merged
+    workflow_run:
+        workflows: ['Auto approve PRs by dependabot']
+        types:
+            - completed
     # Allows you to run this workflow manually from the Actions tab on GitHub.
     workflow_dispatch:
 
