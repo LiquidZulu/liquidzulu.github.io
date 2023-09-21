@@ -17,11 +17,38 @@ export const wikilinksToMdLinks = (md: string): string =>
         )
     );
 
-export const wikilinksToHypertextLinks = (md: string): string =>
+export const wikilinksToHypertextLinks = (
+    md: string,
+    opts: {
+        class?: string;
+        files?: string[];
+        linkPreface?: string;
+    }
+): string =>
     regexReplace(md, wikilinkRegex, x =>
-        ((y: [string, string]) => `<a href="./${getSlug(y[0])}">${y[1]}</a>`)(
-            procWikilink(x)
-        )
+        ((y: [string, string]) =>
+            `<a${
+                opts.class
+                    ? ' class="' +
+                      opts.class +
+                      (opts.files
+                          ? opts.files.some(e => e == y[0])
+                              ? ' link-exists'
+                              : ' link-doesnt-exist'
+                          : '') +
+                      '"'
+                    : ''
+            } ${
+                opts.files
+                    ? opts.files.some(e => e == y[0])
+                        ? 'href="' +
+                          (opts.linkPreface ?? '.') +
+                          '/' +
+                          getSlug(y[0]) +
+                          '"'
+                        : /*404*/ 'title="This page has not been created yet"'
+                    : ''
+            } >${y[1]}</a>`)(procWikilink(x))
     );
 
 export const wikilinksToPlaintext = (md: string): string =>
