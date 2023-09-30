@@ -1,18 +1,17 @@
 {
   description = "Static site for distilled philosophy";
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    nixpkgs.url = "https://flakehub.com/f/NixOS/nixpkgs/0.1.0.tar.gz";
 
+    devshell.url = "github:numtide/devshell";
+    nixago.url = "github:nix-community/nixago";
+    nixago.inputs.nixpkgs.follows = "nixpkgs";
     std = {
       url = "github:divnix/std";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    std-data-collection = {
-      url = "github:divnix/std-data-collection";
       inputs = {
         nixpkgs.follows = "nixpkgs";
-        std.follows = "std";
+        devshell.follows = "devshell";
+        nixago.follows = "nixago";
       };
     };
   };

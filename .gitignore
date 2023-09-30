@@ -1,5 +1,6 @@
 # build output
 dist/
+result/
 
 # generated types
 .astro/
@@ -23,6 +24,9 @@ pnpm-debug.log*
 # nixago: ignore-linked-files
 lefthook.yml
 treefmt.toml
+
+# std
+/.data/
 
 # unlighthouse
 .unlighthouse
