@@ -2,16 +2,41 @@
   inputs,
   cell,
 }: let
-  inherit (inputs) std;
-  lib = inputs.nixpkgs.lib // builtins;
-  presets = inputs.std-data-collection.data.configs;
+  inherit (inputs) nixpkgs;
 in {
-  editorconfig = lib.recursiveUpdate presets.editorconfig std.lib.cfg.editorconfig {
+  editorconfig = {
+    hook.mode = "copy";
     data = {
-      "*.{js,jsx,css,md,html,ts,tsx,astro,yaml}" = {
+      root = true;
+
+      "*" = {
+        charset = "utf-8";
+        end_of_line = "lf";
         indent_size = 4;
+        indent_style = "space";
+        insert_final_newline = true;
+        trim_trailing_whitespace = true;
       };
+
+      "*.nix" = {
+        indent_size = 2;
+      };
+
+      "*.md" = {
+        max_line_length = "off";
+        trim_trailing_whitespace = false;
+      };
+
       "{*.lock,package-lock.json}" = {
+        charset = "unset";
+        end_of_line = "unset";
+        indent_size = "unset";
+        indent_style = "unset";
+        insert_final_newline = "unset";
+        trim_trailing_whitespace = "unset";
+      };
+
+      "{LICENSES/**,LICENSE}" = {
         charset = "unset";
         end_of_line = "unset";
         indent_size = "unset";
@@ -21,8 +46,9 @@ in {
       };
     };
   };
-  treefmt = std.lib.cfg.treefmt {
-    packages = with inputs.nixpkgs; [
+
+  treefmt = {
+    packages = with nixpkgs; [
       alejandra
       nodePackages.prettier
     ];
@@ -52,7 +78,8 @@ in {
       };
     };
   };
-  lefthook = std.lib.cfg.lefthook {
+
+  lefthook = {
     data.pre-commit.commands = {
       treefmt = {
         run = "treefmt --fail-on-change {staged_files}";
