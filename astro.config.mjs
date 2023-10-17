@@ -3,18 +3,18 @@ import tailwind from '@astrojs/tailwind';
 import prefetch from '@astrojs/prefetch';
 import remarkWikilink from '@portaljs/remark-wiki-link';
 import { visit } from 'unist-util-visit';
-import slugify from 'slugify';
 import { readdir } from 'node:fs/promises';
 import { regexReplace } from './src/util/regexReplace';
 import {
     wikilinksToHypertextLinks,
     wikilinksToMdLinks,
 } from './src/util/wikilinks';
+import { getSlug } from './src/util/getSlug';
 
 const files = await readdir('./src/content/brain');
 const filesProc = files
     .filter(file => !file.startsWith('.'))
-    .map(file => file.split('.')[0]);
+    .map(file => getSlug(file.split('.')[0]));
 
 const isObsidian = file => file.path.match(/content\/brain/g) !== null; // | check_for_some_other_vault
 
