@@ -32,7 +32,7 @@ export const wikilinksToHypertextLinks = (
                     ? ' class="' +
                       opts.class +
                       (opts.files
-                          ? opts.files.some(e => e == y[0])
+                          ? opts.files.some(e => e == getSlug(y[0]))
                               ? ' link-exists'
                               : ' link-doesnt-exist'
                           : '') +
@@ -40,7 +40,7 @@ export const wikilinksToHypertextLinks = (
                     : ''
             } ${
                 opts.files
-                    ? opts.files.some(e => e == y[0])
+                    ? opts.files.some(e => e == getSlug(y[0]))
                         ? 'href="' +
                           (opts.linkPreface ?? '.') +
                           '/' +
