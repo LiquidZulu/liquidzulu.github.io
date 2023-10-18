@@ -62,10 +62,7 @@ export const computeOutlinks = (
     let backlinks = {};
     for (let entry of collection) {
         regexReplace(entry.body, wikilinkRegex, x => {
-            const link = getSlug(x)
-                .replaceAll('[', '')
-                .replaceAll(']', '')
-                .split('|')[0];
+            const link = getSlug(x.split('|')[0]).replaceAll('[', '');
 
             backlinks[entry.slug] == undefined
                 ? (backlinks[entry.slug] = [link])
