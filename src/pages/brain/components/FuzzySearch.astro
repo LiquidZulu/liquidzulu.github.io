@@ -1,6 +1,8 @@
 ---
 import Fuse from 'fuse.js';
+import { getSlug } from '../../../util/getSlug';
 const { collection } = Astro.props;
+const slugMap = Object.fromEntries(collection.map(k => [k, getSlug(k)]));
 ---
 
 <button
@@ -51,12 +53,12 @@ const { collection } = Astro.props;
     <ul id="fuzzy_search_results" class="list-none w-[40vw] h-[30vh] pt-2"></ul>
 </dialog>
 
-<script define:vars={{ collection: collection }} defer>
+<script define:vars={{ collection: collection, slugMap: slugMap }} defer>
     const collectionElements = collection.map(x => {
         let li = document.createElement('li');
         let a = document.createElement('a');
         a.innerText = x;
-        a.href = '/brain/note/' + x.replaceAll(' ', '-').toLowerCase();
+        a.href = '/brain/note/' + slugMap[x];
         li.appendChild(a);
         li.id = x;
         li.style.display = 'none';
