@@ -2,7 +2,9 @@
 import Fuse from 'fuse.js';
 import { getSlug } from '../../../util/getSlug';
 const { collection } = Astro.props;
-const slugMap = Object.fromEntries(collection.map(k => [k, getSlug(k)]));
+const slugMap = !!collection
+    ? Object.fromEntries(collection.map(k => [k, getSlug(k)]))
+    : {};
 ---
 
 <button
