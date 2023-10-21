@@ -5,6 +5,7 @@ import remarkWikilink from '@portaljs/remark-wiki-link';
 import { visit } from 'unist-util-visit';
 import { readdir } from 'node:fs/promises';
 import { regexReplace } from './src/util/regexReplace';
+import { unicodeArrows } from './src/util/markdown-plugins';
 import {
     wikilinksToHypertextLinks,
     wikilinksToMdLinks,
@@ -27,6 +28,10 @@ export default defineConfig({
     markdown: {
         remarkPlugins: [
             () => (ast, file) => {
+                // do arrow replacing
+
+                visit(ast, 'text', unicodeArrows);
+
                 // only do these things on Obsidian vaults
                 if (isObsidian(file)) {
                     // replace dashes
