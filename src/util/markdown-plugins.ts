@@ -4,6 +4,7 @@ type TNodeValue = { value: string; [key: string]: any };
 type NodeNodeMap = (node: TNodeValue) => TNodeValue;
 type NodeStringMap = (node: TNodeValue) => string;
 import { regexReplace } from './regexReplace';
+import { wikilinksToHypertextLinks } from './wikilinks';
 
 const nodeReplacer: (
     node: TNodeValue,
@@ -56,3 +57,14 @@ export const fixObsidianDashes: NodeNodeMap = node =>
             x => '–'
         ),
     });
+
+export const obsidianWikilinks: (files: string[]) => NodeNodeMap =
+    files => node =>
+        Object.assign(node, {
+            type: 'html',
+            value: wikilinksToHypertextLinks(node.value, {
+                class: 'internal',
+                files: files,
+                linkPreface: '/brain/note',
+            }),
+        });
