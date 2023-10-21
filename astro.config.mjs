@@ -6,6 +6,11 @@ import { visit } from 'unist-util-visit';
 import { readdir } from 'node:fs/promises';
 import { regexReplace } from './src/util/regexReplace';
 import {
+    unicodeArrows,
+    fixObsidianDashes,
+    obsidianWikilinks,
+} from './src/util/markdown-plugins';
+import {
     wikilinksToHypertextLinks,
     wikilinksToMdLinks,
 } from './src/util/wikilinks';
@@ -26,39 +31,13 @@ export default defineConfig({
     integrations: [tailwind(), prefetch()],
     markdown: {
         remarkPlugins: [
+            // mmmm, curry
             () => (ast, file) => {
-                // only do these things on Obsidian vaults
-                if (isObsidian(file)) {
-                    // replace dashes
-                    // wouldn't this look so much nicer if js had some sort of piping syntax?
-                    visit(ast, 'text', node =>
-                        Object.assign(node, {
-                            // replace -- with endash
-                            value: regexReplace(
-                                // replace --- with emdash
-                                regexReplace(
-                                    // normalise text to have only --- and --, not any rendered dashes, which is contributed, I believe, by gfm
-                                    regexReplace(node.value, /—/g, x => '--'),
-                                    /---/g,
-                                    x => '—'
-                                ),
-                                /--/g,
-                                x => '–'
-                            ),
-                        })
-                    );
+                visit(ast, 'text', unicodeArrows);
 
-                    // handle wikilinks
-                    visit(ast, 'text', node =>
-                        Object.assign(node, {
-                            type: 'html',
-                            value: wikilinksToHypertextLinks(node.value, {
-                                class: 'internal',
-                                files: filesProc,
-                                linkPreface: '/brain/note',
-                            }),
-                        })
-                    );
+                if (isObsidian(file)) {
+                    visit(ast, 'text', fixObsidianDashes);
+                    visit(ast, 'text', obsidianWikilinks(filesProc));
                 }
             },
         ],
