@@ -40,3 +40,19 @@ export const unicodeArrows: NodeNodeMap = node => {
     }
     return node;
 };
+
+export const fixObsidianDashes: NodeNodeMap = node =>
+    Object.assign(node, {
+        // replace -- with endash
+        value: regexReplace(
+            // replace --- with emdash
+            regexReplace(
+                // normalise text to have only --- and --, not any rendered dashes, which is contributed, I believe, by gfm
+                regexReplace(node.value, /—/g, x => '--'),
+                /---/g,
+                x => '—'
+            ),
+            /--/g,
+            x => '–'
+        ),
+    });

@@ -5,7 +5,7 @@ import remarkWikilink from '@portaljs/remark-wiki-link';
 import { visit } from 'unist-util-visit';
 import { readdir } from 'node:fs/promises';
 import { regexReplace } from './src/util/regexReplace';
-import { unicodeArrows } from './src/util/markdown-plugins';
+import { unicodeArrows, fixObsidianDashes } from './src/util/markdown-plugins';
 import {
     wikilinksToHypertextLinks,
     wikilinksToMdLinks,
@@ -29,29 +29,12 @@ export default defineConfig({
         remarkPlugins: [
             () => (ast, file) => {
                 // do arrow replacing
-
                 visit(ast, 'text', unicodeArrows);
 
                 // only do these things on Obsidian vaults
                 if (isObsidian(file)) {
                     // replace dashes
-                    // wouldn't this look so much nicer if js had some sort of piping syntax?
-                    visit(ast, 'text', node =>
-                        Object.assign(node, {
-                            // replace -- with endash
-                            value: regexReplace(
-                                // replace --- with emdash
-                                regexReplace(
-                                    // normalise text to have only --- and --, not any rendered dashes, which is contributed, I believe, by gfm
-                                    regexReplace(node.value, /—/g, x => '--'),
-                                    /---/g,
-                                    x => '—'
-                                ),
-                                /--/g,
-                                x => '–'
-                            ),
-                        })
-                    );
+                    visit(ast, 'text', fixObsidianDashes);
 
                     // handle wikilinks
                     visit(ast, 'text', node =>
