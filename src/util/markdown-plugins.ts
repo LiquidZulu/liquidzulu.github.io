@@ -22,15 +22,25 @@ export const [
     leftRightArrow,
 ]: Array<NodeNodeMap> = [
     node =>
-        nodeReplacer(node, node => regexReplace(node.value, /<-/g, x => '←')),
+        nodeReplacer(node, node =>
+            regexReplace(node.value, / <- /g, x => ' ← ')
+        ),
     node =>
-        nodeReplacer(node, node => regexReplace(node.value, /->/g, x => '→')),
+        nodeReplacer(node, node =>
+            regexReplace(node.value, / -> /g, x => ' → ')
+        ),
     node =>
-        nodeReplacer(node, node => regexReplace(node.value, /\|\^/g, x => '↑')),
+        nodeReplacer(node, node =>
+            regexReplace(node.value, / \|\^ /g, x => ' ↑ ')
+        ),
     node =>
-        nodeReplacer(node, node => regexReplace(node.value, /\|v/g, x => '↓')),
+        nodeReplacer(node, node =>
+            regexReplace(node.value, / \|v /g, x => ' ↓ ')
+        ),
     node =>
-        nodeReplacer(node, node => regexReplace(node.value, /<->/g, x => '↔')),
+        nodeReplacer(node, node =>
+            regexReplace(node.value, / <-> /g, x => ' ↔ ')
+        ),
 ];
 
 const arrowFns = [leftArrow, rightArrow, upArrow, downArrow, leftRightArrow];
