@@ -3,7 +3,7 @@ import { getSlug } from './getSlug';
 import { invertLinks } from './invert';
 import type { CollectionEntry } from 'astro:content';
 
-export const wikilinkRegex = /\[\[(([^\]\|]+)(\|[^\]]+)?)\]\]/g;
+export const wikilinkRegex = /(?<=\[)(\[)(([^\]\|]+)(\|[^\]]+)?)\]\]/g;
 
 export const procWikilink = (wikilink: string): [string, string] => {
     const proc = wikilink.replaceAll('[', '').replaceAll(']', '').split('|');
