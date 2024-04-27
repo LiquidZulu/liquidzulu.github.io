@@ -43,11 +43,10 @@ export default defineConfig({
                 }
             },
         ],
-        rehypePlugins:[
-            ()=>(ast)=>{
-                visit(ast,'element',paragraphLinks);
-
-            }
+        rehypePlugins: [
+            () => ast => {
+                visit(ast, 'element', paragraphLinks);
+            },
         ],
     },
 });

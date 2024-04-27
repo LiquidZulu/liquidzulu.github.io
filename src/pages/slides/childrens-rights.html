@@ -508,10 +508,12 @@
                     display: grid;
                     font-family: Helvetica, Arial, sans-serif;
                     grid-template: 'current dragbar next' minmax(140px, 1fr) 'current dragbar note' 2fr 'info    dragbar note' 3em;
-                    grid-template-columns: minmax(
+                    grid-template-columns:
+                        minmax(
                             3px,
                             var(--bespoke-marp-presenter-split-ratio, 66%)
-                        ) 0 minmax(3px, 1fr);
+                        )
+                        0 minmax(3px, 1fr);
                     height: 100%;
                     left: 0;
                     position: absolute;

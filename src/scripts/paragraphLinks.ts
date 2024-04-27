@@ -1,12 +1,16 @@
-const article = document.querySelector('article')
+const article = document.querySelector('article');
 const paragraphElements = article.querySelectorAll('p');
-let paragraphs = [...paragraphElements]
+let paragraphs = [...paragraphElements];
 
 //let id:string[] = []
-paragraphs.forEach((element)=> {
-    if(!element.innerHTML.startsWith('<sup><a') && element.parentElement?.tagName!='BLOCKQUOTE' && element.innerText.length>50){ 
+paragraphs.forEach(element => {
+    if (
+        !element.innerHTML.startsWith('<sup><a') &&
+        element.parentElement?.tagName != 'BLOCKQUOTE' &&
+        element.innerText.length > 50
+    ) {
         //id.push(element.id);
-        element.outerHTML = `<div class='paragraph-wrapper'><a class='section-paragraph-link' href=#${element.id}></a><p id=${element.id}>${element.innerHTML}</p></div>`
+        element.outerHTML = `<div class='paragraph-wrapper'><a class='section-paragraph-link' href=#${element.id}></a><p id=${element.id}>${element.innerHTML}</p></div>`;
     }
 });
 /**function hasDuplicates(array:string[]) {
