@@ -53,6 +53,15 @@ export const unicodeArrows: NodeNodeMap = node => {
     return node;
 };
 
+export const embedNameWithSpaces: NodeNodeMap = node => {
+    // it isn't an image embed if it doesn't start ![img]
+    if (node.value[0] != '!') return node;
+
+    return nodeReplacer(node, node =>
+        regexReplace(node.value, /\/.+\.\S+/g, uri => encodeURI(uri))
+    );
+};
+
 export const fixObsidianDashes: NodeNodeMap = node =>
     Object.assign(node, {
         // replace -- with endash

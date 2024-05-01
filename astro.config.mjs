@@ -8,6 +8,7 @@ import { regexReplace } from './src/util/regexReplace';
 
 import {
     unicodeArrows,
+    embedNameWithSpaces,
     fixObsidianDashes,
     obsidianWikilinks,
     paragraphLinks,
@@ -35,6 +36,7 @@ export default defineConfig({
         remarkPlugins: [
             // mmmm, curry
             () => (ast, file) => {
+                visit(ast, 'text', embedNameWithSpaces);
                 visit(ast, 'text', unicodeArrows);
 
                 if (isObsidian(file)) {
