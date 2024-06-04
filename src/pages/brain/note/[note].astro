@@ -27,7 +27,7 @@ const brain = await getCollection('brain');
 const notes = brain
 .filter(x => !hasTag(x.data.tags, 'meta'))
 .filter(x => !hasTag(x.data.tags, 'year'))
-.map(x => x.id.split('.')[0]);
+.map(x => x.data['title-override'] ?? x.id.split('.')[0]);
 
 const backlinks = computeBacklinks(brain);
 
@@ -122,7 +122,11 @@ import _ from 'lodash';
                                             href={`/brain/note/${x}`}>
                                             <BrainPanel>
                                                 {
-                                                    brain
+                                                brain
+                                                .find(
+                                                entry =>
+                                                entry.slug == x
+                                                ).data['title-override'] ?? brain
                                                         .find(
                                                             entry =>
                                                                 entry.slug == x

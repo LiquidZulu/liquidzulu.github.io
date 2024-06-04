@@ -14,9 +14,9 @@ const { note, tag, backlinks } = Astro.props;
 import { getCollection, getEntry } from 'astro:content';
 const collection = await getCollection('brain');
 const notes = collection
-    .filter(x => !hasTag(x.data.tags, 'meta'))
-    .filter(x => !hasTag(x.data.tags, 'year'))
-    .map(x => x.id.split('.')[0]);
+.filter(x => !hasTag(x.data.tags, 'meta'))
+.filter(x => !hasTag(x.data.tags, 'year'))
+.map(x => x.data['title-override'] ?? x.id.split('.')[0]);
 
 import { BrainTag, FuzzySearch } from './';
 ---
