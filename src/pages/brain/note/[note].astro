@@ -25,9 +25,9 @@ const noteInfo = await getEntryBySlug('brain', slug);
 
 const brain = await getCollection('brain');
 const notes = brain
-    .filter(x => !hasTag(x.data.tags, 'meta'))
-    .filter(x => !hasTag(x.data.tags, 'year'))
-    .map(x => x.id.split('.')[0]);
+.filter(x => !hasTag(x.data.tags, 'meta'))
+.filter(x => !hasTag(x.data.tags, 'year'))
+.map(x => x.id.split('.')[0]);
 
 const backlinks = computeBacklinks(brain);
 
@@ -47,7 +47,7 @@ import _ from 'lodash';
 ---
 
 <Layout
-    title={`${noteInfo.id.split('.')[0]} | Brain`}
+    title={`${noteInfo.data['title-override'] ?? noteInfo.id.split('.')[0]} | Brain`}
     description={getNoteDescription(noteInfo.body)}
     ptype="article"
     published={noteInfo.data.date}
@@ -79,7 +79,7 @@ import _ from 'lodash';
             <!-- {noteInfo.body} -->
             <div class="mb-[8rem]">
                 <h1 class="oswald text-6xl font-bold text-center mt-24 mb-8">
-                    {noteInfo.id.split('.')[0]}
+                    {noteInfo.data['title-override'] ?? noteInfo.id.split('.')[0]}
                 </h1>
                 <ul
                     class="!list-none scale justify-center flex flex-wrap w-full !m-0">
