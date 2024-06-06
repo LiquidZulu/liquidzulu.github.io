@@ -162,13 +162,11 @@ import _ from 'lodash';
 <!-- is:global required to apply styles to the rendered MD -->
 <style is:global lang="scss">
     table {
-        @apply table-fixed;
+        @apply border-separate border-spacing-x-8;
     }
-    tr {
-        @apply flex gap-6;
-    }
-    tbody {
-        @apply grid gap-2;
+    th,
+    td {
+        @apply py-2;
     }
 
     h2,
