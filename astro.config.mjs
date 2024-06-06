@@ -46,7 +46,7 @@ export default defineConfig({
                         obsidianReplaceEmptyTableRow(emptyRow =>
                             Object.assign(emptyRow, {
                                 type: 'html',
-                                value: `<tr class="flex-grow border-t border-zinc-100"></tr>`,
+                                value: `<tr class="flex-grow border-t border-zinc-700"></tr>`,
                             })
                         )
                     );

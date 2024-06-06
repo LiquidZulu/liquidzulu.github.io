@@ -14,15 +14,15 @@ const { note, tag, backlinks } = Astro.props;
 import { getCollection, getEntry } from 'astro:content';
 const collection = await getCollection('brain');
 const notes = collection
-.filter(x => !hasTag(x.data.tags, 'meta'))
-.filter(x => !hasTag(x.data.tags, 'year'))
-.map(x => x.data['title-override'] ?? x.id.split('.')[0]);
+    .filter(x => !hasTag(x.data.tags, 'meta'))
+    .filter(x => !hasTag(x.data.tags, 'year'))
+    .map(x => x.data['title-override'] ?? x.id.split('.')[0]);
 
 import { BrainTag, FuzzySearch } from './';
 ---
 
 <nav class="absolute px-[2vw] py-[1vh] flex z-50" transition:persist>
-    <div class="text-sm breadcrumbs w-[48vw]">
+    <div class="flex text-sm breadcrumbs w-[48vw]">
         <ul>
             <li>
                 <a href="/brain" aria-label="Return to Brain homepage."
@@ -34,11 +34,11 @@ import { BrainTag, FuzzySearch } from './';
             </li>
             {
                 !!note ? (
-                    <li>
+                    <li class="!hidden md:!flex">
                         <a href={`/brain/note/${note}`}>{note}</a>
                     </li>
                 ) : !!tag ? (
-                    <li>
+                    <li class="!hidden md:!flex">
                         <BrainTag name={tag} />
                     </li>
                 ) : (

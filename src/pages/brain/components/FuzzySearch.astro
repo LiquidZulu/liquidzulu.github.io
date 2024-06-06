@@ -10,7 +10,7 @@ const slugMap = !!collection
 <button
     id="fuzzy_search_button"
     type="button"
-    class="border border-zinc-100 hidden w-64 lg:flex items-center text-sm leading-6 text-zinc-100 rounded-sm ring-1 ring-zinc-900/10 shadow-sm py-1.5 pl-2 pr-3 hover:ring-zinc-300 highlight-white/5 hover:bg-zinc-700"
+    class="border border-zinc-100 w-42 md:w-64 flex items-center text-sm leading-6 text-zinc-100 rounded-sm ring-1 ring-zinc-900/10 shadow-sm py-1.5 pl-2 pr-3 hover:ring-zinc-300 highlight-white/5 hover:bg-zinc-700"
     ><svg
         width="24"
         height="24"
@@ -30,7 +30,8 @@ const slugMap = !!collection
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"></circle></svg
-    >Fuzzy search<span class="ml-auto pl-3 flex-none text-xs font-semibold"
+    >Fuzzy search<span
+        class="hidden md:inline-block flex-none ml-auto pl-3 text-xs font-semibold"
         ><kbd
             id="fuzzy_search_key_alt"
             class="kbd border border-zinc-100 bg-[#0B0F13] rounded-sm">Alt</kbd
