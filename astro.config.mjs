@@ -11,6 +11,7 @@ import {
     fixObsidianDashes,
     obsidianWikilinks,
     paragraphLinks,
+    obsidianReplaceEmptyTableRow,
 } from './src/util/markdown-plugins';
 import {
     wikilinksToHypertextLinks,
@@ -36,15 +37,24 @@ export default defineConfig({
             // mmmm, curry
             () => (ast, file) => {
                 visit(ast, 'text', unicodeArrows);
-
                 if (isObsidian(file)) {
                     visit(ast, 'text', fixObsidianDashes);
                     visit(ast, 'text', obsidianWikilinks(filesProc));
+                    visit(
+                        ast,
+                        'tableRow',
+                        obsidianReplaceEmptyTableRow(emptyRow =>
+                            Object.assign(emptyRow, {
+                                type: 'html',
+                                value: `<tr class="flex-grow border-t border-zinc-100"></tr>`,
+                            })
+                        )
+                    );
                 }
             },
         ],
         rehypePlugins: [
-            () => ast => {
+            () => (ast, file) => {
                 visit(ast, 'element', paragraphLinks);
             },
         ],

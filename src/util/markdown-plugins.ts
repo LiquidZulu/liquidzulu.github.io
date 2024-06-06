@@ -81,3 +81,21 @@ export const obsidianWikilinks: (files: string[]) => NodeNodeMap =
                 linkPreface: '/brain/note',
             }),
         });
+export const obsidianReplaceEmptyTableRow: (
+    substituter: NodeNodeMap
+) => NodeNodeMap = substituter => row => {
+    let empty = true;
+
+    for (let cell of row.children) {
+        if (!!cell.children.length) {
+            empty = false;
+            break;
+        }
+    }
+
+    if (empty) {
+        return substituter(row);
+    }
+
+    return row;
+};
