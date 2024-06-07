@@ -1,0 +1,173 @@
+---
+import '../../css/global.css';
+import { SkipToContent, Logo, Footer, LazyImage } from '../../components';
+
+import { getSlug } from '../../util/getSlug';
+import { Debug } from 'astro/components';
+import { Prism } from '@astrojs/prism';
+
+import { getCollection, getEntry } from 'astro:content';
+const collection = await getCollection('mcas');
+
+import Layout from '../../layouts/McasLayout.astro';
+---
+
+<Layout>
+    <main class="text-slate-50 w-screen">
+        <SkipToContent href="#1" />
+        <div class="w-full h-[80svh] top-0 grid place-items-center">
+            <div
+                class="mx-6 flex flex-wrap w-full justify-center items-center gap-14">
+                <div class="space-y-5 text-center">
+                    <h1 class="text-slate-50 text-8xl font-black">MCAS</h1>
+                    <h2 class="text-slate-300 text-2xl md:text-3xl font-medium">
+                        Procedural animation, without the <span
+                            class="gradient-text font-black bg-gradient-to-r from-lime-500 to-emerald-500"
+                            >hassle</span
+                        >.
+                    </h2>
+                </div>
+                <div class="rounded-md mockup-code bg-slate-950">
+                    <pre data-prefix="$"><code>mcas -q script.org</code></pre>
+                    <pre
+                        data-prefix=">"
+                        class="text-yellow-300"><code>generating animations...</code></pre>
+                    <pre
+                        data-prefix=">"
+                        class="text-green-500"><code>Done!</code></pre>
+                </div>
+            </div>
+        </div>
+        <!--
+             import aristotle from '@internal/test/assets/aristotle.png';
+             import quotes from '@internal/test/assets/aristotle.org-quotes';
+             import { makeQuoteScene } from '@internal/lib/scenes/quote';
+             //import { i } from '@internal/lib/util';
+
+             // if you want to have multiple possible authors, you need to add their pictures here.
+             const cardMap = new Map([['aristotle', aristotle]]);
+
+             export const quoteScenes = quotes.map((x, i) =>
+             makeQuoteScene(cardMap.get(x.author), x, x.citation, `quote-${i}`, {
+             bg: true,
+             }),
+             );
+        -->
+        <div class="w-full top-0 grid gap-32 place-items-center">
+            <div class="mx-6 grid w-full justify-center items-center gap-14">
+                <div class="space-y-5 text-center">
+                    <h2 class="text-slate-300 text-2xl md:text-3xl font-medium">
+                        Beautiful animations, <br />
+                        <span
+                            class="gradient-text font-black bg-gradient-to-r from-lime-500 to-emerald-500"
+                            >minimal code</span
+                        >.
+                    </h2>
+                </div>
+                <div
+                    class="flex flex-wrap justify-center place-items-center gap-12 max-w-[100vw]">
+                    <Prism
+                        code={`import aristotle from './assets/aristotle.png';
+import quotes from './assets/aristotle.org-quotes';
+import { makeQuoteScene } from 'mcas/scenes/quote';
+
+const cardMap = new Map([['aristotle', aristotle]]);
+
+export const quoteScenes = quotes.map((x, i) =>
+    makeQuoteScene(
+        cardMap.get(x.author),
+        x,
+        x.citation,
+        \`quote-\${i}\`,
+        { bg: true, }
+    )
+);`}
+                        lang="ts"
+                    />
+                    <iframe
+                        width="640"
+                        height="360"
+                        src="https://www.youtube.com/embed/GawioXKMXp4"
+                        title="mcas quote example"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen></iframe>
+                </div>
+            </div>
+            <div
+                class="mx-6 p-6 flex flex-row-reverse flex-wrap w-full justify-center items-center gap-14">
+                <div class="space-y-5 text-center">
+                    <h2 class="text-slate-300 text-2xl md:text-3xl font-medium">
+                        <span
+                            class="gradient-text font-black bg-gradient-to-r from-lime-500 to-emerald-500"
+                            >Integrates</span
+                        > with your editing workflow.
+                    </h2>
+                    <h3 class="text-xl">
+                        Export animations as image sequences <br /> or .mp4 files
+                        for use in any non-linear editor.
+                    </h3>
+                </div>
+                <div
+                    class="h-32 flex flex-row justify-center items-center gap-8">
+                    <LazyImage slug="mcas/premier.png" />
+                    <LazyImage slug="mcas/resolve.png" />
+                    <LazyImage slug="mcas/kdenlive.png" />
+                </div>
+            </div>
+            <div
+                class="mx-6 p-6 flex flex-row flex-wrap w-full justify-center items-center gap-14">
+                <div class="space-y-5 text-center">
+                    <h2 class="text-slate-300 text-2xl md:text-3xl font-medium">
+                        <span
+                            class="gradient-text font-black bg-gradient-to-r from-lime-500 to-emerald-500"
+                            >Extended</span
+                        > asset library.
+                    </h2>
+                    <h3 class="text-xl">
+                        MCAS comes with extended <a
+                            class="underline text-emerald-500"
+                            href="https://motioncanvas.io">motion canvas</a
+                        >
+                        <br /> components and utilities.
+                    </h3>
+                </div>
+                <div
+                    class="w-full md:w-[60vw] lg:w-[40vw] flex flex-wrap flex-row justify-center items-center gap-8">
+                    <Prism
+                        code={`// ...
+
+import {
+    colors,
+    McasTxt as Txt,
+    popin,
+    popout
+} from 'mcas';
+
+export default makeScene2D(function* (view) {
+    view.fill(colors.bg);
+
+    const glowingText = createRef<Txt>();
+    view.add(
+        <Txt
+            glow // <-- MCAS specific
+            fontFamily="Oswald"
+            fill="red"
+            ref={glowingText}>
+            HELLO WORLD
+        </Txt>,
+    );
+
+    yield* popin(glowingText);
+    yield* waitFor(5);
+    yield* popout(glowingText);
+});`}
+                        lang="tsx"
+                    />
+                </div>
+            </div>
+        </div>
+    </main>
+    <Footer noShadow={true} bg />
+</Layout>

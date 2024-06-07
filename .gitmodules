@@ -1,3 +1,6 @@
 [submodule "src/content/brain"]
 	path = src/content/brain
 	url = https://github.com/LiquidZulu/brain.git
+[submodule "src/content/mcas"]
+	path = src/content/mcas
+	url = https://github.com/LiquidZulu/mcas
