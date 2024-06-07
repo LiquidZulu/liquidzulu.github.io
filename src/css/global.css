@@ -83,6 +83,10 @@ p > .emphasis {
        uppercase;
 }
 
+.mcas-emphasis {
+    @apply gradient-text font-black bg-gradient-to-r from-lime-500 to-emerald-500;
+}
+
 .footer-shadow {
     box-shadow: 0 0 10vh 10vh black;
 }
