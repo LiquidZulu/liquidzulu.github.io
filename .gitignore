@@ -30,5 +30,3 @@ treefmt.toml
 
 # unlighthouse
 .unlighthouse
-
-src/content/mcas/*
