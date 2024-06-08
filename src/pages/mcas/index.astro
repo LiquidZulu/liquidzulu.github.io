@@ -106,7 +106,6 @@ export const quoteScenes = quotes.map((x, i) =>
                     </h2>
                     <h3 class="text-xl">
                         MCAS is built on top of <a
-                            class="underline text-emerald-500"
                             href="https://motioncanvas.io">motion canvas</a
                         >,<br /> meaning you can write your animations<br /> in whatever
                         text editor you desire,<br /> and have it all rendered in
@@ -143,7 +142,6 @@ export const quoteScenes = quotes.map((x, i) =>
                     </h2>
                     <h3 class="text-xl">
                         MCAS comes with extended <a
-                            class="underline text-emerald-500"
                             href="https://motioncanvas.io">motion canvas</a
                         >
                         <br /> components and utilities.
@@ -212,5 +210,8 @@ export default makeScene2D(function* (view) {
     ul li:before {
         content: '⮕';
         margin-right: 0.4em;
+    }
+    a {
+        @apply hover:underline text-emerald-500;
     }
 </style>
