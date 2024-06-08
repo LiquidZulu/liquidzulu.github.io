@@ -2,6 +2,7 @@ import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 import prefetch from '@astrojs/prefetch';
 import icon from 'astro-icon';
+import markdoc from '@astrojs/markdoc';
 import remarkWikilink from '@portaljs/remark-wiki-link';
 import { visit } from 'unist-util-visit';
 import { readdir } from 'node:fs/promises';
@@ -29,7 +30,7 @@ const isObsidian = file => file.path.match(/content\/brain/g) !== null; // | che
 
 export default defineConfig({
     site: 'https://liquidzulu.github.io',
-    integrations: [tailwind(), prefetch(), icon()],
+    integrations: [tailwind(), prefetch(), icon(), markdoc()],
     markdown: {
         remarkPlugins: [
             // mmmm, curry

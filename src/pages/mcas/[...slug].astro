@@ -3,6 +3,8 @@ import '../../css/global.css';
 import { Debug } from 'astro/components';
 import { getCollection, getEntryBySlug } from 'astro:content';
 
+const mcas = await getCollection('mcas');
+
 export const getStaticPaths = async () => {
     const mcas = await getCollection('mcas');
     return mcas.map(i => ({ params: { slug: i.slug } }));
@@ -14,18 +16,36 @@ const info = await getEntryBySlug('mcas', slug);
 const { Content, headings } = await info.render();
 
 import Layout from '../../layouts/McasLayout.astro';
-import { SkipToContent, Footer } from '../../components';
+import { SkipToContent, Footer, TOC } from '../../components';
 ---
 
 <Layout>
     <SkipToContent href="#md-content" />
-    <main id="md-content" class="w-full">
+    <main id="md-content" class="w-full flex flex-row">
+        <TOC slug={slug} headings={headings}>
+            <li class="cubano border-b-2 border-zinc-700 text-lg">
+                documentation
+            </li>
+            <li>
+                {
+                    mcas.map(({ slug }) => (
+                        <a class="text-gray-600" href={`/mcas/${slug}`}>
+                            <div
+                                id={`sidebar-section-${slug}`}
+                                class="transition-all ease-in-out p-1 my-1 flex items-center hover:text-gray-400 focus:text-gray-400">
+                                <span class="mr-auto text-lg pr-2">{slug}</span>
+                            </div>
+                        </a>
+                    ))
+                }
+            </li>
+        </TOC>
         <article
             class="max-w-[64rem] m-auto min-h-[80vh] mt-6 text-justify md:p-16 p-6">
             <Content />
         </article>
     </main>
-    <Footer noShadow={true} bg />
+    <Footer />
 </Layout>
 <!-- is:global required to apply styles to the rendered MD -->
 <style is:global lang="scss">

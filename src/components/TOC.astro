@@ -63,14 +63,32 @@ import { Debug } from 'astro/components';
                         if (usure) {
                             //check if element is on screen
                             var rect = element.getBoundingClientRect();
-                            var viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight);
-                            if ((rect.bottom < 0 || rect.top - viewHeight >= 0)) {
+                            var viewHeight = Math.max(
+                                document.documentElement.clientHeight,
+                                window.innerHeight
+                            );
+                            if (rect.bottom < 0 || rect.top - viewHeight >= 0) {
                                 //if not on screen then move element to view
-                                if(rect.top > viewHeight/2){
-                                    console.log('botom')
-                                    element.parentElement.parentElement.parentElement.parentElement.scroll({left:0, top:element.offsetTop- viewHeight + element.offsetHeight,behavoir:"smooth"});
-                                }else{
-                                    element.parentElement.parentElement.parentElement.parentElement.scroll({left:0, top:element.offsetTop,behavoir:"smooth"});
+                                if (rect.top > viewHeight / 2) {
+                                    console.log('botom');
+                                    element.parentElement.parentElement.parentElement.parentElement.scroll(
+                                        {
+                                            left: 0,
+                                            top:
+                                                element.offsetTop -
+                                                viewHeight +
+                                                element.offsetHeight,
+                                            behavoir: 'smooth',
+                                        }
+                                    );
+                                } else {
+                                    element.parentElement.parentElement.parentElement.parentElement.scroll(
+                                        {
+                                            left: 0,
+                                            top: element.offsetTop,
+                                            behavoir: 'smooth',
+                                        }
+                                    );
                                 }
                             }
                             modClass(
@@ -106,7 +124,6 @@ import { Debug } from 'astro/components';
                         heights.findIndex(e => e.height > 0) - 1;
 
                     sidebarHeadings.forEach(h => {
-                        
                         switch (toHighlight) {
                             // if findIndex cant find it
                             case -2: {
@@ -245,6 +262,7 @@ import { Debug } from 'astro/components';
                 }
             })()
         }
+        <slot />
     </ul>
 </toc-sidebar>
 
