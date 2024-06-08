@@ -1,6 +1,7 @@
 ---
 import '../../css/global.css';
 import { SkipToContent, Logo, Footer, LazyImage } from '../../components';
+import { McasNavbar } from './components';
 
 import { Prism } from '@astrojs/prism';
 
@@ -10,6 +11,7 @@ import Layout from '../../layouts/McasLayout.astro';
 <Layout>
     <main class="text-slate-50 w-screen">
         <SkipToContent href="#1" />
+        <McasNavbar />
         <div class="w-full h-[80svh] top-0 grid place-items-center">
             <div
                 class="mx-6 flex flex-wrap w-full justify-center items-center gap-14">

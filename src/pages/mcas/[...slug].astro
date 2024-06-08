@@ -2,6 +2,7 @@
 import '../../css/global.css';
 import { Debug } from 'astro/components';
 import { getCollection, getEntryBySlug } from 'astro:content';
+import { McasNavbar } from './components';
 
 const mcas = await getCollection('mcas');
 
@@ -21,6 +22,7 @@ import { SkipToContent, Footer, TOC } from '../../components';
 
 <Layout>
     <SkipToContent href="#md-content" />
+    <McasNavbar />
     <main id="md-content" class="w-full flex flex-row">
         <TOC slug={slug} headings={headings}>
             <li class="cubano border-b-2 border-zinc-700 text-lg">

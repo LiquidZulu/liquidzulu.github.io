@@ -3,6 +3,7 @@ export { default as Blob } from './Blob.astro';
 export { default as BrainSearch } from './BrainSearch.astro';
 export { default as BuyCoffee } from './BuyCoffee.astro';
 export { default as Card } from './Card.astro';
+export { default as FuzzySearch } from './FuzzySearch.astro';
 export { default as Footer } from './Footer.astro';
 export { default as LazyImage } from './LazyImage.astro';
 export { default as LessonPagination } from './LessonPagination.astro';
