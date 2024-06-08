@@ -1,9 +1,9 @@
 ---
 import Fuse from 'fuse.js';
-import { getSlug } from '../../../util/getSlug';
-const { collection } = Astro.props;
+import { getSlug } from '../util/getSlug';
+const { collection, prefix, slugify } = Astro.props;
 const slugMap = !!collection
-    ? Object.fromEntries(collection.map(k => [k, getSlug(k)]))
+    ? Object.fromEntries(collection.map(k => [k, !!slugify ? getSlug(k) : k]))
     : {};
 ---
 
@@ -56,12 +56,15 @@ const slugMap = !!collection
     <ul id="fuzzy_search_results" class="list-none w-[40vw] h-[30vh] pt-2"></ul>
 </dialog>
 
-<script define:vars={{ collection: collection, slugMap: slugMap }} defer>
+<script
+    define:vars={{ collection: collection, prefix: prefix, slugMap: slugMap }}
+    defer
+>
     const collectionElements = collection.map(x => {
         let li = document.createElement('li');
         let a = document.createElement('a');
         a.innerText = x;
-        a.href = '/brain/note/' + slugMap[x];
+        a.href = !!prefix ? prefix + slugMap[x] : slugMap[x];
         li.appendChild(a);
         li.id = x;
         li.style.display = 'none';

@@ -1,34 +1,64 @@
 ---
-import Icon from './Icon.astro';
-const { slug, url, alt } = Astro.props;
+import { Icon } from 'astro-icon/components';
+const { slug, url, alt, className } = Astro.props;
+
+console.log(slug, url, alt);
 ---
 
 <a href={url} aria-label={!!alt ? alt : ''} title={!!alt ? alt : ''}>
     <Icon
-        icon={slug}
-        class={`fill-zinc-500 transition-all ease-in-out hover:scale-110 w-8 h-8 icon-${slug}`}
+        name={slug}
+        class={`text-zinc-500 transition-all ease-in-out hover:scale-110 w-8 h-8 icon-${slug} ${className}`}
     />
 </a>
 
+<script>
+    // this USED to work with just CSS and then SOMEBODY decided it would be a good idea to deprecate the function that I used for my fucking svg loader and now I am stuck using this piece of garbage that apparently works by fucking magic and if you don't say the magic words right then standard fucking css breaks down and takes a nap when you are trying to fucking colour the god damn logo
+    for (let astro of document.getElementsByClassName('icon-astro')) {
+        astro.addEventListener('mouseover', () => {
+            astro.getElementsByClassName('astro-a')[0].style.fill = '#fff';
+            astro.getElementsByClassName('astro-flame')[0].style.fill =
+                '#ff5d01';
+        });
+        astro.addEventListener('mouseout', () => {
+            astro.getElementsByClassName('astro-a')[0].style.fill = '#71717A';
+            astro.getElementsByClassName('astro-flame')[0].style.fill =
+                '#71717A';
+        });
+    }
+</script>
+
 <style lang="scss" is:global>
+    /* [data-icon='astro']:hover,
     .icon-astro:hover {
-        .astro-flame {
-            @apply fill-[#ff5d01];
-        }
-        .astro-a {
-            @apply fill-[#fff];
-        }
+    @apply text-inherit;
+    .astro-flame {
+
+    @apply !text-[#ff5d01];
     }
+    .astro-a {
+    @apply text-[#fff];
+    }
+    }
+
+    [data-icon='astro']:not(:hover),
+    .icon-astro:not(:hover) {
+    @apply text-zinc-500;
+    } */
+    [data-icon='github']:hover,
     .icon-github:hover {
-        @apply fill-[#F0F6FC];
+        @apply text-[#F0F6FC];
     }
+    [data-icon='youtube']:hover,
     .icon-youtube:hover {
-        @apply fill-[#FD0101];
+        @apply text-[#FD0101];
     }
+    [data-icon='twitter']:hover,
     .icon-twitter:hover {
-        @apply fill-[#1D9FF0];
+        @apply text-[#1D9FF0];
     }
+    [data-icon='discord']:hover,
     .icon-discord:hover {
-        @apply fill-[#5662F6];
+        @apply text-[#5662F6];
     }
 </style>

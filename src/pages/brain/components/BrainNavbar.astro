@@ -1,10 +1,11 @@
 ---
+import { Icon } from 'astro-icon/components';
 import {
-    Icon,
     BuyCoffee,
     Navbar,
     Footer,
     SkipToContent,
+    FuzzySearch,
 } from '../../../components';
 
 import { hasTag } from '../../../util/hasTag';
@@ -18,7 +19,7 @@ const notes = collection
     .filter(x => !hasTag(x.data.tags, 'year'))
     .map(x => x.data['title-override'] ?? x.id.split('.')[0]);
 
-import { BrainTag, FuzzySearch } from './';
+import { BrainTag } from './';
 ---
 
 <nav class="absolute px-[2vw] py-[1vh] flex z-50" transition:persist>
@@ -27,7 +28,7 @@ import { BrainTag, FuzzySearch } from './';
             <li>
                 <a href="/brain" aria-label="Return to Brain homepage."
                     ><Icon
-                        icon="brain"
+                        name="brain"
                         class={`fill-zinc-500 transition-all ease-in-out hover:scale-110 w-8 h-8 icon-brain`}
                     /></a
                 >
@@ -48,6 +49,6 @@ import { BrainTag, FuzzySearch } from './';
         </ul>
     </div>
     <div class="mt-[1vh] w-[48vw] grid place-items-end">
-        <FuzzySearch collection={notes} />
+        <FuzzySearch slugify prefix="/brain/note/" collection={notes} />
     </div>
 </nav>
