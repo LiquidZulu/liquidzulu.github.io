@@ -2,12 +2,7 @@
 import '../../css/global.css';
 import { SkipToContent, Logo, Footer, LazyImage } from '../../components';
 
-import { getSlug } from '../../util/getSlug';
-import { Debug } from 'astro/components';
 import { Prism } from '@astrojs/prism';
-
-import { getCollection, getEntry } from 'astro:content';
-////const collection = await getCollection('mcas');
 
 import Layout from '../../layouts/McasLayout.astro';
 ---
@@ -92,9 +87,21 @@ export const quoteScenes = quotes.map((x, i) =>
                 </div>
                 <div
                     class="h-32 flex flex-row justify-center items-center gap-8">
-                    <LazyImage slug="mcas/premier.png" />
-                    <LazyImage slug="mcas/resolve.png" />
-                    <LazyImage slug="mcas/kdenlive.png" />
+                    <img
+                        class="h-full"
+                        src="/images/mcas/premier.png"
+                        loading="lazy"
+                    />
+                    <img
+                        class="h-full"
+                        src="/images/mcas/resolve.png"
+                        loading="lazy"
+                    />
+                    <img
+                        class="h-full"
+                        src="/images/mcas/kdenlive.png"
+                        loading="lazy"
+                    />
                 </div>
             </div>
             <div

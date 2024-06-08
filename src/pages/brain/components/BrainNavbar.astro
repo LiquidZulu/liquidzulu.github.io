@@ -1,11 +1,6 @@
 ---
-import {
-    Icon,
-    BuyCoffee,
-    Navbar,
-    Footer,
-    SkipToContent,
-} from '../../../components';
+import Icon from 'astro-icon/components';
+import { BuyCoffee, Navbar, Footer, SkipToContent } from '../../../components';
 
 import { hasTag } from '../../../util/hasTag';
 
@@ -27,7 +22,7 @@ import { BrainTag, FuzzySearch } from './';
             <li>
                 <a href="/brain" aria-label="Return to Brain homepage."
                     ><Icon
-                        icon="brain"
+                        name="brain"
                         class={`fill-zinc-500 transition-all ease-in-out hover:scale-110 w-8 h-8 icon-brain`}
                     /></a
                 >
