@@ -27,6 +27,9 @@ jobs:
               uses: actions/checkout@v3
               with:
                   submodules: 'true'
+            - name: Install motion-canvas dependencies
+              run: |
+                  npm run mc:install
             - name: Render motion-canvas animations
               run: |
                   npm run mc:build
