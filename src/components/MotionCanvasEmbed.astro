@@ -1,0 +1,46 @@
+---
+// from https://github.com/WaldemarLehner
+// see: https://github.com/WaldemarLehner/astro-motion-canvas-poc
+interface Props {
+    // Url pointing to Module contains the Animation definition
+    url: string;
+    mode?: 'raw' | 'small' | 'large';
+    caption?: string;
+}
+
+const mode = Astro.props.mode ?? 'small';
+const caption = Astro.props.caption;
+
+const classes = [
+    'dark:invert',
+    'self-stretch',
+    'flex',
+    'flex-col',
+    'items-center',
+    'mx-auto',
+];
+
+if (mode === 'small') {
+    classes.push('max-w-md');
+} else if (mode === 'large') {
+    classes.push('max-w-5xl');
+}
+---
+
+{mode === 'raw' && <motion-canvas-player src={Astro.props.url} />}
+
+{
+    mode !== 'raw' && (
+        <div class:list={classes}>
+            <motion-canvas-player src={Astro.props.url} />
+            {caption && <figcaption class=" mb-5">{caption}</figcaption>}
+        </div>
+    )
+}
+
+<script>
+    // We just care about a side effect (defining custom element) of the import here.
+    // That's why we dont import the class definition (and also why the module does not export anything)
+    import '@motion-canvas/player';
+    import '@motion-canvas/core';
+</script>

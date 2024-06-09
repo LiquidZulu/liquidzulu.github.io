@@ -11,7 +11,7 @@ import {
     SignalValue,
     loopFor,
 } from '@motion-canvas/core';
-import { colors, McasTxt as Txt, popin, popout } from 'mcas';
+import { colors, McasTxt as Txt } from 'mcas/lib';
 import cursor from './assets/cursor.png';
 
 export default makeScene2D(function* (view) {
@@ -92,7 +92,7 @@ export default makeScene2D(function* (view) {
 
     code().selection(lines(1));
 
-    const frame = (pos: SignalValue<number>, color: PossibleColor) => (
+    const frame = (pos: () => number, color: PossibleColor) => (
         <Rect
             y={-67}
             x={createSignal(

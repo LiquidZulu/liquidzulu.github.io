@@ -1,10 +1,18 @@
 ---
 import '../../css/global.css';
-import { SkipToContent, Logo, Footer, LazyImage } from '../../components';
+import {
+    SkipToContent,
+    Logo,
+    Footer,
+    LazyImage,
+    MotionCanvasEmbed,
+} from '../../components';
 import { McasNavbar } from './components';
 
 import { Prism } from '@astrojs/prism';
 
+import test from '../../../animation/dist/test?url';
+import imperativeAnimation from '../../../animation/dist/imperative-animation?url';
 import Layout from '../../layouts/McasLayout.astro';
 ---
 
@@ -16,6 +24,8 @@ import Layout from '../../layouts/McasLayout.astro';
             <div
                 class="mx-6 flex flex-wrap w-full justify-center items-center gap-14">
                 <div class="space-y-5 text-center">
+                    <MotionCanvasEmbed url={test} />
+                    <MotionCanvasEmbed url={imperativeAnimation} />
                     <h1 class="text-slate-50 text-8xl font-black">MCAS</h1>
                     <h2 class="text-slate-300 text-2xl md:text-3xl font-medium">
                         Procedural animation, without the <span
