@@ -9,7 +9,7 @@
         "preview": "astro preview",
         "astro": "astro",
         "perf": "./unlighthouse",
-        "mc:install": "(cd animatino && npm install)",
+        "mc:install": "(cd animation && npm install)",
         "mc:build": "(cd animation && npm run build)",
         "mc:dev": "(cd animation && npm run serve)"
     },
