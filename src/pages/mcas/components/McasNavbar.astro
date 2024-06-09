@@ -15,13 +15,14 @@ const { note, tag, backlinks } = Astro.props;
 import { getCollection, getEntry } from 'astro:content';
 const collection = await getCollection('mcas');
 const docs = collection.map(x => x.slug);
+console.log(Astro.url);
 ---
 
 <nav class="absolute w-screen px-[2vw] py-[1vh] flex z-50" transition:persist>
     <div
         class="mt-[1vh] w-full flex flex-row place-items-center justify-end gap-4">
         {
-            Astro.url.pathname == '/mcas' ? (
+            Astro.url.pathname.length < 7 ? (
                 ''
             ) : (
                 <a href="/mcas" class="hover:scale-125 duration-100 text-3xl">

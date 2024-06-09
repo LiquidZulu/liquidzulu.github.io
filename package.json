@@ -8,7 +8,9 @@
         "build": "astro build",
         "preview": "astro preview",
         "astro": "astro",
-        "perf": "./unlighthouse"
+        "perf": "./unlighthouse",
+        "mc:build": "(cd animation && npm run build)",
+        "mc:dev": "(cd animation && npm run serve)"
     },
     "dependencies": {
         "@astrojs/markdoc": "^0.11.0",

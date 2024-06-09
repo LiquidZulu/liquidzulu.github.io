@@ -1,0 +1,19 @@
+#+title: Aristotle
+
+Blah blah, some sort of text, yadda yadda.
+
+#+begin_quote
+When things have only a name in common and the definition of being which corresponds to the name is different, they are called /homonymous/. Thus, for example, both a man and a picture are animals. These have only a name in common and the definition of being which corresponds to the name is different; for if one is to say what being an animal is for each of them, one will give two distinct definitions.
+
+When things have the name in common and the definition of being which corresponds to the name is the same, they are called /synonymous/. Thus, for example, both a man and an ox are animals. Each of these is called, by a common name, an animal, and the definition of being is also the same; for if one is to give the definition of each—what being an animal is for each of them—one will give the same definition.[fn:1]
+#+end_quote
+
+#+begin_quote
+There are these difficulties, then, [in the way of the assumption that that which is not can be in motion], and it may be further objected that, whereas everything which is in motion is in place, that which is not is not in place; for then it would be somewhere.[fn:2]
+#+end_quote
+
+* Footnotes
+
+[fn:1]Aristotle, /Categories/, 1a1-1a12
+
+[fn:2]Aristotle, /Physics/, 225a30-225a34

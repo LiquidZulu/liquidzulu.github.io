@@ -79,11 +79,19 @@ export default makeScene2D(function* (view) {
                 gap={48}
                 direction="column">
                 <Rect width="100%" gap={6} direction="column">
-                    <Txt.b fill="#A0A0A0">DECLARATIVE</Txt.b>
+                    <Txt.b
+                        fontFamily={`ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"`}
+                        fill="#A0A0A0">
+                        DECLARATIVE
+                    </Txt.b>
                     {timeline()}
                 </Rect>
                 <Rect width="100%" gap={6} direction="column">
-                    <Txt.b fill="#A0A0A0">IMPERATIVE</Txt.b>
+                    <Txt.b
+                        fontFamily={`ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"`}
+                        fill="#A0A0A0">
+                        IMPERATIVE
+                    </Txt.b>
                     {timeline()}
                 </Rect>
             </Rect>
