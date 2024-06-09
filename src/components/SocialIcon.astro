@@ -1,8 +1,6 @@
 ---
 import { Icon } from 'astro-icon/components';
 const { slug, url, alt, className } = Astro.props;
-
-console.log(slug, url, alt);
 ---
 
 <a href={url} aria-label={!!alt ? alt : ''} title={!!alt ? alt : ''}>

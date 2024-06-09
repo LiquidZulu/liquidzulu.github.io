@@ -70,7 +70,6 @@ import { Debug } from 'astro/components';
                             if (rect.bottom < 0 || rect.top - viewHeight >= 0) {
                                 //if not on screen then move element to view
                                 if (rect.top > viewHeight / 2) {
-                                    console.log('botom');
                                     element.parentElement.parentElement.parentElement.parentElement.scroll(
                                         {
                                             left: 0,
