@@ -14,8 +14,8 @@ Code.defaultHighlighter = new LezerHighlighter(
     ])
 );
 
-import imperativeAnimation from './scenes/imperative-animation?scene';
+import scene from './scene?scene';
 
 export default makeProject({
-    scenes: [imperativeAnimation],
+    scenes: [scene],
 });

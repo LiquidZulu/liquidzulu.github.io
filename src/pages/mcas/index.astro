@@ -1,10 +1,19 @@
 ---
 import '../../css/global.css';
-import { SkipToContent, Logo, Footer, LazyImage } from '../../components';
+import {
+    SkipToContent,
+    Logo,
+    Footer,
+    LazyImage,
+    MotionCanvasEmbed,
+} from '../../components';
 import { McasNavbar } from './components';
 
 import { Prism } from '@astrojs/prism';
 
+import imperativeAnimation from '../../../animation/dist/imperative-animation?url';
+import quoteExample from '../../../animation/dist/quote-example?url';
+import glowingTextPopin from '../../../animation/dist/glowing-text-popin?url';
 import Layout from '../../layouts/McasLayout.astro';
 ---
 
@@ -35,7 +44,7 @@ import Layout from '../../layouts/McasLayout.astro';
             </div>
         </div>
         <div class="w-full top-0 grid gap-32 place-items-center">
-            <div class="mx-6 grid w-full justify-center items-center gap-14">
+            <div class="mx-6 grid w-full justify-center gap-14">
                 <div class="space-y-5 text-center">
                     <h2 class="text-slate-300 text-2xl md:text-3xl font-medium">
                         Beautiful animations, <br />
@@ -43,36 +52,20 @@ import Layout from '../../layouts/McasLayout.astro';
                     </h2>
                 </div>
                 <div
-                    class="flex flex-wrap justify-center place-items-center gap-12 max-w-[100vw]">
+                    class="flex flex-row flex-wrap justify-center place-items-center place-content-center items-center justify-items-center content-center align-items-center place-items-center gap-12 max-w-[100vw]">
                     {/* prettier-ignore */}
                     <Prism
-                        code={`import aristotle from './assets/aristotle.png';
-import quotes from './assets/aristotle.org-quotes';
-import { makeQuoteScene } from 'mcas/scenes/quote';
-
-const cardMap = new Map([['aristotle', aristotle]]);
-
-export const quoteScenes = quotes.map((x, i) =>
-  makeQuoteScene(
-    cardMap.get(x.author),
-    x,
-    x.citation,
-    \`quote-\${i}\`,
-    { bg: true, }
-  )
-);`}
+                        code={// prettier-ignore
+                        `import aristotle from './assets/aristotle.png';\nimport quotes from './assets/aristotle.org-quotes';\nimport { makeQuoteScene } from 'mcas/scenes/quote';\n\nconst cardMap = new Map([['aristotle', aristotle]]);\n\nexport const quoteScenes = quotes.map((x, i) =>\n  makeQuoteScene(\n    cardMap.get(x.author),\n    x,\n    x.citation,\n    \`quote-\${i}\`,\n    { bg: true, }\n  )\n);`}
                         lang="ts"
                     />
-                    <iframe
-                        class="max-w-[640px] max-h-[360px]"
-                        width="1920"
-                        height="1080"
-                        src="https://www.youtube.com/embed/GawioXKMXp4?autoplay=1&loop=1&playlist=GawioXKMXp4&mute=1"
-                        title="mcas quote example"
-                        frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        referrerpolicy="strict-origin-when-cross-origin"
-                        allowfullscreen></iframe>
+                    <MotionCanvasEmbed
+                        url={quoteExample}
+                        mode="large"
+                        classes={'flex flex-content w-[50vw] place-self-center self-center justify-self-center justify-center place-items-center place-content-center items-center justify-items-center content-center align-items-center place-items-center '.split(
+                            ' '
+                        )}
+                    />
                 </div>
             </div>
             <div
@@ -155,16 +148,11 @@ export const quoteScenes = quotes.map((x, i) =>
                         > deals with <i>duration</i>, not frames.
                     </h3>
                 </div>
-                <iframe
-                    class="max-w-[640px] max-h-[360px]"
-                    width="1920"
-                    height="1080"
-                    src="https://www.youtube.com/embed/9H1PrmE4B4g?autoplay=1&loop=1&playlist=9H1PrmE4B4g&mute=1"
-                    title="mcas quote example"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin"
-                    allowfullscreen></iframe>
+                <MotionCanvasEmbed
+                    url={imperativeAnimation}
+                    mode="large"
+                    classes={'w-[50vw]'.split(' ')}
+                />
             </div>
             <div
                 class="mx-6 p-6 flex flex-row flex-wrap w-full justify-center items-center gap-14">
@@ -184,16 +172,13 @@ export const quoteScenes = quotes.map((x, i) =>
                             <br /> components and utilities.
                         </h3>
                     </div>
-                    <iframe
-                        class="max-w-[640px] max-h-[360px]"
-                        width="1920"
-                        height="1080"
-                        src="https://www.youtube.com/embed/HThjMbYqpvI?autoplay=1&loop=1&playlist=HThjMbYqpvI&mute=1"
-                        title="mcas glowing text popin popout"
-                        frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        referrerpolicy="strict-origin-when-cross-origin"
-                        allowfullscreen></iframe>
+                    <MotionCanvasEmbed
+                        url={glowingTextPopin}
+                        mode="large"
+                        classes={'flex flex-content w-[50vw] place-self-center self-center justify-self-center justify-center place-items-center place-content-center items-center justify-items-center content-center align-items-center place-items-center '.split(
+                            ' '
+                        )}
+                    />
                 </div>
                 <div
                     class="w-full md:w-[60vw] lg:w-[40vw] flex flex-wrap flex-row justify-center items-center gap-8">
