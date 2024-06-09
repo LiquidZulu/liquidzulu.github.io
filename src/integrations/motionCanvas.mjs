@@ -19,7 +19,8 @@ export const copyMotionCanvasDeps = (path, extensions) => ({
                 const potentialHash = filename
                     .split('.')
                     .reverse()[1]
-                    .split('-')[1];
+                    .split('-')
+                    .reverse()[0];
                 if (potentialHash.length != 8) {
                     return false;
                 }
@@ -27,8 +28,8 @@ export const copyMotionCanvasDeps = (path, extensions) => ({
                 return /^[a-fA-z0-9]+$/.test(potentialHash);
             });
 
-            console.log(allPaths);
-            console.log(dependencies);
+            //console.log(allPaths);
+            //console.log(dependencies);
 
             for (const dep of dependencies) {
                 const from = dep;
