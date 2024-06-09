@@ -6,9 +6,8 @@ import markdoc from '@astrojs/markdoc';
 import remarkWikilink from '@portaljs/remark-wiki-link';
 import { visit } from 'unist-util-visit';
 import { readdir } from 'node:fs/promises';
-import { copyFileSync } from 'node:fs';
-import { globSync } from 'glob';
 import { join } from 'node:path';
+import { copyMotionCanvasDeps } from './src/integrations/motionCanvas.mjs';
 import { regexReplace } from './src/util/regexReplace';
 import {
     unicodeArrows,
@@ -36,49 +35,10 @@ export default defineConfig({
         prefetch(),
         icon(),
         markdoc(),
-        // from WaldemarLehner
-        {
-            name: 'copy-motion-canvas-deps',
-            hooks: {
-                'astro:build:generated': ({ dir, logger }) => {
-                    // Get files from dist that are hashed
-                    const path = join(
-                        new URL(import.meta.url).pathname,
-                        '..',
-                        './animation/dist'
-                    );
-
-                    const allPaths = globSync(join(path, '*.js'));
-                    /** @type {string[]}  */
-                    const dependencies = allPaths.filter(e => {
-                        const filename = e.split('/').pop();
-                        if (!filename.split('.').reverse()[1].includes('-')) {
-                            return false;
-                        }
-                        const potentialHash = filename
-                            .split('.')
-                            .reverse()[1]
-                            .split('-')[1];
-                        if (potentialHash.length != 8) {
-                            return false;
-                        }
-                        // Hash must be hexdec (0-9, A-F)
-                        return /^[a-fA-z0-9]+$/.test(potentialHash);
-                    });
-
-                    for (const dep of dependencies) {
-                        const from = dep;
-                        const to = join(
-                            dir.pathname,
-                            '_astro',
-                            dep.split('/').pop()
-                        );
-                        copyFileSync(from, to);
-                        logger.info(`moved dependency from ${from} to ${to}`);
-                    }
-                },
-            },
-        },
+        copyMotionCanvasDeps(
+            join(new URL(import.meta.url).pathname, '..', './animation/dist'),
+            ['png']
+        ),
     ],
     vite: {
         build: {
