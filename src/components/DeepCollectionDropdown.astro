@@ -38,7 +38,7 @@ if (!prev) {
                     <details
                         id={md5(JSON.stringify(v))}
                         class="dropdown w-full">
-                        <summary class="rounded-none bg-zinc-900 border-zinc-900 btn btn-neutral w-full">
+                        <summary id={md5(JSON.stringify(v)) + '-summary'} class="rounded-none bg-zinc-900 border-zinc-900 btn btn-neutral w-full">
                             <Icon
                                 id={md5(JSON.stringify(v)) + '-icon'}
                                 class="transition-all duration-100"
@@ -56,15 +56,21 @@ if (!prev) {
                             defer
                             define:vars={{ id: md5(JSON.stringify(v)) }}>
                             const element = document.getElementById(id);
-                            document.getElementById(id +
-                            '-icon').style.transform = 'rotate(90deg)';
-                            element.addEventListener('toggle', () => (
-                            document.getElementById(id +
-                            '-icon').style.transform == 'rotate(90deg)' ?
-                            document.getElementById(id +
-                            '-icon').style.transform = 'rotate(180deg)' :
-                            document.getElementById(id +
-                            '-icon').style.transform = 'rotate(90deg)' ) )
+                            document.getElementById(id + '-icon').style.transform = 'rotate(90deg)';
+
+                            element.addEventListener('toggle', () => {
+                                if(document.getElementById(id +
+                                                           '-icon').style.transform == 'rotate(90deg)'){
+                                    document.getElementById(id +
+                                                            '-icon').style.transform = 'rotate(180deg)';
+                                    document.getElementById(id + '-summary').style.background = '#242C36';
+                                }
+                                else{
+                                    document.getElementById(id +
+                                                            '-icon').style.transform = 'rotate(90deg)';
+                                    document.getElementById(id + '-summary').style.background = '#18181B';
+                                }
+                            });
                         </script>
                     </details>
                 </li>
