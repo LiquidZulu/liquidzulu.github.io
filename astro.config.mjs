@@ -21,6 +21,7 @@ import {
     wikilinksToMdLinks,
 } from './src/util/wikilinks';
 import { getSlug } from './src/util/getSlug';
+import mdx from '@astrojs/mdx';
 const files = await readdir('./src/content/brain');
 const filesProc = files
     .filter(file => !file.startsWith('.'))
@@ -39,6 +40,7 @@ export default defineConfig({
             join(new URL(import.meta.url).pathname, '..', './animation/dist'),
             ['png']
         ),
+        mdx(),
     ],
     vite: {
         build: {

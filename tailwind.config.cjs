@@ -7,6 +7,9 @@ module.exports = {
                 'kofi-logo': '864px',
                 'table-of-contents': '1132px',
             },
+            dropShadow: {
+                glow: '0 0px 65px rgba(255, 255,255, 0.2)',
+            },
         },
     },
     plugins: [require('daisyui')],

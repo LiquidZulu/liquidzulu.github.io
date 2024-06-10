@@ -1,0 +1,121 @@
+import { version } from 'mcas/package.json';
+
+MCAS is one layer of abstraction on top of [Motion Canvas](https://motioncanvas.io), so knowledge of Motion Canvas will be required if you want to do anything particularly advanced or custom.
+
+# Installation
+
+## Make a new Motion Canvas project
+
+If you are following [the quickstart guide provided by Motion Canvas](https://motioncanvas.io/docs/quickstart), you can skip to [the next section](#initialise-mcas-within-your-project). The gist is that you need to run the following commands into your terminal emulator:
+
+1. Scaffold the project with Motion Canvas:
+
+```sh
+npm init @motion-canvas@latest
+```
+
+2. **C**hange **D**irectory to the project root (replace `project-name` with the name you chose in the previous step):
+
+```sh
+cd project-name
+```
+
+3. Install dependencies:
+
+```sh
+npm install
+```
+
+4. Start the editor:
+
+```sh
+npm start
+```
+
+The editor can be accessed by visiting [http://localhost:9000](http://localhost:9000). We'll use it to preview our animation, although for now there's not much to see.
+
+## Initialise MCAS within your project
+
+There are two recommended ways to use MCAS depending upon your needs:
+
+1. the "suckless" way---downloading MCAS as a local git repo and pointing to it within your Motion Canvas projects, and;
+2. installing MCAS normally as an npm package.
+
+The "[suckless](https://suckless.org)" method is good if you want to maintain your own asset library and add to it as you wish. This will allow you to easily re-use animations and whatnot across different projects without having to start from the ground up. To be clear, by "suckless" I only mean that this method makes it easier for you to modify MCAS on your own, without fear that your modifications will be over-written when updating your dependencies. MCAS is built on top of [hhenrichsen/motion-canvas-component-library-template](https://github.com/hhenrichsen/motion-canvas-component-library-template); if you are interested in making a component library completely separate to MCAS, that is the place to go.
+
+If you are unsure how to do any of that, or simply do not want to, installing it as an NPM package is also perfectly fine and should work almost identically (the import statements will be different when going suckless).
+
+### Suckless MCAS
+
+First, clone the MCAS repo to wherever you want, in this example I am assuming that you have a directory called `~/projects` where you store git repos:
+
+```sh
+cd ~/projects
+git clone https://github.com/liquidzulu/mcas
+cd mcas
+```
+
+You are now inside of your very own MCAS, which you can modify to your heart's content. Install this local MCAS to your NPM project by doing:
+
+```sh
+cd my-project-name
+npm install /path/to/local/install/of/mcas
+```
+
+So, for instance, I have MCAS installed to `~/Documents/github/mcas`, so I do:
+
+```sh
+npm install ~/Documents/github/mcas
+```
+
+Now you are able to modify your local install and it should automatically update everywhere you are importing it to.
+
+### MCAS as an NPM package
+
+```sh
+npm install mcas
+```
+
+Note that with this method you will have to update MCAS whenever a new version is out if you want to have the latest version, by doing:
+
+```sh
+npm install mcas@latest
+```
+
+## Add MCAS to your PATH
+
+Adding MCAS to your PATH allows you to use the MCAS CLI with ease. This allows you to do some of the more MCAS and less Motion Canvas things such as making new scenes with single commands, extracting quotes into Motion Canvas scenes and more.
+
+### Install MCAS globally, and get the path to it
+
+If you installed in the "suckless" way described above, you will already have the local install path, and so can skip this step. If you did not do that you can install MCAS globally by doing:
+
+```sh
+npm install -g mcas
+```
+
+Then to find the path, do:
+
+```sh
+npm list -g
+```
+
+Which should show something like:
+
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto"><code>/home/liquidzulu/.npm-packages/lib
+├── some-package@version
+├── mcas@{version}
+├── another-package@version
+└── more-stuff</code></pre>
+
+This indicates that I have MCAS installed to `~/.npm-packages/lib`, wherever it is for you, take a note of it for the next step.
+
+### Add that path to your PATH
+
+PATH is a variable that stores paths to executables on your system allowing you to run them directly in the terminal without having to type out its complete install location. On windows there is a control panel menu called something like "Edit the system environment variables," and you can modify the PATH there. On linux it depends on which shell you are using, so consult the documentation for your shell to find out this information. If you don't know which shell you are using you are probably using BASH, in which case you can add the following line to your `~/.bashrc`:
+
+```bashrc
+export PATH=$PATH:~/Documents/github/mcas
+```
+
+Assuming that you installed MCAS to `~/Documents/github/mcas`. See [this Stack Overflow question](https://askubuntu.com/questions/3744/how-do-i-modify-my-path-so-that-the-changes-are-available-in-every-terminal-sess) for more information.
