@@ -1,0 +1,74 @@
+---
+const { collection, prev } = Astro.props;
+import { Debug } from 'astro:components';
+import { md5 } from '../util/md5';
+import { getSlug } from '../util/getSlug';
+import { Icon } from 'astro-icon/components';
+let prevLayers;
+
+if (!prev) {
+    prevLayers = [];
+} else {
+    prevLayers = prev;
+}
+---
+
+<ul class="!list-none w-full">
+    {
+        Object.entries(collection).map(([k, v]) =>
+            k == 'files' ? (
+                v.map(x => (
+                    <li>
+                        <a
+                            class="bg-zinc-800 border-zinc-800 btn btn-neutral rounded-none w-full"
+                            href={
+                                prevLayers.length == 0
+                                    ? '/mcas/' + getSlug(x.slug)
+                                    : '/mcas/' +
+                                      prevLayers.join('/') +
+                                      '/' +
+                                      getSlug(x.slug)
+                            }>
+                            {x.slug}
+                        </a>
+                    </li>
+                ))
+            ) : (
+                <li class="w-full">
+                    <details
+                        id={md5(JSON.stringify(v))}
+                        class="dropdown w-full">
+                        <summary class="rounded-none bg-zinc-900 border-zinc-900 btn btn-neutral w-full">
+                            <Icon
+                                id={md5(JSON.stringify(v)) + '-icon'}
+                                class="transition-all duration-100"
+                                name="caret"
+                            />
+                            {k}
+                        </summary>
+                        <ul class="">
+                            <Astro.self
+                                collection={v}
+                                prev={[...prevLayers, k]}
+                            />
+                        </ul>
+                        <script
+                            defer
+                            define:vars={{ id: md5(JSON.stringify(v)) }}>
+                            const element = document.getElementById(id);
+                            document.getElementById(id +
+                            '-icon').style.transform = 'rotate(90deg)';
+                            element.addEventListener('toggle', () => (
+                            document.getElementById(id +
+                            '-icon').style.transform == 'rotate(90deg)' ?
+                            document.getElementById(id +
+                            '-icon').style.transform = 'rotate(180deg)' :
+                            document.getElementById(id +
+                            '-icon').style.transform = 'rotate(90deg)' ) )
+                        </script>
+                    </details>
+                </li>
+            )
+        )
+    }
+</ul>

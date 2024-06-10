@@ -3,6 +3,7 @@ import '../../css/global.css';
 import { Debug } from 'astro/components';
 import { getCollection, getEntryBySlug } from 'astro:content';
 import { McasNavbar } from './components';
+import { deepCollection } from '../../util/collections.tsx';
 
 const mcas = await getCollection('mcas');
 
@@ -16,32 +17,34 @@ const info = await getEntryBySlug('mcas', slug);
 
 const { Content, headings } = await info.render();
 
+const blah = {
+    lib: {},
+    files: [],
+};
+
 import Layout from '../../layouts/McasLayout.astro';
-import { SkipToContent, Footer, TOC } from '../../components';
+import {
+    SkipToContent,
+    Footer,
+    TOC,
+    DeepCollectionDropdown,
+} from '../../components';
 ---
 
 <Layout>
     <SkipToContent href="#md-content" />
     <McasNavbar />
     <main id="md-content" class="w-full flex flex-row">
-        <TOC slug={slug} headings={headings}>
-            <li class="cubano border-b-2 border-zinc-700 text-lg">
-                documentation
-            </li>
-            <li>
-                {
-                    mcas.map(({ slug }) => (
-                        <a class="text-gray-600" href={`/mcas/${slug}`}>
-                            <div
-                                id={`sidebar-section-${slug}`}
-                                class="transition-all ease-in-out p-1 my-1 flex items-center hover:text-gray-400 focus:text-gray-400">
-                                <span class="mr-auto text-lg pr-2">{slug}</span>
-                            </div>
-                        </a>
-                    ))
-                }
-            </li>
-        </TOC>
+        <div class="bg-zinc-950">
+            <TOC slug={slug} headings={headings}>
+                <li class="cubano border-b-2 border-zinc-700 text-lg">
+                    documentation
+                </li>
+                <li>
+                    <DeepCollectionDropdown collection={deepCollection(mcas)} />
+                </li>
+            </TOC>
+        </div>
         <article
             class="max-w-[64rem] m-auto min-h-[80vh] mt-6 text-justify md:p-16 p-6">
             <Content />
@@ -59,6 +62,7 @@ import { SkipToContent, Footer, TOC } from '../../components';
         @apply py-2;
     }
 
+    h1,
     h2,
     h3,
     h4,

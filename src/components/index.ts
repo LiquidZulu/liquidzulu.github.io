@@ -19,3 +19,4 @@ export { default as SkipToContent } from './SkipToContent.astro';
 export { default as SocialIcon } from './SocialIcon.astro';
 export { default as TOC } from './TOC.astro';
 export { default as Testimonial } from './Testimonial.astro';
+export { default as DeepCollectionDropdown } from './DeepCollectionDropdown.astro';
