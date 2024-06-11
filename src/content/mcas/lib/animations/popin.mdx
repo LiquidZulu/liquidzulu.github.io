@@ -1,0 +1,77 @@
+import glowingTextPopin from '../../../animation/dist/glowing-text-popin?url';
+import { MotionCanvasEmbed } from '../../../../components';
+import { Prism } from '@astrojs/prism';
+
+# `popin` / `popout`
+
+<div role="tablist" class="mb-20 tabs tabs-bordered bg-zinc-950">
+  <input type="radio" name="popin_codebox" role="tab" class="text-zinc-200 tab" aria-label="Preview" />
+  <div role="tabpanel" class="tab-content bg-zinc-900 border-zinc-800 p-6">
+    <MotionCanvasEmbed url={glowingTextPopin}
+mode="large"
+classes={'flex flex-content w-[50vw] place-self-center self-center justify-self-center justify-center place-items-center place-content-center items-center justify-items-center content-center align-items-center place-items-center '.split(
+' '
+)} />
+  </div>
+
+  <input type="radio" name="popin_codebox" role="tab" class="text-zinc-200 tab" aria-label="Code" checked />
+  <div role="tabpanel" class="tab-content bg-slate-950 border-zinc-800 p-6">
+<Prism
+                        code={`import { makeScene2D } from '@motion-canvas/2d';
+import { createRef, waitFor } from '@motion-canvas/core';
+import { colors, McasTxt as Txt, popin, popout } from 'mcas/lib';
+
+export default makeScene2D(function\* (view) {
+view.fill(colors.bg);
+
+    const glowingText = createRef<Txt>();
+    view.add(
+        <Txt
+            glow
+            fontSize={140}
+            fontFamily="Oswald"
+            fill="red"
+            ref={glowingText}>
+            HELLO WORLD
+        </Txt>
+    );
+
+    yield* popin(glowingText);
+    yield* waitFor(5);
+    yield* popout(glowingText);
+
+});`} lang='tsx' />
+
+  </div>
+</div>
+
+`popin` is a spring from a `scale` of `0` up to `1`. Use it like:
+
+```tsx
+export default makeScene2D(function* (view) {
+    const ref = createRef<Rect>();
+    view.add(<Rect width={500} height={500} fill="red" />);
+
+    // make sure the scale is 0 initially, if there are other animations before it
+    ref().scale(0);
+    yield* popin(ref);
+});
+```
+
+If you are using `createRefArray` then you will need to wrap the ref in a
+function:
+
+```tsx
+export default makeScene2D(function* (view) {
+    // ...
+
+    yield* popin(() => ref[0]);
+});
+```
+
+`popout` is the opposite of `popin`.
+
+# `popinSize` / `popoutSize`
+
+The same as [`popin` / `popout`](#popin--popout) but using the `size` instead of
+the `scale`.
