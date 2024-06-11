@@ -90,3 +90,11 @@ p > .emphasis {
 .footer-shadow {
     box-shadow: 0 0 10vh 10vh black;
 }
+
+html,
+body,
+main,
+article {
+    scrollbar-color: white !important;
+    color-scheme: light;
+}

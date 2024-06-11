@@ -61,10 +61,10 @@ const { sidebar, pagination } = Astro.props;
 <pagination-div
     data-sidebar={sidebar}
     id={!sidebar ? 'pagination' : 'sidebar-pagination'}
-    class="btn-group">
+    class="join join-horizontal">
     <a
         id="prev"
-        class={'btn' +
+        class={'join-item btn' +
             (!!sidebar
                 ? ` max-[1920px]:w-[3vw] w-[${Math.round(1920 * 0.03)}px]`
                 : '')}
@@ -73,7 +73,7 @@ const { sidebar, pagination } = Astro.props;
     >
     <a
         href={'/' + pagination.home}
-        class={'btn' +
+        class={'join-item btn' +
             (!!sidebar
                 ? ` max-[1920px]:w-[10vw] w-[${Math.round(1920 * 0.1)}px]`
                 : '')}>
@@ -82,7 +82,7 @@ const { sidebar, pagination } = Astro.props;
     <a
         id="next"
         href={'/' + pagination.prevNext[1] + (!!sidebar ? '#md-content' : '')}
-        class={'btn' +
+        class={'join-item btn' +
             (!!sidebar
                 ? ` max-[1920px]:w-[3vw] w-[${Math.round(1920 * 0.03)}px]`
                 : '')}>»</a
