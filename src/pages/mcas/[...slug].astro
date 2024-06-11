@@ -1,6 +1,7 @@
 ---
 import '../../css/global.css';
 import { Debug } from 'astro/components';
+import { ViewTransitions } from 'astro:transitions';
 import { getCollection, getEntryBySlug } from 'astro:content';
 import { McasNavbar } from './components';
 import { deepCollection } from '../../util/collections.tsx';
@@ -32,6 +33,7 @@ import {
 ---
 
 <Layout>
+    <ViewTransitions slot="head" />
     <SkipToContent href="#md-content" />
     <McasNavbar />
     <main id="md-content" class="w-full flex flex-row">
@@ -40,7 +42,7 @@ import {
                 <li class="cubano mb-2 border-b-2 border-zinc-700 text-lg">
                     documentation
                 </li>
-                <li>
+                <li client:load transition:persist>
                     <DeepCollectionDropdown collection={deepCollection(mcas)} />
                 </li>
             </TOC>

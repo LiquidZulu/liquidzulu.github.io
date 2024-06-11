@@ -38,7 +38,10 @@ if (!prev) {
                     <details
                         id={md5(JSON.stringify(v))}
                         class="dropdown w-full">
-                        <summary id={md5(JSON.stringify(v)) + '-summary'} class="rounded-none bg-zinc-900 border-zinc-900 btn btn-neutral w-full">
+                        <summary
+                            client:load
+                            id={md5(JSON.stringify(v)) + '-summary'}
+                            class="rounded-none bg-zinc-900 border-zinc-900 btn btn-neutral w-full">
                             <Icon
                                 id={md5(JSON.stringify(v)) + '-icon'}
                                 class="transition-all duration-100"
@@ -52,29 +55,24 @@ if (!prev) {
                                 prev={[...prevLayers, k]}
                             />
                         </ul>
-                        <script
-                            defer
-                            define:vars={{ id: md5(JSON.stringify(v)) }}>
-                            const element = document.getElementById(id);
-                            document.getElementById(id + '-icon').style.transform = 'rotate(90deg)';
-
-                            element.addEventListener('toggle', () => {
-                                if(document.getElementById(id +
-                                                           '-icon').style.transform == 'rotate(90deg)'){
-                                    document.getElementById(id +
-                                                            '-icon').style.transform = 'rotate(180deg)';
-                                    document.getElementById(id + '-summary').style.background = '#242C36';
-                                }
-                                else{
-                                    document.getElementById(id +
-                                                            '-icon').style.transform = 'rotate(90deg)';
-                                    document.getElementById(id + '-summary').style.background = '#18181B';
-                                }
-                            });
-                        </script>
                     </details>
                 </li>
             )
         )
     }
 </ul>
+
+<style>
+    details > summary {
+        background-color: #18181b;
+        & > svg {
+            @apply rotate-90;
+        }
+    }
+    details[open] > summary {
+        background-color: #242c36;
+        & > svg {
+            @apply rotate-180;
+        }
+    }
+</style>
