@@ -9,7 +9,7 @@
         "preview": "astro preview",
         "astro": "astro",
         "perf": "./unlighthouse",
-        "mc:install": "(cd animation && npm install)",
+        "mc:install": "(npm install mcas@latest && cd animation && npm install mcas@latest && npm install)",
         "mc:build": "(cd animation && npm run build)",
         "mc:dev": "(cd animation && npm run serve)"
     },
@@ -31,7 +31,7 @@
         "fuse.js": "^6.6.2",
         "glob": "^10.4.1",
         "lodash": "^4.17.21",
-        "mcas": "^0.0.5",
+        "mcas": "^0.0.6",
         "node-html-parser": "^6.1.13",
         "postcss": "^8.4.38",
         "remark": "^14.0.3",

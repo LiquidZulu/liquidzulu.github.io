@@ -1,0 +1,63 @@
+import accordionExample from '../../../../../animation/dist/accordion-example?url';
+import { MotionCanvasEmbed } from '../../../../components';
+import { Prism } from '@astrojs/prism';
+
+# Accordion
+
+<div role="tablist" class="mb-20 tabs tabs-bordered bg-zinc-950">
+  <input type="radio" name="popin_codebox" role="tab" class="text-zinc-200 tab" aria-label="Preview" checked />
+  <div role="tabpanel" class="tab-content bg-zinc-900 border-zinc-800 p-6">
+    <MotionCanvasEmbed url={accordionExample}
+mode="large"
+classes={'flex flex-content w-[50vw] place-self-center self-center justify-self-center justify-center place-items-center place-content-center items-center justify-items-center content-center align-items-center place-items-center '.split(
+' '
+)} />
+  </div>
+
+  <input type="radio" name="popin_codebox" role="tab" class="text-zinc-200 tab" aria-label="Code" />
+  <div role="tabpanel" class="tab-content bg-slate-950 border-zinc-800 p-6">
+<Prism
+                        code={`import { makeScene2D } from '@motion-canvas/2d';
+import { all, waitFor, createRefArray } from '@motion-canvas/core';
+import { colors, McasTxt as Txt } from 'mcas/lib';
+import { Accordion, AccordionItem } from 'mcas/lib/components/Accordion';
+
+export default makeScene2D(function\* (view) {
+view.fill(colors.bg);
+
+    const items = createRefArray<AccordionItem>();
+
+    view.add(
+        <Accordion width={640}>
+            <AccordionItem ref={items} title="Accordion item 1" isOpen>
+                <Txt fill="white">
+                    Accordion content arbitrary {'\n'}blah blah blah blah blah
+                    blah {'\n'}blah blah
+                </Txt>
+            </AccordionItem>
+            <AccordionItem ref={items} title="Accordion item 2">
+                <Txt fill="white">
+                    Accordion content arbitrary {'\n'}blah blah blah blah blah
+                    blah {'\n'}blah blah
+                </Txt>
+            </AccordionItem>
+            <AccordionItem ref={items} title="Accordion item 3">
+                <Txt fill="white">
+                    Accordion content arbitrary {'\n'}blah blah blah blah blah
+                    blah {'\n'}blah blah
+                </Txt>
+            </AccordionItem>
+        </Accordion>
+    );
+
+    yield* all(items[1].open(), items[0].close());
+    yield* waitFor(1);
+    yield* all(items[1].close(), items[0].open());
+    yield* waitFor(1);
+
+});`} lang='tsx' />
+
+</div>
+</div>
+
+Based on [shadcn/ui/Accordion](https://ui.shadcn.com/docs/components/accordion). An `Accordion` can take a `width`, `gap`, and `dividerWidth` with `AccordionItem` children. Every `AccordionItem` can be animated with `accordionItemRef().open()`, `accordionItemRef().close()`, or `accordionItemRef().toggle()`; with optional durations for all.

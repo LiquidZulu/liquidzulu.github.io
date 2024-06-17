@@ -5,7 +5,7 @@ import { Prism } from '@astrojs/prism';
 # `popin` / `popout`
 
 <div role="tablist" class="mb-20 tabs tabs-bordered bg-zinc-950">
-  <input type="radio" name="popin_codebox" role="tab" class="text-zinc-200 tab" aria-label="Preview" />
+  <input type="radio" name="popin_codebox" role="tab" class="text-zinc-200 tab" aria-label="Preview" checked />
   <div role="tabpanel" class="tab-content bg-zinc-900 border-zinc-800 p-6">
     <MotionCanvasEmbed url={glowingTextPopin}
 mode="large"
@@ -14,7 +14,7 @@ classes={'flex flex-content w-[50vw] place-self-center self-center justify-self-
 )} />
   </div>
 
-  <input type="radio" name="popin_codebox" role="tab" class="text-zinc-200 tab" aria-label="Code" checked />
+  <input type="radio" name="popin_codebox" role="tab" class="text-zinc-200 tab" aria-label="Code" />
   <div role="tabpanel" class="tab-content bg-slate-950 border-zinc-800 p-6">
 <Prism
                         code={`import { makeScene2D } from '@motion-canvas/2d';
