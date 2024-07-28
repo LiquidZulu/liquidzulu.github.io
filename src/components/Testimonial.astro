@@ -3,6 +3,7 @@ import { getEntryBySlug } from 'astro:content';
 import { Debug } from 'astro/components';
 
 import { NoisePanel } from './';
+import { parse } from '../util/parse';
 
 const { slug } = Astro.props;
 const testimonial = await getEntryBySlug('testimonials', slug);
@@ -20,20 +21,20 @@ const testimonial = await getEntryBySlug('testimonials', slug);
                 src={`/pfp/${testimonial.data.slug}.png`}
             /><div class="my-auto ml-2">
                 <h2 class="text-lg font-bold">
-                    {testimonial.data.name}
+                    {parse(testimonial.data.name)}
                 </h2>
                 <p class="text-slate-400">
-                    {testimonial.data.job}
+                    {parse(testimonial.data.job)}
                 </p>
             </div>
         </div>
         <p class="p-4 text-2xl text-center h-[18rem]">
-            {testimonial.body}
+            {parse(testimonial.body)}
         </p>
-        <slot/>
+        <slot />
         <p class="p-4 text-sm text-left text-slate-400">
             {testimonial.data.for.length > 0 ? 'Reviewing: ' : ''}
-            <i>{testimonial.data.for.join(', ')}</i>
+            <i>{parse(testimonial.data.for.join(', '))}</i>
         </p>
     </a>
 </NoisePanel>
