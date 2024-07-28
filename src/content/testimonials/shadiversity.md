@@ -1,7 +1,7 @@
 ---
 name: 'Shadiversity'
 slug: 'shadiversity'
-job: 'YouTuber'
+job: '{subs:UCkmMACUKpQeIxN9D9ARli1Q}'
 link: 'https://twitter.com/shadmbrooks/status/1779874039982678186'
 for: ['In Defense of AI Art']
 duration: 8
