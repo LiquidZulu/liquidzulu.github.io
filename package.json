@@ -46,7 +46,7 @@
         "unified": "^11.0.4",
         "unist-util-visit": "^5.0.0",
         "yaml": "^2.4.4",
-        "youtubei.js": "^10.2.0"
+        "youtubei.js": "^11.0.1"
     },
     "devDependencies": {
         "prettier": "^3.3.1",
