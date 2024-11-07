@@ -3,7 +3,7 @@ name: 'Stephan Kinsella'
 slug: 'kinsella'
 job: 'Libertarian Scholar'
 link: 'https://stephankinsella.com/2024/11/liquidzulu-libertarian-ethics/'
-duration: 8
+duration: 11
 for: ['The Fundamentals of Libertarian Ethics']
 ---
 

@@ -3,7 +3,7 @@ name: 'TIKhistory'
 slug: 'tik'
 job: '{subs:UCfZz8F37oSJ2rtcEJHM2kCg}'
 link: 'https://www.youtube.com/post/UgkxheMaLm8W-9w18z_QDK5CwSfpIJg5ShnZ'
-duration: 10
+duration: 12
 for: ['Responding to TIK on Anarcho-Capitalism']
 ---
 
