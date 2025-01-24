@@ -1,0 +1,104 @@
+import animation from '../../../../../animation/dist/gradients?url';
+import { MotionCanvasEmbed } from '../../../../components';
+
+# Gradients
+
+<MotionCanvasEmbed url={animation}
+mode="large"
+classes={'flex flex-content w-[50vw] place-self-center self-center justify-self-center justify-center place-items-center place-content-center items-center justify-items-center content-center align-items-center place-items-center '.split(
+' '
+)} />
+
+## `mkGradient`
+
+`mkGradient` is a utility function for creating gradients in a more concise manner than using the motion-canvas `Gradient` class.
+
+```ts
+function mkGradient(
+    direction: GradientDirection,
+    ...colors: [PossibleColor, ...PossibleColor[]]
+): Gradient;
+
+function mkGradient(
+    gradientWidth: number,
+    direction: GradientDirection,
+    ...colors: [PossibleColor, ...PossibleColor[]]
+): Gradient;
+
+function mkGradient(
+    from: PossibleVector2,
+    to: PossibleVector2,
+    ...colors: [PossibleColor, ...PossibleColor[]]
+): Gradient;
+```
+
+## `localGradient`
+
+```ts
+function localGradient(ref: Reference<any>): mkLocalGradient;
+
+function mkLocalGradient(
+    from: PossibleVector2,
+    to: PossibleVector2,
+    ...colors: [PossibleColor, ...PossibleColor[]]
+): Gradient;
+
+function mkLocalGradient(
+    gradientWidth: number,
+    direction: GradientDirection,
+    ...colors: [PossibleColor, ...PossibleColor[]]
+): Gradient;
+
+function mkLocalGradient(
+    direction: GradientDirection,
+    ...colors: [PossibleColor, ...PossibleColor[]]
+): Gradient;
+```
+
+`localGradient` makes a gradient which is parented to a given object. So by doing:
+
+```ts
+view.add(<Circle ref={circle} size={320} />);
+circle().fill(localGradient(circle)('right', 'yellow', 'red'));
+```
+
+You have a gradient going to the right from yellow to red. This gradient will automatically be sized to fit the `circle`.
+
+## GradientDirection
+
+```ts
+type GradientDirection =
+    | 'left'
+    | 'right'
+    | 'up'
+    | 'down'
+    | 'top-left'
+    | 'top-right'
+    | 'bottom-left'
+    | 'bottom-right'
+    | 'l'
+    | 'r'
+    | 'u'
+    | 'd'
+    | 'tl'
+    | 'tr'
+    | 'bl'
+    | 'br'
+    | 'n'
+    | 'north'
+    | 'nw'
+    | 'northwest'
+    | 'w'
+    | 'west'
+    | 'sw'
+    | 'southwest'
+    | 's'
+    | 'south'
+    | 'se'
+    | 'southeast'
+    | 'e'
+    | 'east'
+    | 'ne'
+    | 'northeast'
+    | number; // between 0 and 1, 0 is up
+```

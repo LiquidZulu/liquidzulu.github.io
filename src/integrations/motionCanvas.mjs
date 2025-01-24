@@ -28,8 +28,8 @@ export const copyMotionCanvasDeps = (path, extensions) => ({
                 return /^[a-fA-z0-9]+$/.test(potentialHash);
             });
 
-            //console.log(allPaths);
-            //console.log(dependencies);
+            // console.log(allPaths);
+            // console.log(dependencies);
 
             for (const dep of dependencies) {
                 const from = dep;
