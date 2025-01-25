@@ -1,0 +1,131 @@
+import glowingTextPopin from '../../../../../animation/dist/src/glowing-text-popin/glowing-text-popin?url';
+import { MotionCanvasEmbed } from '../../../../components';
+import { Prism } from '@astrojs/prism';
+
+# Apparators
+
+<div role="tablist" class="mb-20 tabs tabs-bordered bg-zinc-950">
+  <input type="radio" name="popin_codebox" role="tab" class="text-zinc-200 tab" aria-label="Preview" checked />
+  <div role="tabpanel" class="tab-content bg-zinc-900 border-zinc-800 p-6">
+    <MotionCanvasEmbed url={glowingTextPopin}
+mode="large"
+classes={'flex flex-content w-[50vw] place-self-center self-center justify-self-center justify-center place-items-center place-content-center items-center justify-items-center content-center align-items-center place-items-center '.split(
+' '
+)} />
+  </div>
+
+  <input type="radio" name="popin_codebox" role="tab" class="text-zinc-200 tab" aria-label="Code" />
+  <div role="tabpanel" class="tab-content bg-slate-950 border-zinc-800 p-6">
+<Prism
+                        code={`\
+import { Circle, Rect, makeScene2D } from '@motion-canvas/2d';
+import {
+    Reference,
+    ThreadGenerator,
+    all,
+    createRef,
+    createRefArray,
+} from '@motion-canvas/core';
+import {
+    colors,
+    fadein,
+    fadeinleft,
+    fadeinright,
+    fadeinup,
+    fadeout,
+    fadeoutleft,
+    fadeoutright,
+    fadeoutup,
+    popin,
+    popout,
+    McasTxt as Txt,
+} from 'mcas/lib';
+
+export default makeScene2D(function\* (view) {
+view.fill(colors.bg);
+
+    const anims: [string, (x: Reference<Circle>) => ThreadGenerator][] = [
+        ['popin', x => popin(x)],
+        ['popout', x => popout(x)],
+        ['fadein', x => fadein(x)],
+        ['fadeout', x => fadeout(x)],
+        ['fadeinleft', x => fadeinleft(x)],
+        ['fadeoutleft', x => fadeoutleft(x)],
+        ['fadeinright', x => fadeinright(x)],
+        ['fadeoutright', x => fadeoutright(x)],
+        ['fadeinup', x => fadeinup(x)],
+        ['fadeoutup', x => fadeoutup(x)],
+    ];
+
+    const rect = createRef<Rect>();
+    const circles = createRefArray<Circle>();
+
+    view.add(
+        <Rect
+            gap={32}
+            ref={rect}
+            layout
+            width="90%"
+            wrap="wrap"
+            justifyContent="space-evenly"
+        />
+    );
+
+    for (let [name, _] of anims) {
+        rect().add(
+            <Rect layout direction="column" gap={64} alignItems="center">
+                <Txt fontFamily="mononoki" text={name} />
+                <Rect size={300}>
+                    <Circle
+                        layout={false}
+                        ref={circles}
+                        fill="red"
+                        size={200}
+                    />
+                </Rect>
+            </Rect>
+        );
+    }
+
+    yield* all(...anims.map(([_, thread], i) => thread(() => circles[i])));
+
+});
+`} lang='tsx' />
+
+  </div>
+</div>
+
+Apparators are functions that can be used to animate in or out a given element. They all take a `Reference`.
+
+## `popin` / `popout`
+
+`popin` is a spring from a `scale` of `0` up to `1`. Use it like:
+
+```tsx
+export default makeScene2D(function* (view) {
+    const ref = createRef<Rect>();
+    view.add(<Rect width={500} height={500} fill="red" />);
+
+    // make sure the scale is 0 initially, if there are other animations before it
+    ref().scale(0);
+    yield* popin(ref);
+});
+```
+
+If you are using `createRefArray` then you will need to wrap the ref in a
+function:
+
+```tsx
+export default makeScene2D(function* (view) {
+    // ...
+
+    yield* popin(() => ref[0]);
+});
+```
+
+`popout` is the opposite of `popin`.
+
+# `popinSize` / `popoutSize`
+
+The same as [`popin` / `popout`](#popin--popout) but using the `size` instead of
+the `scale`.

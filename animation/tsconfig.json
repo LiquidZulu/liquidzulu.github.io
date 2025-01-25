@@ -2,7 +2,7 @@
     "extends": "@motion-canvas/2d/tsconfig.project.json",
     "include": ["src"],
     "compilerOptions": {
-        "target": "es2021",
+        "target": "esnext",
         "skipLibCheck": true
     }
 }

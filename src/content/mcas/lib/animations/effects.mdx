@@ -1,0 +1,92 @@
+import animation from '../../../../../animation/dist/src/effects/effects?url';
+import { MotionCanvasEmbed } from '../../../../components';
+import { Prism } from '@astrojs/prism';
+
+# Effects
+
+<div role="tablist" class="mb-20 tabs tabs-bordered bg-zinc-950">
+  <input type="radio" name="popin_codebox" role="tab" class="text-zinc-200 tab" aria-label="Preview" checked />
+  <div role="tabpanel" class="tab-content bg-zinc-900 border-zinc-800 p-6">
+    <MotionCanvasEmbed url={animation}
+mode="large"
+classes={'flex flex-content w-[50vw] place-self-center self-center justify-self-center justify-center place-items-center place-content-center items-center justify-items-center content-center align-items-center place-items-center '.split(
+' '
+)} />
+  </div>
+
+  <input type="radio" name="popin_codebox" role="tab" class="text-zinc-200 tab" aria-label="Code" />
+  <div role="tabpanel" class="tab-content bg-slate-950 border-zinc-800 p-6">
+<Prism
+                        code={`\
+import { Rect, makeScene2D } from '@motion-canvas/2d';
+import { createRef, createSignal } from '@motion-canvas/core';
+import { colors, shake, McasTxt as Txt } from 'mcas/lib';
+
+export default makeScene2D(function\* (view) {
+view.fill(colors.bg);
+
+    const rect = createRef<Rect>();
+
+    view.add(<Rect position={[500, 0]} ref={rect} size={500} fill="red" />);
+
+    view.add(
+        <Rect
+            layout
+            direction="column"
+            gap={32}
+            position={[-350, 0]}
+            width={550}>
+            <Txt
+                fontFamily="mononoki"
+                text={createSignal(
+                    () =>
+                        \`position = [\${rect().position().x.toFixed(0)}, \${rect()
+                            .position()
+                            .y.toFixed(0)}]\`
+                )}
+            />
+            <Txt
+                fontFamily="mononoki"
+                text={createSignal(
+                    () => \`scale = \${rect().scale().x.toFixed(2)}\`
+                )}
+            />
+            <Txt
+                fontFamily="mononoki"
+                text={createSignal(
+                    () => \`rotation = \${rect().rotation().toFixed(0)}\`
+                )}
+            />
+        </Rect>
+    );
+
+    yield* shake(v => {
+        rect().position([350, -v]);
+    }, 5);
+    yield* shake(v => {
+        rect().scale(1 + v / 100);
+    });
+    yield* shake(v => {
+        rect().rotation(v);
+    });
+
+});`} lang='tsx' />
+
+  </div>
+</div>
+
+# `shake`
+
+Shake is a function to apply a shake effect to an element.
+
+```ts
+function shake(cb: (val: number) => void, itensity?: number): ThreadGenerator;
+```
+
+# `ShakeSpring`
+
+`ShakeSpring` is the spring used for `shake`:
+
+```ts
+function ShakeSpring(intensity?: number): Spring;
+```

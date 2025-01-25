@@ -1,0 +1,69 @@
+import animation from '../../../../../animation/dist/src/indications/indications?url';
+import { MotionCanvasEmbed } from '../../../../components';
+import { Prism } from '@astrojs/prism';
+
+# Indications
+
+<div role="tablist" class="mb-20 tabs tabs-bordered bg-zinc-950">
+  <input type="radio" name="popin_codebox" role="tab" class="text-zinc-200 tab" aria-label="Preview" checked />
+  <div role="tabpanel" class="tab-content bg-zinc-900 border-zinc-800 p-6">
+    <MotionCanvasEmbed url={animation}
+mode="large"
+classes={'flex flex-content w-[50vw] place-self-center self-center justify-self-center justify-center place-items-center place-content-center items-center justify-items-center content-center align-items-center place-items-center '.split(
+' '
+)} />
+  </div>
+
+  <input type="radio" name="popin_codebox" role="tab" class="text-zinc-200 tab" aria-label="Code" />
+  <div role="tabpanel" class="tab-content bg-slate-950 border-zinc-800 p-6">
+<Prism
+                        code={`\
+import {
+    Code,
+    LezerHighlighter,
+    Rect,
+    insert,
+    makeScene2D,
+    remove,
+    word,
+} from '@motion-canvas/2d';
+import { createRef, createSignal } from '@motion-canvas/core';
+import { colors, popin, shake, McasTxt as Txt } from 'mcas/lib';
+import { flashAround, flash } from 'mcas/lib/animations/indications';
+import { parser } from '@lezer/javascript';
+import { sky500 } from 'mcas/lib/constants/colors';
+
+const highlighter = new LezerHighlighter(parser);
+
+export default makeScene2D(function\* (view) {
+view.fill(colors.bg);
+
+    const code = createRef<Code>();
+
+    view.add(
+        <Code
+            highlighter={highlighter}
+            ref={code}
+            fontFamily="JetBrains Mono, monospace"
+            fontSize={70}
+            code={'yield* flashAround(ref);'}
+        />
+    );
+
+    yield* flashAround(code);
+    yield* code().code.replace(word(0, 7, 11), 'flash', 1);
+    yield* flash(code);
+    yield* code().code.insert([0, 22 - 6], ', colors.sky500', 1);
+    yield* flash(code, sky500);
+    yield* code().code.edit(1)\`yield* flash\${insert('Around')}(ref\${remove(
+        ', colors.sky500'
+    )});\`;
+
+});`} lang='tsx' />
+
+Indications are small animations used to draw one's attention to an element.
+
+## `flashAround`
+
+  </div>
+</div>
