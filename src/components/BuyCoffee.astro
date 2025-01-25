@@ -14,21 +14,21 @@
 
         window.addEventListener('scroll', scrollSpy);
         scrollSpy();
+
+        const logo = document.getElementById('logo-img');
+
+        scrollCoffee.addEventListener('mouseover', () => {
+            logo.animate(
+                [
+                    { transform: 'rotate(0) scale(1)' },
+                    { transform: 'rotate(-20deg) scale(1.2)' },
+                    { transform: 'rotate(20deg) scale(1.2)' },
+                    { transform: 'rotate(0) scale(1)' },
+                ],
+                { duration: 300, iterations: 1 }
+            );
+        });
     }
-
-    const logo = document.getElementById('logo-img');
-
-    scrollCoffee.addEventListener('mouseover', () => {
-        logo.animate(
-            [
-                { transform: 'rotate(0) scale(1)' },
-                { transform: 'rotate(-20deg) scale(1.2)' },
-                { transform: 'rotate(20deg) scale(1.2)' },
-                { transform: 'rotate(0) scale(1)' },
-            ],
-            { duration: 300, iterations: 1 }
-        );
-    });
 </script>
 
 <a
